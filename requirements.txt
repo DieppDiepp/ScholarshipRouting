@@ -1,0 +1,36 @@
+numpy==2.2.6
+pandas
+matplotlib==3.10.5
+seaborn
+pyarrow
+fastparquet
+
+# notebook env
+ipykernel
+ipython
+openpyxl
+
+# machine learning
+scikit-learn
+
+# Proceesing multi types of data
+docling
+
+# RAG requirements
+# === LangChain Core & Engine ===
+langchain==0.3.25               # Main framework to build LLM-based applications using modular chains and agents
+langchain-core==0.3.58          # Lightweight core module: contains schemas, runtimes, and foundational tools
+
+# === LangChain Plugins / Integrations ===
+langchain-openai==0.3.16        # Official integration for OpenAI models (ChatGPT, GPT-4, embeddings, etc.)
+langchain-community==0.3.23     # Community-contributed integrations: tools, vector stores, retrievers, and more
+
+# === Dev Tools & Deployment ===
+langsmith==0.3.42               # Observability platform: log, trace, and debug LLM apps with full visibility
+fastapi==0.115.8
+dotenv==0.9.9
+
+# Gemini API
+google-generativeai
+langchain_google_genai
+google-genai
