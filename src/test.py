@@ -1,5 +1,12 @@
 from data_processing import cParserCV
 from data_processing import save_bronze_data, load_bronze_data
+
+from main_class.file_Applicant import Applicant
+from main_class.file_Scholarship import Scholarship
+from main_class.file_MasterScholarship import MasterScholarship
+from main_class.file_PhDScholarship import PhDScholarship
+from main_class.file_ExchangeProgram import ExchangeProgram
+
 import os
 
 cur_dir = os.path.dirname(os.path.abspath(__file__))
