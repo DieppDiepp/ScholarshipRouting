@@ -1,30 +1,48 @@
-from fastapi import APIRouter, HTTPException, Path
+from typing import Optional, Dict, Any, List, Union
+from fastapi import APIRouter, HTTPException,Query,Body
 from pydantic import BaseModel, Field
-from typing import Optional, Dict, Any
-from services.firestore_svc import save_doc, get_doc
-
+from services.firestore_svc import save_one_raw, save_many_raw, get_one_raw
 router = APIRouter()
 
 class DocIn(BaseModel):
-    id: Optional[str] = Field(default=None, description="Document id (optional).")
+    id: Optional[str] = Field(default=None, description="Optional document id.")
     data: Dict[str, Any]
 
 class DocOut(BaseModel):
     id: str
     data: Dict[str, Any]
 
-@router.post("/{collection}", response_model=DocOut)
-def upsert_document(collection: str, payload: DocIn):
+class BulkResult(BaseModel):
+    inserted_ids: List[str]
+
+@router.post("/{collection}")
+def upsert_documents(
+    collection: str,
+    payload: Union[Dict[str, Any], List[Dict[str, Any]]] = Body(
+        ..., 
+        example={"Scholarship_Name": "Chevening", "Country": "UK"}
+    ),
+):
+    """
+    Upsert document(s) vào Firestore.
+    - Nếu body là 1 object → lưu 1 record.
+    - Nếu body là 1 array object → lưu nhiều record.
+    - Doc_id sẽ được auto-generate.
+    """
     try:
-        doc_id = save_doc(collection, payload.id, payload.data)
+        if isinstance(payload, list):
+            ids = save_many_raw(collection, rows=payload)
+            return {"inserted_ids": ids}
+        else:
+            saved_id = save_one_raw(collection, data=payload)
+            return {"id": saved_id, "data": payload}
     except ValueError:
         raise HTTPException(status_code=400, detail="Invalid collection name")
-    return DocOut(id=doc_id, data=payload.data)
 
 @router.get("/{collection}/{doc_id}", response_model=DocOut)
 def read_document(collection: str, doc_id: str):
     try:
-        doc = get_doc(collection, doc_id)
+        doc = get_one_raw(collection, doc_id)
     except ValueError:
         raise HTTPException(status_code=400, detail="Invalid collection name")
     if not doc:
