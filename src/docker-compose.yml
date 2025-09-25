@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  # Python API Server
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: scholarship-server
+    ports:
+      - "8000:8000"
+    # depends_on:
+    #   - elasticsearch
+    # environment:
+    #   # Cho server biết URL Elasticsearch nội bộ trong network
+    #   - ELASTICSEARCH_HOST=http://elasticsearch:9200
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    container_name: scholarship-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false     
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g       
+    ports:
+      - "9200:9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+volumes:
+  esdata:
