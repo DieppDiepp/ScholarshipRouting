@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI
-from routes import health
+from routes import health, firestore_routes
 import firebase_admin
 from firebase_admin import credentials, firestore
 
@@ -13,3 +13,4 @@ if not firebase_admin._apps:
 
 app = FastAPI(title="Scholarship Routing API")
 app.include_router(health.router, prefix="/health", tags=["health"])
+app.include_router(firestore_routes.router, prefix="/api/v1/firestore", tags=["firestore"])
