@@ -3,7 +3,7 @@ FROM python:3.12-slim-bookworm
 
 WORKDIR /app
 
-RUN pip install --no-cache-dir fastapi elasticsearch uvicorn firebase-admin
+RUN pip install --no-cache-dir fastapi elasticsearch uvicorn firebase-admin prometheus-fastapi-instrumentator
 
 COPY . .
 

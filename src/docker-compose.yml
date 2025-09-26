@@ -1,13 +1,13 @@
 version: "3.9"
 
 services:
-  # Python API Server
+  # ===================== Python API Server =====================
   server:
     build:
       context: ./server
       dockerfile: Dockerfile
-    env_file: [.env]
     container_name: scholarship-server
+    env_file: [.env]
     ports:
       - "${APP_PORT}:${APP_PORT}"
     depends_on:
@@ -16,6 +16,7 @@ services:
     volumes:
       - ./secrets/firebase_key.json:/run/secrets/firebase_key.json:ro
 
+  # ===================== Elasticsearch =====================
   es:
     image: docker.elastic.co/elasticsearch/elasticsearch:9.1.4
     container_name: scholarship-elasticsearch
@@ -26,15 +27,58 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:9200/_cluster/health"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 10
     volumes:
       - esdata:/usr/share/elasticsearch/data
+
+  # ===================== Prometheus =====================
+  prometheus:
+    image: prom/prometheus
+    container_name: scholarship-prometheus
+    env_file: [.env]
+    ports:
+      - "${PROMETHEUS_PORT}:${PROMETHEUS_PORT}"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--log.level=${PROMETHEUS_LOG_LEVEL}"
+
+  # ===================== Grafana =====================
+  grafana:
+    image: grafana/grafana
+    container_name: scholarship-grafana
+    env_file: [.env]
+    ports:
+      - "${GRAFANA_PORT}:${GRAFANA_PORT}"
     environment:
-      - logger.level=ERROR
-      - discovery.type=single-node
-      - xpack.security.enabled=false
-      - ES_JAVA_OPTS=-Xms1g -Xmx1g
-      - network.host=0.0.0.0
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+      - GF_LOG_LEVEL=${GF_LOG_LEVEL}
+    volumes:
+      - grafanadata:/var/lib/grafana
+      - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml:ro
+      - ./grafana/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml:ro
+      - ./grafana/dashboard.json:/var/lib/grafana/dashboards/dashboard.json:ro
+    depends_on:
+      - prometheus
+
+  # ===================== cAdvisor (Container Metrics) =====================
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor
+    container_name: scholarship-cadvisor
+    env_file: [.env]
+    ports:
+      - "${CADVISOR_PORT}:8080"
+    command:
+      - "--logtostderr"
+      - "--v=${CADVISOR_LOG_LEVEL}"
+    volumes:
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
 
 volumes:
   esdata:
+  redisdata:
+  grafanadata:

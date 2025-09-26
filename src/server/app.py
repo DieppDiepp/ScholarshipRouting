@@ -6,6 +6,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 from elasticsearch import Elasticsearch
 from services.es_svc import index_many
+from prometheus_fastapi_instrumentator import Instrumentator
 
 ES_HOST = os.getenv("ELASTICSEARCH_HOST")
 ES_USER = os.getenv("ELASTIC_USER")
@@ -26,7 +27,7 @@ app = FastAPI(title="Scholarship Routing API")
 app.include_router(health.router, prefix="/health", tags=["health"])
 app.include_router(firestore_routes.router, prefix="/api/v1/firestore", tags=["firestore"])
 app.include_router(search.router, prefix="/api/v1/es", tags=["elasticsearch"])
-
+Instrumentator().instrument(app).expose(app)
 @app.on_event("startup")
 def sync_all_firestore_collections_to_es():
     es = Elasticsearch(
