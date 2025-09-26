@@ -4,16 +4,9 @@ from pydantic import BaseModel, Field
 from services.firestore_svc import save_one_raw, save_many_raw, get_one_raw
 router = APIRouter()
 
-class DocIn(BaseModel):
-    id: Optional[str] = Field(default=None, description="Optional document id.")
-    data: Dict[str, Any]
-
 class DocOut(BaseModel):
     id: str
     data: Dict[str, Any]
-
-class BulkResult(BaseModel):
-    inserted_ids: List[str]
 
 @router.post("/{collection}")
 def upsert_documents(
