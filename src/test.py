@@ -23,3 +23,4 @@ parent_dir = os.path.dirname(cur_dir)
 # load_bronze_data usage example:
 # df = load_bronze_data(path=os.path.join(parent_dir, "data/1_bronze"), type="parquet")
 # print(df.info())
+

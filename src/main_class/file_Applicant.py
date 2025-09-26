@@ -1,5 +1,6 @@
 from typing import Optional
 from datetime import datetime
+import json
 
 class Applicant:
     def __init__(self, **kwargs): # Tất cả data user đều có thể chỉnh sửa cho đúng với mình (đề phòng có sai sót khi trích xuất CV)
@@ -43,3 +44,63 @@ class Applicant:
         self.special_things: Optional[str] = kwargs.get('Special_Things') # Các thứ thật sự đặc biệt, mà có thể giúp ứng viên nổi bật hơn
 
 
+    def __repr__(self):
+        return f"<Applicant: {self.name}, GPA: {self.gpa_range_4}, Degree: {self.degree}, Field: {self.field_of_study}>"
+    
+    def __str__(self):
+            # Helper function to format list attributes
+            def format_list(items):
+                if not items:
+                    return "N/A"
+                return "\n".join([f"  - {item}" for item in items])
+
+            # Helper function to format single values, checking for None
+            def format_value(value, default="N/A"):
+                return value if value is not None else default
+
+            return f"""
+            ========================================
+            HỒ SƠ ỨNG VIÊN: {format_value(self.name, 'Chưa cập nhật')}
+            ========================================
+
+            --- THÔNG TIN CÁ NHÂN ---
+            - Email: {format_value(self.email)}
+            - Giới tính: {format_value(self.gender)}
+            - Ngày sinh: {format_value(self.birth_date)}
+            - GPA (hệ 4): {format_value(self.gpa_range_4)}
+
+            --- NGUYỆN VỌNG HỌC BỔNG ---
+            - Loại học bổng: {format_value(', '.join(self.desired_scholarship_type or []))}
+            - Quốc gia: {format_value(', '.join(self.desired_countries or []))}
+            - Mức tài trợ: {format_value(', '.join(self.desired_funding_level or []))}
+            - Lĩnh vực mong muốn: {format_value(', '.join(self.desired_field_of_study or []))}
+
+            --- HỒ SƠ HỌC THUẬT & KINH NGHIỆM ---
+            - Trình độ: {format_value(self.degree)}
+            - Ngành học: {format_value(self.field_of_study)}
+            - Chứng chỉ ngoại ngữ:
+    {format_list(self.language_certificates)}
+            - Chứng chỉ học thuật khác:
+    {format_list(self.academic_certificates)}
+            - Giải thưởng học thuật:
+    {format_list(self.academic_awards)}
+            - Công bố khoa học:
+    {format_list(self.publications)}
+            - Số năm kinh nghiệm: {format_value(self.years_of_experience)}
+
+            --- THÔNG TIN KHÁC ---
+            - Ghi chú thêm: {format_value(self.notes)}
+            - Các kỹ năng (Tags): {format_value(', '.join(self.tags or []))}
+            
+            - ĐIỂM ĐẶC BIỆT:
+            {format_value(self.special_things)}
+            ========================================
+            """
+    
+    def to_json(self):
+        """Chuyển đổi các thuộc tính của object thành chuỗi JSON."""
+        return json.dumps(
+            self.__dict__,
+            indent=4,         # Giúp định dạng JSON đẹp hơn
+            ensure_ascii=False  # Đảm bảo hiển thị đúng tiếng Việt
+        )
