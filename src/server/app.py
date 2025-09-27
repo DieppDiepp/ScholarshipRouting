@@ -1,7 +1,7 @@
 import os
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from routes import health, firestore_routes, search
+from routes import health, firestore_routes, search , auth
 import firebase_admin
 from firebase_admin import credentials, firestore
 from elasticsearch import Elasticsearch
@@ -27,6 +27,7 @@ app = FastAPI(title="Scholarship Routing API")
 app.include_router(health.router, prefix="/health", tags=["health"])
 app.include_router(firestore_routes.router, prefix="/api/v1/firestore", tags=["firestore"])
 app.include_router(search.router, prefix="/api/v1/es", tags=["elasticsearch"])
+app.include_router(auth.router, prefix="/api/v1/auth", tags=["auth"])
 Instrumentator().instrument(app).expose(app)
 @app.on_event("startup")
 def sync_all_firestore_collections_to_es():

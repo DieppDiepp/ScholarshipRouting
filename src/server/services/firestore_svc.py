@@ -1,4 +1,3 @@
-# services/firestore_svc.py
 import re
 from typing import Optional, Dict, Any, List, Iterable
 from firebase_admin import firestore
@@ -19,6 +18,12 @@ def save_one_raw(collection: str, data: Dict[str, Any]) -> str:
     ref = db.collection(col).document()  # auto-id
     ref.set(data)
     return ref.id
+
+def save_with_id(collection: str, doc_id: str, data: Dict[str, Any]) -> str:
+    col = _ensure_valid_collection(collection)
+    db = _db()
+    db.collection(col).document(doc_id).set(data)
+    return doc_id
 
 def save_many_raw(collection: str, rows: Iterable[Dict[str, Any]]) -> List[str]:
     col = _ensure_valid_collection(collection)
@@ -45,6 +50,7 @@ def save_many_raw(collection: str, rows: Iterable[Dict[str, Any]]) -> List[str]:
         batch.commit()
 
     return ids
+
 def get_one_raw(collection: str, doc_id: str) -> Optional[Dict[str, Any]]:
     col = _ensure_valid_collection(collection)
     db = _db()
