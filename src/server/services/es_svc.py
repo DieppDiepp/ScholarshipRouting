@@ -1,4 +1,4 @@
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, Iterable, List, Optional, Literal
 from elasticsearch import Elasticsearch, helpers
 
 def ensure_index(client: Elasticsearch, index: str) -> str:
@@ -119,6 +119,71 @@ def search_keyword(
     res = client.search(
         index=index,
         query={"bool": {"must": must}},
+        size=size,
+        from_=offset,
+    )
+    hits = [
+        {"id": h["_id"], "score": h["_score"], "source": h["_source"]}
+        for h in res["hits"]["hits"]
+    ]
+    return {"total": res["hits"]["total"]["value"], "items": hits}
+
+def filter_advanced(
+    client: Elasticsearch,
+    *,
+    index: str,
+    filters: List[Dict[str, Any]],
+    collection: Optional[str] = None,
+    inter_field_operator: Literal["AND", "OR"] = "AND",
+    size: int = 10,
+    offset: int = 0,
+) -> Dict[str, Any]:
+    """
+    Hàm lọc tổng quát, hỗ trợ logic kết hợp linh hoạt và lọc theo collection.
+    """
+    ensure_index(client, index)
+
+    # Xây dựng các mệnh đề lọc từ input `filters`
+    clauses = []
+    for f in filters:
+        field = f["field"]
+        values = f["values"]
+        intra_operator = f.get("operator", "OR").lower()
+        query_text = " ".join(map(str, values))
+        
+        clauses.append(
+            {"match": {field: {"query": query_text, "operator": intra_operator}}}
+        )
+    
+    query_body: Dict[str, Any] = {"bool": {}}
+    
+    # Logic kết hợp các mệnh đề lọc chính
+    if clauses:
+        if inter_field_operator == "AND":
+            query_body["bool"]["filter"] = clauses
+        else: # inter_field_operator == "OR"
+            query_body["bool"]["should"] = clauses
+            query_body["bool"]["minimum_should_match"] = 1
+            
+    # Luôn áp dụng bộ lọc `collection` như một điều kiện AND (nếu có)
+    # bằng cách thêm nó vào mệnh đề 'filter'.
+    # Đây là cách hiệu quả nhất để kết hợp.
+    if collection:
+        # Nếu 'filter' chưa tồn tại, tạo mới
+        if "filter" not in query_body["bool"]:
+            query_body["bool"]["filter"] = []
+        # Thêm điều kiện lọc collection
+        query_body["bool"]["filter"].append({"term": {"collection": collection}})
+
+
+    # Trả về rỗng nếu không có bất kỳ điều kiện nào
+    if not query_body["bool"]:
+        return {"total": 0, "items": []}
+
+    # Thực thi query
+    res = client.search(
+        index=index,
+        query=query_body,
         size=size,
         from_=offset,
     )

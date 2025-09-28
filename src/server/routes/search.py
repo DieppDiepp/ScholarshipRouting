@@ -1,10 +1,11 @@
 # routes/search.py
 import os
-from typing import Any, Dict, List, Union, Optional
-from fastapi import APIRouter, Query
+from typing import Any, Dict, List, Union, Optional, Literal
+from fastapi import APIRouter, Body, Query
 from elasticsearch import Elasticsearch
-from services.es_svc import search_keyword, index_many
+from services.es_svc import search_keyword, index_many, filter_advanced
 from firebase_admin import firestore
+from dtos.search_dtos import FilterItem
 
 router = APIRouter()
 ES_HOST = os.getenv("ELASTICSEARCH_HOST")
@@ -59,5 +60,56 @@ def sync_firestore_to_es(
     try:
         count = index_many(es, items, index=collection, collection=collection)
         return {"status": "ok", "indexed": count, "collection": collection}
+    finally:
+        es.close()
+
+filter_example = [
+    {
+      "field": "Country",
+      "values": ["Hà Lan", "Đức"],
+      "operator": "OR"
+    },
+    {
+      "field": "Funding_Level",
+      "values": ["Toàn phần"],
+      "operator": "OR"
+    }
+]
+
+@router.post("/filter")
+def filter_documents(
+    # --- Các tham số Query Parameter ---
+    collection: str = Query(..., description="Tên collection cần filter"),
+    size: int = Query(10, ge=1, le=100, description="Số lượng kết quả trả về"),
+    offset: int = Query(0, ge=0, description="Vị trí bắt đầu lấy kết quả"),
+    inter_field_operator: Literal["AND", "OR"] = Query("AND", description="Toán tử kết hợp các bộ lọc với nhau"),
+    
+    # --- Request body giờ là một danh sách FilterItem ---
+    filters: List[FilterItem] = Body(..., example=filter_example)
+):
+    """
+    API để lọc document với các điều kiện phức tạp.
+    """
+    es = Elasticsearch(
+        hosts=[ES_HOST],
+        basic_auth=(ES_USER, ES_PASS),
+        verify_certs=False,
+        max_retries=30,
+        retry_on_timeout=True,
+        request_timeout=30,
+    )
+    try:
+        # Chuyển đổi list các Pydantic model thành list các dict
+        filters_dict = [item.model_dump() for item in filters]
+
+        return filter_advanced(
+            client=es,
+            index=collection,
+            collection=collection,
+            filters=filters_dict,
+            inter_field_operator=inter_field_operator,
+            size=size,
+            offset=offset
+        )
     finally:
         es.close()
