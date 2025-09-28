@@ -1,11 +1,12 @@
 import os
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from routes import health, firestore_routes, search
+from routes import health, firestore_routes, search , auth
 import firebase_admin
 from firebase_admin import credentials, firestore
 from elasticsearch import Elasticsearch
 from services.es_svc import index_many
+from prometheus_fastapi_instrumentator import Instrumentator
 
 ES_HOST = os.getenv("ELASTICSEARCH_HOST")
 ES_USER = os.getenv("ELASTIC_USER")
@@ -26,9 +27,10 @@ app = FastAPI(title="Scholarship Routing API")
 app.include_router(health.router, prefix="/health", tags=["health"])
 app.include_router(firestore_routes.router, prefix="/api/v1/firestore", tags=["firestore"])
 app.include_router(search.router, prefix="/api/v1/es", tags=["elasticsearch"])
-
+app.include_router(auth.router, prefix="/api/v1/auth", tags=["auth"])
+Instrumentator().instrument(app).expose(app)
 @app.on_event("startup")
-def sync_firestore_to_es():
+def sync_all_firestore_collections_to_es():
     es = Elasticsearch(
         hosts=[ES_HOST],
         basic_auth=(ES_USER, ES_PASS),
@@ -37,14 +39,29 @@ def sync_firestore_to_es():
         retry_on_timeout=True,
         request_timeout=30,
     )
+
     try:
-        docs = db.collection("scholarships").stream()
-        records = [doc.to_dict() for doc in docs]
-        if records:
-            count = index_many(es, records, index=os.getenv("ELASTICSEARCH_INDEX", "scholarships"), collection="scholarship")
-            print(f"✅ Synced {count} docs from Firestore → ES")
-        else:
-            print("⚠️ No documents found in Firestore")
+        collections = db.collections()  # Lấy tất cả Firestore collections
+        for coll_ref in collections:
+            coll_name = coll_ref.id
+            docs = coll_ref.stream()
+            records = []
+            for doc in docs:
+                data = doc.to_dict()
+                data["id"] = doc.id  # gắn id để tránh trùng
+                records.append(data)
+
+            if records:
+                count = index_many(
+                    es,
+                    records,
+                    index=coll_name,        # mỗi collection map sang 1 index cùng tên
+                    collection=coll_name    # gắn tên collection để filter khi search
+                )
+                print(f"✅ Synced {count} docs from Firestore collection '{coll_name}' → ES index '{coll_name}'")
+            else:
+                print(f"⚠️ No documents found in collection '{coll_name}'")
+
     except Exception as e:
         print(f"❌ Error syncing Firestore → ES: {e}")
     finally:
