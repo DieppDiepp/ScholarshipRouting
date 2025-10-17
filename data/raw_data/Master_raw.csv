@@ -23,12 +23,12 @@ STT,Scholarship_Name,Scholarship_Type,Country
 22,Orange Knowledge Programme (OKP),Chính phủ,Hà Lan
 23,VLIR-UOS Scholarships (Flemish Universities),Quỹ hoặc tổ chức,Bỉ
 24,ARES Scholarships (Académie de Recherche et d’Enseignement Supérieur),Quỹ hoặc tổ chức,Bỉ
-25,Islamic Development Bank (IsDB) Scholarship Program,Quỹ hoặc tổ chức,Quốc tế
-26,Aga Khan Foundation International Scholarship,Quỹ hoặc tổ chức,Quốc tế
-27,Rotary Peace Fellowship,Quỹ hoặc tổ chức,Quốc tế
-28,Joint Japan/World Bank Graduate Scholarship,Quỹ hoặc tổ chức,Quốc tế
-29,Asian Development Bank–Japan Scholarship (ADB-JSP),Quỹ hoặc tổ chức,Quốc tế
-30,Mastercard Foundation Scholars Program,Quỹ hoặc tổ chức,Quốc tế
+25,Islamic Development Bank (IsDB) Scholarship Program,Quỹ hoặc tổ chức,Saudi Arabia
+26,Aga Khan Foundation International Scholarship,Quỹ hoặc tổ chức,Switzerland
+27,Rotary Peace Fellowship,Quỹ hoặc tổ chức,United States
+28,Joint Japan/World Bank Graduate Scholarship,Quỹ hoặc tổ chức,Japan
+29,Asian Development Bank–Japan Scholarship (ADB-JSP),Quỹ hoặc tổ chức,Japan
+30,Mastercard Foundation Scholars Program,Quỹ hoặc tổ chức,Canada
 31,Commonwealth Master’s Scholarship,Chính phủ,Vương Quốc Anh
 32,Rhodes Scholarship,Quỹ hoặc tổ chức,Vương Quốc Anh
 33,Gates Cambridge Scholarship,Quỹ hoặc tổ chức,Vương Quốc Anh
@@ -45,7 +45,8 @@ STT,Scholarship_Name,Scholarship_Type,Country
 44,AAUW International Fellowships (for women),Quỹ hoặc tổ chức,Mỹ
 45,PEO International Peace Scholarship (for women),Quỹ hoặc tổ chức,Mỹ
 46,Inlaks Shivdasani Foundation Scholarships,Quỹ hoặc tổ chức,Ấn Độ
-47,SEARCA Graduate Scholarship,Quỹ hoặc tổ chức,Đông Nam Á
+47,SEARCA Graduate Scholarship,Quỹ hoặc tổ chức,"Philippines
+"
 48,Brazil PEC-PG Graduate Scholarship Program,Chính phủ,Brazil
 49,Mexican Government Scholarship (AMEXCID),Chính phủ,Mexico
 50,Austrian Government (ADC) Scholarships,Chính phủ,Áo
@@ -86,7 +87,7 @@ STT,Scholarship_Name,Scholarship_Type,Country
 85,POSCO TJ Park (Asian Fellowship at SNU),Quỹ hoặc tổ chức,Hàn Quốc
 86,Chulabhorn Graduate Institute Scholarship,Quỹ hoặc tổ chức,Thái Lan
 87,AIT King's & Queen's Scholarships (Thailand),Chính phủ,Thái Lan
-88,OAS Academic Scholarships,Quỹ hoặc tổ chức,Châu Mỹ (OAS)
+88,OAS Academic Scholarships,Quỹ hoặc tổ chức,Mỹ
 89,Rosa-Luxemburg-Stiftung Scholarships,Quỹ hoặc tổ chức,Đức
 90,Confucius Institute Scholarship,Chính phủ,Trung Quốc
 91,Czech Government Scholarships,Chính phủ,Cộng hòa Séc
@@ -115,10 +116,10 @@ STT,Scholarship_Name,Scholarship_Type,Country
 114,Yenching Academy Scholarship (Peking University),Trường,Trung Quốc
 115,McCall MacBain Scholarship (McGill University),Trường,Canada
 116,Obama Foundation Scholars (Columbia University),Quỹ/Tổ chức,Mỹ
-117,Rotary Peace Fellowship,Quỹ/Tổ chức,Toàn cầu (Global)
-118,Joint Japan/World Bank Graduate Scholarship Program,Quỹ/Tổ chức,Toàn cầu (Global)
-119,ADB-Japan Scholarship (ADB-JSP),Quỹ/Tổ chức,Châu Á
-120,Aga Khan Foundation Scholarship,Quỹ/Tổ chức,Toàn cầu (Global)
+117,Rotary Peace Fellowship,Quỹ/Tổ chức,Mỹ
+118,Joint Japan/World Bank Graduate Scholarship Program,Quỹ/Tổ chức,Japan
+119,ADB-Japan Scholarship (ADB-JSP),Quỹ/Tổ chức,Japan
+120,Aga Khan Foundation Scholarship,Quỹ/Tổ chức,Switzerland
 121,KAUST Fellowship (King Abdullah Univ of Science & Tech),Trường,Ả Rập Xê Út 
 122,Khalifa University Graduate Scholarship,Trường,UAE
 123,MBZUAI Scholarship (Mohamed bin Zayed University of AI),Trường,UAE
@@ -133,11 +134,11 @@ STT,Scholarship_Name,Scholarship_Type,Country
 132,BI Presidential Scholarship,Trường,Na Uy
 133,Doha Institute Graduate Scholarship,Trường,Qatar
 134,Hamad Bin Khalifa University Scholarship,Trường,Qatar
-135,Mandela Rhodes Scholarship,Quỹ/Tổ chức,Nam Phi (South Africa)
+135,Mandela Rhodes Scholarship,Quỹ/Tổ chức,Nam Phi 
 136,Skoll Scholarship (Oxford MBA),Quỹ/Tổ chức,Vương Quốc Anh
 137,JFUNU Scholarship (United Nations University),Quỹ/Tổ chức,Nhật Bản
-138,SEARCA Graduate Scholarship,Quỹ/Tổ chức,Đông Nam Á (SE Asia)
-139,Queen Elizabeth Commonwealth Scholarship (QECS),Quỹ/Tổ chức,Khối Thịnh vượng chung
+138,SEARCA Graduate Scholarship,Quỹ/Tổ chức,Philippines
+139,Queen Elizabeth Commonwealth Scholarship (QECS),Quỹ/Tổ chức,Vương Quốc Anh
 140,Heinrich Böll Foundation Scholarship,Quỹ/Tổ chức,Đức
 141,Konrad Adenauer Stiftung Scholarship,Quỹ/Tổ chức,Đức
 142,Friedrich Ebert Stiftung Scholarship,Quỹ/Tổ chức,Đức
@@ -146,7 +147,7 @@ STT,Scholarship_Name,Scholarship_Type,Country
 145,DeepMind Scholarship (AI/ML),Quỹ/Tổ chức,Vương Quốc Anh
 146,Hitachi Scholarship Foundation,Quỹ/Tổ chức,Nhật Bản
 147,Carolina Foundation Scholarship,Quỹ/Tổ chức,Tây Ban Nha
-148,OPEC Fund for Development Scholarship (OFID),Quỹ/Tổ chức,Toàn cầu (Global)
+148,OPEC Fund for Development Scholarship (OFID),Quỹ/Tổ chức,Áo
 149,East-West Center Graduate Fellowship,Quỹ/Tổ chức,Mỹ
-150,WHO/TDR Postgraduate Scholarship,Quỹ/Tổ chức,Toàn cầu (Global)
+150,WHO/TDR Postgraduate Scholarship,Quỹ/Tổ chức,Switzerland
 151,ICTP Master Scholarship,Quỹ/Tổ chức,Ý 
