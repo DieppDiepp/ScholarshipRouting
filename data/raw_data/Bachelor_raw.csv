@@ -1,0 +1,93 @@
+STT,Scholarship_Name,Scholarship_Type,Country
+1,MEXT (Monbukagakusho) Scholarship,Chính phủ,Nhật Bản
+2,Global Korea Scholarship (GKS),Chính phủ,Hàn Quốc
+3,Chinese Government Scholarship (CSC),Chính phủ,Trung Quốc
+4,Manaaki New Zealand Scholarships,Chính phủ,New Zealand
+5,Australia Awards (Undergraduate component),Chính phủ,Úc
+6,NL Scholarship (formerly Holland Scholarship),Chính phủ,Hà Lan
+7,Deutschlandstipendium (Federal/Private),Chính phủ/Tổ chức,Đức
+8,Emerging Leaders in the Americas Program (ELAP),Chính phủ,Canada
+9,Harvard University Financial Aid (Need-Blind),Trường,Hoa Kỳ
+10,Yale University Financial Aid (Need-Blind),Trường,Hoa Kỳ
+11,Brandeis University Wien International Scholarship Program,Trường,Hoa Kỳ
+12,Clark University Global Scholars Program,Trường,Hoa Kỳ
+13,American University Emerging Global Leader Scholarship,Trường,Hoa Kỳ
+14,Lester B. Pearson International Scholarship,Trường,Canada
+15,University of Toronto Scholars Program,Trường,Canada
+16,ANU Tuckwell Scholarship Program,Trường,Úc
+17,NUS Global Merit Scholarship,Trường,Singapore
+18,NUS ASEAN Undergraduate Scholarship,Trường,Singapore
+19,University of Sheffield International Undergraduate Scholarship,Trường,Vương Quốc Anh
+20,Edinburgh Global Undergraduate Mathematics Scholarships,Trường,Vương Quốc Anh
+21,ETH Zurich Solidary Fund (Need-Based),Trường,Thụy Sĩ
+22,KU Leuven ASEAN Scholarship,Trường,Bỉ
+23,Mastercard Foundation Scholars Program,Quỹ và Tổ chức,Nhiều Quốc gia
+24,"Generation Google Scholarship (APAC, EMEA, NA)",Quỹ và Tổ chức,Nhiều Quốc gia
+25,Shell Scholarship (Undergraduate),Quỹ và Tổ chức,Nhiều Quốc gia
+26,Rotary District Grants (Potential Undergraduate Funding),Quỹ và Tổ chức,Nhiều Quốc gia
+27,Heinrich Böll Scholarships (All Levels),Quỹ và Tổ chức,Đức
+28,Benjamin A. Gilman International Scholarship Program (For US Citizens studying abroad),Chính phủ,Hoa Kỳ
+29,Global Undergraduate Exchange Program (Global UGRAD),Chính phủ,Hoa Kỳ
+30,Davis UWC Scholars Program,Quỹ/Tổ chức,Hoa Kỳ
+31,Jardine Scholarship,Quỹ/Tổ chức,Anh
+32,Türkiye Scholarships,Chính phủ,Thổ Nhĩ Kỳ
+33,Cambridge Commonwealth Trust Scholarships,Quỹ/Tổ chức,Anh
+34,Orange Tulip Scholarship,Chính phủ/Tổ chức,Hà Lan
+35,Trustee Scholars Program – Boston University,Trường,Hoa Kỳ
+36,International Outreach Award – University of Cincinnati,Trường,Hoa Kỳ
+37,International Freshman Scholarships – University of Alabama,Trường,Hoa Kỳ
+38,Stamps Scholarship,Quỹ/Tổ chức,Hoa Kỳ
+39,Schulich Leader Scholarships,Quỹ/Tổ chức,Canada
+40,UBC International Scholars Program – University of British Columbia,Trường,Canada
+41,Melbourne International Undergraduate Scholarship – University of Melbourne,Trường,Úc
+42,KAIST International Undergraduate Scholarship – KAIST,Trường,South Korea
+43,HKUST Admissions Scholarships for International Students – HKUST,Trường,Hong Kong
+44,Reach Oxford Scholarship – University of Oxford,Trường,Vương Quốc Anh
+45,Vice-Chancellor’s International Scholarships Scheme – University of Sydney,Trường,Úc
+46,International Scientia Coursework Scholarship – UNSW Sydney,Trường,Úc
+47,International Student Excellence Scholarship – University of Auckland,Trường,New Zealand
+48,NUS International Undergraduate Scholarship – National University of Singapore,Trường,Singapore
+49,Undergraduate Global Excellence Scholarship – University of Warwick,Trường,Vương Quốc Anh
+50,UQ International Excellence Scholarship – University of Queensland,Trường,Úc
+51,Entrance Scholarships for International Students – The University of Hong Kong (HKU),Trường,Hong Kong
+52,International Undergraduate Excellence Award – University of Nottingham,Trường,Vương Quốc Anh
+53,Inspiring Excellence Undergraduate Scholarship – Durham University,Trường,Vương Quốc Anh
+54,UdeM Exemption Scholarship for International Students – Université de Montréal,Trường,Canada
+55,Entrance Scholarships – McGill University,Trường,Canada
+56,International Student Entrance Scholarship – University of Waterloo,Trường,Canada
+57,President’s Scholars of Excellence Program – University of Toronto,Trường,Canada
+58,Sydney International Undergraduate Academic Excellence Scholarship – University of Sydney,Trường,Úc
+59,Taiwan Scholarship Program (MOE),Chính phủ,Đài Loan
+60,HKSAR Government Scholarship Fund (Outstanding Performance),Chính phủ,Hồng Kông
+61,MAECI Scholarship (Study in Italy Grant - Short-term/Living Allowance),Chính phủ,Ý
+62,University of Hong Kong Scholarships (General International Awards),Trường,Hồng Kông
+63,ICSP Scholarships at University of Oregon,Trường,Mỹ
+64,University of Calgary International Entrance Scholarship,Trường,Canada
+65,Griffith Vice Chancellor’s International Scholarship,Trường,Úc
+66,Dr. Elemér and Éva Kiss Scholarship Fund,Quỹ và Tổ chức,Mỹ
+67,IAPD Scholarship,Quỹ và Tổ chức,Mỹ
+68,Stantec Future Leaders Scholarship,Quỹ và Tổ chức,Mỹ
+69,WGA Evans Scholars Program,Quỹ và Tổ chức,Mỹ
+70,CIEE College Study Abroad Scholarships,Quỹ và Tổ chức,Mỹ
+71,Hubert Humphrey Fellowships,Chính phủ,Mỹ
+72,Civil Society Leadership Awards,Quỹ và Tổ chức,Mỹ
+73,Monash International Merit Scholarship,Trường,Úc
+74,Adelaide Global Citizens Scholarship,Trường,Úc
+75,University of Western Australia Global Excellence Scholarship,Trường,Úc
+76,York University International Entrance Scholarship,Trường,Canada
+77,Western University International Admission Scholarships,Trường,Canada
+78,QuestBridge National College Match,Quỹ và Tổ chức,Mỹ
+79,Coca-Cola Scholars Program,Quỹ và Tổ chức,Mỹ
+80,Dell Scholars Program,Quỹ và Tổ chức,Mỹ
+81,University of Bologna Study Grants for International Students,Trường,Ý
+82,Bocconi Merit and International Awards,Trường,Ý
+83,Tsinghua University Scholarships,Trường,Trung Quốc
+84,Peking University Scholarships,Trường,Trung Quốc
+85,Singapore Management University Scholarships,Trường,Singapore
+86,ACI Foundation Scholarship,Quỹ và Tổ chức,Mỹ
+87,AAUW International Fellowship Program,Quỹ và Tổ chức,Mỹ
+88,GREAT Scholarships,Chính phủ,Anh
+89,Swedish Institute Scholarships for Global Professionals,Chính phủ,Thụy Điển
+90,University of New South Wales International Scholarships,Trường,Úc
+91,Vanier Canada Graduate Scholarships,Chính phủ,Canada
+92,Zawadi Africa Education Fund,Quỹ và Tổ chức,Mỹ
