@@ -1,153 +1,152 @@
 STT,Scholarship_Name,Scholarship_Type,Country
-1,Chinese Government Scholarship,Chính phủ,Trung Quốc
-2,Turkiye Burslari (Turkey Government Scholarship),Chính phủ,Thổ Nhĩ Kỳ
-3,Danish Government Scholarship (University of Southern Denmark),Chính phủ,Đan Mạch
-4,Bangkok Government Scholarship (Chulalongkorn University),Chính phủ,Thái Lan
-5,Government of Brunei Darussalam Scholarship,Chính phủ,Brunei
-6,Stipendium Hungaricum (Hungarian Government Scholarship),Chính phủ,Hungary
-7,Government of Ireland International Education Scholarship,Chính phủ,Ireland
-8,Italian Government Scholarship,Chính phủ,Ý
-9,Tianjin Government Scholarship,Chính phủ,Trung Quốc
-10,Master Mind Scholarship (Government of Flanders),Chính phủ,Bỉ
-11,Colombia Government Scholarship,Chính phủ,Colombia
-12,Thailand International Postgraduate Programme (TIPP),Chính phủ,Thái Lan
-13,Kemitraan Negara Berkembang (KNB) Scholarship,Chính phủ,Indonesia
-14,Australia Research Training Program (RTP) Scholarships,Chính phủ,Úc
-15,Azerbaijan Government Scholarship,Chính phủ,Azerbaijan
-16,National Scholarship Programme of the Slovak Republic,Chính phủ,Slovakia
-17,Beijing Government Scholarship,Chính phủ,Trung Quốc
-18,Romanian Government Scholarship,Chính phủ,Romania
-19,Swedish Institute Scholarships for Global Professionals (SISGP),Chính phủ,Thụy Điển
-20,Global Korea Scholarship (GKS),Chính phủ,Hàn Quốc
-21,Manaaki New Zealand Scholarships,Chính phủ,New Zealand
-22,Orange Knowledge Programme (OKP),Chính phủ,Hà Lan
-23,VLIR-UOS Scholarships (Flemish Universities),Quỹ hoặc tổ chức,Bỉ
-24,ARES Scholarships (Académie de Recherche et d’Enseignement Supérieur),Quỹ hoặc tổ chức,Bỉ
-25,Islamic Development Bank (IsDB) Scholarship Program,Quỹ hoặc tổ chức,Saudi Arabia
-26,Aga Khan Foundation International Scholarship,Quỹ hoặc tổ chức,Switzerland
-27,Rotary Peace Fellowship,Quỹ hoặc tổ chức,United States
-28,Joint Japan/World Bank Graduate Scholarship,Quỹ hoặc tổ chức,Japan
-29,Asian Development Bank–Japan Scholarship (ADB-JSP),Quỹ hoặc tổ chức,Japan
-30,Mastercard Foundation Scholars Program,Quỹ hoặc tổ chức,Canada
-31,Commonwealth Master’s Scholarship,Chính phủ,Vương Quốc Anh
-32,Rhodes Scholarship,Quỹ hoặc tổ chức,Vương Quốc Anh
-33,Gates Cambridge Scholarship,Quỹ hoặc tổ chức,Vương Quốc Anh
-34,Clarendon Scholarship (University of Oxford),Trường đại học,Vương Quốc Anh
-35,Knight-Hennessy Scholars (Stanford University),Trường đại học,Mỹ
-36,Schwarzman Scholars (Tsinghua University),Quỹ hoặc tổ chức,Trung Quốc
-37,Yenching Academy Scholarship (Peking University),Trường đại học,Trung Quốc
-38,KAUST Scholarship (King Abdullah University of Science & Tech),Trường đại học,Ả Rập Xê-út
-39,MBZUAI Scholarship (Mohamed Bin Zayed Univ of AI),Trường đại học,UAE
-40,Khalifa University Graduate Scholarship,Trường đại học,UAE
-41,Westminster International Postgraduate Full Scholarship,Trường đại học,Vương Quốc Anh
-42,ETH Zurich Excellence Scholarship & Opportunity Programme,Trường đại học,Thụy Sĩ
-43,Weidenfeld-Hoffmann Scholarships (Oxford),Quỹ hoặc tổ chức,Vương Quốc Anh
-44,AAUW International Fellowships (for women),Quỹ hoặc tổ chức,Mỹ
-45,PEO International Peace Scholarship (for women),Quỹ hoặc tổ chức,Mỹ
-46,Inlaks Shivdasani Foundation Scholarships,Quỹ hoặc tổ chức,Ấn Độ
-47,SEARCA Graduate Scholarship,Quỹ hoặc tổ chức,"Philippines
-"
-48,Brazil PEC-PG Graduate Scholarship Program,Chính phủ,Brazil
-49,Mexican Government Scholarship (AMEXCID),Chính phủ,Mexico
-50,Austrian Government (ADC) Scholarships,Chính phủ,Áo
-51,ICCR Scholarships (Indian Council for Cultural Relations),Chính phủ,Ấn Độ
-52,Marshall Scholarship (UK),Chính phủ,Vương Quốc Anh
-53,MOFCOM Scholarship (China),Chính phủ,Trung Quốc
-54,Heinrich Böll Foundation Scholarships,Quỹ hoặc tổ chức,Đức
-55,Konrad Adenauer Stiftung (KAS) Scholarship,Quỹ hoặc tổ chức,Đức
-56,Frank Knox Memorial Fellowship (Harvard University),Quỹ hoặc tổ chức,Mỹ
-57,MAEC-AECID Scholarship (Spain),Chính phủ,Tây Ban Nha
-58,Mandela Rhodes Scholarship,Quỹ hoặc tổ chức,Nam Phi
-59,Emile Boutmy Scholarship (Sciences Po),Trường đại học,Pháp
-60,Amsterdam Excellence Scholarship,Trường đại học,Hà Lan
-61,TU Delft Excellence Scholarships,Trường đại học,Hà Lan
-62,Allan & Nesta Ferguson Masters Scholarships (Sheffield),Quỹ hoặc tổ chức,Anh
-63,Eric Bleumink Fund Scholarship (Groningen),Trường đại học,Hà Lan
-64,Friedrich Ebert Stiftung Scholarships,Quỹ hoặc tổ chức,Đức
-65,Fundación Carolina Scholarships,Quỹ hoặc tổ chức,Tây Ban Nha
-66,Scotland Saltire Scholarship,Chính phủ,Vương Quốc Anh
-67,King Fahd University Scholarship (KFUPM),Trường đại học,Ả Rập Xê-út
-68,Qatar University Graduate Scholarships,Trường đại học,Qatar
-69,Open Doors Russian Scholarship (Global Universities),Chính phủ,Nga
-70,Mauritius Government (Africa) Scholarship,Chính phủ,Mauritius
-71,Wellcome International Masters Fellowships,Quỹ hoặc tổ chức,Vương Quốc Anh
-72,Obama Foundation Scholars Program,Quỹ hoặc tổ chức,Mỹ
-73,Shanghai Government Scholarship,Chính phủ,Trung Quốc
-74,Japan Africa Dream Scholarship (JADS),Quỹ hoặc tổ chức,Nhật Bản
-75,Pan African University Scholarship,Quỹ hoặc tổ chức,Châu Phi
-76,Skoltech Master's Scholarship,Trường đại học,Nga
-77,UNIL Master's Grants (Lausanne),Trường đại học,Thụy Sĩ
-78,University of Geneva Excellence Master Fellowships,Trường đại học,Thụy Sĩ
-79,KAAD Scholarship (Catholic Academic Exchange Service),Quỹ hoặc tổ chức,Đức
-80,"JFUNU Scholarship (UN University, Japan)",Quỹ hoặc tổ chức,Nhật Bản
-81,Malaysia International Scholarship (MIS),Chính phủ,Malaysia
-82,Kazakhstan Government Scholarships,Chính phủ,Kazakhstan
-83,Moroccan Government Scholarships,Chính phủ,Ma Rốc
-84,KAIST International Student Scholarship,Trường đại học,Hàn Quốc
-85,POSCO TJ Park (Asian Fellowship at SNU),Quỹ hoặc tổ chức,Hàn Quốc
-86,Chulabhorn Graduate Institute Scholarship,Quỹ hoặc tổ chức,Thái Lan
-87,AIT King's & Queen's Scholarships (Thailand),Chính phủ,Thái Lan
-88,OAS Academic Scholarships,Quỹ hoặc tổ chức,Mỹ
-89,Rosa-Luxemburg-Stiftung Scholarships,Quỹ hoặc tổ chức,Đức
-90,Confucius Institute Scholarship,Chính phủ,Trung Quốc
-91,Czech Government Scholarships,Chính phủ,Cộng hòa Séc
-92,Polish Government Scholarships,Chính phủ,Ba Lan
-93,Latvian Government Scholarships,Chính phủ,Latvia
-94,Estonian Government Scholarships,Chính phủ,Estonia
-95,Kofi Annan MBA Fellowship (ESMT Berlin),Quỹ hoặc tổ chức,Đức
-96,Invest Your Talent in Italy Scholarship,Chính phủ,Ý
-97,"Skoll Scholarship (MBA, Oxford)",Quỹ hoặc tổ chức,Vương Quốc Anh
-98,Education for Sustainable Energy Development (ESED) Scholarship,Quỹ hoặc tổ chức,Quốc tế
-99,Beit Trust Postgraduate Scholarships,Quỹ hoặc tổ chức,Vương Quốc Anh
-100,Open Society Foundations Civil Society Leadership Awards,Quỹ hoặc tổ chức,Quốc tế
-101,Orange Knowledge Programme,Chính phủ,Hà Lan 
-102,Swiss Government Excellence Scholarships,Chính phủ,Thụy Sĩ
-103,Stipendium Hungaricum,Chính phủ,Hungary
-104,Eiffel Excellence Scholarship,Chính phủ,Pháp
-105,TaiwanICDF Scholarship,Chính phủ,Đài Loan
-106,Malaysia International Scholarship (MIS),Chính phủ,Malaysia
-107,Thailand International Postgraduate Programme (TIPP),Chính phủ,Thái Lan
-108,Brunei Darussalam Government Scholarship (BDGS),Chính phủ,Brunei
-109,National Scholarship Programme (NSP),Chính phủ,Slovakia
-110,Czech Government Scholarship,Chính phủ,Cộng hòa Séc 
-111,Knight-Hennessy Scholars (Stanford University),Trường,Mỹ
-112,Clarendon Scholarship (University of Oxford),Trường,Vương Quốc Anh
-113,Schwarzman Scholars (Tsinghua University),Quỹ/Tổ chức,Trung Quốc
-114,Yenching Academy Scholarship (Peking University),Trường,Trung Quốc
-115,McCall MacBain Scholarship (McGill University),Trường,Canada
-116,Obama Foundation Scholars (Columbia University),Quỹ/Tổ chức,Mỹ
-117,Rotary Peace Fellowship,Quỹ/Tổ chức,Mỹ
-118,Joint Japan/World Bank Graduate Scholarship Program,Quỹ/Tổ chức,Japan
-119,ADB-Japan Scholarship (ADB-JSP),Quỹ/Tổ chức,Japan
-120,Aga Khan Foundation Scholarship,Quỹ/Tổ chức,Switzerland
-121,KAUST Fellowship (King Abdullah Univ of Science & Tech),Trường,Ả Rập Xê Út 
-122,Khalifa University Graduate Scholarship,Trường,UAE
-123,MBZUAI Scholarship (Mohamed bin Zayed University of AI),Trường,UAE
-124,EPFL Excellence Fellowships,Trường,Thụy Sĩ
-125,Geneva Excellence Master Fellowship,Trường,Thụy Sĩ
-126,Chulalongkorn Graduate Scholarship,Trường,Thái Lan
-127,SIIT Graduate Scholarship (Thammasat University),Trường,Thái Lan
-128,TU Delft Justus & Louise van Effen Scholarship,Trường,Hà Lan
-129,Adelaide Scholarships International (ASI),Trường,Úc
-130,University of Sydney International Scholarship (USydIS),Trường,Úc
-131,KAAD Scholarship,Quỹ/Tổ chức,Đức
-132,BI Presidential Scholarship,Trường,Na Uy
-133,Doha Institute Graduate Scholarship,Trường,Qatar
-134,Hamad Bin Khalifa University Scholarship,Trường,Qatar
-135,Mandela Rhodes Scholarship,Quỹ/Tổ chức,Nam Phi 
-136,Skoll Scholarship (Oxford MBA),Quỹ/Tổ chức,Vương Quốc Anh
-137,JFUNU Scholarship (United Nations University),Quỹ/Tổ chức,Nhật Bản
-138,SEARCA Graduate Scholarship,Quỹ/Tổ chức,Philippines
-139,Queen Elizabeth Commonwealth Scholarship (QECS),Quỹ/Tổ chức,Vương Quốc Anh
-140,Heinrich Böll Foundation Scholarship,Quỹ/Tổ chức,Đức
-141,Konrad Adenauer Stiftung Scholarship,Quỹ/Tổ chức,Đức
-142,Friedrich Ebert Stiftung Scholarship,Quỹ/Tổ chức,Đức
-143,Churchill Scholarship (Cambridge),Quỹ/Tổ chức,Vương Quốc Anh
-144,Rhodes Scholarship (Oxford),Quỹ/Tổ chức,Vương Quốc Anh
-145,DeepMind Scholarship (AI/ML),Quỹ/Tổ chức,Vương Quốc Anh
-146,Hitachi Scholarship Foundation,Quỹ/Tổ chức,Nhật Bản
-147,Carolina Foundation Scholarship,Quỹ/Tổ chức,Tây Ban Nha
-148,OPEC Fund for Development Scholarship (OFID),Quỹ/Tổ chức,Áo
-149,East-West Center Graduate Fellowship,Quỹ/Tổ chức,Mỹ
-150,WHO/TDR Postgraduate Scholarship,Quỹ/Tổ chức,Switzerland
-151,ICTP Master Scholarship,Quỹ/Tổ chức,Ý 
+1,Chinese Government Scholarship,Government,China
+2,Turkiye Burslari (Turkey Government Scholarship),Government,Turkey
+3,Danish Government Scholarship (University of Southern Denmark),Government,Denmark
+4,Bangkok Government Scholarship (Chulalongkorn University),Government,Thailand
+5,Government of Brunei Darussalam Scholarship,Government,Brunei
+6,Stipendium Hungaricum (Hungarian Government Scholarship),Government,Hungary
+7,Government of Ireland International Education Scholarship,Government,Ireland
+8,Italian Government Scholarship,Government,Italy
+9,Tianjin Government Scholarship,Government,China
+10,Master Mind Scholarship (Government of Flanders),Government,Belgium
+11,Colombia Government Scholarship,Government,Colombia
+12,Thailand International Postgraduate Programme (TIPP),Government,Thailand
+13,Kemitraan Negara Berkembang (KNB) Scholarship,Government,Indonesia
+14,Australia Research Training Program (RTP) Scholarships,Government,Australia
+15,Azerbaijan Government Scholarship,Government,Azerbaijan
+16,National Scholarship Programme of the Slovak Republic,Government,Slovakia
+17,Beijing Government Scholarship,Government,China
+18,Romanian Government Scholarship,Government,Romania
+19,Swedish Institute Scholarships for Global Professionals (SISGP),Government,Sweden
+20,Global Korea Scholarship (GKS),Government,South Korea
+21,Manaaki New Zealand Scholarships,Government,New Zealand
+22,Orange Knowledge Programme (OKP),Government,Netherlands
+23,VLIR-UOS Scholarships (Flemish Universities),Organization/Foundation,Belgium
+24,ARES Scholarships (Académie de Recherche et d’Enseignement Supérieur),Organization/Foundation,Belgium
+25,Islamic Development Bank (IsDB) Scholarship Program,Organization/Foundation,Saudi Arabia
+26,Aga Khan Foundation International Scholarship,Organization/Foundation,Switzerland
+27,Rotary Peace Fellowship,Organization/Foundation,United States
+28,Joint Japan/World Bank Graduate Scholarship,Organization/Foundation,Japan
+29,Asian Development Bank–Japan Scholarship (ADB-JSP),Organization/Foundation,Japan
+30,Mastercard Foundation Scholars Program,Organization/Foundation,Canada
+31,Commonwealth Master’s Scholarship,Government,United Kingdom
+32,Rhodes Scholarship,Organization/Foundation,United Kingdom
+33,Gates Cambridge Scholarship,Organization/Foundation,United Kingdom
+34,Clarendon Scholarship (University of Oxford),University,United Kingdom
+35,Knight-Hennessy Scholars (Stanford University),University,United States
+36,Schwarzman Scholars (Tsinghua University),Organization/Foundation,China
+37,Yenching Academy Scholarship (Peking University),University,China
+38,KAUST Scholarship (King Abdullah University of Science & Tech),University,Saudi Arabia
+39,MBZUAI Scholarship (Mohamed Bin Zayed Univ of AI),University,UAE
+40,Khalifa University Graduate Scholarship,University,UAE
+41,Westminster International Postgraduate Full Scholarship,University,United Kingdom
+42,ETH Zurich Excellence Scholarship & Opportunity Programme,University,Switzerland
+43,Weidenfeld-Hoffmann Scholarships (Oxford),Organization/Foundation,United Kingdom
+44,AAUW International Fellowships (for women),Organization/Foundation,United States
+45,PEO International Peace Scholarship (for women),Organization/Foundation,United States
+46,Inlaks Shivdasani Foundation Scholarships,Organization/Foundation,India
+47,SEARCA Graduate Scholarship,Organization/Foundation,Philippines
+48,Brazil PEC-PG Graduate Scholarship Program,Government,Brazil
+49,Mexican Government Scholarship (AMEXCID),Government,Mexico
+50,Austrian Government (ADC) Scholarships,Government,Austria
+51,ICCR Scholarships (Indian Council for Cultural Relations),Government,India
+52,Marshall Scholarship (UK),Government,United Kingdom
+53,MOFCOM Scholarship (China),Government,China
+54,Heinrich Böll Foundation Scholarships,Organization/Foundation,Germany
+55,Konrad Adenauer Stiftung (KAS) Scholarship,Organization/Foundation,Germany
+56,Frank Knox Memorial Fellowship (Harvard University),Organization/Foundation,United States
+57,MAEC-AECID Scholarship (Spain),Government,Spain
+58,Mandela Rhodes Scholarship,Organization/Foundation,South Africa
+59,Emile Boutmy Scholarship (Sciences Po),University,France
+60,Amsterdam Excellence Scholarship,University,Netherlands
+61,TU Delft Excellence Scholarships,University,Netherlands
+62,Allan & Nesta Ferguson Masters Scholarships (Sheffield),Organization/Foundation,United Kingdom
+63,Eric Bleumink Fund Scholarship (Groningen),University,Netherlands
+64,Friedrich Ebert Stiftung Scholarships,Organization/Foundation,Germany
+65,Fundación Carolina Scholarships,Organization/Foundation,Spain
+66,Scotland Saltire Scholarship,Government,United Kingdom
+67,King Fahd University Scholarship (KFUPM),University,Saudi Arabia
+68,Qatar University Graduate Scholarships,University,Qatar
+69,Open Doors Russian Scholarship (Global Universities),Government,Russia
+70,Mauritius Government (Africa) Scholarship,Government,Mauritius
+71,Wellcome International Masters Fellowships,Organization/Foundation,United Kingdom
+72,Obama Foundation Scholars Program,Organization/Foundation,United States
+73,Shanghai Government Scholarship,Government,China
+74,Japan Africa Dream Scholarship (JADS),Organization/Foundation,Japan
+75,Pan African University Scholarship,Organization/Foundation,Africa (Region)
+76,Skoltech Master's Scholarship,University,Russia
+77,UNIL Master's Grants (Lausanne),University,Switzerland
+78,University of Geneva Excellence Master Fellowships,University,Switzerland
+79,KAAD Scholarship (Catholic Academic Exchange Service),Organization/Foundation,Germany
+80,"JFUNU Scholarship (UN University, Japan)",Organization/Foundation,Japan
+81,Malaysia International Scholarship (MIS),Government,Malaysia
+82,Kazakhstan Government Scholarships,Government,Kazakhstan
+83,Moroccan Government Scholarships,Government,Morocco
+84,KAIST International Student Scholarship,University,South Korea
+85,POSCO TJ Park (Asian Fellowship at SNU),Organization/Foundation,South Korea
+86,Chulabhorn Graduate Institute Scholarship,Organization/Foundation,Thailand
+87,AIT King's & Queen's Scholarships (Thailand),Government,Thailand
+88,OAS Academic Scholarships,Organization/Foundation,United States
+89,Rosa-Luxemburg-Stiftung Scholarships,Organization/Foundation,Germany
+90,Confucius Institute Scholarship,Government,China
+91,Czech Government Scholarships,Government,Czech Republic
+92,Polish Government Scholarships,Government,Poland
+93,Latvian Government Scholarships,Government,Latvia
+94,Estonian Government Scholarships,Government,Estonia
+95,Kofi Annan MBA Fellowship (ESMT Berlin),Organization/Foundation,Germany
+96,Invest Your Talent in Italy Scholarship,Government,Italy
+97,"Skoll Scholarship (MBA, Oxford)",Organization/Foundation,United Kingdom
+98,Education for Sustainable Energy Development (ESED) Scholarship,Organization/Foundation,Canada
+99,Beit Trust Postgraduate Scholarships,Organization/Foundation,United Kingdom
+100,Open Society Foundations Civil Society Leadership Awards,Organization/Foundation,United States
+101,Orange Knowledge Programme,Government,Netherlands
+102,Swiss Government Excellence Scholarships,Government,Switzerland
+103,Stipendium Hungaricum,Government,Hungary
+104,Eiffel Excellence Scholarship,Government,France
+105,TaiwanICDF Scholarship,Government,Taiwan
+106,Malaysia International Scholarship (MIS),Government,Malaysia
+107,Thailand International Postgraduate Programme (TIPP),Government,Thailand
+108,Brunei Darussalam Government Scholarship (BDGS),Government,Brunei
+109,National Scholarship Programme (NSP),Government,Slovakia
+110,Czech Government Scholarship,Government,Czech Republic
+111,Knight-Hennessy Scholars (Stanford University),University,United States
+112,Clarendon Scholarship (University of Oxford),University,United Kingdom
+113,Schwarzman Scholars (Tsinghua University),Organization/Foundation,China
+114,Yenching Academy Scholarship (Peking University),University,China
+115,McCall MacBain Scholarship (McGill University),University,Canada
+116,Obama Foundation Scholars (Columbia University),Organization/Foundation,United States
+117,Rotary Peace Fellowship,Organization/Foundation,United States
+118,Joint Japan/World Bank Graduate Scholarship Program,Organization/Foundation,Japan
+119,ADB-Japan Scholarship (ADB-JSP),Organization/Foundation,Japan
+120,Aga Khan Foundation Scholarship,Organization/Foundation,Switzerland
+121,KAUST Fellowship (King Abdullah Univ of Science & Tech),University,Saudi Arabia
+122,Khalifa University Graduate Scholarship,University,UAE
+123,MBZUAI Scholarship (Mohamed bin Zayed University of AI),University,UAE
+124,EPFL Excellence Fellowships,University,Switzerland
+125,Geneva Excellence Master Fellowship,University,Switzerland
+126,Chulalongkorn Graduate Scholarship,University,Thailand
+127,SIIT Graduate Scholarship (Thammasat University),University,Thailand
+128,TU Delft Justus & Louise van Effen Scholarship,University,Netherlands
+129,Adelaide Scholarships International (ASI),University,Australia
+130,University of Sydney International Scholarship (USydIS),University,Australia
+131,KAAD Scholarship,Organization/Foundation,Germany
+132,BI Presidential Scholarship,University,Norway
+133,Doha Institute Graduate Scholarship,University,Qatar
+134,Hamad Bin Khalifa University Scholarship,University,Qatar
+135,Mandela Rhodes Scholarship,Organization/Foundation,South Africa
+136,Skoll Scholarship (Oxford MBA),Organization/Foundation,United Kingdom
+137,JFUNU Scholarship (United Nations University),Organization/Foundation,Japan
+138,SEARCA Graduate Scholarship,Organization/Foundation,Philippines
+139,Queen Elizabeth Commonwealth Scholarship (QECS),Organization/Foundation,United Kingdom
+140,Heinrich Böll Foundation Scholarship,Organization/Foundation,Germany
+141,Konrad Adenauer Stiftung Scholarship,Organization/Foundation,Germany
+142,Friedrich Ebert Stiftung Scholarship,Organization/Foundation,Germany
+143,Churchill Scholarship (Cambridge),Organization/Foundation,United Kingdom
+144,Rhodes Scholarship (Oxford),Organization/Foundation,United Kingdom
+145,DeepMind Scholarship (AI/ML),Organization/Foundation,United Kingdom
+146,Hitachi Scholarship Foundation,Organization/Foundation,Japan
+147,Carolina Foundation Scholarship,Organization/Foundation,Spain
+148,OPEC Fund for Development Scholarship (OFID),Organization/Foundation,Austria
+149,East-West Center Graduate Fellowship,Organization/Foundation,United States
+150,WHO/TDR Postgraduate Scholarship,Organization/Foundation,Switzerland
+151,ICTP Master Scholarship,Organization/Foundation,Italy

@@ -1,59 +1,59 @@
 STT,Scholarship_Name,Scholarship_Type,Country
-1,UCL Research Excellence Scholarship (UCL-RES),Trường,Anh
-2,Canada Graduate Scholarships – Doctoral (CGS-D / CGRS-D),Chính phủ,Canada
-3,Monash Graduate Scholarship (MGS/MIPRS),Trường,Úc
-4,University of Sydney Research Training Program (RTP) Scholarships,Trường,Úc
-5,Melbourne Research Scholarship (MRS),Trường,Úc
-6,Gates Cambridge Scholarship,Quỹ và Tổ chức,Vương quốc Anh
-7,Rhodes Scholarship,Quỹ và Tổ chức,Vương quốc Anh
-8,Chevening Scholarship,Chính phủ,Vương quốc Anh
-9,Commonwealth Scholarship (CSC),Chính phủ,Vương quốc Anh
-10,UK Research and Innovation (UKRI) DTPs,Chính phủ,Vương quốc Anh
-11,Wellcome Trust Four-year PhD Programmes,Quỹ và Tổ chức,Vương quốc Anh
-12,DAAD Doctoral Programmes in Germany,Chính phủ,Đức
-13,Eiffel Excellence Scholarship Program (Doctorate),Chính phủ,Pháp
-14,F.R.S.-FNRS Doctoral Fellowships,Quỹ và Tổ chức,Bỉ
-15,FWO Doctoral Fellowships (Fundamental Research),Quỹ và Tổ chức,Bỉ
-16,FPI/FPU Predoctoral Grants,Chính phủ,Tây Ban Nha
-17,MAECI Italian Government Scholarships,Chính phủ,Ý
-18,Swiss Government Excellence Scholarships,Chính phủ,Thụy Sĩ
-19,CYD Fellowships (Cyber-Defence),Trường/Quỹ và Tổ chức,Thụy Sĩ
-20,Government of Ireland Postgraduate Scholarship,Chính phủ,Ireland
-21,Japanese Government (MEXT) Scholarship (Research),Chính phủ,Nhật Bản
-22,Global Korea Scholarship (GKS),Chính phủ,Hàn Quốc
-23,China Government Scholarship (CGS),Chính phủ,Trung Quốc
-24,Siemens China Scholarship,Quỹ và Tổ chức,Trung Quốc
-25,Marie Skłodowska-Curie Actions (Doctoral Networks),Quỹ và Tổ chức,Liên minh châu Âu (EU)
-26,Singapore International Graduate Award (SINGA),Quỹ và Tổ chức,Singapore
-27,Aga Khan Foundation International Scholarship Programme (AKF-ISP),Quỹ và Tổ chức,Thụy Sĩ
-28,IDRC – International Doctoral Research Awards (IDRA),"Quỹ, tổ chức",Canada
-29,HEC Paris – PhD Program Funding,Trường,Pháp
-30,Dublin City University (DCU) – PhD Scholarships,Trường,Ireland
-31,CSIRO Industry PhD (iPhD),"Quỹ, tổ chức",Úc
-32,European University Institute (EUI) Doctoral Programme,Trường,Ý / EU
-33,EURAXESS – PhD Studentships/Jobs,"Quỹ, tổ chức",EU
-34,University of Brighton – Funded PhD Studentships,Trường,Anh
-35,Vingroup Science & Technology Scholarship (PhD),"Quỹ, tổ chức",Việt Nam
-36,RMIT Vietnam PhD Scholarships,Trường,Việt Nam
-37,VIED – University of Waterloo Doctoral Scholarship,Chính phủ,Canada / Việt Nam
-38,Monash – Vietnam Government Joint PhD Scholarships (Project 89),Chính phủ + Trường,Úc / Việt Nam
-39,UTS FEIT – Project 89 PhD Top-up,Chính phủ + Trường,Úc / Việt Nam
-40,Fulbright Vietnamese Visiting Student Researcher (VSR) – S&T,"Quỹ, tổ chức",Hoa Kỳ
-41,Hong Kong PhD Fellowship Scheme (HKPFS),Chính phủ,Hong Kong
-42,Edinburgh Doctoral College Scholarships,Trường,Anh
-43,Warwick Chancellor’s International Scholarships,"Quỹ, tổ chức",Anh
-44,Manchester President’s Doctoral Scholar Award (PDS),"Quỹ, tổ chức",Anh
-45,Nottingham Vice-Chancellor’s Scholarship for Research Excellence,"Quỹ, tổ chức",Anh
-46,King’s PGR International Scholarships (KCL),"Quỹ, tổ chức",Anh
-47,QMUL Principal’s Postgraduate Research Studentships,"Quỹ, tổ chức",Anh
-48,Nanyang President’s Graduate Scholarship (NPGS),Trường,Singapore
-49,Taiwan International Graduate Program (TIGP),"Quỹ, tổ chức",Đài Loan
-50,Imperial College London President’s PhD Scholarships,Trường,Vương quốc Anh
-51,Pierre Elliott Trudeau Foundation Doctoral Scholarships,"Quỹ, tổ chức",Canada
-52,Cambridge International PhD Scholarships (Cambridge Trust),"Quỹ, tổ chức",Vương quốc Anh
-53,Clarendon Scholarships (Oxford) – DPhil/PhD,"Quỹ, tổ chức",Vương quốc Anh
-54,UCL Overseas Research Scholarships (ORS),Trường,Vương quốc Anh
-55,KAUST Fellowship – PhD,Chính phủ,Ả Rập Saudi
-56,NUS President’s Graduate Fellowship (PGF) – PhD,Trường,Singapore
-57,Türkiye Scholarships (YTB) – PhD,Chính phủ,Thổ Nhĩ Kỳ
-58,Vanier Canada Graduate Scholarships (PhD),"Quỹ, tổ chức",Canada
+1,UCL Research Excellence Scholarship (UCL-RES),University,United Kingdom
+2,Canada Graduate Scholarships – Doctoral (CGS-D / CGRS-D),Government,Canada
+3,Monash Graduate Scholarship (MGS/MIPRS),University,Australia
+4,University of Sydney Research Training Program (RTP) Scholarships,University,Australia
+5,Melbourne Research Scholarship (MRS),University,Australia
+6,Gates Cambridge Scholarship,Organization/Foundation,United Kingdom
+7,Rhodes Scholarship,Organization/Foundation,United Kingdom
+8,Chevening Scholarship,Government,United Kingdom
+9,Commonwealth Scholarship (CSC),Government,United Kingdom
+10,UK Research and Innovation (UKRI) DTPs,Government,United Kingdom
+11,Wellcome Trust Four-year PhD Programmes,Organization/Foundation,United Kingdom
+12,DAAD Doctoral Programmes in Germany,Government,Germany
+13,Eiffel Excellence Scholarship Program (Doctorate),Government,France
+14,F.R.S.-FNRS Doctoral Fellowships,Organization/Foundation,Belgium
+15,FWO Doctoral Fellowships (Fundamental Research),Organization/Foundation,Belgium
+16,FPI/FPU Predoctoral Grants,Government,Spain
+17,MAECI Italian Government Scholarships,Government,Italy
+18,Swiss Government Excellence Scholarships,Government,Switzerland
+19,CYD Fellowships (Cyber-Defence),Organization/Foundation,Switzerland
+20,Government of Ireland Postgraduate Scholarship,Government,Ireland
+21,Japanese Government (MEXT) Scholarship (Research),Government,Japan
+22,Global Korea Scholarship (GKS),Government,South Korea
+23,China Government Scholarship (CGS),Government,China
+24,Siemens China Scholarship,Organization/Foundation,China
+25,Marie Skłodowska-Curie Actions (Doctoral Networks),Organization/Foundation,European Union (EU)
+26,Singapore International Graduate Award (SINGA),Organization/Foundation,Singapore
+27,Aga Khan Foundation International Scholarship Programme (AKF-ISP),Organization/Foundation,Switzerland
+28,IDRC – International Doctoral Research Awards (IDRA),Organization/Foundation,Canada
+29,HEC Paris – PhD Program Funding,University,France
+30,Dublin City University (DCU) – PhD Scholarships,University,Ireland
+31,CSIRO Industry PhD (iPhD),Organization/Foundation,Australia
+32,European University Institute (EUI) Doctoral Programme,University,Italy / European Union (EU)
+33,EURAXESS – PhD Studentships/Jobs,Organization/Foundation,European Union (EU)
+34,University of Brighton – Funded PhD Studentships,University,United Kingdom
+35,Vingroup Science & Technology Scholarship (PhD),Organization/Foundation,Vietnam
+36,RMIT Vietnam PhD Scholarships,University,Vietnam
+37,VIED – University of Waterloo Doctoral Scholarship,Government,Canada / Vietnam
+38,Monash – Vietnam Government Joint PhD Scholarships (Project 89),Government/University,Australia / Vietnam
+39,UTS FEIT – Project 89 PhD Top-up,Government/University,Australia / Vietnam
+40,Fulbright Vietnamese Visiting Student Researcher (VSR) – S&T,Organization/Foundation,United States
+41,Hong Kong PhD Fellowship Scheme (HKPFS),Government,Hong Kong
+42,Edinburgh Doctoral College Scholarships,University,United Kingdom
+43,Warwick Chancellor’s International Scholarships,Organization/Foundation,United Kingdom
+44,Manchester President’s Doctoral Scholar Award (PDS),Organization/Foundation,United Kingdom
+45,Nottingham Vice-Chancellor’s Scholarship for Research Excellence,Organization/Foundation,United Kingdom
+46,King’s PGR International Scholarships (KCL),Organization/Foundation,United Kingdom
+47,QMUL Principal’s Postgraduate Research Studentships,Organization/Foundation,United Kingdom
+48,Nanyang President’s Graduate Scholarship (NPGS),University,Singapore
+49,Taiwan International Graduate Program (TIGP),Organization/Foundation,Taiwan
+50,Imperial College London President’s PhD Scholarships,University,United Kingdom
+51,Pierre Elliott Trudeau Foundation Doctoral Scholarships,Organization/Foundation,Canada
+52,Cambridge International PhD Scholarships (Cambridge Trust),Organization/Foundation,United Kingdom
+53,Clarendon Scholarships (Oxford) – DPhil/PhD,Organization/Foundation,United Kingdom
+54,UCL Overseas Research Scholarships (ORS),University,United Kingdom
+55,KAUST Fellowship – PhD,Government,Saudi Arabia
+56,NUS President’s Graduate Fellowship (PGF) – PhD,University,Singapore
+57,Türkiye Scholarships (YTB) – PhD,Government,Turkey
+58,Vanier Canada Graduate Scholarships (PhD),Organization/Foundation,Canada
