@@ -29,7 +29,7 @@ import json
 from typing import Dict, Any, List
 # SỬA: Import LLM class để dùng làm type hint
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.output_parsers import JsonOutputParser
+from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 
 from agent.state import AgentState 
 from agent.tools import RotatingTavilyTool
@@ -164,68 +164,58 @@ def drill_down_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[
 
 # --- Node 4: Tổng Hợp Cuối Cùng (Cập nhật) ---
 def final_synthesis_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict[str, Any]:
-    print(f"\n--- Node: Final Synthesis ---")
+    print(f"\n--- Node: Final Synthesis (Creating Text Report) ---")
     
     context_str = "\n\n---\n\n".join(
         [f"URL: {doc['url']}\nCONTENT: {doc['content']}" for doc in state["context_documents"]]
     )
+    # Lấy bản nháp JSON cuối cùng từ vòng lặp
     draft_report_str = json.dumps(state["final_report"], indent=2, ensure_ascii=False)
     
-    # # SỬA: Sử dụng biến từ file config
-    # llm = ChatGoogleGenerativeAI(
-    #     model=config.NON_CREATIVE_LLM_MODEL,
-    #     temperature=config.NON_CREATIVE_LLM_TEMP,
-    #     google_api_key=os.environ.get("GOOGLE_API_KEY")
-    # )
+    # SỬA: Dùng StrOutputParser() vì chúng ta muốn một BÀI BÁO CÁO (text)
+    synthesis_chain = synthesis_prompt | llm | StrOutputParser() 
     
-    synthesis_chain = synthesis_prompt | llm | JsonOutputParser() 
-    
-    print("  Đang gọi LLM để tổng hợp báo cáo cuối cùng...")
+    print("  Đang gọi LLM để viết báo cáo văn bản toàn diện...")
     
     try:
-        final_report = synthesis_chain.invoke({
+        # Đây là một chuỗi (string)
+        report_text = synthesis_chain.invoke({
             "scholarship_name": state["scholarship_name"],
             "context": context_str,
             "draft_report": draft_report_str
         })
-        print("  -> Tổng hợp hoàn tất.")
-        return {"final_report": final_report}
+        print("  -> Viết báo cáo văn bản hoàn tất.")
+        # SỬA: Trả về text report vào trường mới
+        return {"synthesis_report_text": report_text} 
     except Exception as e:
-        print(f"  Lỗi khi tổng hợp cuối cùng: {e}")
-        return {"final_report": state["final_report"]}
+        print(f"  Lỗi khi tổng hợp báo cáo văn bản: {e}")
+        return {"synthesis_report_text": "Error during synthesis."}
     
-# --- Node 5: Cấu Trúc (SỬA TÊN VÀ LOG) ---
+    
+# --- Node 5: Cấu Trúc (Cập nhật) ---
 def structure_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict[str, Any]:
-    """
-    Node cuối cùng: Chuyển đổi báo cáo JSON 10 mục (tiếng Anh)
-    thành một JSON phẳng (flat) tiếng Anh.
-    """
-    print(f"\n--- Node: Structure Report ---") # Đổi tên log
+    print(f"\n--- Node: Structure Report (from Text Report + Context) ---")
 
-    final_report_json = state["final_report"]
-    final_report_str = json.dumps(final_report_json, indent=2, ensure_ascii=False)
-
-    # llm = ChatGoogleGenerativeAI(
-    #     model=config.NON_CREATIVE_LLM_MODEL,
-    #     temperature=config.NON_CREATIVE_LLM_TEMP,
-    #     google_api_key=os.environ.get("GOOGLE_API_KEY")
-    # )
+    # SỬA: Lấy 2 nguồn input
+    synthesis_report = state["synthesis_report_text"]
+    context_str = "\n\n---\n\n".join(
+        [f"URL: {doc['url']}\nCONTENT: {doc['content']}" for doc in state["context_documents"]]
+    )
 
     structuring_chain = structuring_prompt | llm | JsonOutputParser()
 
-    print("  Đang gọi LLM để cấu trúc lại báo cáo...") # Đổi log
+    print("  Đang gọi LLM để trích xuất JSON phẳng cuối cùng...")
 
     try:
         structured_report = structuring_chain.invoke({
-            "final_report": final_report_str
+            "synthesis_report": synthesis_report,
+            "context": context_str
         })
 
-        # Đảm bảo Scholarship_Name là tên gốc
         structured_report["Scholarship_Name"] = state["scholarship_name"]
-
-        print("  -> Cấu trúc báo cáo hoàn tất.") # Đổi log
+        print("  -> Trích xuất JSON phẳng hoàn tất.")
         return {"structured_report": structured_report}
 
     except Exception as e:
-        print(f"  Lỗi khi cấu trúc báo cáo: {e}") # Đổi log
+        print(f"  Lỗi khi cấu trúc báo cáo: {e}")
         return {"structured_report": {}}

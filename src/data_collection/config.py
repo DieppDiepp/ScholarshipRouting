@@ -38,10 +38,15 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Ví dụ: "rag_database_master.jsonl", "rag_database_bachelor.jsonl", ...
 RAG_DATABASE_PATH = os.path.join(OUTPUT_DIR, f"rag_database_{LEVEL}.jsonl")
-# Ví dụ: "scholarship_reports_master.json", "scholarship_reports_bachelor.json", ...
-FINAL_REPORTS_PATH = os.path.join(OUTPUT_DIR, f"scholarship_reports_{LEVEL}.json")
 
-# SỬA: Đổi tên file output cuối cùng
+# SỬA: Đổi tên. Đây là file JSON 10 mục (để debug)
+DRAFT_REPORTS_PATH = os.path.join(OUTPUT_DIR, f"scholarship_reports_{LEVEL}.json")
+
+# MỚI: Thêm đường dẫn cho file báo cáo VĂN BẢN (Text Report)
+# Chúng ta vẫn lưu nó dưới dạng JSON {tên_hb: "toàn bộ bài văn..."}
+FINAL_TEXT_REPORTS_PATH = os.path.join(OUTPUT_DIR, f"text_reports_{LEVEL}.json")
+
+# Đường dẫn cho file JSON phẳng cuối cùng (giữ nguyên)
 STRUCTURED_ENGLISH_REPORTS_PATH = os.path.join(OUTPUT_DIR, f"structured_english_reports_{LEVEL}.json")
 
 # --- 3. CẤU HÌNH AGENT (Giữ nguyên) ---

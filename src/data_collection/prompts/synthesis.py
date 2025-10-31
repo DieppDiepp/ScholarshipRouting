@@ -5,30 +5,35 @@
 from langchain_core.prompts import PromptTemplate
 
 # Lấy lại cấu trúc JSON đã escape từ file kia
-from .plan_and_analyze import JSON_STRUCTURE_TEMPLATE
+# XÓA: Không cần JSON_STRUCTURE_TEMPLATE ở đây nữa
+# from .plan_and_analyze import JSON_STRUCTURE_TEMPLATE
 
 SYNTHESIS_PROMPT_TEMPLATE = """
-**TASK:** You are a final Editor. You have been given a **Draft Report** and all the **Raw Evidence** (scraped web content) that has been collected.
+**TASK:** You are a senior research analyst. Your goal is to write a final, comprehensive, and well-structured analytical report (in text/markdown format) on the "{scholarship_name}" scholarship.
 
-**Scholarship:** {scholarship_name}
+You will be given two inputs:
+1.  **Draft Report:** A JSON object with the data found so far (may contain nulls).
+2.  **All Collected Evidence:** A large block of raw text from all web pages visited.
 
-**DRAFT REPORT (May contain nulls):**
+**INPUT 1: DRAFT REPORT (JSON):**
 {draft_report}
 
 ---
-**ALL COLLECTED EVIDENCE (Raw Context):**
+**INPUT 2: ALL COLLECTED EVIDENCE (Raw Context):**
 {context}
 ---
 
 **YOUR REQUIREMENTS:**
 
-1.  **Final Review:** Read the Draft Report.
-2.  **Fill Gaps:** Using the All Collected Evidence, perform a final review to see if any information from the Evidence can fill in the remaining `null` fields in the Draft Report.
-3.  **No Hallucination:** Only use information from the Evidence. If a field is still `null` after your review, keep it as `null`.
-4.  **Final Output:** Return a single, clean JSON object matching the 10-section structure below. Do not add any explanations or markdown backticks.
+1.  **Write a Comprehensive Report:** Using *both* inputs, write a detailed analytical report in English.
+2.  **Structure:** Organize the report logically using Markdown headings (e.g., "## Basic Information", "## Funding and Benefits", "## Eligibility Criteria").
+3.  **Synthesize, Don't Just List:** Do not just copy/paste. Synthesize the information from all 20+ documents into a coherent narrative.
+4.  **Use All Information:** Use the **Draft Report** as a guide for the structure, but use the **All Collected Evidence** to find details, fill in the gaps (the `null` values), and provide rich context.
+5.  **Be Factual:** Stick strictly to the information provided in the inputs.
 
-**Final JSON Structure:**
-""" + JSON_STRUCTURE_TEMPLATE # Nối chuỗi
+**OUTPUT FORMAT:**
+Respond with ONLY the final, comprehensive text/markdown report. Do not include any other text or explanations.
+"""
 
 # Tạo PromptTemplate
 synthesis_prompt = PromptTemplate(

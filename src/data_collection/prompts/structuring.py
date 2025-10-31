@@ -1,6 +1,7 @@
 # data_collection/prompts/structuring.py
 
 from langchain_core.prompts import PromptTemplate
+from .plan_and_analyze import JSON_STRUCTURE_TEMPLATE # Import schema từ file cũ
 
 # SỬA: Schema này giờ là schema đích (tiếng Anh)
 # Mình đã xóa trường "Danh_Sách_Nhóm_Ngành" tiếng Việt
@@ -42,44 +43,40 @@ FLAT_JSON_SCHEMA_ENGLISH = """
 }}
 """
 
+# SỬA: Cập nhật hoàn toàn prompt
 STRUCTURING_PROMPT_TEMPLATE = """
-**TASK:** You are an expert data structuring agent. Your job is to convert a nested, English JSON report into a single, flat, structured **English** JSON object, following specific data type and formatting rules, with a **critical focus on category standardization** for search system compatibility.
+**TASK:** You are an expert data extraction agent. Your job is to convert a comprehensive **Text Report** into a single, flat, structured **English** JSON object. You will also receive the **Raw Evidence** for cross-referencing.
 
-**INPUT REPORT (English, Nested):**
-{final_report}
+**INPUT 1: COMPREHENSIVE TEXT REPORT (Primary Source):**
+{synthesis_report}
 
 ---
+**INPUT 2: ALL RAW WEB EVIDENCE (Secondary Source for details):**
+{context}
+---
+
 **INSTRUCTIONS:**
 
-1.  **Data Mapping Priority:** Read the input report and map its data STRICTLY to the target flat schema provided below.
-2.  **STRICT Data Types & Formatting (Crucial for Elasticsearch):**
-    * **Boolean/Integer/Float:**
-        * **Boolean (For_Vietnamese, Field_Restriction):** Must be literal `true` or `false`.
-        * **Integer (Min_Working_Hours):** Must be an integer (e.g., `0`, `40`).
-        * **Float (Min_Gpa, Experience_Years):** Must be a number (e.g., `2.0`, `3.3`). Use the numerical default value (e.g., `0.0`) if the requirement is not stated.
-    * **Dates:** Format as **DD/MM/YYYY**. Use `""` if vague or missing.
-    * **Language_Certificate:** Format **MUST** be `<Certificate Name><space><Score Level>`. E.g., "IELTS 7.0".
-    * **Timeline:** Format **MUST** be a chronological list of `<Time> : <Event>`. E.g., "15 January 2025 : Application Deadline".
-3.  **CATEGORY FIELDS - STRICT MAPPING (Use ONLY Allowed Values):**
-    * For the fields below, you **MUST ONLY** use the allowed values specified. Map descriptive text from the input report to these standardized categories.
-        * **Scholarship_Type:** ONLY use: `Government`, `University`, `Organization/Foundation`.
-        * **Funding_Level:** Use a comma-separated combination of ONLY: `Full scholarship`, `Tuition Waiver`, `Stipend`, `Accommodation`, `Partial Funding`, `Fixed Amount`, `Other Costs`.
-        * **Application_Mode:** ONLY use: `Annual`, `Rolling`.
-        * **Bachelor_Field_Relevance:** ONLY use: `Strictly required`, `Loosely required`, `Not mentioned`.
-        * **Gender:** ONLY use: `Male`, `Female`, `No requirement`.
-        * **Required_Degree:** Use a comma-separated combination of ONLY: `Bachelor's degree`, `Bachelor's equivalent`, `None`, `Master's degree`, `PhD`.
-        * **Academic_Certificate:** Use a comma-separated combination of ONLY: `Not required`, `GMAT`, `GRE`, or other relevant degree/certification names.
+1.  **Map Data:** Read **Input 1 (Text Report)** first. This is your primary source.
+2.  **Cross-Reference:** Use **Input 2 (Raw Evidence)** to find specific details (like exact GPAs, dates, or list items) that might be summarized in the Text Report.
+3.  **Strict Data Types & Formatting:** Follow the rules exactly as specified in the target schema.
+    * **boolean:** `true` or `false`.
+    * **float:** `2.0`, `3.3`. Use `0.0` if not specified.
+    * **string:** Extract English text. Use `""` or `null` for missing values.
+    * **Dates:** Format as DD/MM/YYYY. Use `""` or `null` if not specific.
+    * **Category Fields:** Map to allowed values (e.g., "Full scholarship", "Annual").
+4.  **Accuracy:** You now have ALL information. Be extremely accurate.
 
 **TARGET SCHEMA (English):**
 """ + FLAT_JSON_SCHEMA_ENGLISH + """
 
 ---
 **OUTPUT FORMAT:**
-Respond with ONLY the single, structured **English** JSON object. Do not include any explanations or markdown backticks.
+Respond with ONLY the single, structured **English** JSON object.
 """
 
-# Tạo PromptTemplate (chỉ cần final_report làm input)
+# SỬA: Cập nhật input_variables
 structuring_prompt = PromptTemplate(
-    input_variables=["final_report"],
+    input_variables=["synthesis_report", "context"],
     template=STRUCTURING_PROMPT_TEMPLATE
 )

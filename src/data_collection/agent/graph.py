@@ -127,7 +127,6 @@ class LangGraphSearchAgent:
         return structure_node(state, llm_instance)
 
     # --- XÂY DỰNG ĐỒ THỊ (Cập nhật) ---
-    
     def build_graph(self):
         graph = StateGraph(AgentState) 
         
@@ -154,8 +153,9 @@ class LangGraphSearchAgent:
         print("Biên dịch Agent Graph (Giai Đoạn 7 - Xoay vòng LLM) thành công.")
         return graph.compile()
 
-    # --- PHƯƠNG THỨC INVOKE (Giữ nguyên) ---
+# --- PHƯƠNG THỨC INVOKE (Cập nhật) ---
     def invoke(self, scholarship_name: str):
+        # SỬA: Thêm synthesis_report_text vào state ban đầu
         initial_state = {
             "scholarship_name": scholarship_name,
             "api_call_count": 0,
@@ -163,9 +163,10 @@ class LangGraphSearchAgent:
             "visited_urls": set(),
             "context_documents": [],
             "missing_information": [],
-            "final_report": {},
+            "final_report": {},       # Báo cáo nháp
             "failed_queries": set(),
             "queries_just_ran": [],
+            "synthesis_report_text": "", # <-- MỚI: Báo cáo văn bản
             "structured_report": {}
         }
         final_state = self.app.invoke(initial_state)
