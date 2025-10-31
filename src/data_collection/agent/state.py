@@ -25,11 +25,14 @@ class AgentState(TypedDict):
     
     # MỚI: "Trí nhớ ngắn hạn" - Các truy vấn VỪA MỚI chạy trong vòng này
     queries_just_ran: List[str]
-    
+
+
     # --- Thông tin cho các node sau ---
-    missing_information: List[str]
+    missing_information: List[str] # Cần kiểm tra thêm thông tin gì
     final_report: Dict
 
+    # MỚI: Thêm trường cho báo cáo văn bản toàn diện (Node 4)
+    synthesis_report_text: str
+
     # MỚI: Báo cáo "phẳng" (flat) đã được trích xuất và dịch
-    # flat_vietnamese_report: Dict[str, Any]
     structured_report: Dict

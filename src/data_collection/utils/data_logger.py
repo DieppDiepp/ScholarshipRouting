@@ -32,29 +32,44 @@ def save_to_rag_db(scholarship_name: str, documents: List[Dict[str, Any]], filep
     
     print(f"💾 Đã ghi {len(documents)} tài liệu vào RAG DB: {filepath}")
 
-def save_final_report(scholarship_name: str, report: Dict[str, Any], filepath: str):
+# SỬA: Đổi tên hàm này cho rõ ràng
+def save_draft_report(scholarship_name: str, report: Dict[str, Any], filepath: str):
     """
-    Cập nhật file JSON báo cáo cuối cùng với kết quả của một học bổng.
+    Lưu báo cáo nháp JSON 10 mục (để debug).
     """
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
-    
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             existing_data = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         existing_data = {}
-
-    # Cập nhật báo cáo cho học bổng cụ thể
     existing_data[scholarship_name] = report
-
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(existing_data, f, ensure_ascii=False, indent=4)
+    print(f"📊 Đã cập nhật báo cáo nháp 10-mục cho '{scholarship_name}' tại: {filepath}")
+
+# MỚI: Hàm để lưu Báo Cáo Văn Bản
+def save_text_report(scholarship_name: str, report_text: str, filepath: str):
+    """
+    Lưu báo cáo văn bản toàn diện (dưới dạng JSON {tên: text}).
+    """
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            existing_data = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing_data = {}
     
-    print(f"📊 Đã cập nhật báo cáo cuối cùng cho '{scholarship_name}' tại: {filepath}")
+    # Lưu bài văn bản dưới dạng string
+    existing_data[scholarship_name] = report_text
+    
+    with open(filepath, 'w', encoding='utf-8') as f:
+        json.dump(existing_data, f, ensure_ascii=False, indent=4)
+    print(f" TXT Đã cập nhật báo cáo VĂN BẢN cho '{scholarship_name}' tại: {filepath}")
 
 
 # SỬA: Đổi tên hàm cho phù hợp
-def save_structured_english_report(scholarship_data: Dict[str, Any], filepath: str):
+def save_structured_report(scholarship_data: Dict[str, Any], filepath: str):
     """
     Lưu báo cáo có cấu trúc (flat, ENGLISH) vào một file JSON
     chứa một danh sách (list) các học bổng.

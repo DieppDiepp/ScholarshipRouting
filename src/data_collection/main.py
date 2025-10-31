@@ -43,7 +43,11 @@ from agent.tools import RotatingTavilyTool
 from agent.graph import LangGraphSearchAgent
 import config # <--- config bây giờ đã được "cấu hình động"
 # SỬA: Import hàm lưu trữ đã đổi tên
-from utils.data_logger import save_final_report, save_structured_english_report
+from utils.data_logger import (
+    save_draft_report, 
+    save_text_report, 
+    save_structured_report
+)
 
 # --- CÀI ĐẶT BAN ĐẦU (Giữ nguyên) ---
 env_path = os.path.join(os.path.dirname(__file__), '.env')
@@ -52,68 +56,73 @@ if not os.path.exists(env_path):
 load_dotenv(dotenv_path=env_path)
 
 def main():
-    print(f"--- STARTING PIPELINE FOR LEVEL: {args.level.upper()} ---") # Log tiếng Anh
+    print(f"--- STARTING PIPELINE FOR LEVEL: {args.level.upper()} ---")
+    
     try:
-        # 1. Tải cả hai danh sách keys
         tavily_api_keys = load_tavily_api_keys()
         google_api_keys = load_google_api_keys()
-
     except Exception as e:
-        print(f"Error loading API keys: {e}") # Log tiếng Anh
+        print(f"Error loading API keys: {e}")
         return
 
     tavily_tool = RotatingTavilyTool(api_keys=tavily_api_keys)
-    # 3. SỬA: Khởi tạo Agent và truyền cả hai vào
     agent = LangGraphSearchAgent(
         tool=tavily_tool,
         google_api_keys=google_api_keys
     )
 
     try:
-        print(f"Reading CSV file: {config.SCHOLARSHIP_DATA_PATH}") # Log tiếng Anh
+        print(f"Reading CSV file: {config.SCHOLARSHIP_DATA_PATH}")
         df = pd.read_csv(config.SCHOLARSHIP_DATA_PATH)
         scholarship_names = df[config.SCHOLARSHIP_NAME_COLUMN].dropna().unique().tolist()
     except Exception as e:
-        print(f"Error reading CSV file: {e}") # Log tiếng Anh
+        print(f"Error reading CSV file: {e}")
         return
-
-    test_names = scholarship_names[6:10] # Test with 1 scholarship
+        
+    test_names = scholarship_names[6:20] # Test with 1 scholarship
     # test_names = scholarship_names # Run all
-    print(f"\nWill process {len(test_names)} scholarships.") # Log tiếng Anh
+    print(f"\nWill process {len(test_names)} scholarships.")
 
     for name in test_names:
         print(f"\n=============================================")
-        print(f"🚀 Starting processing for: {name}") # Log tiếng Anh
+        print(f"🚀 Starting processing for: {name}")
 
         try:
             final_state = agent.invoke(name)
-            print(f"\n--- Processing complete for: {name} ---") # Log tiếng Anh
+            print(f"\n--- Processing complete for: {name} ---")
 
-            # Save draft report (for debugging)
+            # SỬA: Cập nhật 3 hàm lưu trữ
+            
+            # 1. Lưu file báo cáo nháp 10 mục (để debug)
             if final_state.get("final_report"):
-                save_final_report(name, final_state["final_report"], config.FINAL_REPORTS_PATH)
+                save_draft_report(name, final_state["final_report"], config.DRAFT_REPORTS_PATH)
 
-            # SỬA: Save structured ENGLISH report
+            # 2. LƯU BÁO CÁO VĂN BẢN MỚI
+            if final_state.get("synthesis_report_text"):
+                save_text_report(name, final_state["synthesis_report_text"], config.FINAL_TEXT_REPORTS_PATH)
+
+            # 3. Lưu file báo cáo CẤU TRÚC (flat, english)
             if final_state.get("structured_report"):
-                save_structured_english_report( # Gọi hàm đã đổi tên
+                save_structured_report(
                     final_state["structured_report"],
-                    config.STRUCTURED_ENGLISH_REPORTS_PATH # Dùng đường dẫn đã đổi tên
+                    config.STRUCTURED_ENGLISH_REPORTS_PATH
                 )
-
-            print(f"  - Total API calls: {final_state['api_call_count']}") # Log tiếng Anh
-            print(f"  - Total loops: {final_state['current_loop']}") # Log tiếng Anh
-            print(f"  - Total documents collected: {len(final_state['context_documents'])}") # Log tiếng Anh
+            
+            print(f"  - Total API calls: {final_state['api_call_count']}")
+            print(f"  - Total loops: {final_state['current_loop']}")
+            print(f"  - Total documents collected: {len(final_state['context_documents'])}")
 
         except Exception as e:
-            print(f"!!!!!! CRITICAL ERROR PROCESSING '{name}': {e} !!!!!!") # Log tiếng Anh
-            print("Continuing with the next scholarship...") # Log tiếng Anh
-            continue
+            print(f"!!!!!! CRITICAL ERROR PROCESSING '{name}': {e} !!!!!!")
+            print("Continuing with the next scholarship...")
+            continue 
 
     print("\n=============================================")
-    print("--- ENTIRE PIPELINE COMPLETE ---") # Log tiếng Anh
-    print(f"Check RAG DB: {config.RAG_DATABASE_PATH}") # Log tiếng Anh
-    print(f"Check Draft Reports: {config.FINAL_REPORTS_PATH}") # Log tiếng Anh
-    print(f"Check Structured English Reports: {config.STRUCTURED_ENGLISH_REPORTS_PATH}") # Log tiếng Anh
+    print("--- ENTIRE PIPELINE COMPLETE ---")
+    print(f"Check RAG DB: {config.RAG_DATABASE_PATH}")
+    print(f"Check Draft Reports (JSON 10-muc): {config.DRAFT_REPORTS_PATH}")
+    print(f"Check Text Reports (Markdown): {config.FINAL_TEXT_REPORTS_PATH}")
+    print(f"Check Structured Reports (Flat JSON): {config.STRUCTURED_ENGLISH_REPORTS_PATH}")
 
 if __name__ == "__main__":
     main()
