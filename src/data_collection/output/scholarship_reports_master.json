@@ -1,0 +1,213 @@
+{
+    "Government of Ireland International Education Scholarship": {
+        "basic_info": {
+            "official_name": "Government of Ireland International Education Scholarship",
+            "provider": "Government of Ireland (managed by Higher Education Authority - HEA)",
+            "study_country": "Ireland"
+        },
+        "funding_info": {
+            "funding_details": "60 scholarships, €10,000 stipend for one year, Full Tuition Fee Waiver",
+            "covered_expenses": [
+                "Full Tuition Fee Waiver",
+                "€10,000 stipend for student costs and living expenses"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "5 March 2025",
+            "opening_date": "Open for 2025/2026 academic year",
+            "number_of_awards": "60"
+        },
+        "eligibility_criteria": {
+            "for_vietnamese": "Non-EU/EEA students",
+            "age_requirements": "No age limit",
+            "work_requirements": null
+        },
+        "field_restrictions": {
+            "eligible_fields": "All disciplines",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum 60 out of 100",
+            "required_degree": "Master's, Postgraduate Diploma, or PhD programme (NFQ levels 9 or 10)"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl": "English language proficiency tests such as TOEFL, IELTS, and PTE",
+            "gmat_gre": null
+        },
+        "additional_requirements": {
+            "reference_letters": "Letter of recommendation",
+            "career_plan": "SOP (Statement of Purpose)"
+        },
+        "background_and_logistics": {
+            "official_website": "https://hea.ie/policy/internationalisation/goi-ies/",
+            "application_documents": [
+                "GOI-IES Call Document",
+                "FAQs",
+                "Selection Process Infographic",
+                "Guidance for Referees",
+                "Application Help Document",
+                "indicative application form",
+                "conditional or final offer of admission",
+                "Letter of recommendation",
+                "SOP",
+                "Scores for English language proficiency tests"
+            ],
+            "selection_process": "Results released in June or July each year; selection based on academic qualifications, achievements, and/or work experience (40 marks)"
+        }
+    },
+    "Italian Government Scholarship": {
+        "basic_info": {
+            "official_name": "Italian Government Scholarship",
+            "provider": "Italian Ministry of Foreign Affairs and International Cooperation (MAECI)",
+            "study_country": "Italy"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded scholarship providing financial support to students who might not have the resources to study in Italy.",
+            "covered_expenses": [
+                "Exemption from Payment of enrollment and tuition fees",
+                "Health and Medical/Accident insurance",
+                "Living expenses"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "May 16, 2025 at 2:00 PM (Italian time)",
+            "opening_date": "Applications are now open for the 2025/2026 academic year.",
+            "number_of_awards": "Approximately 1,200 scholarships awarded"
+        },
+        "eligibility_criteria": {
+            "for_vietnamese": "Vietnamese citizens are eligible.",
+            "age_requirements": "Under 28 years old by the deadline for Master’s Degree/AFAM Programs/Italian Language and Culture Courses (born after 16 May 1996, with exceptions for renewals). Under 30 years old for PhD programs. Applicants must be foreign students not residing in Italy and Italian nationals living abroad (IRE).",
+            "work_requirements": null
+        },
+        "field_restrictions": {
+            "eligible_fields": "Master’s degrees, PhD programs, AFAM programs (Higher Education in Arts, Music, and Dance), research under academic supervision, language or cultural courses, University Degrees, Specialization and Vocational Schools.",
+            "restrictions": "No other Italian government scholarship allowed. Scholarships may be 3, 6, or 9 months long."
+        },
+        "academic_requirements": {
+            "min_gpa": "Most scholarships in Italy, including highly competitive ones like MAECI, require a minimum GPA of 3.0 out of 4.0 or its equivalent. Selection is based on academic merit and meeting strict credit and grade requirements.",
+            "required_degree": "Relevant bachelor’s degree for Master’s programs. Master’s degree for Doctoral programs. Appropriate academic qualification required to enroll to the Italian University/Institute."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl": "Italian A2 (for Language/culture courses), Italian B2 (CEFR) (for Italian-taught programs). Good knowledge of Italian or English language required, depending on program requirements. Certificate of proficiency in Italian language for Italian-taught courses.",
+            "gmat_gre": null
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null
+        },
+        "background_and_logistics": {
+            "official_website": "Official portal Study in Italy or official MAECI website.",
+            "application_documents": "Letter of acceptance from the relevant Italian University (required for PhD applicants).",
+            "selection_process": "Based on academic merit, motivation, and knowledge of the Italian or English language. A selection committee is appointed by the Italian Embassy in each country. The application process for the scholarship and university admission are separate."
+        }
+    },
+    "Tianjin Government Scholarship": {
+        "basic_info": {
+            "official_name": "Tianjin Government Scholarship",
+            "provider": "Tianjin Government",
+            "study_country": "China"
+        },
+        "funding_info": {
+            "funding_details": "Up to CNY 2000/month (CNY 24,000/year) for undergraduate, masters and PhD studies. Other reported amounts include ¥20,000 per year for living expenses, CNY 10,000 per year for Master's and Doctoral degrees, and CNY 20,000 per academic year for College students (partial scholarship). The scholarship is typically for one year and renewable.",
+            "covered_expenses": [
+                "Full Tuition Fee Coverage",
+                "Living Stipend",
+                "Materials",
+                "Accommodation",
+                "Other study-related expenses"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "May 31, 2025",
+            "opening_date": "October 15, 2024",
+            "number_of_awards": "Award ratio of up to 3% of the total number of undergraduate graduates (Nankai University)."
+        },
+        "eligibility_criteria": {
+            "for_vietnamese": null,
+            "age_requirements": "Master’s applicants: under 35 years; PhD applicants: under 40 years.",
+            "work_requirements": null
+        },
+        "field_restrictions": {
+            "eligible_fields": "All subjects offered by the university.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "GPA above 3.2/4.0 (for Tianjin University applicants).",
+            "required_degree": "Bachelor's, Master's, and Doctoral degrees. Master’s applicants require a Bachelor’s degree; PhD applicants require a Master’s degree. Open to foreign self-funded undergraduate, postgraduate, and PhD students normally enrolled in Tianjin."
+        },
+        "experience_requirements": {
+            "min_years": "Minimum one year (for relevant work experience, specific to Tianjin University applicants).",
+            "accepted_types": "Relevant work experience (specific to Tianjin University applicants)."
+        },
+        "test_requirements": {
+            "ielts_toefl": "IELTS 6.5 or TOEFL 85 (for English-instructed programs, specific to Tianjin University). HSK-5 with minimum score of 180 (for Chinese-instructed programs, specific to Tianjin University). HSK4 (Score 195 or above) for Engineering/Science; HSK5 (Score 180 or above) for business and liberal arts (general HSK requirement).",
+            "gmat_gre": null
+        },
+        "additional_requirements": {
+            "reference_letters": "Two Recommendation Letters (from two different referrers) required for Master's, Doctoral degree studies, and senior scholar programs.",
+            "career_plan": "Personal Statement, including study or research plan (no less than 800 words for Master and Doctor Degree, no less than 300 words for Bachelor’ degree application)."
+        },
+        "background_and_logistics": {
+            "official_website": null,
+            "application_documents": "Tianjin Government Scholarship Application Form, Personal Statement (including study/research plan), Admission Letter, Application Form for Visa to China for Overseas Students (JW202 or JW201), Physical Examination Report and Test Report (Original Copy), Passports (valid for 6+ months), Original No Crime Certificate, Bachelor/Master diplomas (or pre-graduation certificate), Academic transcripts, English Proficiency Certificates (if applicable), HSK certificates (if applicable), Two Recommendation Letters.",
+            "selection_process": "Assessment results are publicized for one week, then submitted to Tianjin Municipal Education Commission. The Scholarship List is determined by experts organized by Tianjin Municipal Education Commission."
+        }
+    },
+    "Master Mind Scholarship (Government of Flanders)": {
+        "basic_info": {
+            "official_name": "Master Mind Scholarship (Government of Flanders)",
+            "provider": "Flemish Ministry of Education and Training (Government of Flanders)",
+            "study_country": "Belgium (Flanders and Brussels)"
+        },
+        "funding_info": {
+            "funding_details": "A grant of €10,020 and a tuition fee waiver per academic year. Duration is one academic year for a master's programme of 60 ECTS or two academic years for a master's programme of 120 ECTS. Cannot be combined with another scholarship from the Flemish Government.",
+            "covered_expenses": [
+                "Grant of €10,020 per academic year",
+                "Tuition fee waiver"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "15 January 2026, 23.59 CET (for 2026-2027 academic year)",
+            "opening_date": "15 October 2025 (for 2026-2027 academic year)",
+            "number_of_awards": "Estimated 30 international students across various universities in Flanders"
+        },
+        "eligibility_criteria": {
+            "for_vietnamese": "Yes (All nationalities can apply)",
+            "age_requirements": "Age limit for Masters students is 30 years by the time of application.",
+            "work_requirements": null
+        },
+        "field_restrictions": {
+            "eligible_fields": "Master's programmes in Flanders and Brussels",
+            "restrictions": "Students enrolled in preparatory programmes and distance learning are not eligible. Specific master programs may also be ineligible (not listed in content)."
+        },
+        "academic_requirements": {
+            "min_gpa": "3.5 out of 4.0",
+            "required_degree": "Applicant must apply for a Master's degree program. Previous degree cannot have been obtained at a Flemish higher education institution (except for credit mobility)."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl": "IELTS: minimum overall band score of 7.0; TOEFL: minimum total score of 94 (or C1 level). English language test results or Letter of exemption provided by the Host university are required.",
+            "gmat_gre": null
+        },
+        "additional_requirements": {
+            "reference_letters": "Two signed letters of recommendation from professors of your (previous) home university, university of applied sciences (and arts) or recent employer.",
+            "career_plan": "Study Plan or research proposal; Letter of motivation demonstrating motivation and commitment to studying in Flanders or Brussels."
+        },
+        "background_and_logistics": {
+            "official_website": null,
+            "application_documents": "Master Mind Scholarship Application Form, required documents, English language test results or Letter of exemption, Letter of motivation, Two signed letters of recommendation, Study Plan/research proposal.",
+            "selection_process": "Applicant must be accepted by a Flemish host institution for a degree program. The host institution starts the application procedure by creating the candidate’s application file in the Mobility-Online tool. Nomination follows the application deadline."
+        }
+    }
+}
