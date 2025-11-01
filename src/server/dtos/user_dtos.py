@@ -37,3 +37,22 @@ class UserProfile(BaseModel):
     notes: Optional[str] = None
     tags: Optional[List[str]] = None
     special_things: Optional[str] = None
+
+
+# DTOs for tracking scholarship interests (calendar items)
+class ScholarshipInterest(BaseModel):
+    """A simple scholarship interest item for calendar display.
+    
+    Only includes essential fields needed for calendar visualization:
+    - scholarship_id: unique id of scholarship
+    - name: name/title of the scholarship
+    - open_date: when applications open
+    - close_date: when applications close
+    """
+    scholarship_id: str
+    name: str
+    open_date: datetime
+    close_date: datetime
+
+
+# Removed UserInterestsUpdate DTO since we're handling single interest operations

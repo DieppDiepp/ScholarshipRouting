@@ -5,7 +5,8 @@ from fastapi import APIRouter, Query, Body, HTTPException, status
 from elasticsearch import Elasticsearch
 
 from services.user_svc import find_matching_scholarships_for_profile
-from dtos.user_dtos import UserProfile
+from dtos.user_dtos import UserProfile, ScholarshipInterest
+from services.auth_svc import get_profile, update_profile
 
 router = APIRouter()
 
@@ -87,3 +88,98 @@ def match_scholarships_by_profile(
         )
     finally:
         es.close()
+
+
+@router.get(
+    "/interests/{uid}",
+    response_model=Dict[str, Any],
+    summary="Get user's scholarship interests",
+    description="Return the list of scholarship interests stored on the user's Firestore document (field: scholar_interests).",
+)
+def get_scholar_interests(uid: str):
+    profile = get_profile(uid)
+    if not profile:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+
+    interests = profile.get("scholar_interests", [])
+    return {"uid": uid, "interests": interests}
+
+
+@router.post(
+    "/interests/{uid}/add",
+    response_model=Dict[str, Any],
+    summary="Add a new scholarship interest",
+    description="Add a new scholarship to user's interests list. Duplicates are prevented based on scholarship_id."
+)
+def add_scholar_interest(
+    uid: str,
+    interest: ScholarshipInterest = Body(..., description="Scholarship interest to add")
+):
+    try:
+        # Get current profile
+        profile = get_profile(uid)
+        if not profile:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+
+        # Get current interests or initialize empty list
+        current_interests = profile.get("scholar_interests", [])
+        
+        # Check for duplicate
+        if any(i.get("scholarship_id") == interest.scholarship_id for i in current_interests):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"Scholarship {interest.scholarship_id} is already in interests"
+            )
+
+        # Add new interest
+        current_interests.append(interest.model_dump())
+        
+        # Update profile
+        updated_profile = update_profile(uid, {"scholar_interests": current_interests})
+        return {"uid": uid, "interests": updated_profile.get("scholar_interests", [])}
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to add interest: {str(e)}"
+        )
+
+
+@router.delete(
+    "/interests/{uid}/{scholarship_id}",
+    response_model=Dict[str, Any],
+    summary="Remove a scholarship interest",
+    description="Remove a specific scholarship from user's interests list"
+)
+def delete_scholar_interest(uid: str, scholarship_id: str):
+    try:
+        # Get current profile
+        profile = get_profile(uid)
+        if not profile:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+
+        # Get current interests
+        current_interests = profile.get("scholar_interests", [])
+        
+        # Remove interest with matching scholarship_id
+        new_interests = [i for i in current_interests if i.get("scholarship_id") != scholarship_id]
+        
+        if len(new_interests) == len(current_interests):
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Scholarship {scholarship_id} not found in interests"
+            )
+            
+        # Update profile
+        updated_profile = update_profile(uid, {"scholar_interests": new_interests})
+        return {"uid": uid, "interests": updated_profile.get("scholar_interests", [])}
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to delete interest: {str(e)}"
+        )
