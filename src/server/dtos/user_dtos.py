@@ -56,3 +56,13 @@ class ScholarshipInterest(BaseModel):
 
 
 # Removed UserInterestsUpdate DTO since we're handling single interest operations
+class ScholarshipInterestUpdate(BaseModel):
+    """Partial update DTO for scholarship interest.
+
+    Requires the target `scholarship_id`, other fields are optional.
+    Only provided fields will be updated.
+    """
+    scholarship_id: str
+    name: Optional[str] = None
+    open_date: Optional[datetime] = None
+    close_date: Optional[datetime] = None

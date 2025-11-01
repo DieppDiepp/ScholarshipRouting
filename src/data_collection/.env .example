@@ -1,0 +1,11 @@
+GOOGLE_API_KEY_1=
+GOOGLE_API_KEY_2=
+...
+TAVILY_API_KEY_1=
+TAVILY_API_KEY_2=
+...
+
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
+LANGSMITH_API_KEY= # Lấy trên Langsmith
+LANGSMITH_PROJECT= # Lấy trên Langsmith
