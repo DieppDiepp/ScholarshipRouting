@@ -66,3 +66,34 @@ class ScholarshipInterestUpdate(BaseModel):
     name: Optional[str] = None
     open_date: Optional[datetime] = None
     close_date: Optional[datetime] = None
+
+
+# DTOs for tracking scholarship applications (user's submissions)
+class ScholarshipApplication(BaseModel):
+    """Represents a user's application to a scholarship.
+
+    Minimal fields to track applications consistently:
+    - scholarship_id: unique id of scholarship
+    - name: scholarship name/title
+    - applied_date: optional date/time for quick reference (ISO-8601)
+    - status: optional short status label
+    - notes: optional free-text notes
+    """
+    scholarship_id: str
+    name: str
+    applied_date: Optional[datetime] = None
+    status: Optional[str] = None
+    notes: Optional[str] = None
+
+
+class ScholarshipApplicationUpdate(BaseModel):
+    """Partial update payload for a scholarship application.
+
+    Provide the target `scholarship_id`, other fields are optional and only provided
+    values will be merged into the stored application item.
+    """
+    scholarship_id: str
+    name: Optional[str] = None
+    applied_date: Optional[datetime] = None
+    status: Optional[str] = None
+    notes: Optional[str] = None

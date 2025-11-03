@@ -5,7 +5,13 @@ from fastapi import APIRouter, Query, Body, HTTPException, status
 from elasticsearch import Elasticsearch
 
 from services.user_svc import find_matching_scholarships_for_profile
-from dtos.user_dtos import UserProfile, ScholarshipInterest, ScholarshipInterestUpdate
+from dtos.user_dtos import (
+    UserProfile,
+    ScholarshipInterest,
+    ScholarshipInterestUpdate,
+    ScholarshipApplication,
+    ScholarshipApplicationUpdate,
+)
 from services.auth_svc import get_profile, update_profile
 
 router = APIRouter()
@@ -234,4 +240,136 @@ def delete_scholar_interest(uid: str, scholarship_id: str):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to delete interest: {str(e)}"
+        )
+
+
+@router.get(
+    "/applications/{uid}",
+    response_model=Dict[str, Any],
+    summary="Get user's scholarship applications",
+    description="Return the list of scholarship applications stored on the user's Firestore document (field: scholar_applications).",
+)
+def get_scholar_applications(uid: str):
+    profile = get_profile(uid)
+    if not profile:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+
+    applications = profile.get("scholar_applications", [])
+    return {"uid": uid, "applications": applications}
+
+
+@router.post(
+    "/applications/{uid}/add",
+    response_model=Dict[str, Any],
+    summary="Add a new scholarship application",
+    description="Add a new scholarship application to user's profile. Duplicates are prevented based on scholarship_id.",
+)
+def add_scholar_application(
+    uid: str,
+    application: ScholarshipApplication = Body(..., description="Scholarship application to add"),
+):
+    try:
+        profile = get_profile(uid)
+        if not profile:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+
+        current_apps = profile.get("scholar_applications", [])
+
+        if any(i.get("scholarship_id") == application.scholarship_id for i in current_apps):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"Scholarship {application.scholarship_id} is already in applications",
+            )
+
+        current_apps.append(application.model_dump())
+
+        updated_profile = update_profile(uid, {"scholar_applications": current_apps})
+        return {"uid": uid, "applications": updated_profile.get("scholar_applications", [])}
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to add application: {str(e)}",
+        )
+
+
+@router.put(
+    "/applications/{uid}",
+    response_model=Dict[str, Any],
+    summary="Update a scholarship application",
+    description="Partially update a scholarship application by scholarship_id. Only provided fields are updated.",
+)
+def update_scholar_application(
+    uid: str,
+    application_data: ScholarshipApplicationUpdate = Body(
+        ..., description="Partial update payload; include scholarship_id and any fields to change"
+    ),
+):
+    try:
+        profile = get_profile(uid)
+        if not profile:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+
+        app_update = application_data
+        current_apps = profile.get("scholar_applications", [])
+
+        found = False
+        for i in range(len(current_apps)):
+            if current_apps[i].get("scholarship_id") == app_update.scholarship_id:
+                update_fields = app_update.model_dump(exclude_unset=True)
+                merged = {**current_apps[i], **update_fields}
+                current_apps[i] = merged
+                found = True
+                break
+
+        if not found:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Scholarship {app_update.scholarship_id} not found in applications",
+            )
+
+        updated_profile = update_profile(uid, {"scholar_applications": current_apps})
+        return {"uid": uid, "applications": updated_profile.get("scholar_applications", [])}
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to update application: {str(e)}",
+        )
+
+
+@router.delete(
+    "/applications/{uid}/{scholarship_id}",
+    response_model=Dict[str, Any],
+    summary="Remove a scholarship application",
+    description="Remove a specific scholarship application from user's profile",
+)
+def delete_scholar_application(uid: str, scholarship_id: str):
+    try:
+        profile = get_profile(uid)
+        if not profile:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+
+        current_apps = profile.get("scholar_applications", [])
+        new_apps = [i for i in current_apps if i.get("scholarship_id") != scholarship_id]
+
+        if len(new_apps) == len(current_apps):
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Scholarship {scholarship_id} not found in applications",
+            )
+
+        updated_profile = update_profile(uid, {"scholar_applications": new_apps})
+        return {"uid": uid, "applications": updated_profile.get("scholar_applications", [])}
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to delete application: {str(e)}",
         )
