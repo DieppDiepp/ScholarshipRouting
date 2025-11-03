@@ -21,12 +21,15 @@ if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 
 db = firestore.client()
-
+origins = [
+    "http://localhost:3000",
+    "https://scholarship-routing.vercel.app"
+]
 # --- FastAPI app ---
 app = FastAPI(title="Scholarship Routing API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
