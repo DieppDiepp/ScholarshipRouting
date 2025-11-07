@@ -1,10 +1,8 @@
-#   * `plan_and_analyze.py`: Prompt phức tạp nhất. Nó yêu cầu LLM: "Dựa trên nội dung web thô sau... hãy điền vào cấu trúc JSON 10 mục này... Sau đó, xác định những mục nào còn thiếu (`null`) và tạo ra một danh sách các câu hỏi tìm kiếm mới để đi tìm chính xác thông tin đó."
-
 # data_collection/prompts/plan_and_analyze.py
 
 from langchain_core.prompts import PromptTemplate
 
-# JSON_STRUCTURE_TEMPLATE (giữ nguyên, đã escape)
+# SỬA: Xóa các trường không cần thiết khỏi cấu trúc nháp (draft structure)
 JSON_STRUCTURE_TEMPLATE = """
 {{
     "basic_info": {{
@@ -22,9 +20,7 @@ JSON_STRUCTURE_TEMPLATE = """
         "number_of_awards": "..."
     }},
     "eligibility_criteria": {{
-        "for_vietnamese": "...",
-        "age_requirements": "...",
-        "work_requirements": "..."
+        "eligibility_details": "..." 
     }},
     "field_restrictions": {{
         "eligible_fields": "...",
@@ -39,22 +35,27 @@ JSON_STRUCTURE_TEMPLATE = """
         "accepted_types": "..."
     }},
     "test_requirements": {{
-        "ielts_toefl": "...",
-        "gmat_gre": "..."
+        "ielts_toefl_other_language_certificates": "..."
     }},
     "additional_requirements": {{
         "reference_letters": "...",
-        "career_plan": "..."
+        "career_plan": "...",
+        "age_limits": "...", 
+        "gender_requirement": "...",
+        "special_circumstances": "...",
+        "other_requirements": "..."
     }},
     "background_and_logistics": {{
         "official_website": "...",
         "application_documents": "...",
-        "selection_process": "..."
+        "selection_process": "...",
+        "scholarship_info": "...",
+        "timeline_summary": "..."
     }}
 }}
 """
 
-# --- ENGLISH PROMPT ---
+# --- ENGLISH PROMPT (Giữ nguyên, chỉ thay đổi input variables) ---
 
 _ANALYZE_PROMPT_PART_1 = """
 **TASK:** You are an expert Scholarship Analyst. You have just received raw web content scraped for the scholarship: "{scholarship_name}".
@@ -80,7 +81,7 @@ _ANALYZE_PROMPT_PART_2 = """
     * Here is a list of queries that were already executed but **failed** to yield new, useful information:
         `{failed_queries}`
     * When creating new `missing_queries`, **DO NOT** repeat any query from this failed list.
-    * If you still need information for that topic, **rephrase the query** (e.g., instead of "IELTS requirements", try "English language proficiency test scores").
+    * If you still need information for that topic, **rephrase the query**.
 
 **OUTPUT FORMAT:**
 Respond with a single, raw JSON object only. Do not include any explanations or markdown backticks (```json ... ```). The JSON object must have two keys:
@@ -92,10 +93,8 @@ Respond with a single, raw JSON object only. Do not include any explanations or 
     "report_data": {{
         "basic_info": {{
             "official_name": "Chevening Scholarship",
-            "provider": "UK Government",
-            "study_country": "UK"
+            ...
         }},
-        "funding_info": {{ ... }},
         "timeline_info": {{
             "application_deadline": null,
             ...
@@ -119,7 +118,7 @@ ANALYZE_PROMPT_TEMPLATE = (
     + _ANALYZE_PROMPT_PART_2
 )
 
-# Thêm "failed_queries" vào danh sách input_variables
+# input_variables giữ nguyên (vì các biến {scholarship_name}, {context}, {failed_queries} vẫn được dùng)
 analyze_prompt = PromptTemplate(
     input_variables=["scholarship_name", "context", "failed_queries"],
     template=ANALYZE_PROMPT_TEMPLATE
