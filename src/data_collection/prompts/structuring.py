@@ -1,10 +1,11 @@
 # data_collection/prompts/structuring.py
 
 from langchain_core.prompts import PromptTemplate
-from .plan_and_analyze import JSON_STRUCTURE_TEMPLATE # Import schema từ file cũ
+# Import schema từ file plan_and_analyze
+from .plan_and_analyze import JSON_STRUCTURE_TEMPLATE
 
-# SỬA: Schema này giờ là schema đích (tiếng Anh)
-# Mình đã xóa trường "Danh_Sách_Nhóm_Ngành" tiếng Việt
+# Schema tiếng Anh phẳng (FLAT_JSON_SCHEMA_ENGLISH) giữ nguyên
+# (Mình rút gọn ở đây cho dễ đọc)
 FLAT_JSON_SCHEMA_ENGLISH = """
 {{
   "Scholarship_Name": "",
@@ -13,14 +14,9 @@ FLAT_JSON_SCHEMA_ENGLISH = """
   "Funding_Level": "",     // Comma-separated categories. Allowed values MUST map to: "Full scholarship", "Tuition Waiver", "Stipend", "Accommodation", "Partial Funding", "Fixed Amount", "Other Costs"
   "Funding_Details": "",   // Keep bullet points/newlines
   "Application_Mode": "",  // ONLY ONE of: "Annual", "Rolling"
-  "Application_Month": "", // ONLY ONE of: "1"-"12" IF Application_Mode is "Annual" (Represents the annual application opening month). Use "" if Application_Mode is "Rolling".
-  "Start_Date": "",        // "DD/MM/YYYY" IF YYYY is 2025, OR "" (Represents the specific Application Opening Date).
-  "End_Date": "",          // "DD/MM/YYYY" IF YYYY is 2025, OR "" (Represents the specific Application Deadline Date).
+  "End_Date": "",          // "YYYY-MM-DD" IF YYYY is 2025, OR "" (Represents the specific Application Deadline Date).
   "Quantity": "",          // Specify the quantity and the target group/region. e.g., "Globally: 100, Vietnam: 5"
-  "For_Vietnamese": false, // ONLY ONE of: true/false
-  "Eligibility": "",       // Use string based on input report, map boolean if possible
-  "Eligible_Applicants": "", // Keep bullet points/newlines
-  "Field_Restriction": false, // ONLY ONE of: true/false
+  "Eligible_Applicants": "",  // Use string based on input report, map boolean if possible
   "Eligible_Fields": "",   // Field groups separated by newlines. Majors within a group separated by commas. e.g., "Field Group: Major 1, Major 2..."
   "Required_Degree": "",   // Comma-separated (select one or more): "Bachelor's degree", "Bachelor's equivalent", "Final Year Student", "Relevant Master's degree"
   "Min_Gpa": 0.0,          // Float (0.0 if not specified)
@@ -29,8 +25,6 @@ FLAT_JSON_SCHEMA_ENGLISH = """
   "Min_Working_Hours": 0,  // Integer (0 if not specified/required)
   "Language_Certificate": "", // Format MUST be: <Certificate Name><space><Score Level>. e.g., "IELTS 7.0"
   "Academic_Certificate": "", // Comma-separated: "Not required", "GMAT", "GRE", or other relevant degree/certification names.
-  "Awards_Requirement": "",   // Keep bullet points/newlines
-  "Publication_Requirement": "",  // Keep bullet points/newlines
   "Age": "",               // Use specific age or range. e.g., "Under 30", "25-35", or "" if not specified.
   "Gender": "",            // ONLY ONE of: "Male", "Female", "No requirement"
   "Special_Circumstances": "",  
@@ -43,29 +37,22 @@ FLAT_JSON_SCHEMA_ENGLISH = """
 }}
 """
 
-# SỬA: Cập nhật hoàn toàn prompt
 STRUCTURING_PROMPT_TEMPLATE = """
-**TASK:** You are an expert data extraction agent. Your job is to convert a comprehensive **Text Report** into a single, flat, structured **English** JSON object. You will also receive the **Raw Evidence** for cross-referencing.
+**TASK:** You are an expert data structuring agent. Your job is to convert a comprehensive **Text Report** into a single, flat, structured **English** JSON object, following specific data type and formatting rules.
 
-**INPUT 1: COMPREHENSIVE TEXT REPORT (Primary Source):**
+**INPUT TEXT REPORT (Your *only* source of truth):**
 {synthesis_report}
 
 ---
-**INPUT 2: ALL RAW WEB EVIDENCE (Secondary Source for details):**
-{context}
----
-
 **INSTRUCTIONS:**
 
-1.  **Map Data:** Read **Input 1 (Text Report)** first. This is your primary source.
-2.  **Cross-Reference:** Use **Input 2 (Raw Evidence)** to find specific details (like exact GPAs, dates, or list items) that might be summarized in the Text Report.
-3.  **Strict Data Types & Formatting:** Follow the rules exactly as specified in the target schema.
-    * **boolean:** `true` or `false`.
-    * **float:** `2.0`, `3.3`. Use `0.0` if not specified.
-    * **string:** Extract English text. Use `""` or `null` for missing values.
-    * **Dates:** Format as DD/MM/YYYY. Use `""` or `null` if not specific.
-    * **Category Fields:** Map to allowed values (e.g., "Full scholarship", "Annual").
-4.  **Accuracy:** You now have ALL information. Be extremely accurate.
+1.  **Map Data:** Read the **Input Text Report** carefully.
+2.  **Strict Data Types & Formatting:** Follow the rules exactly as specified in the target schema.
+    * **float (Min_Gpa, Experience_Years, Min_Working_Hours):** Must be a number (e.g., `2.0`). Use `0.0` if not specified in the report.
+    * **Dates (End_Date):** Must be formatted as **YYYY-MM-DD**. If the input is "15 January 2025", output "2025-01-15". If not available or vague, use `null` or `""`.
+    * **Category Fields:** Map the text to the allowed values (e.g., "Full scholarship", "Annual").
+    * **`Eligibility_Criteria`:** This is the merged field. Summarize all information about applicant eligibility here (citizenship, age, work, etc.).
+3.  **Accuracy:** Do not add information that is not present in the Text Report.
 
 **TARGET SCHEMA (English):**
 """ + FLAT_JSON_SCHEMA_ENGLISH + """
@@ -75,8 +62,8 @@ STRUCTURING_PROMPT_TEMPLATE = """
 Respond with ONLY the single, structured **English** JSON object.
 """
 
-# SỬA: Cập nhật input_variables
+# input_variables giữ nguyên (chỉ cần 'synthesis_report')
 structuring_prompt = PromptTemplate(
-    input_variables=["synthesis_report", "context"],
+    input_variables=["synthesis_report"],
     template=STRUCTURING_PROMPT_TEMPLATE
 )

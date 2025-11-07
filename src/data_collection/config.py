@@ -51,8 +51,12 @@ STRUCTURED_ENGLISH_REPORTS_PATH = os.path.join(OUTPUT_DIR, f"structured_english_
 
 # --- 3. CẤU HÌNH AGENT (Giữ nguyên) ---
 MAX_RESEARCH_LOOPS = 5
-MAX_API_CALLS_PER_SCHOLARSHIP = 50
-DRILL_DOWN_QUERY_COUNT = 3
+MAX_API_CALLS_PER_SCHOLARSHIP = 40
+DRILL_DOWN_QUERY_COUNT = 5  # <--- HÃY ĐẢM BẢO DÒNG NÀY TỒN TẠI VÀ ĐÚNG TÊN
+
+# --- CẤU HÌNH TAVILY API (MỚI) ---
+TAVILY_MAX_RESULTS_INITIAL = 5  # Số kết quả cho lần tìm kiếm đầu tiên
+TAVILY_MAX_RESULTS_DRILLDOWN = 3 # Số kết quả cho mỗi truy vấn drill-down
 
 # --- 4. CẤU HÌNH LLM (Giữ nguyên) ---
 NON_CREATIVE_LLM_MODEL = "gemini-2.5-flash"

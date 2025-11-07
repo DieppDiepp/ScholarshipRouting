@@ -42,14 +42,17 @@ from prompts.structuring import structuring_prompt
 from utils.data_logger import save_to_rag_db
 import config
 
-# --- Node 1: Tìm Kiếm Ban Đầu (Không thay đổi) ---
+# --- Node 1: Tìm Kiếm Ban Đầu (Cập nhật) ---
 def initial_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[str, Any]:
-    # (Nội dung hàm giữ nguyên)
     print(f"\n--- Node: Initial Search (Loop {state['current_loop']}) ---")
     scholarship_name = state["scholarship_name"]
+    
     query = INITIAL_SEARCH_PROMPT.format(scholarship_name=scholarship_name)
     print(f"  Đang tìm kiếm: '{query}'")
-    results = tool.invoke(query, max_results=5)
+    
+    # SỬA: Lấy max_results từ config
+    results = tool.invoke(query, max_results=config.TAVILY_MAX_RESULTS_INITIAL)
+    
     valid_results = [res for res in results if res.get("content")]
     print(f"  -> Tìm thấy {len(valid_results)} kết quả hợp lệ.")
     save_to_rag_db(scholarship_name, valid_results, config.RAG_DATABASE_PATH)
@@ -128,10 +131,7 @@ def drill_down_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[
     current_urls = state["visited_urls"]
     
     new_docs = []
-    
-    # SỬA: Sử dụng biến từ file config
     queries_to_run = queries[:config.DRILL_DOWN_QUERY_COUNT] 
-    
     print(f"  Sẽ thực thi {len(queries_to_run)}/{len(queries)} truy vấn còn thiếu.")
     
     api_calls_made = 0
@@ -141,7 +141,10 @@ def drill_down_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[
             break
             
         print(f"  Đang tìm kiếm: '{query}'")
-        results = tool.invoke(query, max_results=2)
+        
+        # SỬA: Lấy max_results từ config
+        results = tool.invoke(query, max_results=config.TAVILY_MAX_RESULTS_DRILLDOWN)
+        
         api_calls_made += 1
         
         for res in results:
@@ -194,24 +197,25 @@ def final_synthesis_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict
     
 # --- Node 5: Cấu Trúc (Cập nhật) ---
 def structure_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict[str, Any]:
-    print(f"\n--- Node: Structure Report (from Text Report + Context) ---")
+    print(f"\n--- Node: Structure Report (from Text Report ONLY) ---") # Cập nhật log
 
-    # SỬA: Lấy 2 nguồn input
+    # SỬA: Chỉ lấy report text
     synthesis_report = state["synthesis_report_text"]
-    context_str = "\n\n---\n\n".join(
-        [f"URL: {doc['url']}\nCONTENT: {doc['content']}" for doc in state["context_documents"]]
-    )
+    
+    # SỬA: Xóa context_str
+    # context_str = "\n\n---\n\n".join(...)
 
     structuring_chain = structuring_prompt | llm | JsonOutputParser()
 
     print("  Đang gọi LLM để trích xuất JSON phẳng cuối cùng...")
 
     try:
+        # SỬA: Chỉ truyền 'synthesis_report' vào chain
         structured_report = structuring_chain.invoke({
-            "synthesis_report": synthesis_report,
-            "context": context_str
+            "synthesis_report": synthesis_report
         })
 
+        # Logic còn lại giữ nguyên
         structured_report["Scholarship_Name"] = state["scholarship_name"]
         print("  -> Trích xuất JSON phẳng hoàn tất.")
         return {"structured_report": structured_report}

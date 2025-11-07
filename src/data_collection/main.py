@@ -79,7 +79,7 @@ def main():
         print(f"Error reading CSV file: {e}")
         return
         
-    test_names = scholarship_names[6:20] # Test with 1 scholarship
+    test_names = scholarship_names[6:12] # Test with 1 scholarship
     # test_names = scholarship_names # Run all
     print(f"\nWill process {len(test_names)} scholarships.")
 
