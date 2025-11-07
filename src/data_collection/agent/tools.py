@@ -18,6 +18,7 @@
 from typing import List, Dict, Any
 from langchain_tavily import TavilySearch
 import config  # <-- THÊM IMPORT CONFIG
+from threading import Lock # MỚI: Import Lock
 
 class RotatingTavilyTool:
     """

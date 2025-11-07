@@ -33,13 +33,11 @@ from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 
 from agent.state import AgentState 
 from agent.tools import RotatingTavilyTool
-# ... (import các prompts) ...
 from prompts.initial_search import INITIAL_SEARCH_PROMPT
 from prompts.plan_and_analyze import analyze_prompt
 from prompts.synthesis import synthesis_prompt 
 from prompts.structuring import structuring_prompt
-
-from utils.data_logger import save_to_rag_db
+# from utils.data_logger import save_to_rag_db
 import config
 
 # --- Node 1: Tìm Kiếm Ban Đầu (Cập nhật) ---
@@ -55,11 +53,12 @@ def initial_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[str
     
     valid_results = [res for res in results if res.get("content")]
     print(f"  -> Tìm thấy {len(valid_results)} kết quả hợp lệ.")
-    save_to_rag_db(scholarship_name, valid_results, config.RAG_DATABASE_PATH)
+    # save_to_rag_db(scholarship_name, valid_results, config.RAG_DATABASE_PATH)
     new_urls = {res.get("url") for res in valid_results}
     
     return {
-        "context_documents": valid_results,
+        # SỬA: valid_results giờ là context_documents ban đầu
+        "context_documents": valid_results, 
         "visited_urls": new_urls,
         "api_call_count": state["api_call_count"] + 1,
         "current_loop": state["current_loop"] + 1,
@@ -153,12 +152,14 @@ def drill_down_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[
                 current_urls.add(res.get("url"))
     
     print(f"  -> Tìm thấy {len(new_docs)} tài liệu mới.")
-    if new_docs:
-        save_to_rag_db(scholarship_name, new_docs, config.RAG_DATABASE_PATH)
+    # if new_docs:
+    #     save_to_rag_db(scholarship_name, new_docs, config.RAG_DATABASE_PATH)
     
     return {
-        "context_documents": current_docs + new_docs,
+        # SỬA: Nối new_docs vào context_documents
+        "context_documents": current_docs + new_docs, 
         "visited_urls": current_urls,
+        # ... (các trường khác giữ nguyên) ...
         "missing_information": queries[len(queries_to_run):],
         "api_call_count": state["api_call_count"] + api_calls_made,
         "current_loop": state["current_loop"] + 1,
