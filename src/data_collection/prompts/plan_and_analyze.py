@@ -102,7 +102,7 @@ Respond with a single, raw JSON object only. Do not include any explanations or 
         ...
     }},
     "missing_queries": [
-        "Chevening scholarship application deadline 2025-2026",
+        "Chevening scholarship application deadline 2026-2027",
         "Chevening scholarship work experience requirements"
     ]
 }}

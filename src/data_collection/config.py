@@ -52,7 +52,7 @@ STRUCTURED_ENGLISH_REPORTS_PATH = os.path.join(OUTPUT_DIR, f"structured_english_
 # --- 3. CẤU HÌNH AGENT (Giữ nguyên) ---
 MAX_RESEARCH_LOOPS = 5
 MAX_API_CALLS_PER_SCHOLARSHIP = 40
-DRILL_DOWN_QUERY_COUNT = 5  # <--- HÃY ĐẢM BẢO DÒNG NÀY TỒN TẠI VÀ ĐÚNG TÊN
+DRILL_DOWN_QUERY_COUNT = 4  # <--- HÃY ĐẢM BẢO DÒNG NÀY TỒN TẠI VÀ ĐÚNG TÊN
 
 # --- CẤU HÌNH TAVILY API (MỚI) ---
 TAVILY_MAX_RESULTS_INITIAL = 5  # Số kết quả cho lần tìm kiếm đầu tiên
@@ -65,7 +65,7 @@ NON_CREATIVE_LLM_TEMP = 0
 # --- CẤU HÌNH PIPELINE (MỚI) ---
 # Chọn index để chạy (ví dụ: [6:12] như bạn nói)
 SCHOLARSHIP_START_INDEX = 0  # Bắt đầu từ học bổng thứ 6
-SCHOLARSHIP_END_INDEX = 12   # Dừng ở học bổng thứ 12 (không bao gồm 12)
+SCHOLARSHIP_END_INDEX = 18   # Dừng ở học bổng thứ 12 (không bao gồm 12)
 # Đặt `None` để chạy đến cuối. Ví dụ: (0, None) là chạy tất cả.
 
 # Số lượng học bổng chạy song song (số luồng)
