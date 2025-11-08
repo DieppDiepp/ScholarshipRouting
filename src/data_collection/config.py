@@ -29,7 +29,7 @@ GRAND_PROJECT_ROOT = os.path.dirname(PROJECT_ROOT)
 # SỬA: Tạo tên file input động
 # Ví dụ: "Master_raw.csv", "Bachelor_raw.csv", "PhD_raw.csv"
 input_filename = f"{LEVEL.capitalize()}_raw.csv"
-SCHOLARSHIP_DATA_PATH = os.path.join(GRAND_PROJECT_ROOT, "data", "raw_data", input_filename)
+SCHOLARSHIP_DATA_PATH = os.path.join(GRAND_PROJECT_ROOT, "data", "final_input", input_filename)
 SCHOLARSHIP_NAME_COLUMN = "Scholarship_Name"
 
 # SỬA: Tạo tên file output động
@@ -52,7 +52,7 @@ STRUCTURED_ENGLISH_REPORTS_PATH = os.path.join(OUTPUT_DIR, f"structured_english_
 # --- 3. CẤU HÌNH AGENT (Giữ nguyên) ---
 MAX_RESEARCH_LOOPS = 5
 MAX_API_CALLS_PER_SCHOLARSHIP = 40
-DRILL_DOWN_QUERY_COUNT = 4  # <--- HÃY ĐẢM BẢO DÒNG NÀY TỒN TẠI VÀ ĐÚNG TÊN
+DRILL_DOWN_QUERY_COUNT = 4  # Số lượng truy vấn đầu tiên trong danh sách các truy vấn thiếu 
 
 # --- CẤU HÌNH TAVILY API (MỚI) ---
 TAVILY_MAX_RESULTS_INITIAL = 5  # Số kết quả cho lần tìm kiếm đầu tiên

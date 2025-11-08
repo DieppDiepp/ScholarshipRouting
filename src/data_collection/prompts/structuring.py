@@ -13,7 +13,7 @@ FLAT_JSON_SCHEMA_ENGLISH = """
   "Funding_Level": "",     // Comma-separated categories. Allowed values MUST map to: "Full scholarship", "Tuition Waiver", "Stipend", "Accommodation", "Partial Funding", "Fixed Amount", "Other Costs"
   "Funding_Details": "",   // Keep bullet points/newlines
   "Application_Mode": "",  // ONLY ONE of: "Annual", "Rolling"
-  "End_Date": "YYYY-MM-DD",// Format: "YYYY-MM-DD" IF YYYY is 2025, OR "" (Represents the specific Application Deadline Date).
+  "End_Date": "YYYY-MM-DD",// Format: "YYYY-MM-DD" IF YYYY is 2026, OR "" (Represents the specific Application Deadline Date).
   "Quantity": "",          // e.g., "Globally: 100, Vietnam: 5"
   "Eligibility_Criteria": "", // Merged field for all eligibility info
   
@@ -36,7 +36,7 @@ FLAT_JSON_SCHEMA_ENGLISH = """
   "Other_Requirements": "", 
   "Scholarship_Info": "",  // A brief, general overview of the scholarship program (be careful not to confuse this with funding level details)
   "Application_Documents": "", // Keep staged structure if possible
-  "Timeline": "", // Chronological list. Format MUST be: <Time> : <Event>. e.g., "15 January 2025 : Application Deadline"
+  "Timeline": "", // Chronological list. Format MUST be: <Time> : <Event>. e.g., "15 January 2026 : Application Deadline"
   "Url": "" // MUST be the URL of the official scholarship website or application page, if can not find the official URL pick the most relevant one.
 }}
 """
@@ -128,10 +128,11 @@ STRUCTURING_PROMPT_TEMPLATE = """
 
 1.  **Map Data:** Read the **Input Text Report** carefully.
 2.  **Strict Data Types & Formatting:** Follow the rules exactly.
-    * **`Min_Gpa` (String):** e.g., "3.2/4.0", "Not specified".
-    * **`Experience_Years` (String):** e.g., "2 years full-time", "Not required".
-    * **`Dates (End_Date)`:** Must be **YYYY-MM-DD**. (e.g., "15 January 2025" -> "2025-01-15").
-    * **`Required_Degree` (Category):** Map text to allowed values (e.g., "High School Diploma", "Bachelor's degree").
+    * **`Min_Gpa` (String):** Include value + scale; if different programs have different minimum GPAs, list with context (e.g., "Master: 3.2/4.0, PhD: 3.5/4.0", or "Range varies: 2.8–3.7 depending on program"); if scale missing, infer common scale; if not specified, use "Not specified".
+    * **`Experience_Years` (String):** Extract the requirement as text, **including its context (e.g., "2 years of full-time work", "3 years of relevant experience", "Not required")**. Do NOT convert to a number.
+    * **`Min_Working_Hours` (String):** Extract the requirement as text, **including its context (e.g., "2800 hours full-time", "Not specified")**. Do NOT convert to a number.
+    * **`Dates (End_Date)`:** Must be **YYYY-MM-DD**. (e.g., "15 January 2026" -> "2026-01-15").
+    * **`Required_Degree` (Category):** Map the text to the allowed values (e.g., "High School Diploma" for Bachelor's applicants, "Bachelor's degree" for Master's applicants, "Master's degree" for PhD applicants). Use the comma-separated list from the schema comment.
 
 3.  **Accuracy:** Do not add information that is not present in the Text Report.
 
