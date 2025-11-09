@@ -52,10 +52,10 @@ STRUCTURED_ENGLISH_REPORTS_PATH = os.path.join(OUTPUT_DIR, f"structured_english_
 # --- 3. CẤU HÌNH AGENT (Giữ nguyên) ---
 MAX_RESEARCH_LOOPS = 5
 MAX_API_CALLS_PER_SCHOLARSHIP = 40
-DRILL_DOWN_QUERY_COUNT = 4  # Số lượng truy vấn đầu tiên trong danh sách các truy vấn thiếu 
+DRILL_DOWN_QUERY_COUNT = 3  # Số lượng truy vấn đầu tiên trong danh sách các truy vấn thiếu 
 
 # --- CẤU HÌNH TAVILY API (MỚI) ---
-TAVILY_MAX_RESULTS_INITIAL = 5  # Số kết quả cho lần tìm kiếm đầu tiên
+TAVILY_MAX_RESULTS_INITIAL = 4  # Số kết quả cho lần tìm kiếm đầu tiên
 TAVILY_MAX_RESULTS_DRILLDOWN = 3 # Số kết quả cho mỗi truy vấn drill-down
 
 # --- 4. CẤU HÌNH LLM (Giữ nguyên) ---
@@ -65,9 +65,9 @@ NON_CREATIVE_LLM_TEMP = 0
 # --- CẤU HÌNH PIPELINE (MỚI) ---
 # Chọn index để chạy (ví dụ: [6:12] như bạn nói)
 SCHOLARSHIP_START_INDEX = 0  # Bắt đầu từ học bổng thứ 6
-SCHOLARSHIP_END_INDEX = 18   # Dừng ở học bổng thứ 12 (không bao gồm 12)
+SCHOLARSHIP_END_INDEX = 100   # Dừng ở học bổng thứ 12 (không bao gồm 12)
 # Đặt `None` để chạy đến cuối. Ví dụ: (0, None) là chạy tất cả.
 
 # Số lượng học bổng chạy song song (số luồng)
 # Cũng chính là kích thước của 1 "lô" (batch)
-PARALLEL_WORKERS = 6
+PARALLEL_WORKERS = 10
