@@ -41,78 +41,93 @@ FLAT_JSON_SCHEMA_ENGLISH = """
 }}
 """
 
-# MỚI: Danh sách ngành chuẩn (Giữ nguyên từ prompt của bạn)
+# SỬA: Danh sách ngành chuẩn mới với 16 nhóm
 STANDARDIZED_FIELDS_AND_GROUPS = """
-**BUSINESS & ECONOMICS:**
-Agribusiness, Business Administration, Business Analytics, Business Management, Commercial Law, Economics, Finance, Innovation, International Business, International Management, International Trade, Logistics, Marketing, Digital Marketing, Strategic Marketing Management, MBA, Private Sector Development, Taxation, Wealth Management
+**1. Education & Training:**
+Basic programmes and qualifications, Literacy and numeracy, Personal skills and development, Education science, Training for pre-school teachers, Teacher training without subject specialisation, Teacher training with subject specialisation
 
-**STEM - COMPUTER SCIENCE & TECHNOLOGY:**
-Advanced Technologies, Artificial Intelligence, Computer Science, Cybersecurity, Data Science, Digital Technologies, Machine Learning, Robotics
+**2. Arts, Design & Media:**
+Audio-visual techniques and media production, Fashion, interior and industrial design, Fine arts, Handicrafts, Music and performing arts, Visual Arts, Theatre/Drama, Game Design, Game Development, Journalism and reporting, Arts Administration/Management
 
-**STEM - ENGINEERING:**
-Aeronautical Engineering, Automotive Engineering, Biomedical Engineering, Civil Engineering, Electrical Engineering, Environmental Engineering, Hydro Science and Engineering, Mechanical Engineering, Sustainable Energy Technologies, Renewable Energy
+**3. Humanities & Social Sciences:**
+Religion and theology, History and archaeology, Philosophy and ethics, Language acquisition, Literature and linguistics, Inter-disciplinary programmes involving arts and humanities, Political sciences and civics, Psychology, Sociology and cultural studies, International Relations, Area Studies
 
-**STEM - NATURAL SCIENCES:**
-Agricultural Sciences, Forest Sciences, Biology, Life Sciences, Biomedicine, Chemistry, Environmental Science, Food Science, Marine Science, Lacustrine Science, Mathematics, Physics
+**4. Economics & Business:**
+Economics, Accounting and taxation, Finance, banking and insurance, Management and administration, Marketing and advertising, Secretarial and office work, Wholesale and retail sales, Work skills
 
-**STEM - ARCHITECTURE & PLANNING:**
-Architecture, Urban Planning, Transport Engineering
+**5. Law & Public Policy:**
+Law, Political sciences and civics, Public Health, International Development
 
-**SOCIAL SCIENCES & HUMANITIES:**
-Anthropology, Development Studies, Food Security, Gender Studies, Gender and Development Studies, Global Affairs, International Affairs, International Relations, Globalization, History, Journalism, Linguistics, Media Studies, Digital Media, Peace Studies, Mediation, Conflict Research, Sociology
+**6. Natural Sciences:**
+Biology, Biochemistry, Environmental sciences, Natural environments and wildlife, Chemistry, Earth sciences, Physics, Astronomy, Mathematics, Statistics
 
-**LAW, POLITICS & GOVERNANCE:**
-Good Governance, Human Rights Law, International Law, Law, Public Policy, Political Science, Public Administration, Security, Rule of Law, Transnational Justice
+**7. IT & Data Science:**
+Computer use, Database and network design and administration, Software and applications development and analysis, Data Science, Data Analytics, Data Engineering, Artificial Intelligence, Cyber Security
 
-**HEALTH & MEDICINE:**
-Clinical Medicine, Dentistry, Deglutology, Epidemiology, Global Health, Health Economics, Health Policy, Health Management, Medicine, Pharmacy, Public Health, Sexual Health, Reproductive Health
+**8. Engineering & Technology:**
+Nanotechnology, Chemical engineering and processes, Environmental protection technology, Electricity and energy, Electronics and automation, Mechanics and metal trades, Motor vehicles, ships and aircraft, Food processing, Materials (glass, paper, plastic and wood), Textiles (clothes, footwear and leather), Mining and extraction, Sustainable Energy Solutions and Innovation, Renewable Energy Management, Quantum Technologies, Quantum Engineering, Advanced Materials Science, Advanced Materials Engineering
 
-**EDUCATION:**
-Education Management, Educational Administration, Psychology of Education, TESOL, Learning, Education and Technology
+**9. Construction & Planning:**
+Architecture and town planning, Building and civil engineering, Urban and Regional Planning
 
-**ARTS & DESIGN:**
-Art History, Design, Product Design, Fashion Design, Film Studies, Music, Theater Arts
+**10. Agriculture & Environment:**
+Agricultural/Biosystems Engineering, Crop and livestock production, Agroecology and Sustainable Agriculture, Horticulture, Food Science, Forestry, Fisheries, Veterinary, Animal Science, Environmental sciences, Natural environments and wildlife, Environmental protection technology, Climate Change Adaptation, Climate Change Mitigation
 
-**INTERDISCIPLINARY & SPECIALIZED:**
-Climate Change, Climate Change Adaptation, Disaster Risk Management, Environmental Management, Environmental Governance, Sustainable Development
+**11. Healthcare & Medicine:**
+Dental studies, Medicine, Nursing and midwifery, Medical diagnostic and treatment technology, Therapy and rehabilitation, Pharmacy, Pharmaceutical Science, Traditional and complementary medicine and therapy, Public Health, Global Health Architecture, Clinical Mental Health Counseling, Nutrition Science
+
+**12. Social Services & Care:**
+Care of the elderly and of disabled adults, Child care and youth services, Social work and counselling, Clinical Mental Health Counseling, Psychology
+
+**13. Personal Services & Tourism:**
+Domestic services, Hair and beauty services, Hotel, restaurants and catering, Sports, Travel, tourism and leisure
+
+**14. Security & Defense:**
+Occupational health and safety, Military and defence, Protection of persons and property, Maritime Security, Community sanitation, Cyber Security
+
+**15. Library & Information Management:**
+Library, information and archival studies, Information Science, Library Science, Information Science
+
+**16. Transportation & Logistics:**
+Transport services, Motor vehicles, ships and aircraft
 """
-
-# SỬA: Thay thế hoàn toàn QUY TẮC CHUẨN HÓA
+# SỬA: Cập nhật Quy tắc Chuẩn hóa
 FIELD_NORMALIZATION_RULES = """
 **Your goal is to populate two fields: `Eligible_Field_Group` and `Eligible_Fields`.**
 
-1.  **Rule 1: Specific Field Mapping (Ưu tiên cao nhất)**
-    * Read the input report. If you see a **specific field** (e.g., "Finance", "CS", "AI", "Civil Engineering"), find its standardized name in the list.
+1.  **Rule 1: Specific Field Mapping (Highest Priority)**
+    * Read the input. If you see a **specific field** (e.g., "Finance", "CS", "AI", "Civil Engineering"), find its standardized name in the list.
     * **Action:**
         * Add the standardized **specific field** (e.g., "Finance", "Computer Science") to the `Eligible_Fields` list.
-        * *Automatically* add its corresponding **group name** (e.g., "BUSINESS & ECONOMICS") to the `Eligible_Field_Group` list.
+        * *Automatically* add its corresponding **group name** (e.g., "Economics & Business") to the `Eligible_Field_Group` list.
     * *Example:* Input "Studies in Finance and AI."
         * `Eligible_Fields`: "Finance, Artificial Intelligence"
-        * `Eligible_Field_Group`: "BUSINESS & ECONOMICS, STEM - COMPUTER SCIENCE & TECHNOLOGY"
+        * `Eligible_Field_Group`: "Economics & Business, IT & Data Science"
 
-2.  **Rule 2: Broad Group Mapping (Chỉ dùng khi không có ngành cụ thể)**
-    * Read the input. If it *only* mentions a **broad group** (e.g., "Engineering", "Arts", "Sciences", "STEM") and *not* any specific fields within that group...
+2.  **Rule 2: Broad Group Mapping (Only if specific fields are absent)**
+    * Read the input. If it *only* mentions a **broad group** (e.g., "Engineering", "Arts", "Sciences") and *not* any specific fields within that group...
     * **Action:**
         * `Eligible_Fields`: **Leave this field empty** (`""` or `null`).
-        * `Eligible_Field_Group`: Add the standardized **group name(s)** (e.g., "STEM - ENGINEERING", "ARTS & DESIGN", "STEM - NATURAL SCIENCES").
-    * *Example:* Input "We fund students in Engineering, Arts, and STEM fields."
+        * `Eligible_Field_Group`: Add the standardized **group name(s)** (e.g., "Engineering & Technology", "Arts, Design & Media", "Natural Sciences").
+    * *Example:* Input "We fund students in Engineering, Arts, and IT fields."
         * `Eligible_Fields`: ""
-        * `Eligible_Field_Group`: "STEM - ENGINEERING, ARTS & DESIGN, STEM - COMPUTER SCIENCE & TECHNOLOGY, STEM - NATURAL SCIENCES, STEM - ARCHITECTURE & PLANNING" (Vì STEM là 4 nhóm)
+        * `Eligible_Field_Group`: "Engineering & Technology, Arts, Design & Media, IT & Data Science"
 
 3.  **Rule 3: Synonym Mapping**
     * Map common variations to their *standardized specific field* and follow Rule 1.
     * "CS" / "IT" / "Computing" / "Software Engineering" -> Map to "Computer Science".
     * "AI" / "ML" -> Map to "Artificial Intelligence", "Machine learning".
-    * "Business" / "Management" -> Map to "Business Administration", "Business Management".
-    * "Public Health" / "Health Sciences" -> Map to "Public Health", "Global Health".
+    * "Business" / "Management" -> Map to "Business Administration", "Management and administration".
+    * "Public Health" -> Map to "Public Health".
+    * "Humanities" -> Map to "Humanities & Social Sciences" (as a group, Rule 2).
 
-4.  **Rule 4: Special Cases (Ghi đè tất cả)**
-    * Input: "All fields" / "No restrictions" / "Any Master's program" / "" (Empty)
+4.  **Rule 4: Special Cases (Overrides all)**
+    * Input: "All fields" / "No restrictions" / "Any Master's program" / "All fields of university" / "" (Empty)
     * **Action:**
         * `Eligible_Fields`: "All fields"
         * `Eligible_Field_Group`: "All fields"
 
-5.  **Output Format:** Both fields must be a single, comma-separated string. Ensure no duplicate entries in a single list (e.g., "BUSINESS & ECONOMICS, BUSINESS & ECONOMICS" is wrong).
+5.  **Output Format:** Both fields must be a single, comma-separated string. Ensure no duplicate entries in a single list.
 """
 
 
