@@ -5,7 +5,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.embeddings.base import Embeddings # Dùng class base
 from langchain.docstore.document import Document
 from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 
 from .custom_embeddings import CustomVietnameseEmbeddings
 from . import data_loader
@@ -34,6 +34,10 @@ def create_documents() -> List[Document]:
         if not metadata:
             print(f"Warning: No metadata found for '{name}'. Skipping.")
             continue
+
+        # Thêm lại 'Scholarship_Name' vào trong metadata
+        # để chúng ta có thể truy cập nó sau này.
+        metadata['Scholarship_Name'] = name
             
         # 4. Tạo 1 Document LangChain
         # page_content là nội dung văn bản (từ File 3)
