@@ -11,7 +11,7 @@ from .. import config
 class ScholarshipSearchFilters(BaseModel):
     Country: Optional[str] = Field(
         None,
-        description="Quốc gia mà người dùng muốn du học, chỉ chấp nhận trả về 1 hoặc nhiều các giá trị sau: "
+        description="Quốc gia mà người dùng muốn du học, trả về một hoặc nhiều tên quốc gia chính thức. Ví dụ: 'UK', 'USA', 'China', 'Hungary',... "
     )
     Scholarship_Type: Optional[str] = Field(
         None,
@@ -23,7 +23,7 @@ class ScholarshipSearchFilters(BaseModel):
     )
     Required_Degree: Optional[str] = Field(
         None,
-        description="Bằng tốt nghiệp cao nhất mà người dùng đang đề cập, chỉ chấp nhận trả về 1 trong 3 giá trị: 'High School Diploma','Bachelor', 'Master'"
+        description="Bằng tốt nghiệp cao nhất mà người dùng đang đề cập, chỉ chấp nhận trả về 1 trong các giá trị: 'High School Diploma','Bachelor', 'Master'"
     )
     Wanted_Degree:Optional[str] = Field(
         None,
@@ -31,27 +31,29 @@ class ScholarshipSearchFilters(BaseModel):
     )
     Eligible_Field_Group: Optional[str] = Field(
         None,
-        description="Ngành học người dùng quan tâm, ví dụ: 'Engineering', 'Computer Science', 'Social Sciences'"
+        description="Nhóm ngành học người dùng quan tâm, chỉ chấp nhận trả về 1 hoặc nhiều các giá trị sau: 'Education & Training', 'Arts, Design & Media', 'Humanities & Social Sciences', 'Economics & Business', 'Law & Public Policy', 'Natural Sciences', 'IT & Data Science', 'Engineering & Technology', 'Construction & Planning', 'Agriculture & Environment', 'Healthcare & Medicine', 'Social Services & Care', 'Personal Services & Tourism', 'Security & Defense', 'Library & Information Management', 'Transportation & Logistics'"
     )
 
-# 2. Khởi tạo LLM (Gemini)
+# 2. Khởi tạo LLM (Gemini) - Đọc từ config
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+    model=config.EXTRACTOR_LLM_MODEL,
     google_api_key=config.GOOGLE_API_KEY,
-    temperature=0
+    temperature=config.EXTRACTOR_LLM_TEMP
 )
 
 # 3. Tạo một "Chain" có khả năng trích xuất theo cấu trúc (Structured Output)
 structured_llm = llm.with_structured_output(ScholarshipSearchFilters)
 
-# 4. Tạo Prompt
+# 4. Tạo Prompt - Cập nhật để phù hợp với schema mới
 prompt = ChatPromptTemplate.from_messages([
     ("system", 
      "Bạn là một chuyên gia trích xuất thông tin. "
      "Nhiệm vụ của bạn là trích xuất các tiêu chí tìm kiếm học bổng từ câu hỏi của người dùng. "
      "Chỉ trích xuất thông tin được cung cấp, không suy diễn hay thêm thông tin không có trong câu hỏi. "
-     "Nếu người dùng muốn học bổng 'toàn phần', hãy đặt Funding_Level là 'Full scholarship'. "
-     "Nếu người dùng muốn học Thạc sĩ, hãy đặt Required_Degree là 'Master's degree' hoặc 'Master'."),
+     "Hãy tuân thủ tuyệt đối các giá trị được phép trong mô tả của từng trường."
+     "Ví dụ: Nếu người dùng muốn 'học bổng toàn phần', hãy đặt Funding_Level là 'Full scholarship'. "
+     "Nếu người dùng muốn học Thạc sĩ, hãy đặt Wanted_Degree là 'Master'. "
+     "Nếu người dùng nói 'tôi vừa tốt nghiệp đại học', hãy đặt Required_Degree là 'Bachelor'."),
     ("human", "{user_query}")
 ])
 

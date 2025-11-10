@@ -40,7 +40,6 @@ langchain-google-genai
 langchain_community
 
 # Vector DBs
-chromadb
 langchain_chroma
 
 # LangChain core
