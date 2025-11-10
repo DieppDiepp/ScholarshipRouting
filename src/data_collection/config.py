@@ -65,7 +65,7 @@ NON_CREATIVE_LLM_TEMP = 0
 # --- CẤU HÌNH PIPELINE (MỚI) ---
 # Chọn index để chạy (ví dụ: [6:12] như bạn nói)
 SCHOLARSHIP_START_INDEX = 0  # Bắt đầu từ học bổng thứ 6
-SCHOLARSHIP_END_INDEX = 100   # Dừng ở học bổng thứ 12 (không bao gồm 12)
+SCHOLARSHIP_END_INDEX = 20   # Dừng ở học bổng thứ 12 (không bao gồm 12)
 # Đặt `None` để chạy đến cuối. Ví dụ: (0, None) là chạy tất cả.
 
 # Số lượng học bổng chạy song song (số luồng)
