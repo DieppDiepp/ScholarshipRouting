@@ -20,7 +20,7 @@ STRUCTURED_REPORTS_PATH = DATA_DIR / "structured_english_reports_master.json"
 # --- LỰA CHỌN MODEL EMBEDDING ---
 # Đổi giá trị này thành "google" hoặc "hf" (HuggingFace)
 # để chọn model bạn muốn dùng cho indexing và retrieval
-EMBEDDING_CHOICE ="hf"  # <-- ĐỔI Ở ĐÂY
+EMBEDDING_CHOICE ="google"  # <-- ĐỔI Ở ĐÂY
 
 # --- Cấu hình cho Google (Gemini) ---
 GOOGLE_EMBEDDING_MODEL_NAME = "models/text-embedding-004"

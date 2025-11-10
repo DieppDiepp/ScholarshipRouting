@@ -34,34 +34,53 @@ def apply_post_retrieval_filters(docs: List[Document], filters: ScholarshipSearc
     """
     Lọc danh sách các Document (đã truy vấn)
     dựa trên các tiêu chí (filters).
+    Hỗ trợ logic "OR" cho các trường dạng List.
     """
     filtered_docs = []
     filter_data = filters.model_dump(exclude_none=True) # Chỉ lấy các filter có giá trị
     
     if not filter_data:
-        # Nếu không có filter nào, trả về danh sách gốc
         return docs
         
     print(f"--- Applying post-retrieval filters: {filter_data} ---")
     
     for doc in docs:
-        matches_all = True
+        matches_all_filters = True
         
+        # Duyệt qua từng filter (ví dụ: key='Country', value=['France', 'Germany'])
         for key, value in filter_data.items():
+            
             # Lấy giá trị metadata từ document
             metadata_value = doc.metadata.get(key)
-            
             if metadata_value is None:
-                # Nếu metadata không có trường này, loại
-                matches_all = False
+                matches_all_filters = False
                 break
+            
+            metadata_value_str = str(metadata_value).lower()
+            
+            # Giờ chúng ta kiểm tra xem 'value' là List hay str
+            
+            if isinstance(value, list):
+                # --- XỬ LÝ LOGIC "OR" (cho List[str]) ---
+                # Chỉ cần 1 item trong list value khớp là ĐẠT
+                any_match_in_list = False
+                for item in value:
+                    if str(item).lower() in metadata_value_str:
+                        any_match_in_list = True
+                        break # Đã tìm thấy 1 cái khớp, thoát vòng lặp
                 
-            # So sánh linh hoạt (không phân biệt hoa thường, chứa)
-            if str(value).lower() not in str(metadata_value).lower():
-                matches_all = False
-                break
+                if not any_match_in_list:
+                    # Nếu không có item nào trong list khớp
+                    matches_all_filters = False
+                    break # Thoát vòng lặp filters (vì 1 filter đã trượt)
+            
+            else:
+                # --- XỬ LÝ LOGIC "AND" (cho str, ví dụ: Required_Degree) ---
+                if str(value).lower() not in metadata_value_str:
+                    matches_all_filters = False
+                    break # Thoát vòng lặp filters
                 
-        if matches_all:
+        if matches_all_filters:
             filtered_docs.append(doc)
             
     return filtered_docs
@@ -118,7 +137,7 @@ if __name__ == '__main__':
     
     print(f"Testing RAG pipeline with '{config.EMBEDDING_CHOICE}' model.")
     
-    test_query = "Tôi muốn tìm học bổng toàn phần thạc sĩ ở Trung Quốc"
+    test_query = "Tôi muốn tìm học bổng toàn phần thạc sĩ ngành khoa học dữ liệu ở châu âu"
     
     # 1. Chạy extractor
     extracted_filters = extract_filters(test_query)
