@@ -1,4 +1,4 @@
-#   * `initial_search.py`: Chứa prompt đơn giản, ví dụ: `"{scholarship_name} scholarship official website and application portal 2025-2026"`.
+#   * `initial_search.py`: Chứa prompt đơn giản, ví dụ: `"{scholarship_name} scholarship official website and application portal 2026-2027"`.
 
 # data_collection/prompts/initial_search.py
 
