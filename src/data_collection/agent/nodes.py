@@ -37,10 +37,10 @@ from prompts.initial_search import INITIAL_SEARCH_PROMPT
 from prompts.plan_and_analyze import analyze_prompt
 from prompts.synthesis import synthesis_prompt 
 from prompts.structuring import structuring_prompt
-# from utils.data_logger import save_to_rag_db
+# from utils.data_logger import save_to_rag_db 
 import config
 
-# --- Node 1: Tìm Kiếm Ban Đầu (Cập nhật) ---
+# --- Node 1: Tìm Kiếm Ban Đầu ---
 def initial_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[str, Any]:
     print(f"\n--- Node: Initial Search (Loop {state['current_loop']}) ---")
     scholarship_name = state["scholarship_name"]
@@ -66,7 +66,7 @@ def initial_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[str
         "queries_just_ran": [query] 
     }
 
-# --- Node 2: Phân Tích & Lập Kế Hoạch (Cập nhật) ---
+# --- Node 2: Phân Tích & Lập Kế Hoạch ---
 def analyze_and_plan_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict[str, Any]:
     print(f"\n--- Node: Analyze & Plan (Loop {state['current_loop']}) ---")
     scholarship_name = state["scholarship_name"]
@@ -120,7 +120,7 @@ def analyze_and_plan_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dic
         print(f"  Lỗi khi gọi LLM hoặc parse JSON: {e}")
         return {"missing_information": [], "queries_just_ran": []}
 
-# --- Node 3: Tìm Kiếm Chuyên Sâu (Cập nhật) ---
+# --- Node 3: Tìm Kiếm Chuyên Sâu ---
 def drill_down_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[str, Any]:
     print(f"\n--- Node: Drill-Down Search (Loop {state['current_loop']}) ---")
     scholarship_name = state["scholarship_name"]
@@ -196,7 +196,7 @@ def final_synthesis_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict
         return {"synthesis_report_text": "Error during synthesis."}
     
     
-# --- Node 5: Cấu Trúc (Cập nhật) ---
+# --- Node 5: Cấu Trúc ---
 def structure_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict[str, Any]:
     print(f"\n--- Node: Structure Report (from Text Report ONLY) ---") # Cập nhật log
 
@@ -216,8 +216,13 @@ def structure_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict[str, 
             "synthesis_report": synthesis_report
         })
 
-        # Logic còn lại giữ nguyên
+        # 1. Ghi đè tên học bổng (như cũ)
         structured_report["Scholarship_Name"] = state["scholarship_name"]
+        
+        # 2. MỚI: Hardcode cấp độ học bổng
+        # Lấy giá trị từ config.py (ví dụ: "master", "phd") và viết hoa chữ cái đầu
+        structured_report["Wanted_Degree"] = config.LEVEL.capitalize()
+
         print("  -> Trích xuất JSON phẳng hoàn tất.")
         return {"structured_report": structured_report}
 
