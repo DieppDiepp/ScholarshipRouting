@@ -23,7 +23,8 @@ if not firebase_admin._apps:
 db = firestore.client()
 origins = [
     "http://localhost:3000",
-    "https://scholarship-routing.vercel.app"
+    "https://scholarship-routing.vercel.app",
+    "https://scholarshipsrouting.netlify.app"
 ]
 # --- FastAPI app ---
 app = FastAPI(title="Scholarship Routing API")
