@@ -21,6 +21,51 @@ def ensure_index(client: Elasticsearch, index: str) -> str:
                         "analyzer": "en_std",
                         "fields": {"raw": {"type": "keyword"}},
                     },
+                    "Country": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                        "fields": {"raw": {"type": "keyword"}},
+                    },
+                    "country": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                        "fields": {"raw": {"type": "keyword"}},
+                    },
+                    "Funding_Level": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                        "fields": {"raw": {"type": "keyword"}},
+                    },
+                    "Scholarship_Type": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                        "fields": {"raw": {"type": "keyword"}},
+                    },
+                    "degreeLevel": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                        "fields": {"raw": {"type": "keyword"}},
+                    },
+                    "Required_Degree": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                        "fields": {"raw": {"type": "keyword"}},
+                    },
+                    "fieldOfStudy": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                        "fields": {"raw": {"type": "keyword"}},
+                    },
+                    "Eligible_Fields": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                        "fields": {"raw": {"type": "keyword"}},
+                    },
+                    "Eligible_Field_Group": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                        "fields": {"raw": {"type": "keyword"}},
+                    },
                 }
             },
         )
@@ -149,11 +194,28 @@ def filter_advanced(
         field = f["field"]
         values = f["values"]
         intra_operator = f.get("operator", "OR").lower()
-        query_text = " ".join(map(str, values))
         
-        clauses.append(
-            {"match": {field: {"query": query_text, "operator": intra_operator}}}
-        )
+        # Sử dụng term query cho exact matching với keyword field
+        # Nếu field có sub-field .raw, dùng nó; nếu không thì dùng field gốc
+        keyword_field = f"{field}.raw" if field not in ["collection", "__text"] else field
+        
+        if len(values) == 1:
+            # Nếu chỉ có 1 giá trị, dùng term query đơn giản
+            clauses.append(
+                {"term": {keyword_field: values[0]}}
+            )
+        else:
+            # Nếu có nhiều giá trị, dùng terms query (OR logic trong cùng field)
+            if intra_operator == "or":
+                clauses.append(
+                    {"terms": {keyword_field: values}}
+                )
+            else:  # AND logic - cần match tất cả values (khó xảy ra với 1 field)
+                # Với AND, ta cần tất cả values đều match - nhưng 1 field thường chỉ có 1 giá trị
+                # Nên ta vẫn dùng terms nhưng yêu cầu minimum_should_match = 100%
+                clauses.append(
+                    {"terms": {keyword_field: values}}
+                )
     
     query_body: Dict[str, Any] = {"bool": {}}
     
