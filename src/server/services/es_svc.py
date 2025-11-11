@@ -66,6 +66,30 @@ def ensure_index(client: Elasticsearch, index: str) -> str:
                         "analyzer": "en_std",
                         "fields": {"raw": {"type": "keyword"}},
                     },
+                    "Language_Certificate": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                    },
+                    "Min_Gpa": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                    },
+                    "Experience_Years": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                    },
+                    "Funding_Details": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                    },
+                    "Eligibility_Criteria": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                    },
+                    "Other_Requirements": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                    },
                 }
             },
         )
@@ -190,32 +214,42 @@ def filter_advanced(
 
     # Xây dựng các mệnh đề lọc từ input `filters`
     clauses = []
+    
+    # Fields that contain descriptive text and should use text search instead of exact match
+    text_search_fields = ["Language_Certificate", "Min_Gpa", "Experience_Years", 
+                          "Funding_Details", "Eligibility_Criteria", "Other_Requirements"]
+    
     for f in filters:
         field = f["field"]
         values = f["values"]
         intra_operator = f.get("operator", "OR").lower()
         
-        # Sử dụng term query cho exact matching với keyword field
-        # Nếu field có sub-field .raw, dùng nó; nếu không thì dùng field gốc
-        keyword_field = f"{field}.raw" if field not in ["collection", "__text"] else field
-        
-        if len(values) == 1:
-            # Nếu chỉ có 1 giá trị, dùng term query đơn giản
+        # Determine if we should use text search or exact keyword matching
+        if field in text_search_fields:
+            # Use match query for text search (finds "6.5" within longer text)
+            query_text = " ".join(map(str, values))
             clauses.append(
-                {"term": {keyword_field: values[0]}}
+                {"match": {field: {"query": query_text, "operator": intra_operator}}}
             )
         else:
-            # Nếu có nhiều giá trị, dùng terms query (OR logic trong cùng field)
-            if intra_operator == "or":
+            # Use term/terms query for exact matching with keyword field
+            keyword_field = f"{field}.raw" if field not in ["collection", "__text"] else field
+            
+            if len(values) == 1:
+                # Single value - use term query
                 clauses.append(
-                    {"terms": {keyword_field: values}}
+                    {"term": {keyword_field: values[0]}}
                 )
-            else:  # AND logic - cần match tất cả values (khó xảy ra với 1 field)
-                # Với AND, ta cần tất cả values đều match - nhưng 1 field thường chỉ có 1 giá trị
-                # Nên ta vẫn dùng terms nhưng yêu cầu minimum_should_match = 100%
-                clauses.append(
-                    {"terms": {keyword_field: values}}
-                )
+            else:
+                # Multiple values - use terms query
+                if intra_operator == "or":
+                    clauses.append(
+                        {"terms": {keyword_field: values}}
+                    )
+                else:  # AND logic
+                    clauses.append(
+                        {"terms": {keyword_field: values}}
+                    )
     
     query_body: Dict[str, Any] = {"bool": {}}
     
