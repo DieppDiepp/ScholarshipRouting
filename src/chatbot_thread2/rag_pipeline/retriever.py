@@ -1,5 +1,6 @@
 from langchain_chroma import Chroma
 from langchain.docstore.document import Document
+# from langchain_core.documents import Document
 from typing import List, Dict, Any, Optional
 
 from .. import config
