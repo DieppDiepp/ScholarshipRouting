@@ -17,6 +17,8 @@
 
 from typing import List, Dict, Any
 from langchain_tavily import TavilySearch
+import config  # <-- THÊM IMPORT CONFIG
+from threading import Lock # MỚI: Import Lock
 
 class RotatingTavilyTool:
     """
@@ -35,29 +37,26 @@ class RotatingTavilyTool:
         self.current_key_index = (self.current_key_index + 1) % self.total_keys
         return key
 
-    def invoke(self, query: str, max_results: int = 5) -> List[Dict[str, Any]]:
+    # SỬA: Cập nhật giá trị default cho max_results
+    def invoke(self, query: str, max_results: int = config.TAVILY_MAX_RESULTS_DRILLDOWN) -> List[Dict[str, Any]]:
         """
         Thực hiện tìm kiếm với key tiếp theo trong vòng xoay.
-        SỬA ĐỔI: Chỉ trả về danh sách các tài liệu trong key 'results'.
+        Giá trị max_results mặc định giờ lấy từ config.
         """
         api_key = self._get_next_key()
-        print(f"    (Sử dụng API Key #{self.current_key_index}...)") # Sửa nhỏ: Bỏ +1 để khớp index 0
+        print(f"    (Sử dụng API Key #{self.current_key_index}...)")
         
         try:
             tool = TavilySearch(
                 tavily_api_key=api_key,
-                max_results=max_results,
+                max_results=max_results,  # <--- Sử dụng giá trị max_results được truyền vào
                 include_answer=True,
-                include_raw_content=False # Không cần mấy cái tag làm gì cho mệt
+                include_raw_content=True
             )
             
-            # 1. Gọi tool và nhận về dict đầy đủ
             response_dict = tool.invoke({"query": query})
-            
-            # 2. Trích xuất và chỉ trả về danh sách 'results'
-            # Dùng .get() để tránh lỗi nếu key 'results' không tồn tại
             return response_dict.get("results", []) 
 
         except Exception as e:
             print(f"    Lỗi khi gọi API Key #{self.current_key_index}: {e}")
-            return [] # Luôn trả về list rỗng nếu có lỗi
+            return []

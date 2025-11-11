@@ -40,6 +40,20 @@ langchain-google-genai
 langchain_community
 
 # Vector DBs
-chromadb
 langchain_chroma
 
+# LangChain core
+langchain-text-splitters
+
+# Utilities
+tqdm           # Hiển thị thanh progress khi indexing
+
+# Hugging Face Embeddings
+sentence-transformers
+langchain-huggingface
+
+# Dependencies cho custom embedding
+transformers
+torch
+
+pydantic

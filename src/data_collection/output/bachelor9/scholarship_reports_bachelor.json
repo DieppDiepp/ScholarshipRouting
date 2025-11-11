@@ -1,0 +1,975 @@
+{
+    "Clark University Global Scholars Program": {
+        "basic_info": {
+            "official_name": "Clark University Global Scholars Program",
+            "provider": "Clark University",
+            "study_country": "USA"
+        },
+        "funding_info": {
+            "funding_details": "Scholarship amount ranges from $5,000 to $25,000 per year, for four years, contingent upon meeting academic requirements. A stipend of $2,500 is also provided. Minimum award is $15,000/year ($60,000 for four years).",
+            "covered_expenses": [
+                "Tuition fees",
+                "Accommodation",
+                "Other academic costs",
+                "Other needs"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "January 15, 2026",
+            "opening_date": null,
+            "number_of_awards": null
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to first-year undergraduate international students from all nationalities, applying for a Bachelor's Degree. Applicants must have attended school overseas for at least four years."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Bachelor's Program in any field",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": null,
+            "required_degree": null
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Minimum TOEFL score ranges between 80-85."
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "Recipients must enroll and maintain an annual GPA of at least 3.0 for renewal. The admissions process is need-aware; applications may be denied on financial grounds if the International Student Certification of Finances and Financial Assistance Application Form indicates greater need than can be provided."
+        },
+        "background_and_logistics": {
+            "official_website": "clarku.edu/gls",
+            "application_documents": "International Student Certification of Finances and Financial Assistance Application Form",
+            "selection_process": "Admissions process is need-aware. Applications may be denied on financial grounds if greater need is indicated than can be provided.",
+            "scholarship_info": "The Clark Global Scholars Program is a merit scholarship and need-based grant offered by Clark University to first-year and transfer international undergraduate students, reflecting the university’s commitment to diversity and global engagement.",
+            "timeline_summary": "Application deadline: January 15, 2026. Decision Released: Late March 2026."
+        }
+    },
+    "American University Emerging Global Leader Scholarship": {
+        "basic_info": {
+            "official_name": "American University Emerging Global Leader Scholarship",
+            "provider": "American University",
+            "study_country": "USA"
+        },
+        "funding_info": {
+            "funding_details": "Covers all billable AU expenses (full tuition, room, and board) for two international students. It is a fully funded undergraduate scholarship, though partial scholarships are also mentioned. Renewable for a total of four years of undergraduate study based on satisfactory academic performance.",
+            "covered_expenses": [
+                "full tuition",
+                "room",
+                "board",
+                "fees",
+                "housing"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "January 15, 2026",
+            "opening_date": "September 2025 for the 2026 academic year",
+            "number_of_awards": "two international students"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Targeted to high-achieving international students who wish to pursue a Bachelor's Degree in the US. Applicants must need a non-immigrant visa (preferably F-1 or J-1 student visa) to study in the United States. Strong commitment to leadership, volunteerism, and community service is required. Students enrolled in secondary or high school education expecting to graduate by June 2024 are eligible to apply."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Any undergraduate major offered",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "minimum GPA equivalent of 3.8/4.0 or top 10% of class",
+            "required_degree": "Bachelor's Degree / undergraduate study"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "TOEFL-iBT: 95 (with 20 in each section), IELTS: 7.0 (with 6.0 in each section), TOEFL-PBT: 600 (with 24 in each section)"
+        },
+        "additional_requirements": {
+            "reference_letters": "letters of recommendation",
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "Applicants must first submit their Common Application and all supporting documents before January 15, 2026. Then, submit the AU EGL Scholarship application and essays via the applicant portal by January 15, 2026. It is recommended to apply Regular Decision for Fall 2026. Eligible applicants must present a certificate of finances, showing a minimum balance of 4,000 USD (AU Declaration of Finances Form - AU DFF). Scholarship is solely based on academic merit."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.american.edu/admissions/international/au-egls.cfm",
+            "application_documents": "Common Application, supporting documents (academic transcripts, letters of recommendation), AU EGL Scholarship application, essays (five prompts), AU Declaration of Finances Form (AU DFF) confirming US$4,000 minimum.",
+            "selection_process": "Notifications will be released by April 1, 2026. A selection committee is involved in the process.",
+            "scholarship_info": "Promotes educational access and opportunity, enhancing international diversity. Targeted to high-achieving international undergraduate students and global changemakers. Renewable for four years based on satisfactory academic performance.",
+            "timeline_summary": "Application opens September 2025 for the 2026 academic year. Application and supporting documents deadline is January 15, 2026. Notifications released by April 1, 2026."
+        }
+    },
+    "Lester B. Pearson International Scholarship": {
+        "basic_info": {
+            "official_name": "Lester B. Pearson International Scholarship",
+            "provider": "University of Toronto",
+            "study_country": "Canada"
+        },
+        "funding_info": {
+            "funding_details": "Fully Funded",
+            "covered_expenses": [
+                "Full tuition",
+                "books",
+                "incidental fees",
+                "full residence support"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "November 7, 2025",
+            "opening_date": "May 21, 2025",
+            "number_of_awards": "Approximately 37 scholarships awarded annually"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Must be an international student (not a Canadian citizen, permanent resident, or dual citizen) requiring a study permit. Currently in the final year of senior secondary school (e.g., 2024/2025 or 2025/2026 academic year) OR recently graduated (no earlier than June 2025). Applying for their first undergraduate program beginning in September 2026. Students who have started their post-secondary education are ineligible. Students registered in ESL, Bridging, Certificate, or ISP programs are not eligible. Students from 170 countries are eligible. Must be nominated by their secondary school."
+        },
+        "field_restrictions": {
+            "eligible_fields": "All academic disciplines (e.g., Life Sciences, Engineering, Computer Science, Commerce & Management, Humanities & Social Sciences)",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": null,
+            "required_degree": "Bachelor's (first undergraduate program)"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "IELTS: minimum 6.5 (with no section below 6.0); TOEFL iBT: minimum 80 (with 22 in each of speaking and writing) or typically 86."
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": "No age limit.",
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "Demonstrate exceptional academic achievement and creativity. Recognized as leaders within their school. Involvement in extracurricular activities. Recipients must be full-time students and maintain a minimum of a 3.000 GPA during the funding period."
+        },
+        "background_and_logistics": {
+            "official_website": null,
+            "application_documents": "Online application form, essays, details about academic accomplishments, leadership positions, and extracurricular involvement.",
+            "selection_process": "Students must be nominated by their secondary school. After nomination and university application, students are invited to complete the scholarship application.",
+            "scholarship_info": "An esteemed and serious University of Toronto grant.",
+            "timeline_summary": "Study Start Date: September 2026."
+        }
+    },
+    "NUS Global Merit Scholarship": {
+        "basic_info": {
+            "official_name": "NUS Global Merit Scholarship",
+            "provider": "National University of Singapore (NUS)",
+            "study_country": "Singapore"
+        },
+        "funding_info": {
+            "funding_details": "Tenable for the normal candidature period. The scholarship is worth 30% more than the NUS Merit Scholarship. Coverage for most courses in NUS, including Double Degree Programmes and Concurrent Degree Programmes. Students are generally allowed to accept only one scholarship program during their undergraduate studies, but may concurrently be awarded other bursaries and scholarships with NUS approval.",
+            "covered_expenses": [
+                "Health insurance",
+                "Full tuition waiver / tuition-free study",
+                "Monthly allowance (S$6,000 per annum)",
+                "Accommodation Allowance (S$2,000 per annum)",
+                "Book allowance (≈ S$200)"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "19 March 2025 (for AY2025)",
+            "opening_date": "1 February 2025 (for AY2025)",
+            "number_of_awards": null
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Awarded to outstanding freshmen pursuing a full-time undergraduate course at NUS. Primarily for Singapore Citizens, but also available for international students. Applicants must have strong leadership qualities and potential, and good co-curricular record (inferred from 'good co-'). Not for transfer applicants from local or overseas universities. Not for current undergraduate students."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Most courses in NUS, including Double Degree Programmes and Concurrent Degree Programmes.",
+            "restrictions": "Limited scholarships are available for Dentistry."
+        },
+        "academic_requirements": {
+            "min_gpa": null,
+            "required_degree": "Full-time undergraduate course"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "Only one common scholarship application is required. Each student is only allowed to accept 1 scholarship program during the course of his/her undergraduate studies, but can concurrently be awarded other bursaries and scholarships with NUS approval."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.nus.edu.sg/oam/scholarships/scholarships-for-freshmen-singapore-citizens/nus-global-merit-scholarship, https://nus.edu.sg/oam/scholarships/important-dates-and-application, https://nus.edu.sg/oam/scholarships/scholarships-for-freshmen-singapore-citizens",
+            "application_documents": null,
+            "selection_process": "All eligible students will be considered for the scholarship through their application for undergraduate admission to NUS.",
+            "scholarship_info": "The NUS Global Merit Scholarship is one of two tiers of NUS Scholarships offered to prospective students, awarded to outstanding freshmen and tenable for the normal candidature period. It is worth 30% more than the NUS Merit Scholarship.",
+            "timeline_summary": "Based on admissions application timeline."
+        }
+    },
+    "University of Toronto Scholars Program": {
+        "basic_info": {
+            "official_name": "University of Toronto Scholars Program",
+            "provider": "University of Toronto",
+            "study_country": "Canada"
+        },
+        "funding_info": {
+            "funding_details": "Awards approximately $7,500 CAD each. Some sources indicate INR 4,60,716 (approx. C$7,500) as financial aid. The program is part of C$55M+ in annual funding for U of T scholarships.",
+            "covered_expenses": [
+                "tuition fees"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "January 15 (undergraduate general admission); November 7 (early admission consideration for some programs/rounds).",
+            "opening_date": "Applications open around October (OUAC).",
+            "number_of_awards": "Approximately 900 admission awards."
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Outstanding students upon admission, demonstrating outstanding and consistent academic performance in secondary school. Open to both domestic and international students."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Almost all academic fields of study are available for undergraduate programs.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum 90% academic average in the last completed year of high school or Cégep.",
+            "required_degree": "Undergraduate admission."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "IELTS: 7.0; TOEFL: 93 (for English language proficiency, generally required for international students)."
+        },
+        "additional_requirements": {
+            "reference_letters": "Reference letters (general admission requirement).",
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "High School transcripts, Scores of standardized exams, Student Supporting Documentation. May require a study permit for international students."
+        },
+        "background_and_logistics": {
+            "official_website": "https://future.utoronto.ca/university-of-toronto-scholars-program",
+            "application_documents": "High School transcripts, English language proficiency certificates (IELTS/TOEFL), Reference letters, Statement of Purpose (SOP), Scores of standardized exams. Supplementary Application Form may be required for some program areas (e.g., UTSC).",
+            "selection_process": "Automatically considered based on academic average upon admission.",
+            "scholarship_info": "Provides recognition to U of T's outstanding students upon admission. Awards are not renewable.",
+            "timeline_summary": "Undergraduate application process starts in the fall of the year before studies begin (around October). Early consideration for admission is available for applications submitted by November 7, with documents by December 2. General undergraduate admission deadline is January 15."
+        }
+    },
+    "ANU Tuckwell Scholarship Program": {
+        "basic_info": {
+            "official_name": "ANU Tuckwell Scholarship Program",
+            "provider": "Australian National University (ANU)",
+            "study_country": "Australia"
+        },
+        "funding_info": {
+            "funding_details": "The program is funded by a landmark $50-million gift to ANU by alumnus Graham Tuckwell and his wife, later expanded by a gift of AU$100 million ($76.3 million) from Graham and Louise Tuckwell. Scholars receive $26,750 per annum (2025 rate, increasing annually) for the length of their undergraduate degree program (studying full-time). The scholarship also includes a Tuition Fee waiver, Living Allowance, Monthly Stipend, Thesis Allowance, and a one-off $1,500 relocation grant for first year Scholars (from 2024).",
+            "covered_expenses": [
+                "Living Allowance",
+                "Monthly Stipend",
+                "Thesis Allowance",
+                "Tuition Fee waiver",
+                "On-campus residential costs",
+                "Books",
+                "General living expenses",
+                "One-off $1,500 relocation grant for first year Scholars (from 2024)"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "22 May 2026 (for commencing in 2027)",
+            "opening_date": "2 March 2026 (for commencing in 2027)",
+            "number_of_awards": "25"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Applicants must be school-leavers, domestic students, and eligible to apply for undergraduate study at ANU. They must have completed at least one high school Math's course/unit in at least one semester during Year 11 or Year 12."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Undergraduate degree programs. The program encourages women to pursue studies in engineering and computing fields, and generally in STEM fields.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "ATAR of 95.0",
+            "required_degree": null
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Applicants must meet ANU's English language requirements, which can be demonstrated by providing an acceptable English proficiency test such as IELTS or PTE Academic. Specific ESL scores mentioned are Language Use: 85, Listening: 80, Reading: 85, Sentence Meaning: 90."
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": "Encourages women to pursue studies in engineering and computing fields, and generally in STEM fields.",
+            "special_circumstances": null,
+            "other_requirements": null
+        },
+        "background_and_logistics": {
+            "official_website": "https://tuckwell.anu.edu.au/",
+            "application_documents": null,
+            "selection_process": "The application process involves Stage 1 and Stage 2. Selection criteria include academic potential and achievements, a strong extra-curricular record, and an ATAR above 95.0.",
+            "scholarship_info": "The Tuckwell Scholarship Program at the ANU is the most transformational undergraduate scholarship program in Australia. It was launched in February 2013.",
+            "timeline_summary": "Applications for commencing study at ANU in 2027 open on 2 March 2026 (Stage 1) and close on 13 April 2026 (Stage 1). Stage 2 opens on 13 May 2026 and closes on 22 May 2026."
+        }
+    },
+    "Edinburgh Global Undergraduate Mathematics Scholarships": {
+        "basic_info": {
+            "official_name": "Edinburgh Global Undergraduate Mathematics Scholarships",
+            "provider": "University of Edinburgh",
+            "study_country": "United Kingdom"
+        },
+        "funding_info": {
+            "funding_details": "Partially Funded, up to £5,000 per year (approximately US$6,350 or Rs 5,62,650/-) for the entire length of the program of study.",
+            "covered_expenses": [
+                "Living costs"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "31 March 2025 at 23:59 GMT",
+            "opening_date": null,
+            "number_of_awards": "Varies"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Awarded to international/EU applicants who demonstrate outstanding academic performance. Applicants must have International/EU fee status and be accepted for full-time admission to an undergraduate degree programme hosted in the School of Mathematics at the University of Edinburgh. Not available to students already on programme or studying Mathematics as part of a degree programme hosted by another School within the University. Applicants should have applied to the University of Edinburgh through the University and College Admissions Service (UCAS), but do not need to have received an offer in order to begin the scholarship application process."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Undergraduate degree programmes hosted in the School of Mathematics at the University of Edinburgh, including but not limited to: Economics and Mathematics (Hons), Mathematics and Statistics (Hons), Mathematics (Hons), Computer Science and Mathematics (Hons), Mathematics and Business (Hons).",
+            "restrictions": "Not available to students studying Mathematics as part of a degree programme hosted by another School within the University."
+        },
+        "academic_requirements": {
+            "min_gpa": null,
+            "required_degree": "Bachelors / Undergraduate degree programme"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "IELTS / TOEFL or other language certificates may be required for admission to the University of Edinburgh, as courses are taught in English."
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": null
+        },
+        "background_and_logistics": {
+            "official_website": "https://registryservices.ed.ac.uk/student-funding/undergraduate/international/mathematics",
+            "application_documents": null,
+            "selection_process": null,
+            "scholarship_info": "The Edinburgh Global Undergraduate Mathematics Scholarship is awarded to international/EU applicants who demonstrate outstanding academic performance and are accepted for full-time admission to an undergraduate degree programme hosted in the School of Mathematics at the University of Edinburgh. The online scholarship application form is available on EUCLID through the MyEd portal.",
+            "timeline_summary": "Tenable for the entire duration of the program of study."
+        }
+    },
+    "NUS ASEAN Undergraduate Scholarship": {
+        "basic_info": {
+            "official_name": "NUS ASEAN Undergraduate Scholarship",
+            "provider": "National University of Singapore (NUS)",
+            "study_country": "Singapore"
+        },
+        "funding_info": {
+            "funding_details": "The scholarship covers the full tuition fees (after MOE Tuition Grant Subsidy) and provides an annual living allowance of S$5,800. It also includes a S$1,750 one-time allowance. The scholarship is tenable for Double Degree Programmes, Joint Degree Programmes, and Concurrent Degree Programmes.",
+            "covered_expenses": [
+                "Tuition fees (after MOE Tuition Grant Subsidy)",
+                "Annual living allowance (S$5,800)",
+                "One-time allowance (S$1,750)"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "19 March 2025 (for scholarship applications after applying for admission to NUS for AY2025/2026)",
+            "opening_date": "Scholarship applications can be submitted only after applications for admission to NUS have been submitted. Admission application periods for AY2025/2026 vary by qualification, with the earliest opening on 20 November 2024.",
+            "number_of_awards": null
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Offered to support outstanding freshmen from ASEAN member countries (excluding Singapore). Applicants must be citizens or permanent residents from an ASEAN member country, excluding Singapore. Demonstrated strong leadership qualities and potential. Active participation in co-curricular activities. Outstanding academic performance in high school, with strong final-year results (A-Level equivalent, IB Diploma, UEC, or other recognised qualifications). Applicants must be applying for a full-time undergraduate course at NUS. The scholarship is tenable for Double Degree Programmes, Joint Degree Programmes, and Concurrent Degree Programmes."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Full-time undergraduate course at NUS, including Double Degree Programmes, Joint Degree Programmes, and Concurrent Degree Programmes.",
+            "restrictions": "Only one scholarship program is allowed during undergraduate studies (an ASEAN Scholar will not be eligible to apply for another scholarship/award)."
+        },
+        "academic_requirements": {
+            "min_gpa": null,
+            "required_degree": "High school diploma or equivalent qualifications (A-Level equivalent, IB Diploma, UEC, or other recognised qualifications) for freshmen admission."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": "Required (referee recommendations)",
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "Applicants must indicate scholarship interest where prompted; shortlisted candidates receive separate instructions via email. Scholarship applications must be submitted after applying for admission to NUS. It is recommended to keep a portfolio of leadership projects, community service, and regional initiatives that emphasise ASEAN impact."
+        },
+        "background_and_logistics": {
+            "official_website": "https://nus.edu.sg/oam/scholarships/scholarships-for-freshmen-(international-students)/asean-undergraduate-scholarship",
+            "application_documents": "Scholarship applications can be submitted only after applications for admission to NUS have been submitted. Referee recommendations are required. A Supporting Documents Guide is available.",
+            "selection_process": "Shortlisted candidates receive separate instructions via email. Most applicants can expect to receive admission outcome online by July (for Semester 1) or December (for Semester 2).",
+            "scholarship_info": "The ASEAN Undergraduate Scholarship is a freshmen scholarship offered by NUS to support outstanding students from ASEAN member countries (excluding Singapore). It aims to offer financial aid for freshmen, covering tuition and providing a living allowance for top ASEAN freshmen.",
+            "timeline_summary": "Submit a complete admissions package early, keep leadership credentials strong, and watch the NUS offer timeline for scholarship shortlist notifications. Admission outcomes are typically by July (for Semester 1) or December (for Semester 2)."
+        }
+    },
+    "University of Sheffield International Undergraduate Scholarship": {
+        "basic_info": {
+            "official_name": "University of Sheffield International Undergraduate Scholarship",
+            "provider": "University of Sheffield",
+            "study_country": "UK"
+        },
+        "funding_info": {
+            "funding_details": "Scholarships are offered, with values varying by source and faculty. Some sources state 'up to £10,000' (sheffield.ac.uk, youthexpat.com). Other sources mention '£2,500 for each year (subject to a 60% average) of your undergraduate degree' (usic.sheffield.ac.uk, sheffield.ac.uk/international/fees-and-funding/scholarships/undergraduate). A total of 75 scholarships are mentioned, each providing '£10,000 per year towards tuition fees, with a maximum value of £40,000 for four-year courses' (studyinuk.com). Automatic '£7500 scholarships' are also mentioned for international fee-paying undergraduates starting September 2026 (indianexpress.com). Specific faculty amounts are '£2,000 per year for courses in the Faculty of Arts and Humanities and Faculty of Social Sciences and £2,500 per year for courses in the' (hotcoursesabroad.com).",
+            "covered_expenses": [
+                "tuition fees"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "The general deadline for most University of Sheffield Scholarships falls between March and May 2026 (scholarsavenue.com). A specific deadline of 1pm (UK time) on Tuesday June 3, 2026, is mentioned for the University of Sheffield Undergraduate Merit Scholarship (mucuruzi.com).",
+            "opening_date": null,
+            "number_of_awards": "75"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Overseas/international fee-paying students starting their studies in September 2026. Must be self-funded and studying full-time. Applicants should have excellent academic results and potential. Must have received an academic offer to study a full-time undergraduate course at the University of Sheffield."
+        },
+        "field_restrictions": {
+            "eligible_fields": "All undergraduate degree courses are eligible",
+            "restrictions": "Medicine (A100/A101) and Dentistry (A200)"
+        },
+        "academic_requirements": {
+            "min_gpa": "A 60% average is required for each year of the undergraduate degree to maintain the scholarship.",
+            "required_degree": "Undergraduate degree"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "An essay is required, which should include information about the applicant and demonstrate initiative and excellence using examples of current or past activities and actions."
+        },
+        "background_and_logistics": {
+            "official_website": "https://sheffield.ac.uk/international/fees-and-funding/scholarships/undergraduate/international-undergraduate-scholarship",
+            "application_documents": "Essay",
+            "selection_process": "If offered the scholarship, applicants will be asked to confirm.",
+            "scholarship_info": "Scholarship opportunities are offered for international students with excellent academic results and potential, starting their studies in September 2026. Awards vary, with some being up to £10,000, others £2,500 per year, and some automatic £7500 scholarships.",
+            "timeline_summary": "Scholarships are for students starting their studies in September 2026."
+        }
+    },
+    "KU Leuven ASEAN Scholarship": {
+        "basic_info": {
+            "official_name": "KU Leuven ASEAN Scholarship",
+            "provider": "KU Leuven",
+            "study_country": "Belgium"
+        },
+        "funding_info": {
+            "funding_details": "Full tuition + €4,000 one-off allowance.",
+            "covered_expenses": [
+                "tuition fees",
+                "living expenses",
+                "travel costs",
+                "insurance costs",
+                "one-off allowance of €4,000"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "February 15, 2026",
+            "opening_date": null,
+            "number_of_awards": "limited number"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Outstanding student from Southeast Asia who wishes to pursue a master's or advanced master's degree. Applicants must enroll in an eligible master's program. Applicants must have completed their latest university degree."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Master's and advanced master's programmes at KU Leuven. Examples include: Master of Philosophy, Master of Economics, Master of Business Engineering, Master of Business and Information Systems Engineering, Master of Information Management, Master of Biomedical Engineering, Master of Civil Engineering, Master of Chemical Engineering, Master of Engineering: Computer Science, Master of Electrical Engineering, Master of Engineering: Energy, Master of Materials Engineering, Master of Mechanical Engineering, Master of Mathematical Engineering, Master of Nuclear Engineering, Master of Safety Engineering.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "High GPA / Excellent study results",
+            "required_degree": "Completed a university degree (e.g., Bachelor's) to pursue a Master's or Advanced Master's degree."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": "Good work experience (mentioned generally for KU Leuven scholarships)"
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": null
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.kuleuven.be/scholarships/year/2026-2027/ku-leuven-asean-scholarship",
+            "application_documents": "Transcript of records",
+            "selection_process": "Highly competitive, limited number of awards (e.g., 4-5 nominations out of hundreds of applicants mentioned for a general KU Leuven scholarship).",
+            "scholarship_info": "The KU Leuven ASEAN Scholarship is awarded to an outstanding student from Southeast Asia who wishes to pursue a master's or advanced master's degree.",
+            "timeline_summary": "Scholarship available for academic years 2025-2026 and 2026-2027."
+        }
+    },
+    "ETH Zurich Solidarity Fund (Need-Based)": {
+        "basic_info": {
+            "official_name": "Solidarity Fund for Foreign Students",
+            "provider": "Solidarity Fund Foundation (ETH Zurich & University of Zurich)",
+            "study_country": "Switzerland"
+        },
+        "funding_info": {
+            "funding_details": "Social scholarships provided if financial resources are available, serving as subsidiary funding. They do not cover all living and study costs. An example award of 10,000 CHF was mentioned for a Master's student. The fund aims to support foreign students in difficult financial circumstances to ensure access to education and foster internationality and diversity. The Solidarity Fund is financed by voluntary contributions from students and professors of both ETH Zurich and the University of Zurich.",
+            "covered_expenses": [
+                "Living costs",
+                "Study costs"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": null,
+            "opening_date": null,
+            "number_of_awards": null
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Foreign students with permit B status, regularly enrolled in their first Bachelor or Master studies at ETH Zurich or the University of Zurich. Bachelor students must have successfully passed their first-year examination. New international Master's students can only apply after successfully completing their first semester and gaining a minimum of 20 ECTS in the previous semester. Applicants must be in difficult financial circumstances. Only students who submit their applications directly to the Financial Aid Offices will be considered."
+        },
+        "field_restrictions": {
+            "eligible_fields": null,
+            "restrictions": "International Masterstudents with a non-swiss Bachelor or ETH degree are not eligible."
+        },
+        "academic_requirements": {
+            "min_gpa": null,
+            "required_degree": "Bachelor and Master studies"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": "Support for Ukrainian students with protection status S.",
+            "other_requirements": null
+        },
+        "background_and_logistics": {
+            "official_website": "https://ethz.ch/students/en/studies/financial/solidarity-fund.html",
+            "application_documents": "Applications via eSTIP. Required documents include: SF-Informationsheet scholarships (PDF), SF-Evidence of assets parents (PDF), SF- Income after pension parents (PDF), SF- Parental support (PDF). Proof of income/pension of the parents (annual income before tax deduction for the year 2024, original proof in local currency like tax assessment notice or income confirmation). Proof of income of the student (all employment contracts for past, current, and upcoming semester, including expected salary information).",
+            "selection_process": null,
+            "scholarship_info": null,
+            "timeline_summary": null
+        }
+    },
+    "Mastercard Foundation Scholars Program": {
+        "basic_info": {
+            "official_name": "Mastercard Foundation Scholars Program",
+            "provider": "Mastercard Foundation",
+            "study_country": "Canada, France, UK, USA, Uganda, Lebanon, Costa Rica, various African countries"
+        },
+        "funding_info": {
+            "funding_details": "Comprehensive support to enable young people to attain inclusive and relevant education; fully funded scholarship program; comprehensive scholarship.",
+            "covered_expenses": [
+                "Tuition",
+                "Books",
+                "Monthly stipend (e.g. food allowance)",
+                "Housing/accommodation",
+                "Travel costs (travel and visas, round-trip airfare, travel to third country)",
+                "Allowance for a laptop",
+                "Health cover"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "Sciences Po: 4th January 2026; University of Toronto: November 3, 2025; UBC: October 15th 2025 (for invitation to apply to MCFSP); Cambridge: by course's funding deadline.",
+            "opening_date": "Cambridge: 2026/2027 academic year applications now open; UBC: 2026 applications now open; Edinburgh: 14th October 2025 at 10am (BST) for 2026/2027.",
+            "number_of_awards": "Sciences Po: 1,450 students (2024-2033 phase); UC Berkeley: approximately 55 master's students with 29+ entering each year; University of Edinburgh: 240 scholarships (2016-2023), 200 scholarships (Phase One since 2016); ASU: 120 undergraduate students (Phase I)."
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to talented young men and women from Sub-Saharan Africa/African continent facing economic barriers/financial resources. Must demonstrate academic excellence, strong leadership potential, and a commitment to achieving change in Africa. Applicants must be admitted onto an eligible master's program at a partner university and meet specific program eligibility criteria. Financial need is a key requirement."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Primarily Master's degree programs. Specific fields mentioned include: health-related disciplines (U of T), Biomedical Engineering (U of T), engineering and business (ASU Phase II), technology and innovation (ASU Phase III), Master of Finance (MFIN) (Cambridge).",
+            "restrictions": "Must apply for an eligible course/program. Some programs have specific field requirements (e.g., health-related disciplines for U of T)."
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum cumulative GPA above 2.80 out of a 4.0 GPA Scale; typically 3.0/4.0 minimum, but competitive applicants have higher; a satisfactory scholastic average.",
+            "required_degree": "Master's degree (postgraduate on-campus and online)."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": "Past leadership experiences; work experience (mentioned for McGill); internships (Berkeley); young professionals (Sciences Po)."
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Proof of English language proficiency required, typically TOEFL/IELTS or other English language test scores (e.g., SAT, MELAB), where applicable."
+        },
+        "additional_requirements": {
+            "reference_letters": "Generally required, should be personal and detailed. Edinburgh does not request letters at application stage, only name and email.",
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": "Facing economic barriers; significant barriers to access higher education; ambitions that exceed financial resources.",
+            "other_requirements": "Specific program requirements (e.g., relevance of prior studies, minimum mathematics requirements for McGill); financial documentation (tax notice, proof of earnings for Sciences Po)."
+        },
+        "background_and_logistics": {
+            "official_website": "Main foundation website: mastercardfdn.org. Partner universities have dedicated pages (e.g., mcfspedinburgh.smapply.io, www.mcgill.ca/mastercardfdn-scholars, www.mastercardfoundation.fund.cam.ac.uk, mcfscholarsprogram.berkeley.edu, www.sciencespo.fr/students/en/fees-funding/bursaries-financial-aid/mastercard-foundation-scholarships/, internationalexperience.utoronto.ca/global-experiences/global-scholarships/mastercard-foundation-scholars, mcfscholars.asu.edu).",
+            "application_documents": "Completed application form, all required documents, scholarship statement, proof of English language proficiency, financial documentation (tax notice, proof of earnings).",
+            "selection_process": "Selection based on course application and scholarship statement. Applicants must first be accepted onto a master's program at a partner university. Some universities have a two-stage process (e.g., UBC: invitation to apply to MCFSP after initial eligibility, then submit UBC application). Shortlisting for interviews may occur.",
+            "scholarship_info": "Initiated in 2012, grown to a community of over 12,000 alumni. Aims to create a powerful network of youth and institutions promoting fair and inclusive economic progress in Africa. Provides support from selection until securing first job (Sciences Po). Has strategic phases (e.g., 2024-2033 for Sciences Po, Phase I, II, III for ASU). Includes a Graduate Internship Program for 6-12 months work experience.",
+            "timeline_summary": "Program began in 2012. University of Edinburgh partnership since 2016. Sciences Po in its second strategic phase (2024-2033)."
+        }
+    },
+    "Shell Scholarship (Undergraduate) – Malaysia": {
+        "basic_info": {
+            "official_name": "Shell Scholarship",
+            "provider": "Shell Malaysia",
+            "study_country": "Malaysia"
+        },
+        "funding_info": {
+            "funding_details": "The scholarship covers direct study-related expenses, including tuition fees, living expenses, books and other allowances. Shell Malaysia is awarding 400 bursaries and 100 scholarships, worth RM11 million (US$3.610 million) this year. Shell Malaysia has allocated RM10 million for its scholarship programme this year and 80 students were picked to receive full.",
+            "covered_expenses": [
+                "tuition fees",
+                "living expenses",
+                "books",
+                "other allowances"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "May 14th, 2025, at 11.59pm",
+            "opening_date": null,
+            "number_of_awards": "400 bursaries and 100 scholarships (total), 80 full scholarships"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "For candidates to be sponsored for A-levels and undergraduates in prestigious colleges and universities locally. Minimum 8As (A/A+) in Sijil Pelajaran Malaysia (SPM) OR Excellent O-level grades at IGCSE (A*/A). Malaysian SPM 2024 leavers or high school students who are either graduating or nearly ready to graduate. Must be eligible to work in the country where the scholarship program is offered. Not currently holding any other scholarship."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Engineering (Mechanical, Civil, Chemical, Petroleum, Electrical and Electronics, Environmental)",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum 8As (A/A+) in Sijil Pelajaran Malaysia (SPM) OR Excellent O-level grades at IGCSE (A*/A)",
+            "required_degree": "A-levels and undergraduates (higher education)"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": "Two letters of recommendation (one from student's parent, one from a school official or member of community), if requested.",
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "Strong leadership skills and active participation in extracurricular activities (societies, etc.). Proof of Eligibility to Work in Malaysia. Personal statement or essay."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.shell.com.my/about-us/careers/students-and-graduates/scholarships.html",
+            "application_documents": "Full application form, Letters of recommendation, Personal statement or essay, Proof of Eligibility to Work in Malaysia.",
+            "selection_process": "Applicants will be informed of the selection outcome by the end of July.",
+            "scholarship_info": "Shell Malaysia has been awarding scholarships and bursaries for over 40 years as part of a long-standing commitment. The program provides financial and career assistance to students keen to pursue higher education, including internships.",
+            "timeline_summary": "Applications for the 2025 Class of Shell Scholars close on May 14th, 2025, at 11.59 PM. Selection outcome by the end of July."
+        }
+    },
+    "Benjamin A. Gilman International Scholarship Program": {
+        "basic_info": {
+            "official_name": "Benjamin A. Gilman International Scholarship Program",
+            "provider": "U.S. Department of State (implemented by Institute of International Education - IIE)",
+            "study_country": "Over 170 countries (must be Level 1 or 2 Travel Advisory)"
+        },
+        "funding_info": {
+            "funding_details": "Up to $5,000. Supplemental funding of up to $3,000 available for students studying a critical need language and/or conducting STEM-related research while overseas.",
+            "covered_expenses": [
+                "Program tuition",
+                "Room and board",
+                "Books",
+                "Local transportation",
+                "Insurance (Accident & Sickness Medical Expenses, Emergency Medical Evacuation)",
+                "International airfare",
+                "Passport"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "Thursday, March 5, 2026, at 11:59pm Pacific Time (for programs starting May 1, 2026 to April 30, 2027)",
+            "opening_date": "Mid-January 2026 (for March 2026 Deadline)",
+            "number_of_awards": "Approximately 1,600 (per recent announcement)"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Must be a U.S. citizen undergraduate student in good standing at an accredited institution of higher education in the United States (two-year and four-year institutions included). Must be receiving a Federal Pell Grant. Must be applying to or accepted into a credit-bearing study abroad program or internship in a country/location with an overall Travel Advisory Level 1 or 2, per the U.S. Department of State Travel Advisory System. Ideal applicants also lack prior study abroad experience."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Study abroad programs or internships",
+            "restrictions": "Programs must be in a country or location with an overall Travel Advisory Level 1 or 2, according to the U.S. Department of State’s Travel Advisory System."
+        },
+        "academic_requirements": {
+            "min_gpa": "No minimum GPA requirement",
+            "required_degree": "Undergraduate student"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": "Intern abroad"
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": "One letter of recommendation (advisor certification required)",
+            "career_plan": "Required as part of the application essays, making a case for how a global academic or professional experience contributes to future academic and/or career goals.",
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": "High financial need (Federal Pell Grant recipient). Ideal applicants lack prior study abroad experience.",
+            "other_requirements": "Proof of program acceptance is required prior to award. Must identify a faculty or staff member at your institution to certify study abroad program information. Expected to complete a Follow-on Service Project upon return to the U.S. to promote study abroad and the Gilman Program."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.gilmanscholarship.org/",
+            "application_documents": "4 Required Short Essays (and optional supplemental essays), Transcripts (unofficial and official both accepted), Letter of Recommendation, FAFSA, Advisor Certification.",
+            "selection_process": null,
+            "scholarship_info": "The Benjamin A. Gilman International Scholarship Program provides scholarships to undergraduates with high financial need to study or intern abroad. It is a program of the U.S. Department of State with funding provided by the U.S. Government and supported in its implementation by the Institute of International Education (IIE). Since its inception in 2001, the program has supported 44,000 American students to study or intern abroad in over 170 countries.",
+            "timeline_summary": "The October 2025 Deadline application (for programs starting Dec 1, 2025, to Oct 31, 2026) is closed. The March 2026 Deadline application (for programs starting May 1, 2026, to April 30, 2027) will open in mid-January 2026."
+        }
+    },
+    "Heinrich Böll Scholarships (All Levels)": {
+        "basic_info": {
+            "official_name": "Heinrich Böll Scholarships",
+            "provider": "Heinrich Böll Foundation",
+            "study_country": "Germany"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded scholarship. Generous financial support covering various costs, including tuition fees, living expenses, and additional support for research or academic activities. Funded by the Federal Ministry of Education and Research, the Federal Foreign Office, and DAAD.",
+            "covered_expenses": [
+                "tuition fees",
+                "living expenses",
+                "research costs",
+                "academic activities"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "March 1st and September 1st (twice a year)",
+            "opening_date": "Application portal opens approximately 6 weeks before the application deadline.",
+            "number_of_awards": "Approximately 1,000 to 1,500 scholarships awarded annually."
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to international students of all nationalities for Master's and PhD programs in Germany. An application for a scholarship for an undergraduate degree is not possible for international students. Applicants must be enrolled in state or state-approved German institutions of higher education. Not supported are second degree courses, study visits outside Germany, or final degree phases. Recipients are expected to have excellent academic records, be socially and politically engaged, and have an active interest in the basic values of the foundation: ecology and sustainability, democracy and human rights, self-determination and justice. The research project (for doctoral students) must be related to one of the Böll Foundation's fields of work. Applicants should provide convincing reasons for applying and align with the foundation's emphasis on gender equality, environmental sustainability, and social justice."
+        },
+        "field_restrictions": {
+            "eligible_fields": "All fields of study.",
+            "restrictions": "Doctoral research projects must be related to one of the Böll Foundation's fields of work."
+        },
+        "academic_requirements": {
+            "min_gpa": "No specified minimum GPA, but successful applicants typically have top-tier academic performance, excellent school grades, and a very good academic record.",
+            "required_degree": "Applicants must hold a Bachelor's degree for Master's programs or a Master's degree for PhD programs."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": "Work experience, internships, social work, and achievements are considered. Journalism applicants require work samples with proof of publication or broadcasting."
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Required German language proficiency: Minimum DSH 2 or TestDaF Level B2."
+        },
+        "additional_requirements": {
+            "reference_letters": "One personal reference on social commitment and one expert reference from a university lecturer (or schoolteacher for school leavers). Typically 1-2 letters of recommendation. Expert reference must be sent directly to the scholarship department via email.",
+            "career_plan": "Statement of purpose outlining academic and professional aspirations.",
+            "age_limits": "No strict age limit, but applicants under 30 are preferred for Master's programs.",
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "Excellent academic records, social and political engagement, active interest in the foundation's basic values (ecology and sustainability, democracy and human rights, self-determination and justice). Updated CV required."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.boell.de/en/scholarships",
+            "application_documents": "Online application form, Info Sheets (A1-1b, A2-1b), Application Forms (A1-2, A2-2 - in German), written proof of German language proficiency, personal reference on social commitment, expert reference from a university lecturer, updated CV, statement of purpose. Journalism applicants require work samples.",
+            "selection_process": "Three-stage selection procedure: 1. Submission of written application documents (assessed based on academic record, social commitment/political interest, convincing reasons for applying). 2. Interview with a liaison lecturer.",
+            "scholarship_info": "The Heinrich Böll Foundation offers fully funded scholarships to international students, with an application process held twice a year. Approximately 1,000 to 1,500 scholarships are awarded annually. The scholarships are funded by the Federal Ministry of Education and Research, the Federal Foreign Office, DAAD, and the Heinrich Böll Foundation.",
+            "timeline_summary": "Application portal opens approximately 6 weeks before the deadline."
+        }
+    },
+    "Global Undergraduate Exchange Program (Global UGRAD)": {
+        "basic_info": {
+            "official_name": "Global Undergraduate Exchange Program (Global UGRAD)",
+            "provider": "U.S. Department of State with funding provided by the U.S. Government and administered by World Learning.",
+            "study_country": "United States"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded exchange program that covers students' travel to/from the United States, university tuition, room and board, health insurance. Includes tuition, housing, and a stipend.",
+            "covered_expenses": [
+                "travel to/from the United States",
+                "university tuition",
+                "room and board",
+                "health insurance",
+                "stipend"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "December 15, 2024",
+            "opening_date": "November 1, 2024",
+            "number_of_awards": "approximately 250-300 students annually"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to outstanding undergraduate students from around the world for non-degree full-time study. Applicants must be citizens of a country other than the United States, currently residing in a participating country/area. Must be currently enrolled in a full-time undergraduate program at a college or university, have completed their first year of undergraduate study prior to starting the program, and have one full year remaining at their home institution after the Global UGRAD Program year. Part-time or correspondence students are not eligible. The program focuses on students from non-elite schools. Applicants are considered regardless of race, color, religion, ethnicity, or gender, and persons with disabilities are eligible. Applicants must demonstrate commitment to community service through volunteering experiences and project initiation."
+        },
+        "field_restrictions": {
+            "eligible_fields": "All fields of study are eligible, supporting students across all disciplines from sciences and engineering to arts.",
+            "restrictions": "Some sources indicate exceptions for Medicine, Law, TESL, and Pharmaceutical Studies."
+        },
+        "academic_requirements": {
+            "min_gpa": "No GPA requirement.",
+            "required_degree": "Currently enrolled in a full-time undergraduate program; must have completed their first year of undergraduate study and have one full year remaining at their home institution after the program."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": "Community service, professional development, and cultural enrichment. Applicants should list relevant volunteering experiences and project initiation."
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "TOEFL ITP, TOEFL Prediction score, TOEFL iBT, IELTS, Duolingo English Test, or Pearson's Test of English. Specific scores mentioned include TOEFL Essentials 8.5+, IELTS 6.0+, Pearson's Test of English 54+, Duolingo English Test 51+."
+        },
+        "additional_requirements": {
+            "reference_letters": "Two letters of recommendation are required: one academic letter and one personal letter (not from family), to be submitted in English or Spanish translated by a certified translator. Some sources also mention two academic recommendation forms.",
+            "career_plan": "A personal statement clarifying interests, academic objectives, and goals for selection and placement committees.",
+            "age_limits": "At least 18 years old by August of the relevant academic year. For Pakistani citizens, applicants should be between 18-24 years old by the deadline.",
+            "gender_requirement": "None (applicants considered regardless of gender).",
+            "special_circumstances": "Persons with disabilities are considered. The Global UGRAD-Pakistan Program is run by a different organization.",
+            "other_requirements": "Participation in a non-degree full-time study program."
+        },
+        "background_and_logistics": {
+            "official_website": "https://exchanges.state.gov/non-us/program/global-undergraduate-exchange-program-global-ugrad",
+            "application_documents": "Transcripts, personal statement, two recommendation forms, English language proficiency test scores (TOEFL/IELTS/Duolingo/Pearson's), and a Global UGRAD medical form.",
+            "selection_process": "Competitive basis. Students are selected by U.S. Embassies and Fulbright Commissions.",
+            "scholarship_info": "Provides one-semester scholarships for non-degree full-time study in the U.S., combined with community service, professional development, and cultural enrichment. Aims to bring future leaders to experience U.S. higher education, gain critical professional skills, and learn about American culture and values.",
+            "timeline_summary": "The application period for the 2025-2026 academic year is from November 1, 2024 to December 15, 2024."
+        }
+    },
+    "Generation Google Scholarship (APAC)": {
+        "basic_info": {
+            "official_name": "Generation Google Scholarship: for women in computer science (Asia Pacific Region/APAC)",
+            "provider": "Google",
+            "study_country": "Asia-Pacific (APAC) region, including countries such as India, Japan, Singapore, and Australia"
+        },
+        "funding_info": {
+            "funding_details": "One-time scholarship amount of $2,500 USD. Described as a prestigious initiative and a fully funded scholarship by some sources, but the specific amount suggests partial funding.",
+            "covered_expenses": [
+                "Tuition and other school fees",
+                "Books",
+                "Academic supplies",
+                "Conferences",
+                "Other education-related expenses"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "August 14, 2025 (for 2025-2026 academic year). Note: Applications for the current cycle (e.g., 2024-2025) are closed.",
+            "opening_date": "July 27-28, 2025 (for 2026 academic session)",
+            "number_of_awards": "Approximately 55 scholars for the APAC region (in a past cycle); 142 recipients across Africa, Asia-Pacific, Europe, Middle East, and North America (total across regions)."
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Be currently enrolled as a full-time second or third year undergraduate student at an accredited university in Asia Pacific for the 2024-2025 academic year (or 2nd year for 2025-2026 academic year). Children of Google employees cannot apply. Recipients of certain other Google Scholarships (Generation Google Scholarship, Generation Google Scholarship: for women in gaming, Generation Google Scholarship: for supply chain and fulfillment, Google Lime Scholarship, Google Student Veterans of America Scholarship, Women Techmakers Scholarship for Computer Science, Women Techmakers Scholarship for Gaming, and Venkat Panchapakesan Scholarships India) are not eligible to reapply. Must demonstrate commitment to diversity, equity, and inclusion, leadership, academic performance, and financial need."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Computer Science and related fields",
+            "restrictions": "Primarily for women in computer science; strong encouragement for women to apply."
+        },
+        "academic_requirements": {
+            "min_gpa": "A minimum GPA of 3.0 on a 4.0 scale is often required.",
+            "required_degree": "Undergraduate (Bachelor's) degree, specifically in the 2nd or 3rd year of study."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": "Two letters of recommendation",
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": "For women in computer science; strong encouragement for women to apply.",
+            "special_circumstances": "Aimed at supporting students from underrepresented backgrounds; demonstrated financial need; commitment to diversity, equity, and inclusion.",
+            "other_requirements": "Demonstrated leadership, academic performance, and commitment to sustainability and community involvement."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.iie.org/programs/generationgoogle/generation-google-scholarship-for-women-in-computer-science-asia-pacific-region-apac/, https://www.google.com/about/careers/applications/buildyourfuture/scholarships/generation-google-scholarship-apac",
+            "application_documents": "Resume/CV, Two letters of recommendation, Official Academic transcripts from your current university, Essays.",
+            "selection_process": "Online application form. Application includes questions about resume, essays, leadership, community engagement, and interest in computer science. May include an online challenge with sections on General Cognitive Ability and Role Related Knowledge.",
+            "scholarship_info": "A prestigious initiative by Google to empower students, especially women, pursuing computer science degrees to excel in technology and become leaders in the field. Established to help aspiring students.",
+            "timeline_summary": "Scholarship typically targets the 2025-2026 academic year, with applications opening around July and deadlines in August for the subsequent academic year."
+        }
+    },
+    "Rotary District Grants (Potential Undergraduate Funding)": {
+        "basic_info": {
+            "official_name": "Rotary District Grants (Potential Undergraduate Funding)",
+            "provider": "The Rotary Foundation and local Rotary clubs/districts",
+            "study_country": "Local or international (anywhere in the world)"
+        },
+        "funding_info": {
+            "funding_details": "Highly variable by district/club. Examples for undergraduate/local scholarships include $2,500 (for three undergraduate students in one district) and up to $4,000 (for a University District Rotary Club Scholarship for certificate programs). Some District Grants are specifically for vocational studies.",
+            "covered_expenses": [
+                "Partial cost",
+                "Aid with expenses"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "Variable by district/club. Examples include April 18, 2025; October 14, 2024; August 31, 2025. Deadlines are frequently advertised in spring.",
+            "opening_date": null,
+            "number_of_awards": "Variable by district/club. One district provided three undergraduate awards in a specific academic year."
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Applicants can be rising high school seniors, current postsecondary institution students, or graduating high school seniors. Rotarians and employees of a club/district are generally not eligible, but Rotaract members may apply. Must be accepted to a full-time post-secondary/high school study at a university, college, or community college."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Variable by district/club. Can include any subject matter for undergraduate or graduate students studying locally or abroad. Some District Grants are specifically for vocational studies towards a certification program. Program of study must align with Rotary's goals in a selected Area of Focus and future career plans.",
+            "restrictions": "Some District Grants are specifically for vocational studies and are not designed to support academic studies. Applicants may not be a Rotarian or an employee of a club, district, or other Rotary entity."
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum 3.0 GPA on a 4.0 scale (for some district/club scholarships).",
+            "required_degree": "For high school seniors applying for post-secondary study, or current post-secondary students. Can also be for certificate programs."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": "Two letters of recommendation are required, with at least one from an academic adviser or counselor.",
+            "career_plan": "Applicants must state their objectives for the scholarship, including program of study, degree sought, area of academic focus, and career/professional plans, explaining alignment with Rotary's goals and future career plans.",
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "A local Rotary club must sponsor applications. Applications must be submitted by the local Rotary Club to the District Scholarship Chair. Proof of admission and proof of insurance are required. Some scholarships require demonstration of involvement."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.rotary.org/en/our-programs/scholarships",
+            "application_documents": "Completed online application or writeable PDF document. Official copy of student's transcripts. Two letters of recommendation. Proof of admission. Proof of insurance that meets The Rotary Foundation requirements.",
+            "selection_process": "Nomination of an applicant by a Rotary Club or District Scholarship Committee member.",
+            "scholarship_info": "Rotary District Grants are a funding mechanism used by The Rotary Foundation and local Rotary clubs/districts to support various scholarships. These scholarships are highly localized and can include funding for undergraduate students, high school seniors, and vocational studies. They are distinct from Global Grants, which are primarily for graduate-level study.",
+            "timeline_summary": "Application deadlines are variable by district/club and are frequently advertised in spring. Specific deadlines found include April 18, 2025, October 14, 2024, and August 31, 2025."
+        }
+    }
+}

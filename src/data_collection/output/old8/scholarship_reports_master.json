@@ -1,0 +1,991 @@
+{
+    "Turkiye Burslari (Turkey Government Scholarship)": {
+        "basic_info": {
+            "official_name": "Türkiye Scholarships (Turkish: Türkiye Bursları)",
+            "provider": "Government of Turkey",
+            "study_country": "Türkiye"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded scholarship for international students.",
+            "covered_expenses": [
+                "Monthly stipend up to 9000 TL per month",
+                "Tuition Fee",
+                "Return flight ticket",
+                "Health insurance",
+                "Accommodation",
+                "1-year Turkish Language Course"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "February 20 annually (main scholarship programs); 4 times a year (Research Scholarship)",
+            "opening_date": "January 10 annually",
+            "number_of_awards": "Around 5,000 new scholarships awarded each year"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "To qualify, applicants must fulfill specific requirements which vary depending on the level of study (undergraduate, master's, Ph.D.) and the specific scholarship category. General eligibility criteria typically apply to all applicants."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Wide range of disciplines and fields, including long-term bachelor's, master's, PhD, short-term research, merit-based, art, culture, and sports programs.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "Undergraduate: Minimum GPA of 70% or 3.0/4.0; Master's: Minimum GPA of 75% or 3.5/4.0; Ph.D.: Minimum GPA of 75%. Higher GPA is key for competitive majors like medicine and engineering.",
+            "required_degree": "High school diploma and transcript (for Bachelor's); Bachelor's degree and transcript (for Master's and PhD)."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "International exam results (GRE, GMAT, SAT, etc.) if required by the chosen university or program. International language test results such as TOEFL, DELF if required by the chosen university or program. Turkey accepts TOEFL and sometimes IELTS, but not DET. All awardees without C1 Level Turkish Proficiency must attend a 1-year Turkish Language Course and attain C1 level."
+        },
+        "additional_requirements": {
+            "reference_letters": "Required, highlighting strengths, achievements, and fit for the program.",
+            "career_plan": "Personal statement/Motivation letter (in English) is a crucial component, emphasizing how applicants meet specific criteria.",
+            "age_limits": "Undergraduate: under 21; Master's: under 30; Ph.D.: under 35; Research Scholarship: under 50.",
+            "gender_requirement": null,
+            "special_circumstances": "Undergraduate scholarships are regionally defined and focused on developing countries and regions with historical links to Turkey. Individuals currently enrolled in Turkish universities at the level of education they will apply for are eligible. Some specific programs may require applicants to be between 25-45 years of age with five years and above of working experience.",
+            "other_requirements": "Nationality criteria, strong academic background, leadership skills, commitment to extracurricular activities, cultural sensitivity, strong resume."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.turkiyeburslari.gov.tr/",
+            "application_documents": "CNIC/Passport, Clear photo, High school diploma and transcript, Bachelor's degree and transcript (if applicable), Motivation letter (in English), Letters of reference, International exam results (GRE, GMAT, SAT, etc.) if required, International language test results (TOEFL, DELF, etc.) if required, Official high school transcript, Test scores for SAT or ACT (for undergraduate).",
+            "selection_process": "A 30-question quantitative test (mathematics, geometry, logic) is held for undergraduate candidates (especially for health sciences, science, engineering, and social sciences) prior to face-to-face interviews. Candidates selected from over 100 countries are evaluated by interview committees consisting of academics and experts. Interviews are usually held at Turkish embassies or consulates in the applicant’s home country.",
+            "scholarship_info": "Government-funded, competitive scholarship program for international students to pursue full-time or short-term programs at top Turkish universities. It aims to strengthen educational and cultural ties, offering opportunities at associate, undergraduate, master's, and Ph.D. levels. It is the largest Turkish scholarship program, receiving over 250,000 applications annually.",
+            "timeline_summary": "Applications are received between January 10 – February 20 annually for main programs. Research Scholarship applications are received 4 times a year. A mandatory 1-year Turkish language course (8 months, ending in June) is provided for recipients without C1 Turkish proficiency."
+        }
+    },
+    "Government of Brunei Darussalam Scholarship": {
+        "basic_info": {
+            "official_name": "The Government of Brunei Darussalam Scholarship for Foreign Students Tenable in Brunei Darussalam (BDGS) Academic Session 2025/2026",
+            "provider": "Ministry of Foreign Affairs, Ministry of Education and Sports",
+            "study_country": "Brunei Darussalam"
+        },
+        "funding_info": {
+            "funding_details": "Fully Funded, offered annually under a special scholarship award scheme.",
+            "covered_expenses": [
+                "Full exemption from tuition fees",
+                "economy class air-ticket to Brunei Darussalam from the scholarship recipient’s country of origin/country of domicile prior to the commencement of the course",
+                "economy class air-ticket from Brunei Darussalam to the scholarship recipient’s country of origin/country of domicile upon completion of the course"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "Applications for the 2025/2026 academic session are now closed as per the official Ministry of Foreign Affairs website.",
+            "opening_date": "Applications were open for the 2025/2026 academic session.",
+            "number_of_awards": null
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to international students/foreign students. Applicants must meet the minimum qualification set by the University for Admission to graduate studies. Conform to all the rules and regulations underlying this scholarship award scheme."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Diploma, Undergraduate Degree, and Postgraduate Master’s Degree programs in various disciplines including Arts, sciences, engineering, Islamic studies, business, and humanities. Available at Universiti Brunei Darussalam (UBD), Universiti Islam Sultan Sharif Ali (UNISSA), Universiti Teknologi Brunei (UTB), Kolej Universiti Perguruan Ugama Seri Begawan (KUPU SB), and Politeknik Brunei (PB).",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum qualification of Five (5) Distinctions (As & Bs) in the Senior (O-Level equivalent) for Diploma/Undergraduate. Bachelor's degree with a minimum of Second-Class Honours (Upper Division) for Postgraduate. GPA of at least 2.75 out of 4.0 or equivalent. (Note: One source states 'No GPA requirement'.)",
+            "required_degree": "Diploma, Undergraduate Degree, Postgraduate Master’s Degree. For graduate studies, a bachelor's degree from an accredited university is required."
+        },
+        "experience_requirements": {
+            "min_years": "0 - 3 years' work experience",
+            "accepted_types": "work experience"
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Proficient in English with a Credit 6 at GCE 'O' Level Examination or a Grade 'C' in IGCSE English (as a second language) or an IELTS score of 6.0. English test is required; other language tests are not required."
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": "Age of a bachelor's degree student should not exceed 25 years. Must not exceed 25 years old (general).",
+            "gender_requirement": null,
+            "special_circumstances": "Upon completion of the program, the scholarship recipient will be required to leave Brunei Darussalam with immediate effect. A scholarship recipient is not permitted to undertake any paid employment or to serve on the staff of any country’s representative mission in Brunei Darussalam during the duration of the scholarship. Conform to all the rules and regulations underlying this scholarship award scheme.",
+            "other_requirements": "Applicants applying to Universiti Brunei Darussalam (UBD) must also complete an online application through UBD's admission portal."
+        },
+        "background_and_logistics": {
+            "official_website": "Ministry of Foreign Affairs (www.mfa.gov.bn/Pages/scholarship.aspx, www.mfa.gov.bn/pages/online-bdgs.aspx), Ministry of Education, Brunei Darussalam’s website (www.education.go.ug). Also links to individual university websites for course details (UBD, UNISSA, UTB, KUPU SB, PB).",
+            "application_documents": "Online Application Form (BDGS Application Form). Download the application procedures, Eligibility Criteria and benefits.",
+            "selection_process": null,
+            "scholarship_info": "Known as THE GOVERNMENT OF BRUNEI DARUSSALAM SCHOLARSHIP FOR FOREIGN STUDENTS TENABLE IN BRUNEI DARUSSALAM (BDGS). Also referred to as BDGS (IS) for international students and BDGS (LS) for citizens of Brunei Darussalam.",
+            "timeline_summary": "Academic Session 2025/2026."
+        }
+    },
+    "Stipendium Hungaricum (Hungarian Government Scholarship)": {
+        "basic_info": {
+            "official_name": "Stipendium Hungaricum (Hungarian Government Scholarship)",
+            "provider": "Hungarian Government, Ministry of Foreign Affairs and Trade, Tempus Public Foundation",
+            "study_country": "Hungary"
+        },
+        "funding_info": {
+            "funding_details": "Tuition-free education, monthly stipend, accommodation contribution, and medical insurance. Monthly stipend for non-degree, bachelor’s, master’s, one-tier master’s, or postgraduate specialist training courses: HUF 43,700 (approximately EUR 110) for 12 months a year. Monthly stipend for doctoral level: HUF 140,000 (approximately EUR 365) for the first 4 semesters, and HUF 180,000 (approximately EUR 470) for the second 4 semesters, for 12 months a year. Accommodation: free dormitory placement or a contribution of HUF 40,000 per month. Medical insurance: up to HUF 65,000 (approximately EUR 160) annually. Note: The scholarship may not cover all living expenses.",
+            "covered_expenses": [
+                "Tuition fees",
+                "Monthly stipend",
+                "Accommodation costs",
+                "Medical insurance"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "15 January 2025, 2 p.m. (Central European Time) for the 2025/2026 academic year.",
+            "opening_date": "Expected around mid-November 2024 for 2025/2026 academic year. Expected around mid-November 2025 for 2026/2027 academic year. Application process will start from November 2026 for 2027 intake.",
+            "number_of_awards": "Thousands of scholarships are awarded each year (e.g., more than 4900 students for the 2020/2021 academic year)."
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Applicants must be citizens of a partner country, and their nationality must match the program eligibility. Eligibility for scholarship types and study fields is determined by educational cooperation programs between Hungary and the specific Sending Partner. Current self-financed students in a Hungarian Higher Education Institution applying for the same study level have specific eligibility restrictions. Scholarship renewal is contingent on maintaining a minimum GPA and deportment grade requirements. Bachelor’s or master’s graduates may be granted permission to pursue further studies at the next academic level abroad in the same field (subject to committee’s discretion)."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Wide range of degree programmes available, including Education Sciences and Psychology, Humanities, Informatics, Science, Social Sciences, Primary and Pre-School Education, and Business.",
+            "restrictions": "Applicants are eligible to apply only for scholarship types and study fields that are determined in the educational cooperation programmes in effect between Hungary and the specific Sending Partner."
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum GPA of 4 (Good) under Hungary’s 5-point grading system (equivalent to “B” under international grading standards) for renewal/state-funded support. Minimum 56 points on a 100-point scale for 'acceptable' or 'conditionally acceptable' status.",
+            "required_degree": "For Bachelor's (Undergraduate) and One-Tier programs: HSSC/Intermediate or equivalent. For Master's (Postgraduate Program): 16 years Bachelor's degree or equivalent. For PhD programs: 17/18 years Degree or equivalent."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Language proficiency requirements are outlined in the Call for Applications. Proof can be uploaded if previous level of studies was completed in the language of the selected study programme. Translations of documents are required if not in the language of the selected study programme or Hungarian."
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": "For Pakistani nationals: submit a bond to HEC not to change discipline and to return to Pakistan to serve the country for a prescribed period after completion of degree. For Kazakhstan nationals: submit a document agreeing to return and work in Kazakhstan for a year after studies.",
+            "age_limits": "Candidates need to be 18 before 30 of August.",
+            "gender_requirement": null,
+            "special_circumstances": "Students at Risk Subprogramme.",
+            "other_requirements": "All applicants need to accept the 'Statement for Application'. A statement of acceptance issued by the supervisor must be attached for doctoral programmes if required by the doctoral school (deadline 15 March 2024 for 2024 intake). Compulsory Hungarian as a foreign language and culture course for all scholarship holders starting in or after Fall 2020. Pakistani nationals must submit online applications via both Hungarian and HEC websites. Part-time work is possible but subject to taxes."
+        },
+        "background_and_logistics": {
+            "official_website": "https://stipendiumhungaricum.hu/, https://apply.stipendiumhungaricum.hu/",
+            "application_documents": "Application guide, Call for Applications (for BA/MA/OTM and PhD), scanned copy of original secondary school graduation certificate or equivalent (for Bachelor's/One-Tier/Non-degree/Hungarian language prep), scanned copy of original bachelor’s degree certificate or equivalent (for Master's), certificate about student status (for partial studies), transcripts, translations of all documents (if not in English or Hungarian), Statement for Application, Statement of the Supervisor (if required for PhD). Final degree and transcript must be submitted before August 01, 2025 (for Pakistani nationals).",
+            "selection_process": "Applicants are informed about their results by the ministry of education of their country or by the national scholarship office/agency.",
+            "scholarship_info": "Established by the Hungarian Government in 2013 to promote internationalisation of Hungarian higher education and attract top international students. Offers mentor programme, trainings, courses through Stipendium Hungaricum Mentor Network (HÖOK). Alumni Hungary Network provides internship positions and job opportunities. Celebrated its 10th anniversary. The scholarship sends out newsletters monthly with job opportunities.",
+            "timeline_summary": "The application system typically opens around mid-November for the subsequent academic year. The main application deadline is usually mid-January. Studies for successful applicants generally start in September."
+        }
+    },
+    "Bangkok Government Scholarship (Chulalongkorn University – Graduate)": {
+        "basic_info": {
+            "official_name": "Chulalongkorn University Graduate Scholarship Program for ASEAN or Non-ASEAN Countries",
+            "provider": "Thai Government, Chulalongkorn University",
+            "study_country": "Thailand"
+        },
+        "funding_info": {
+            "funding_details": "Fully Funded Scholarships, offering full financial support.",
+            "covered_expenses": [
+                "Full tuition fee coverage",
+                "Monthly stipend (about 16,000 Baht) to support living and housing expenses",
+                "Accommodation",
+                "Round-trip economy airfare (amount of reimbursement varies depending on the applicant’s home location)"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "13 October 2025 (for 2026 intake)",
+            "opening_date": "December (for 2026 admission)",
+            "number_of_awards": "Several"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to international students from ASEAN or Non-ASEAN countries (including Afghanistan, from all around the world). Foreign students who have been studying in any program at Chulalongkorn University for more than one semester are not eligible to apply. Faculty members, researchers, and academic staff who will return to teach are eligible. Recipients are not allowed to accept any off-campus employment in Thailand during the scholarship term and must reside in Thailand."
+        },
+        "field_restrictions": {
+            "eligible_fields": "All graduate programs offered by the university (Master’s and Doctoral degrees), across all subjects.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "Undergraduate studies: Minimum GPA of 2.75; Graduate studies: Minimum GPA of 3.25. Candidates must have an excellent academic record, with a minimum GPA requirement typically around 3.25.",
+            "required_degree": "Master’s Degree or PhD Degree"
+        },
+        "experience_requirements": {
+            "min_years": "At least 3 years work experience in any field (applicants with less than 3 years of work experience may request a waiver).",
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Strong command of English must be demonstrated, either by a certificate of English proficiency from the applicant’s prior university or by results on standardized tests like the TOEFL or IELTS. An English proficiency score record is required."
+        },
+        "additional_requirements": {
+            "reference_letters": "Two recommendation letters from the Head, the Director, or the Dean.",
+            "career_plan": "Study plan / description of academic interests (on a separate sheet of A4-sized paper).",
+            "age_limits": "Applicants must be under 40.",
+            "gender_requirement": "Male/Female (Males and females are eligible).",
+            "special_circumstances": "Not eligible if already studying in any program at Chulalongkorn University for more than one semester.",
+            "other_requirements": "Copy of Certificate of Graduation, official transcript of academic records, copy of passport, one 1-inch-colored photo (with blue background, taken no more than six months ago, in polite attire, signed on the reverse side), health certificate, nomination letter from the home institution."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.chula.ac.th/en/academics/admissions/scholarships/, www.academic.chula.ac.th (for application form download)",
+            "application_documents": "Completed application form, Curriculum Vitae, Copy of Certificate of Graduation, official transcript of academic records, English proficiency score record, copy of passport, study plan / description of academic interests, one 1-inch-colored photo, two recommendation letters, health certificate, nomination letter from home institution.",
+            "selection_process": "Applicants must send the completed application form and relevant documents directly to the Faculty/Programme of their choice before the deadline set by the University’s Office of Academic Affairs. Applicants must be screened and recruited by the Faculty/Programme of their choice before their names are forwarded to the Office of Academic Affairs, Chulalongkorn University. Applicants should send their application form and relevant documents to the Faculty/Programme of their choice at least 2 weeks prior to the deadline set by the University’s Office of Academic Affairs.",
+            "scholarship_info": "Chulalongkorn University is Thailand’s oldest and most prestigious university, offering an exceptional Graduate Scholarship Program for Master’s and PhD degree applicants across a wide range of disciplines. It provides a rare, fully funded opportunity to study in Thailand with a range of benefits and an emphasis on international collaboration, providing financial assistance.",
+            "timeline_summary": "Applications are currently being received for the 2025-2026 Chulalongkorn University Scholarship. The application period for 2026 admission starts in December, with a main deadline of 13 October 2025. For 2025, there were multiple rounds with deadlines by March 28th, May 30th, and June 30th."
+        }
+    },
+    "Chinese Government Scholarship (CGS)": {
+        "basic_info": {
+            "official_name": "Chinese Government Scholarship (CGS)",
+            "provider": "Chinese Government Scholarship, administered by the China Scholarship Council (CSC) and various Chinese Embassies/Consulates",
+            "study_country": "China"
+        },
+        "funding_info": {
+            "funding_details": "Monthly stipends: Undergraduate: CNY 2,500; Master's students/General Scholars: CNY 3,000; Doctoral students/Senior Scholars: CNY 3,500. (Note: Master applicants at UCAS receive RMB 3,500, with RMB 500 provided by the supervisor or the CAS Institute). USD equivalents mentioned include Bachelor's: 340 USD, Master's: 408 USD, PhD: 476 USD per month, and a general monthly allowance of 272-408 USD for personal expenses. The scholarship can provide up to 8,984 USD per year. An AASCU-designated scholarship is valued at approximately 10,000 USD, disbursed to universities, not to individual students.",
+            "covered_expenses": [
+                "Tuition fees",
+                "Registration fees",
+                "Accommodation",
+                "Stipend/Monthly allowance",
+                "Medical insurance",
+                "Emergent medical care",
+                "Administration costs (for program students)",
+                "Expenditures to support student activities",
+                "One-time settlement"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "Varies by country/embassy: e.g., Ireland: 5pm, 25 February 2026; Sweden: February 8, 2026.",
+            "opening_date": "Application for 2026/2027 is now open.",
+            "number_of_awards": null
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to outstanding international students, teachers, and scholars from all over the world to study and conduct research in China. Specific requirements may apply based on nationality (e.g., US citizens for US embassy, South African citizens for South Africa program, requiring return to South Africa upon completion). Generally supports graduate studies, undergraduate studies, and non-degree Chinese language studies."
+        },
+        "field_restrictions": {
+            "eligible_fields": "A variety of study fields.",
+            "restrictions": "Marks of pre-requisite subjects for chosen field of study (e.g., for Engineering applicants, NSC Maths and Physics marks OR for social sciences, NSC English marks) will be reviewed separately."
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum of 60% for National Senior Certificate (or equivalent) for non-degree Chinese language studies and undergraduate studies. Marks of pre-requisite subjects for chosen field of study will be reviewed separately.",
+            "required_degree": "National Senior Certificate (or equivalent) for undergraduate/non-degree; Bachelor's degree (16 years) for Master's program applicants; Master's degree for Doctoral program applicants."
+        },
+        "experience_requirements": {
+            "min_years": "Typically a minimum of three years for master's program applicants.",
+            "accepted_types": "Work experience"
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Applicants for Chinese-taught master's, doctoral, general scholar, and senior scholar programs must submit a valid HSK score report meeting corresponding Chinese language proficiency requirements. Applicants for programs taught in other languages must provide relevant language proficiency certificates, such as IELTS or TOEFL score reports, in accordance with university requirements. No Chinese proficiency requirements for general scholar applicants studying Chinese language programs. Scholarship recipients of Chinese-taught programs who meet basic language requirements but lack proficiency for their major may need up to one-year preparatory courses."
+        },
+        "additional_requirements": {
+            "reference_letters": "Two letters of recommendation (written only in Chinese or English) from professors or associate professors are required for graduate programs or senior scholar programs.",
+            "career_plan": "Study Plan or Research Proposal in English or Chinese: Undergraduate: Minimum 200 words; Masters: Minimum 800 words; PhD: Minimum 800 words. It should include an applicant's academic background, study plan, personal strengths, and aspired career.",
+            "age_limits": "Under the age of 35 for Master's program applicants; under the age of 40 for Doctoral program applicants and HSK winner scholarship applicants.",
+            "gender_requirement": null,
+            "special_circumstances": "Successful scholarship applicants may be required to sign a contract and return to their home country (e.g., South Africa) upon completion of studies. If the study plan exceeds the scholarship duration (e.g., AY 2026/2027), the host university should be contacted for extended funding. Successful applicants should publish research achievements with UCAS/institutes as academic institutions and state funding by CGS.",
+            "other_requirements": "Applicants must provide at least one pre-admission document from applied universities (recommended to obtain a pre-acceptance letter). Notarized highest diploma, Foreigner Physical Examination Form, and a valid ordinary passport are required. Online application is mandatory. Specific agency numbers may apply (e.g., Indonesian Agency Number 3602). Applicants may apply to 2 universities through the China Embassy. Scholarships do not cover visa fees, international travel fees, and application fees."
+        },
+        "background_and_logistics": {
+            "official_website": "Chinese Government Scholarship Information System (CGSIS): www.campuschina.org. Other relevant sites: Study in China, www.chinesescholarshipcouncil.com. For UCAS specific applications: https://is.ucas.ac.cn/#/login.",
+            "application_documents": "Application Form for Chinese Government Scholarship (in Chinese or English), copy of submitted online application, supporting documentation, valid HSK score report (if applicable), relevant language proficiency certificates (IELTS/TOEFL, if applicable), pre-admission documents from universities, Study Plan or Research Proposal (in English or Chinese, min 200 words for UG, 800 words for Masters/PhD), two letters of recommendation from professors/associate professors (for graduate/senior scholar programs), notarized highest diploma, Foreigner Physical Examination Form, valid ordinary passport, documents with English name, Gender, Nationality, Date of Birth.",
+            "selection_process": "Scholarship applicants accepted by Chinese institutions will be officially confirmed as Chinese Government Scholarship students with endorsement from the Ministry of Education of China. The Chinese Government Scholarship Committee relies heavily upon the recommendations of referees.",
+            "scholarship_info": "A full scholarship enabling outstanding international students, teachers, and scholars from around the world to study and conduct research in China. It supports undergraduate (Bachelors), postgraduate (Master’s or PhD), and non-degree Chinese language studies. Available at 273-289 Chinese universities affiliated with the China Scholarship Council (CSC). Annually, over 9,000 applications are received from 170 countries, with a 15% success rate. Specific programs exist, such as the AASCU-designated CGS for students at AASCU member institutions. Scholarship durations: Bachelor's: 4 academic years (5 for medicine); Master's: 2-3 academic years; Doctoral: 3 academic years. Short-term study (e.g., one semester: September-January) may also be covered.",
+            "timeline_summary": "Academic Year 2026/2027"
+        }
+    },
+    "Danish Government Scholarship (University of Southern Denmark – SDU)": {
+        "basic_info": {
+            "official_name": "Danish Government Scholarship (University of Southern Denmark – SDU)",
+            "provider": "Danish Government (Ministry of Higher Education and Science)",
+            "study_country": "Denmark"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded, covering full tuition fees and providing a monthly stipend for living expenses. Some awards may be partial tuition fee waivers.",
+            "covered_expenses": [
+                "Full tuition fees",
+                "Monthly stipend for living expenses",
+                "Travel costs",
+                "Health insurance",
+                "Accommodation"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "1 February 2026",
+            "opening_date": null,
+            "number_of_awards": null
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "International students from non-EU/EEA countries (and Switzerland) who are eligible to pay tuition fees. Must be highly qualified/outstanding students. Must be enrolling in specific Master's degree programs, particularly engineering Master's programs, at SDU. Some sources specify Sønderborg campus, others Vejle campus. Applicants eligible for the Danish State Grant cannot be considered. Must first complete and submit the online admission application for a chosen Master's program at SDU."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Master's degree programs, specifically engineering Master's programs. Mechatronics Engineering is explicitly mentioned.",
+            "restrictions": "Only for Master's studies. Some sources state programs at Sønderborg campus, others at Vejle campus."
+        },
+        "academic_requirements": {
+            "min_gpa": null,
+            "required_degree": null
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "IELTS score of at least 6.5. TOEFL score of 575 (paper-based), 230 (computer-based), or 88 (internet-based). One source states 'no IELTS needed', which contradicts other information."
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "A secondary school leaving certificate (minimum 210 hours at high school level). Incomplete or late applications will not be eligible. No application fee."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.sdu.dk/en/uddannelse/fees_and_funding/scholarships",
+            "application_documents": null,
+            "selection_process": "Applicants apply for an eligible Master's program through the SDU portal and are automatically considered for the scholarship; a separate application for the scholarship is not needed.",
+            "scholarship_info": "The scholarship acknowledges the important impact and investment of non-EU/EEA students and is part of Denmark's global initiative to attract talented students to the University of Southern Denmark (SDU), which is described as one of the world's top 50 universities.",
+            "timeline_summary": "Primarily for the 2026 intake, with the autumn semester beginning September 2026. Some sources mention 2025 or 2026-2027."
+        }
+    },
+    "Government of Ireland – International Education Scholarship (GOI-IES)": {
+        "basic_info": {
+            "official_name": "Government of Ireland – International Education Scholarship (GOI-IES)",
+            "provider": "Government of Ireland, Higher Education Authority (HEA)",
+            "study_country": "Ireland"
+        },
+        "funding_info": {
+            "funding_details": "Includes a €10,000 stipend and a Full Tuition Fee Waiver for one year of full-time study. The scholarship fund is directed at supporting student costs and living expenses. Described as a fully funded program.",
+            "covered_expenses": [
+                "Full Tuition Fee Waiver",
+                "€10,000 stipend",
+                "Student costs and living expenses"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "5 March 2025",
+            "opening_date": "Opened for 2025/26 academic year",
+            "number_of_awards": "60 scholarships annually"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to exceptional, high-calibre international students from non-EU/non-EEA countries (domiciliary of origin outside the EU/EEA/Switzerland/United Kingdom). Applicants must have a conditional or final offer of admission to an eligible Irish higher education institution for a full-time, international, fee-paying postgraduate programme at NFQ levels 9 or 10."
+        },
+        "field_restrictions": {
+            "eligible_fields": "All disciplines across eligible Irish higher education institutions",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": null,
+            "required_degree": "Master’s, Postgraduate Diploma, or PhD (NFQ levels 9 or 10)"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": "Required (mentioned as 'recommendation letters')",
+            "career_plan": null,
+            "age_limits": "No age limit prescribed",
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": null
+        },
+        "background_and_logistics": {
+            "official_website": "https://hea.ie/policy/internationalisation/goi-ies/",
+            "application_documents": "Academic transcripts, recommendation letters, personal statements, copy of conditional or final offer of admission/valid offer letter.",
+            "selection_process": null,
+            "scholarship_info": "A prestigious scholarship programme funded by the Government of Ireland in partnership with Irish higher education institutions and managed by the Higher Education Authority. Supports high-calibre international students for one year of full-time study.",
+            "timeline_summary": "One year of full-time study"
+        }
+    },
+    "Master Mind Scholarship (Government of Flanders)": {
+        "basic_info": {
+            "official_name": "Master Mind Scholarship (Government of Flanders)",
+            "provider": "Government of Flanders, Flemish Ministry of Education and Training",
+            "study_country": "Belgium (Flanders and Brussels)"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded scholarship providing a grant of €10,020 and a tuition fee waiver per academic year.",
+            "covered_expenses": [
+                "Grant of €10,020",
+                "Tuition fee waiver"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "15 January 2026, 23.59 CET (for master's program application for 2026-2027 academic year)",
+            "opening_date": "Applications are now open for the 2026 Master Mind Scholarships",
+            "number_of_awards": "30 Master Mind Scholarships"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Outstanding students worldwide. The applicant must apply to take up a Master degree programme at a Flemish higher education institution. The student has to be accepted by the host institution for a degree programme to receive the scholarship. The previous degree (used to enrol for the master programme) cannot have been obtained at a Flemish higher education institution. Students already enrolled in a Flemish higher education institution cannot apply. International students who have previously been enrolled in a Flemish higher education institution on credit mobility (such as Erasmus+) are still eligible. Students cannot combine the Master Mind scholarship with another scholarship from the Flemish Government."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Most English-taught master’s programs offered by Flemish universities and higher education institutions in Flanders and Brussels. Examples from KU Leuven include Master of Philosophy, Economics, Business Engineering, Information Systems Engineering, Information Management, Biomedical Engineering, Civil Engineering, Chemical Engineering, Computer Science, Electrical Engineering, Energy, Materials Engineering, Mechanical Engineering, Mathematical Engineering, Nuclear Engineering, Safety Engineering.",
+            "restrictions": "Students who enrol for certain specific programmes for the academic year 2025-2026 are not eligible (specific programs not listed in content)."
+        },
+        "academic_requirements": {
+            "min_gpa": "3.5 minimum",
+            "required_degree": "Master's degree programme (implying a Bachelor's degree for admission)"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Online language tests of IELTS (IELTS Indicator) and TOEFL (TOEFL iBT Special Home Edition) are accepted."
+        },
+        "additional_requirements": {
+            "reference_letters": "Two signed letters of recommendation from professors of your (previous) home university, University of Applied sciences, School of Arts or recent employer.",
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": "International students who have previously been enrolled in a Flemish higher education institution on credit mobility (such as Erasmus+) are still eligible for a Master Mind Scholarship.",
+            "other_requirements": "A passport photo."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.studyinflanders.be/scholarships/master-mind-scholarships",
+            "application_documents": "Master Mind Scholarship Application Form (mandatory), KU Leuven Scholarships & Master Mind Candidacy Form (as an annexe), LUCA/VLUHR Master Mind application form, passport photo, two signed letters of recommendation. A complete application file for an eligible master’s programme is required.",
+            "selection_process": "Candidates must first apply for admission to an eligible Flemish host institution. Host institutions (e.g., KU Leuven's master's programmes) will nominate eligible students who have expressed interest in the scholarship after the application deadline. The host institution also performs an academic check of the student’s file. If preselected, the student receives an email via Mobility-Online tool.",
+            "scholarship_info": "The Master Mind Scholarship is awarded by the Flemish Ministry of Education and Training to outstanding international students for Master's programmes in Flanders and Brussels. It offers an exceptional opportunity to pursue a fully funded master’s degree in Belgium.",
+            "timeline_summary": "The scholarship is for the academic year 2026-2027. The duration is one academic year for a master's programme of 60 ECTS or two academic years for a master's programme of 120 ECTS."
+        }
+    },
+    "Colombia Government Scholarship (for foreigners)": {
+        "basic_info": {
+            "official_name": "Beca Colombia Scholarship Programme for Foreigners",
+            "provider": "ICETEX",
+            "study_country": "Colombia"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded scholarship program for international students, offering comprehensive financial support.",
+            "covered_expenses": [
+                "Full tuition coverage",
+                "Monthly stipends",
+                "Health insurance",
+                "Living stipends",
+                "Immigration support",
+                "Visa fees",
+                "One-time grant for foreign identification card issuance",
+                "Installation expenses",
+                "Expenses for books and materials"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "June 13, 2025",
+            "opening_date": "Applications are currently open",
+            "number_of_awards": null
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Foreign citizens from all nationalities; must not have Colombian nationality; must not be residing in Colombia or have resided there for the last 6 months prior to applying, or have started studies in Colombia at the time of application; must not have been a beneficiary of the Beca Colombia program previously; age between 25-49 years old (not older than 50 years); must have a cumulative general average of 4.0 out of 5.0; scholarship recipients must return to their country of origin or residence after the academic program ends and agree not to request a visa to remain in Colombia for two years from the scholarship end date."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Master's, Doctoral, or Specialization Degree programs in public and private Colombian higher education institutions, as listed in the 2025-2 Academic Offer Catalogue, across various disciplines.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "4.0 out of 5.0",
+            "required_degree": "Undergraduate degree (university degree or bachelor's degree)"
+        },
+        "experience_requirements": {
+            "min_years": "1 or 2 years",
+            "accepted_types": "Work experience"
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Spanish language proficiency test (DELE or SIELE) with a minimum B2 level or another supporting certificate. Support is available for non-Spanish-speaking students to strengthen Spanish language skills prior to the academic program."
+        },
+        "additional_requirements": {
+            "reference_letters": "Referees should provide a reference.",
+            "career_plan": null,
+            "age_limits": "25-49 years old (not older than 50 years)",
+            "gender_requirement": null,
+            "special_circumstances": "Open to applicants from non-Spanish-speaking countries, with support available to strengthen Spanish language skills.",
+            "other_requirements": "Have admission to at least one to three postgraduate programs found in the Academic Offer Catalog 2025-2."
+        },
+        "background_and_logistics": {
+            "official_website": null,
+            "application_documents": [
+                "Verified copies of Educational Transcripts",
+                "Experience report signed by the tutor or director of the academic program",
+                "Certificate from the University stating current enrollment and duration",
+                "Reference letters"
+            ],
+            "selection_process": "Students are selected with exceptional academic merit and leadership.",
+            "scholarship_info": "Part of Colombia’s Reciprocity Programme, coordinated by ICETEX, designed to promote academic, cultural, and technological exchange and strengthen social ties between international students and Colombian institutions.",
+            "timeline_summary": "Scholarship duration: Perfectioning of Spanish (up to 6 months), Specialization (up to 18 months/3 academic semesters), Master's (up to 24 months/4 academic semesters), Doctorate (up to 48 months/8 academic semesters). Renewal required annually for programs longer than 12 months."
+        }
+    },
+    "Thailand International Postgraduate Programme (TIPP)": {
+        "basic_info": {
+            "official_name": "Thailand International Postgraduate Programme (TIPP)",
+            "provider": "Thailand Government, Royal Thai Government’s Thailand International Development Cooperation Agency (TICA), Ministry of Foreign Affairs",
+            "study_country": "Thailand"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded master’s scholarships/fellowships. Provides 100% tuition coverage, monthly living allowances, and research funding. Accommodation allowance is 7,000–9,000 Baht/month depending on location. Costs NOT covered include: pre-existing illnesses, dental treatment, brain disease, mental illness, pregnancy, glasses, travel insurance, costs from loss or theft of personal belongings, and all visa application costs (fee, travel to embassy/consulate, postal fee, transit visa fee).",
+            "covered_expenses": [
+                "Tuition",
+                "Monthly living allowances",
+                "Research funding",
+                "Accommodation Allowance (7,000–9,000 Baht/month)"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "For 2026 intake: 9 November 2025, 11:59pm NZST. For 2025 intake: 31st January 2025 (for submission to Royal Thai Embassy/Permanent Mission/Consulate General). Deadlines may vary by participating institution and year.",
+            "opening_date": null,
+            "number_of_awards": "Approximately 70 postgraduate scholarships (as part of a larger program including 700+ training fellowships)."
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to international students from developing countries. Specifically targets government officials from developing countries. Allocated for specific member states, including some OIC Member States. Candidates must be nominated by the National Focal Point for International Development Cooperation (e.g., Ministry of Foreign Affairs) or by relevant central government agencies for which the nominated candidates currently work."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Development topics categorized under six themes: Sufficiency Economy Philosophy (SEP), Public Health, Agriculture and Food Security, Climate Change and Environmental Issues, Bio-Circular-Green Economy (BCG) Model, and other topics related to the United Nations Sustainable Development Goals (SDGs). Specific Master's programs mentioned include: Food Technology, Biomedical Sciences, Nursing Science, Pharmaceutical Sciences and Technology. Diverse fields aligning with Thailand’s expertise and global development goals.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum undergraduate GPA of 2.75. Must maintain a GPA of 2.75 or higher for renewal.",
+            "required_degree": "Master's Degree (Full-Time). One source also mentions Ph.D. availability."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": "Government officials from developing countries."
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "General 'language requirements' are set by Thai scholarship programs. No specific IELTS/TOEFL scores for TIPP itself are provided, though general postgraduate IELTS scores of 6.5-7.0 are mentioned in a non-TIPP specific context."
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": "Candidates must be nominated by their National Focal Point for International Development Cooperation or relevant central government agencies.",
+            "other_requirements": "Strict academic standards are set by Thai scholarship programs."
+        },
+        "background_and_logistics": {
+            "official_website": "https://tica-thaigov.mfa.go.th/en/content/37130-thai-international-postgraduate-programme?cate=5f206afba58d6575e9277ddb",
+            "application_documents": "Application Form (to be filled), hard copy of the application form and other related documents. Guidelines, list of eligible countries/territories, and application forms are available.",
+            "selection_process": "Application procedure involves submitting documents through the Royal Thai Embassy/Permanent Mission of Thailand to the United Nations/Royal Thai Consulate – General accredited to eligible countries/territories, after nomination by the National Focal Point.",
+            "scholarship_info": "Established in 1999 (or 2000). Aims to expand Thailand’s commitment to fostering cooperation partnerships among developing countries, share Thailand’s best practices and experience, build global partnerships, empower students with advanced skills and knowledge, and allow participants to experience Thailand’s rich culture and warm hospitality.",
+            "timeline_summary": "Scholarships are offered for academic years such as 2025 and 2026-2027."
+        }
+    },
+    "Tianjin Government Scholarship (Master)": {
+        "basic_info": {
+            "official_name": "Tianjin Government Scholarship",
+            "provider": "Tianjin Government",
+            "study_country": "China"
+        },
+        "funding_info": {
+            "funding_details": "Full and partial scholarship. Supports students for one academic year, with specific funding levels depending on the prize type (first prize or second prize). Master's degree funding is 10,000 (likely CNY per year or total). Provides up to CNY 2000/month stipend.",
+            "covered_expenses": [
+                "Tuition fees",
+                "Living allowance",
+                "Comprehensive medical insurance fees",
+                "Accommodation",
+                "Stipend"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "May 30, 2026 (for Nankai University)",
+            "opening_date": "October 15, 2024 (for Tianjin University 2025 intake)",
+            "number_of_awards": null
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to international students who are non-Chinese citizens. Available for both prospective and current international students at universities in Tianjin. Not eligible if previously received a Tianjin Government Scholarship. Applicants must be foreign self-funded students who have normally enrolled in Tianjin (for current students)."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Master's programs in Chinese Universities within Tianjin. Bachelor, Master, Doctoral degrees are offered at Nankai University. Outstanding international master program students are eligible.",
+            "restrictions": "Programs must be within Tianjin."
+        },
+        "academic_requirements": {
+            "min_gpa": "A minimum GPA of 3.0 or equivalent",
+            "required_degree": "Bachelor diploma (for Master's applicants)"
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "For Chinese-instructed programs: HSK-5 certificate with a minimum score of 180 (for Science and Engineering, HSK level 4≥180; for Arts, HSK level 5≥180). For English-instructed programs: English Proficiency Certificate (English native speakers are exempted). Applicants should meet the language requirements of the higher education institutions and provide relevant proofs."
+        },
+        "additional_requirements": {
+            "reference_letters": null,
+            "career_plan": "Personal Statement, including study or research plan",
+            "age_limits": "Under the age of 35 (for Master's applicants)",
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": null
+        },
+        "background_and_logistics": {
+            "official_website": "https://sie.tju.edu.cn/en/jxj/tjszfjxj/, http://www.studyintianjin.com/Scholarship.html",
+            "application_documents": "Tianjin Government Scholarship Application Form, Personal Statement (including study or research plan, personal background, financial situation, personal strengths, no less than 800 words for Master Degree, written in Chinese or English), Bachelor diploma, English Proficiency Certificate or HSK certificate. Online application registration is required.",
+            "selection_process": "Admission results are announced officially on the university website. Admission Notice and Visa Application Form (JW202) are sent to scholarship winners from July 1 to August 31. Assessment results are publicized for one week and then submitted to Tianjin Municipal Education Commission. Scholarship List is determined by experts organized by Tianjin Municipal Education Commission.",
+            "scholarship_info": "One-year duration scholarship, which can be applied for year by year. Supports students for one academic year, with specific funding levels depending on the prize type (first prize or second prize).",
+            "timeline_summary": "Admission Notice and Visa Application Form (JW202) are sent to scholarship winners from July 1 to August 31."
+        }
+    },
+    "Italian Government Scholarship (MAECI)": {
+        "basic_info": {
+            "official_name": "Italian Government Scholarship (MAECI)",
+            "provider": "Italian Ministry of Foreign Affairs and International Cooperation (MAECI)",
+            "study_country": "Italy"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded scholarship. Grants are offered. A total of 9000 euros will be provided, or 900€ each month. Scholarship duration can be three, six, or nine months depending on the type of course. A MAECI Grant aims to help cover the costs of living and studying in Italy, and will therefore only be paid for the periods that the grantee actually spends in Italy.",
+            "covered_expenses": [
+                "Exemption from Payment of enrollment and tuition fees",
+                "Health and Medical/Accident insurance",
+                "Monthly stipend (900€ per month, up to 9000 euros total)"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "May 16, 2025, at 2:00 PM CET (for 2025-2026 academic year). Other mentioned deadlines include November 5, 2025, and January 10, 2026.",
+            "opening_date": "April 25 (for 2025-2026 academic year). Applications for 2025-2026 have been opened.",
+            "number_of_awards": "Maximum of 9 scholarships/grants"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Open to foreign students living abroad and Italian citizens living abroad (IRE). Applicants must be foreign citizens living abroad or Italian citizens living abroad (IRE). The program covers 143 countries and territories."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Master’s Degree, PhD, Higher Education in Arts, Music, and Dance (AFAM) Programs, Italian Language and Culture advanced Courses, Bachelor’s Degree, Short Courses, research and training programs. Fields include science, art, economics, engineering, and culture.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": null,
+            "required_degree": "Appropriate academic qualification required to enroll in the Italian University/Institute. For Master’s, a relevant bachelor’s degree is required. For Doctoral, a master’s degree is required. Applicants for PhD need to meet entry requirements and academic qualifications established by the University."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": "Work experience (1 or 2 years mentioned in a Facebook post, not explicitly stated as a general formal requirement for MAECI)"
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "For Italian-taught courses, a certificate proving proficiency in Italian language (minimum B2 CEFR level) is required. Candidates enrolled in an Italian language course at the University may submit a language certification issued by a language teacher of the University department. For English-taught programs, a certificate proving proficiency in English language is required. A B2 level in Italian or English is generally required."
+        },
+        "additional_requirements": {
+            "reference_letters": "Not categorically asked for, but a recommendation letter might be helpful.",
+            "career_plan": null,
+            "age_limits": "For Master’s Degree, Higher Education in Arts, Music, and Dance (AFAM) Programs, and Italian Language and Culture advanced Courses: applicants should not be over 28 years old by the deadline of the call (born after May 15, 1996, or May 16, 1996, or June 9, 1994). For Bachelor’s Degree: ≤ 23 years old. For PhD: ≤ 30 years old. The age for bachelor, master, and linguistic stay levels must not exceed 28 years and 364 days at the deadline.",
+            "gender_requirement": null,
+            "special_circumstances": "Age limits have a sole exception for renewals. The scholarship can be renewed for the following academic year if students meet performance requirements. Insurance coverage will not apply to events derived from pre-existing physical and pathological conditions.",
+            "other_requirements": "For PhD, applicants are required to provide a letter of acceptance on behalf of the relevant Italian University. The grant is incompatible with any other grant offered by the Italian Government or any other Italian public institution, including DSU grants. Income proof is required (e.g., Salary certificate, Job ID/ Visiting Card, TIN certificate, Income tax certificate for salaried persons)."
+        },
+        "background_and_logistics": {
+            "official_website": "Applications must be submitted exclusively through the Study in Italy portal. Visit the official MAECI website or esteri.it.",
+            "application_documents": "Certificate of Italian language level (B2 CEFR) or English language proficiency certificate. Letter of acceptance from an Italian University (for PhD). Income proof (Salary certificate, Job ID/ Visiting Card, TIN certificate, Income tax certificate, etc.).",
+            "selection_process": "Academic performance (e.g., CGPA) is a factor, with lower CGPA potentially reducing chances.",
+            "scholarship_info": "The Italian Government Scholarship (MAECI) is an esteemed initiative designed to support international students in pursuing higher education in Italy. It aims to promote cultural exchange, strengthen academic cooperation, and allow students to experience Italy’s rich academic and cultural heritage. It supports Italy’s global vision of strengthening ties in education, science, and culture while promoting the Italian language and values such as sustainability and innovation.",
+            "timeline_summary": "Scholarships are offered for academic years 2025-2026 and 2026-2027. Applications for 2022 were also mentioned as open (outdated)."
+        }
+    },
+    "Australia Research Training Program (RTP) Scholarships": {
+        "basic_info": {
+            "official_name": "Australian Government Research Training Program (RTP) Scholarship",
+            "provider": "Australian Government (funded through eligible Higher Education Providers/Universities)",
+            "study_country": "Australia"
+        },
+        "funding_info": {
+            "funding_details": "The Australian Government provides funding to eligible Higher Education Providers (HEPs) to support domestic and overseas students undertaking Research Doctorate and Research Masters degrees. RTP scholarships include RTP Fees Offset, RTP Stipends, and RTP Allowances. \n\n**Duration:**\n*   Research Doctorate (full-time): Minimum 3 years, up to a maximum of 4 years (at HEP's discretion). ANU mentions 3.5 years with possibility of extension.\n*   Research Doctorate (part-time): Minimum 6 years, up to a maximum of 8 years.\n*   Research Masters (full-time): 2 years.\n\n**Stipend:**\n*   AUD$33,511 per annum (2025 rate, e.g., Curtin, UTAS).\n*   AUD$34,752 annually (ACIR, year not specified).\n\n**Allowances:**\n*   Relocation costs (e.g., up to A$2,000 at UniSC, also mentioned by ANU, UTAS).\n*   Thesis allowance (e.g., up to AU$840 for doctoral thesis, up to AU$420 for master by research thesis at UTS).\n*   Overseas Student Health Care Policy (OSHC) for international students (e.g., ACU, UTS).",
+            "covered_expenses": [
+                "RTP Fees Offset (tuition fees, 100% for up to 14 research periods at Sydney Uni)",
+                "RTP Stipends (living costs)",
+                "RTP Allowances",
+                "Relocation costs",
+                "Travel and removal allowances",
+                "Overseas Student Health Care Policy (OSHC)",
+                "Thesis allowance"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "Application deadlines are university-specific. Examples include:\n*   CSU (International, 2027 commencement): Friday 19 June 2026.\n*   ACU (2025/2026): Wednesday 1 October 2025, 11:59 PM AEST (for 2025).\n*   Federation University (2026 RTP stipend): Open until 11:59 PM on the 31st of [incomplete date] (opened 1 September 2025).",
+            "opening_date": "Application opening dates are university-specific. Examples include:\n*   ACU: Twice per annum in April and October.\n*   Federation University (2026 RTP stipend): 1st of September 2025.",
+            "number_of_awards": null
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Applicants must be prospective or current Higher Degree by Research (HDR) students undertaking a Research Doctorate or Research Masters degree. Scholarships are offered to high-achieving domestic and international students.\n\n**General Criteria:**\n*   Be enrolled in an accredited Research Higher Degree.\n*   Must not be receiving income from another source to support general living costs (Flinders).\n*   Domestic students are required to have a CHESSN (Curtin).\n*   Applicants who are unsuccessful in two prior applications for the RTP scholarship at Bond University are ineligible to apply for future scholarship rounds."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Research Doctorate degrees, Research Masters degrees, Masters by Research, Doctoral degrees (PhD).",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "A strong academic record and high GPA are required. Applicants generally need very good grades in a relevant Masters degree. Anecdotal evidence suggests domestic students often have a WAM (Weighted Average Mark) of 85+ or a perfect/near-perfect GPA for successful applications. Selection is based on academic results for prior study and research potential.",
+            "required_degree": "Higher Degree by Research (HDR), specifically Research Doctorate or Research Masters degrees. Completion of a degree with a substantial research component (at least 25%), such as an Honours degree or higher, or equivalent international qualifications recognized by Australian tertiary admission authorities."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": "At least six months of relevant supervised research experience with outstanding results (possibly as part of a Masters degree) (Quora, unofficial source)."
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": null
+        },
+        "additional_requirements": {
+            "reference_letters": "Strong referee letters, preferably from academics who supervised prior research (Quora, unofficial source).",
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "Applicants should contact their chosen eligible higher education provider (HEP) directly for specific application, selection, and offer processes. Familiarization with university-specific RTP scholarship policies and procedures is required. Some universities may require an Invitation to Apply from a registered supervisor (e.g., Curtin). Confirmation of a qualified supervisor, available space, and resources aligned with the university's research strategy is often necessary (e.g., ANU). Having something to make an applicant stand out, such as authorship of a peer-reviewed journal paper or notable academic prizes/commendations, can be beneficial (Quora, unofficial source). Full-time HDR candidates are generally required to work approximately 35 hours per week on their research (UNE). Part-time scholarship recipients may be subject to employment restrictions (UTAS)."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.education.gov.au/research-block-grants/research-training-program",
+            "application_documents": "Application processes vary by university. Some require an Expression of Interest form as a first step (e.g., Curtin). Universities may use an online portal for both course admission and scholarship applications (e.g., Monash, UniSC). Eligible applicants are often automatically considered for available graduate research scholarships without needing to select specific ones (e.g., Monash).",
+            "selection_process": "Scholarships are awarded based on academic merit and research potential to high-achieving domestic and international students. Candidates are ranked through a competitive process by central scholarship selection committees or relevant selection panels. Offers for stipend and fee offset scholarships are typically made around the same time as course offers. If a student becomes ineligible or rejects an offer, it may be made to the next ranked student.",
+            "scholarship_info": "The Australian Government Research Training Program (RTP) Scholarship provides financial support for high-quality Higher Degree by Research (HDR) candidates. It is funded by the Australian Government and offered by Australian universities to high-achieving domestic and international research students undertaking Research Doctorate and Research Masters degrees. The RTP includes Fees Offset, Stipends, and Allowances. The RTP Fee Offset is often offered to all domestic students admitted to a Masters by Research or doctoral degree. This scholarship can be packaged with other tuition scholarships for international students and is available for Joint Research Awards when the Australian university is the home institution.",
+            "timeline_summary": null
+        }
+    },
+    "Romanian Government Scholarship (MFA/Study in Romania)": {
+        "basic_info": {
+            "official_name": "Romanian Government Scholarship (MFA/Study in Romania)",
+            "provider": "Romanian Ministry of Foreign Affairs (MFA) / Romanian Government",
+            "study_country": "Romania"
+        },
+        "funding_info": {
+            "funding_details": "This prestigious scholarship covers tuition, living expenses, and accommodation, ensuring a hassle-free study experience. It is a fully funded opportunity. A monthly stipend is provided for students studying in the Romanian language preparatory year.",
+            "covered_expenses": [
+                "Tuition",
+                "Living expenses",
+                "Accommodation",
+                "Monthly stipend (during preparatory year)"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "12 March 2025",
+            "opening_date": "29 January 2025",
+            "number_of_awards": "85"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Applicants must be outstanding students from non-EU and non-EFTA countries. Candidates must have good results in education, with an average for the last graduated school of at least 7 (seven) corresponding to the scoring system in Romania or a 'Good' score. Applicants with certain unspecified conditions are not eligible."
+        },
+        "field_restrictions": {
+            "eligible_fields": "All fields available at the participating Romanian universities, including Engineering, Humanities, Arts, Sciences.",
+            "restrictions": "Medicine, Dental Medicine, and Pharmacy are not eligible fields of study."
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum GPA of 7/10 (Romanian grading system) or equivalent for the last graduated school.",
+            "required_degree": "Undergraduate: Full Grade 12 certificate/results or high school diploma. Master's: Relevant Bachelor's degree with at least Merit. PhD: Relevant Bachelor's and Master's degrees with at least a Merit for both degrees."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": null
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "For Bachelor's and Master's studies, applicants must study in Romanian, with a mandatory preparatory year if they do not speak the language. PhD candidates can choose an English language study program, for which NO IELTS is required, but proof of English proficiency is needed."
+        },
+        "additional_requirements": {
+            "reference_letters": "Two reference letters (for Master's applicants).",
+            "career_plan": null,
+            "age_limits": "Undergraduate Applicants: Minimum 18 and maximum 26 years by 01 July 2025. Master's Applicants: Maximum 35 years. PhD Applicants: Maximum 45 years.",
+            "gender_requirement": "Male/Female (Eligible Gender).",
+            "special_circumstances": null,
+            "other_requirements": "Applicants must submit all required documents. Applicants must observe the laws in force in Romania, the school and university rules, regulations and norms, as well as those for social life."
+        },
+        "background_and_logistics": {
+            "official_website": "https://studyinromania.gov.ro, https://scholarships.studyinromania.gov.ro",
+            "application_documents": "Completed application form, Passport, Birth Certificate (English), Academic Papers (High school diploma for BSc, Bachelor's degree for MSc, Master's degree for PhD), Copies of Educational certificates (SSC, HSC, Bachelor's, Master's, PhD if applicable) with authorized translation, Transcript of current academic records (for final-year students, until application submission, with authorized translation into English, French, Spanish or Romanian), Certificate proving final-year graduation exam (for final-year students, with authorized translation into English, French, Spanish or Romanian), Two reference letters (for Master's applicants), Applicant's CV (Europus format), Statement of (incomplete), Proof of name change + translation. Post-acceptance documents include MFA acceptance letter, accommodation letter from your school, a police record.",
+            "selection_process": null,
+            "scholarship_info": "This is an annual scholarship program provided by the Romanian Government through the Ministry of Foreign Affairs to citizens from non-EU countries. It promotes education and cultural exchange, aiming for long-term development and deepening of bilateral relations and the promotion of Romanian higher education institutions worldwide.",
+            "timeline_summary": "The scholarship is offered annually."
+        }
+    },
+    "Kemitraan Negara Berkembang (KNB) Scholarship": {
+        "basic_info": {
+            "official_name": "Kemitraan Negara Berkembang (KNB) Scholarship",
+            "provider": "Government of Indonesia",
+            "study_country": "Indonesia"
+        },
+        "funding_info": {
+            "funding_details": "Prestigious fully funded program, financial assistance, full financial support, no application fee.",
+            "covered_expenses": [
+                "Tuition fee coverage",
+                "Stipend",
+                "Airfare",
+                "Health insurance (maximum IDR 200,000 monthly premium)",
+                "Research and book allowance monthly"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "16 February 2026",
+            "opening_date": null,
+            "number_of_awards": "Around 200 scholarships (also mentioned 5000, but 200 is more consistent across sources)"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Students from developing countries; prospective international students; Male/Female; Result awaiting students can also apply."
+        },
+        "field_restrictions": {
+            "eligible_fields": "All Academic Fields & Majors, including engineering, economics, health sciences, social studies, Sciences, Intelligent Electrical and Informatics Technology, Civil, Planning, Geo-Engineering, Marine Technology and Industrial Technology and Systems Engineering, Educational Science Education. Available across 998 study programs.",
+            "restrictions": "The study program offered differs between universities; Each study program has different requirements."
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum GPA of 2.30/3.00 or equivalent (for some universities/programs); Hold a Bachelor's Degree with a minimum GPA of 3.0/4.0 (for some universities/programs).",
+            "required_degree": "Bachelor’s, Master’s, or Doctoral degrees (Master’s and Doctoral Degree Program at Universitas Brawijaya)."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": "Work history (if any)"
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "English or Japanese proficiency required (TOEFL, JLPT, etc.). Specific scores mentioned: Minimum TOEFL ITP 500, TOEFL IBT 61, IELTS 6.0, TOEIC 575 (Valid within the last 2 years); IBT TOEFL of 80, IELTS of 6.0, TOEIC of 700 (certificate must be obtained within the last 2 Years)."
+        },
+        "additional_requirements": {
+            "reference_letters": "Recommendation letter from the Indonesian Embassy or the Indonesian Consulate General; Recommendation letter from the potential research supervisor (for doctoral applicants only); Recommendation letter from the employer/immediate supervisor (if working); Academic Recommendation Letter from Previous Schools; Academic Certificate and Academic Transcript from previous degree.",
+            "career_plan": null,
+            "age_limits": null,
+            "gender_requirement": "Male/Female (Both)",
+            "special_circumstances": "Part of Indonesia’s global cooperation efforts (South–South Partnership).",
+            "other_requirements": "Applicants cannot register without a recommendation letter from the Indonesian Representative in the relevant country; Must intend to study full-time."
+        },
+        "background_and_logistics": {
+            "official_website": "https://knbscholarship.com/, http://knb.kemdiktisaintek.go.id",
+            "application_documents": "Documents for Recommendation Letters (educational background, GPA, Final Diploma, Institutional Reputation), work history (if any), validity of documents; Academic Certificate and Academic Transcript from previous degree.",
+            "selection_process": "Online application form; Selection results announced online via KNB Scholarship Website and Indonesian Embassy publication network; Essay-writing + psychological interview; Selection for 2025 starts Feb 17 - March 7, results announced June 13, 2025.",
+            "scholarship_info": "Popularly known as KNB Scholarship; offered by the Indonesian Government to prospective international students from developing countries; allows pursuit of Bachelor’s, Master’s, or Doctoral degrees at top Indonesian universities; 31 or 34 university partners participating; around 200 scholarships across all levels of study and fields; 998 study programs.",
+            "timeline_summary": "KNB Scholarship 2026; KNB Scholarship Year 2025/2026; KNB Scholarship 2025-26; Indonesian Government KNB Scholarships 2026-2027; For 2025, around 200 KNB Scholarship applicants are planned."
+        }
+    },
+    "Azerbaijan Government Scholarship (Educational Grant for OIC/NAM)": {
+        "basic_info": {
+            "official_name": "Heydar Aliyev - International Education Grant Program",
+            "provider": "Ministry of Foreign Affairs and Ministry of Science and Education of the Republic of Azerbaijan, Azerbaijan International Development Agency",
+            "study_country": "Azerbaijan"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded scholarship",
+            "covered_expenses": [
+                "Full tuition fees",
+                "International flights (annual round-trip)",
+                "Monthly stipends (800 AZN for meals, accommodation, and utilities)",
+                "Medical insurance (worth 200 AZN)",
+                "Visa and registration costs"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "May 15, 2025 (for nomination by home country government)",
+            "opening_date": "26 March 2025 (Call for Applications)",
+            "number_of_awards": "100 educational grants annually"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "International students from OIC Member States and Non-Aligned Movement (NAM) countries (over 150 countries), including Small Island Developing States, Pakistan/AJ&K nationals, and Ugandan scholars. National or local students of Azerbaijan are ineligible. Requires official nomination by home country government authorities (e.g., Ministry of Foreign Affairs or Education)."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Preparatory courses, Undergraduate, Graduate (Master's), Doctoral (PhD), General Medicine, and Medical Residency Programmes",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum GPA of 70% (on a scale of 0 to 100 or 7 on a scale of 10 or equivalent) for previous degree(s). For renewal, a minimum GPA of 3.0 is mentioned.",
+            "required_degree": "For Master's/Graduate programs: Bachelor's/Master's (16 years education). For Doctoral/PhD programs: MS/MPhil degree holder."
+        },
+        "experience_requirements": {
+            "min_years": null,
+            "accepted_types": "Professional experience at a postgraduate level"
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Language proficiency in English, Russian, Turkish, or Azerbaijani. Specific scores: IELTS 5 / TOEFL 40 (for some programs), IELTS 5.5 / TOEFL 50 (for Master’s/PhD and other programs)."
+        },
+        "additional_requirements": {
+            "reference_letters": "Two Recommendation Letters from academic or professional referees.",
+            "career_plan": null,
+            "age_limits": "Under 35 for undergraduate/general medicine, under 40 for graduate/medical residency, and under 45 for doctoral programs.",
+            "gender_requirement": null,
+            "special_circumstances": null,
+            "other_requirements": "Demonstrate motivation and leadership potential. Applicants with foreign qualifications should have their documents equated by relevant national authorities (e.g., UNEB/NCHE for Uganda). Renewal of fellowship dependent on minimum GPA of 3.0."
+        },
+        "background_and_logistics": {
+            "official_website": "studyinazerbaijan.edu.az, portal.edu.az, www.aida.az/scholarship",
+            "application_documents": "Completed nomination form, Application letter with a recent passport photograph, photocopies of academic certificates and transcripts (Diplomas and Transcripts from prior High School or Higher Education Institution), copy of valid passport, Research Proposal (for Ph.D. applicants).",
+            "selection_process": "Two-stage application process: 1. Official nomination by home country government authorities. 2. After nomination, candidates complete online application through the Study in Azerbaijan Centralized Admission Service (SIACAS) portal. Evaluation by respective government authorities and then by Azerbaijan. Notification of selected candidates. Selected applicant considered scholarship recipient only after delivering required documentation to the higher education institution.",
+            "scholarship_info": "Established by the decree of President Ilham Aliyev on July 8, 2023. Dedicated to Heydar Aliyev, founder of modern Azerbaijan. Aims to support education of foreigners in Azerbaijani higher education institutions. OIC Education Programme.",
+            "timeline_summary": "Call for Applications: 26 March 2025. Submission of applications (first stage/nomination) to relevant government authorities: From April 20 to May 20, 2024 (for 2024-2025, with May 15, 2025 as a key nomination deadline for 2025-2026). Review and evaluation by government authorities: May 21 to June 15, 2024. Registration of applications (second stage) in SIACAS: June 1 to June 15, 2025 (for 2025-2026) or June 16 to July 1, 2024 (for 2024-2025). Review and evaluation of candidates (by Azerbaijan): July 1 to August 15, 2024. Notification of selected candidates: August 16 to August 30, 2024. Start of academic year: September 15, 2024. Last date for arrival: September 30, 2024."
+        }
+    },
+    "National Scholarship Programme of the Slovak Republic (NSP)": {
+        "basic_info": {
+            "official_name": "National Scholarship Programme of the Slovak Republic (NSP)",
+            "provider": "Government of the Slovak Republic; Ministry of Education, Research, Development, and Youth; SAIA (administrator)",
+            "study_country": "Slovakia"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded program supporting mobility for study, research, teaching, and artistic stays. Scholarships cover living costs and travel allowances. Available for Masters and PhD studies, covering up to €1,470 monthly.",
+            "covered_expenses": [
+                "living costs",
+                "travel allowances",
+                "travel costs"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": "April 30, 2026 (for summer semester 2026/2027 or 2026-2027 academic year); October 31, 2026 (for winter semester 2026/2027); October 31, 2025 (for summer semester 2026)",
+            "opening_date": null,
+            "number_of_awards": "More than 4100 scholarships were awarded in 2019-2020."
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "The program supports mobility of international students, PhD students, university teachers, researchers, and artists for scholarship stays at higher education institutions and research organizations in Slovakia. It also supports mobility of Slovak university students, PhD students, and postdocs for stays outside Slovakia. \n\nSpecific eligibility for international applicants:\n- PhD students whose higher education or scientific training takes place outside Slovakia and who are accepted by a Slovak university or research institution for an academic mobility stay.\n- International nationals (excluding Slovakia) studying or working outside Slovakia, who are accepted by Slovak host institutions for mobility stays.\n\nIneligibility criteria:\n- International students and PhD students accepted for full degree higher education (bachelor, master, doctoral studies) in Slovakia, or those already studying full degree in Slovakia who would like to fund their studies by the NSP.\n- University teachers, researchers, and artists without a PhD degree (or its equivalent) and at the same time with more than 4 years of work experience (PhD studies are considered as work experience) on the application deadline. However, in special cases (e.g., force majeure), candidates without a PhD degree but with more than 4 years but not more than 7 years of work experience may be accepted, but awarded a scholarship corresponding to applicants without a PhD degree and with less than 4 years of experience.\n- International applicants who, within the period of 36 months prior to the application deadline, have spent 15 or more months (in total) in the Slovak Republic.\n- International applicants who are accepted for a scholarship stay in Slovakia in the framework of other scholarship programmes funded from public resources (e.g., International Visegrad Fund, Erasmus+, CEEPUS, bilateral agreements, etc.)."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Study, research, teaching, and artistic stays.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "Minimum GPA of 70% or 3.0 is required.",
+            "required_degree": "Masters, PhD, University Teachers, Researchers, Artists (for various types of stays/roles)."
+        },
+        "experience_requirements": {
+            "min_years": "For university teachers, researchers, and artists without a PhD degree: generally ineligible if more than 4 years of work experience, but may be accepted if not more than 7 years of work experience in special cases.",
+            "accepted_types": "University teacher, researcher, artist work experience; PhD studies are considered as work experience."
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "Minimum SAT score of 1100. No mention of IELTS/TOEFL."
+        },
+        "additional_requirements": {
+            "reference_letters": "Two recommendation letters from professors or supervisors/university teachers.",
+            "career_plan": "Detailed study programme or research plan.",
+            "age_limits": null,
+            "gender_requirement": null,
+            "special_circumstances": "In extraordinary circumstances caused by force majeure, unofficial translations may be accepted initially (official translation required later). Special consideration for university teachers/researchers/artists without PhD but with 4-7 years of experience.",
+            "other_requirements": "Confirmation of current enrollment (for students and PhD candidates); Motivation letter; Invitation/admission letter from a Slovak host institution (scan for online application, original sent directly to SAIA); Academic transcripts and degree; Curriculum vitae; Original documents with official translations into Slovak or English (unofficial may be accepted temporarily in force majeure)."
+        },
+        "background_and_logistics": {
+            "official_website": "https://www.scholarships.sk/en/main/programme",
+            "application_documents": "Curriculum vitae; Motivation letter; Detailed study programme/research plan; Two recommendation letters from professors/supervisors/university teachers; Confirmation of current enrollment (students and PhD candidates); Academic transcripts and degree; Invitation/admission letter from a Slovak host institution; Original documents with official translations into Slovak or English language (unofficial translations may be accepted temporarily in force majeure).",
+            "selection_process": "Scholarships are awarded on a competitive basis by a Selection Committee.",
+            "scholarship_info": "Established in 2005 by the Government of the Slovak Republic to support the mobility of students, PhD students, university teachers, researchers, and artists. It enables short-term academic, research, teaching, or artistic stays at Slovak higher education and research institutions.",
+            "timeline_summary": "New call for applications is open for the summer semester of the academic year 2026/2027 and the 2026 edition of the program. Applications are being accepted for the 2026-2027 academic year program."
+        }
+    },
+    "Beijing Government Scholarship (BGS – Master)": {
+        "basic_info": {
+            "official_name": "Beijing Government Scholarship (BGS)",
+            "provider": "Beijing Municipal Government",
+            "study_country": "China (Beijing region)"
+        },
+        "funding_info": {
+            "funding_details": "Fully funded or partially funded. Covers tuition fees. Full scholarship: ¥40,000 per year (specified for Doctoral, generally mentioned for BGS). Half scholarship: ¥20,000 per year (for Doctoral). Partial scholarship: Half/A quarter of tuition fee of one-academic year. Annual living stipend of $4,489.",
+            "covered_expenses": [
+                "Tuition fees",
+                "Accommodation",
+                "Living expenses"
+            ]
+        },
+        "timeline_info": {
+            "application_deadline": null,
+            "opening_date": null,
+            "number_of_awards": "Not specified (subject to university allocation)"
+        },
+        "eligibility_criteria": {
+            "eligibility_details": "Applicants must be non-Chinese citizens with good health, willing to obey Chinese laws and regulations. Must be academically excellent. Must be applying for admission to a degree program (Bachelor's, Master's, PhD) at a university in the Beijing region, or already admitted as an undergraduate or graduate student. Must not be receiving other tuition scholarship funds. For Master's applicants, must hold a Bachelor's degree or its equivalent. For current students, the average score of the previous academic year must be no less than 80/100."
+        },
+        "field_restrictions": {
+            "eligible_fields": "Bachelor, Master's, Doctoral Degrees, Chinese language training, relevant advanced studies, specialized training. Specific programs like International Master of Business Administration (IMBA) and Digital Economy are mentioned at UIBE.",
+            "restrictions": null
+        },
+        "academic_requirements": {
+            "min_gpa": "Average score of at least 80/100 or a GPA of 3.0 (for previous degree or previous academic year for current students).",
+            "required_degree": "Bachelor's degree or its equivalent (for Master's applicants)."
+        },
+        "experience_requirements": {
+            "min_years": "Three years or more of work experience (specifically for IMBA at UIBE).",
+            "accepted_types": "Work experience (specifically for IMBA at UIBE)."
+        },
+        "test_requirements": {
+            "ielts_toefl_other_language_certificates": "For English-taught majors: IELTS 6.0, TOEFL 75 or above, or proof of corresponding language proficiency (exceptions for native English speakers). For Chinese-taught postgraduate programs: HSK-5 level or above. Students applying for English-taught programs at China Agricultural University do not need to submit Chinese proficiency test scores at the time of application."
+        },
+        "additional_requirements": {
+            "reference_letters": "Two letters of recommendation from professors or associate professors (implied for graduate programs).",
+            "career_plan": "Statement of Purpose clearly indicating duration and purpose of study, preferred technical work or experience and academic background.",
+            "age_limits": "Under the age of 35 when applying for a master's program. Under the age of 25 for undergraduate programs.",
+            "gender_requirement": null,
+            "special_circumstances": "Scholarship needs to be applied for every year. Available for current international students. Must not be receiving other tuition scholarship funds.",
+            "other_requirements": "Must meet basic admission requirements for international students at the target university."
+        },
+        "background_and_logistics": {
+            "official_website": "https://english.beijing.gov.cn/studyinginbeijing/scholarshipapplications/202006/t20200617_1926391.html (Beijing Municipal Government - dated), https://isdplus.pku.edu.cn/HOME/SCHOLARSHIP/Beijing_Government_Scholarship__BGS_.htm (Peking University), https://iso.bnu.edu.cn/en/affiche/detail?cid=20&detail=632&pid=0 (Beijing Normal University), https://admissions.cau.edu.cn/art/2025/8/10/art_48609_1078380.html (China Agricultural University), https://cup.edu.cn/overseas/Admission/Scholarships/index.htm (China University of Petroleum (Beijing)).",
+            "application_documents": "Application Form for Beijing Municipal Government Scholarship (obtained from target HEI or downloaded from website), Statement of Purpose, Two letters of recommendation (for graduate programs), Language proficiency certificates (IELTS/TOEFL/HSK), Valid passport, Foreigner Physical Examination Form, Academic transcripts/degree certificates.",
+            "selection_process": "Higher Education Institutions (HEIs) assess applications. University-specific committees (e.g., BNU Assessment Committee, PKU International students’ office) are responsible for acceptance, review, and approval. HEIs send Scholarship Admission Notice, Admission Notice, and Visa Application Form (JW201) to candidates three months before study begins.",
+            "scholarship_info": "Established by Beijing Municipal Government to encourage and support outstanding international students to study and conduct research in Beijing. It needs to be applied for every year. Duration for Bachelor's, Master's, and Doctoral degrees is under 4 years. Duration for Chinese language training or specialized training is under one year (one semester or one academic year).",
+            "timeline_summary": "Scholarship duration for Master's degree is under 4 years. Scholarship needs to be applied for every year."
+        }
+    }
+}

@@ -33,30 +33,32 @@ from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 
 from agent.state import AgentState 
 from agent.tools import RotatingTavilyTool
-# ... (import các prompts) ...
 from prompts.initial_search import INITIAL_SEARCH_PROMPT
 from prompts.plan_and_analyze import analyze_prompt
 from prompts.synthesis import synthesis_prompt 
 from prompts.structuring import structuring_prompt
-
-from utils.data_logger import save_to_rag_db
+# from utils.data_logger import save_to_rag_db 
 import config
 
-# --- Node 1: Tìm Kiếm Ban Đầu (Không thay đổi) ---
+# --- Node 1: Tìm Kiếm Ban Đầu ---
 def initial_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[str, Any]:
-    # (Nội dung hàm giữ nguyên)
     print(f"\n--- Node: Initial Search (Loop {state['current_loop']}) ---")
     scholarship_name = state["scholarship_name"]
+    
     query = INITIAL_SEARCH_PROMPT.format(scholarship_name=scholarship_name)
     print(f"  Đang tìm kiếm: '{query}'")
-    results = tool.invoke(query, max_results=5)
+    
+    # SỬA: Lấy max_results từ config
+    results = tool.invoke(query, max_results=config.TAVILY_MAX_RESULTS_INITIAL)
+    
     valid_results = [res for res in results if res.get("content")]
     print(f"  -> Tìm thấy {len(valid_results)} kết quả hợp lệ.")
-    save_to_rag_db(scholarship_name, valid_results, config.RAG_DATABASE_PATH)
+    # save_to_rag_db(scholarship_name, valid_results, config.RAG_DATABASE_PATH)
     new_urls = {res.get("url") for res in valid_results}
     
     return {
-        "context_documents": valid_results,
+        # SỬA: valid_results giờ là context_documents ban đầu
+        "context_documents": valid_results, 
         "visited_urls": new_urls,
         "api_call_count": state["api_call_count"] + 1,
         "current_loop": state["current_loop"] + 1,
@@ -64,7 +66,7 @@ def initial_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[str
         "queries_just_ran": [query] 
     }
 
-# --- Node 2: Phân Tích & Lập Kế Hoạch (Cập nhật) ---
+# --- Node 2: Phân Tích & Lập Kế Hoạch ---
 def analyze_and_plan_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict[str, Any]:
     print(f"\n--- Node: Analyze & Plan (Loop {state['current_loop']}) ---")
     scholarship_name = state["scholarship_name"]
@@ -118,7 +120,7 @@ def analyze_and_plan_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dic
         print(f"  Lỗi khi gọi LLM hoặc parse JSON: {e}")
         return {"missing_information": [], "queries_just_ran": []}
 
-# --- Node 3: Tìm Kiếm Chuyên Sâu (Cập nhật) ---
+# --- Node 3: Tìm Kiếm Chuyên Sâu ---
 def drill_down_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[str, Any]:
     print(f"\n--- Node: Drill-Down Search (Loop {state['current_loop']}) ---")
     scholarship_name = state["scholarship_name"]
@@ -128,10 +130,7 @@ def drill_down_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[
     current_urls = state["visited_urls"]
     
     new_docs = []
-    
-    # SỬA: Sử dụng biến từ file config
     queries_to_run = queries[:config.DRILL_DOWN_QUERY_COUNT] 
-    
     print(f"  Sẽ thực thi {len(queries_to_run)}/{len(queries)} truy vấn còn thiếu.")
     
     api_calls_made = 0
@@ -141,7 +140,10 @@ def drill_down_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[
             break
             
         print(f"  Đang tìm kiếm: '{query}'")
-        results = tool.invoke(query, max_results=2)
+        
+        # SỬA: Lấy max_results từ config
+        results = tool.invoke(query, max_results=config.TAVILY_MAX_RESULTS_DRILLDOWN)
+        
         api_calls_made += 1
         
         for res in results:
@@ -150,12 +152,14 @@ def drill_down_search_node(state: AgentState, tool: RotatingTavilyTool) -> Dict[
                 current_urls.add(res.get("url"))
     
     print(f"  -> Tìm thấy {len(new_docs)} tài liệu mới.")
-    if new_docs:
-        save_to_rag_db(scholarship_name, new_docs, config.RAG_DATABASE_PATH)
+    # if new_docs:
+    #     save_to_rag_db(scholarship_name, new_docs, config.RAG_DATABASE_PATH)
     
     return {
-        "context_documents": current_docs + new_docs,
+        # SỬA: Nối new_docs vào context_documents
+        "context_documents": current_docs + new_docs, 
         "visited_urls": current_urls,
+        # ... (các trường khác giữ nguyên) ...
         "missing_information": queries[len(queries_to_run):],
         "api_call_count": state["api_call_count"] + api_calls_made,
         "current_loop": state["current_loop"] + 1,
@@ -192,27 +196,33 @@ def final_synthesis_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict
         return {"synthesis_report_text": "Error during synthesis."}
     
     
-# --- Node 5: Cấu Trúc (Cập nhật) ---
+# --- Node 5: Cấu Trúc ---
 def structure_node(state: AgentState, llm: ChatGoogleGenerativeAI) -> Dict[str, Any]:
-    print(f"\n--- Node: Structure Report (from Text Report + Context) ---")
+    print(f"\n--- Node: Structure Report (from Text Report ONLY) ---") # Cập nhật log
 
-    # SỬA: Lấy 2 nguồn input
+    # SỬA: Chỉ lấy report text
     synthesis_report = state["synthesis_report_text"]
-    context_str = "\n\n---\n\n".join(
-        [f"URL: {doc['url']}\nCONTENT: {doc['content']}" for doc in state["context_documents"]]
-    )
+    
+    # SỬA: Xóa context_str
+    # context_str = "\n\n---\n\n".join(...)
 
     structuring_chain = structuring_prompt | llm | JsonOutputParser()
 
     print("  Đang gọi LLM để trích xuất JSON phẳng cuối cùng...")
 
     try:
+        # SỬA: Chỉ truyền 'synthesis_report' vào chain
         structured_report = structuring_chain.invoke({
-            "synthesis_report": synthesis_report,
-            "context": context_str
+            "synthesis_report": synthesis_report
         })
 
+        # 1. Ghi đè tên học bổng (như cũ)
         structured_report["Scholarship_Name"] = state["scholarship_name"]
+        
+        # 2. MỚI: Hardcode cấp độ học bổng
+        # Lấy giá trị từ config.py (ví dụ: "master", "phd") và viết hoa chữ cái đầu
+        structured_report["Wanted_Degree"] = config.LEVEL.capitalize()
+
         print("  -> Trích xuất JSON phẳng hoàn tất.")
         return {"structured_report": structured_report}
 
