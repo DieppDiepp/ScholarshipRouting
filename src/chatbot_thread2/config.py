@@ -45,5 +45,8 @@ EXTRACTOR_LLM_MODEL = "gemini-2.5-flash"
 EXTRACTOR_LLM_TEMP = 0.0
 
 # Dùng cho các tác vụ sáng tạo (sinh câu trả lời - Phase 4)
-GENERATOR_LLM_MODEL = "gemini-2.5-pro"
+GENERATOR_LLM_MODEL = "gemini-2.5-flash"
 GENERATOR_LLM_TEMP = 0.7
+
+# python -m src.chatbot_thread2.rag_pipeline.retriever
+    
