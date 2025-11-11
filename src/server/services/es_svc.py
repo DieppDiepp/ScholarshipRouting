@@ -8,17 +8,17 @@ def ensure_index(client: Elasticsearch, index: str) -> str:
             settings={
                 "analysis": {
                     "analyzer": {
-                        "vi_std": {"type": "standard", "stopwords": "_none_"}
+                        "en_std": {"type": "standard", "stopwords": "_english_"}
                     }
                 }
             },
             mappings={
                 "properties": {
                     "collection": {"type": "keyword"},
-                    "__text": {"type": "text", "analyzer": "vi_std"},
+                    "__text": {"type": "text", "analyzer": "en_std"},
                     "Scholarship_Name": {
                         "type": "text",
-                        "analyzer": "vi_std",
+                        "analyzer": "en_std",
                         "fields": {"raw": {"type": "keyword"}},
                     },
                 }
