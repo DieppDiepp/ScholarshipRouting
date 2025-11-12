@@ -1,0 +1,21 @@
+STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
+1,Hỏi về chances (lo lắng),Do I have a good chance for Lester B. Pearson International Scholarship?,✅ BẮT BUỘC,Đánh giá cơ hội dựa trên profile
+2,Hỏi về GPA (không tự tin),Is my GPA 3.5 good enough?,✅ BẮT BUỘC,Đánh giá GPA so với yêu cầu
+3,Hỏi về IELTS score,Is IELTS 7.0 sufficient for these scholarships?,✅ BẮT BUỘC,Đánh giá điểm IELTS
+4,Hỏi về age (lo lắng),Am I too young/old at 22?,✅ BẮT BUỘC,Đánh giá tuổi so với yêu cầu
+5,Hỏi về field change (ngây thơ),Can I switch from CS to Engineering?,✅ BẮT BUỘC,Tư vấn về chuyển ngành
+6,Hỏi về improvement (muốn cải thiện),What should I improve in my profile?,✅ BẮT BUỘC,Gợi ý cải thiện hồ sơ
+7,Hỏi về weaknesses (không tự tin),What are my weak points for scholarships?,✅ BẮT BUỘC,Phân tích điểm yếu
+8,Hỏi về strengths (tự tin),What are my strong points?,✅ BẮT BUỘC,Phân tích điểm mạnh
+9,Hỏi về specific scholarship (lo lắng),Should I apply for NUS Global Merit Scholarship?,✅ BẮT BUỘC,Tư vấn có nên apply không
+10,Hỏi về timeline (gấp),When should I start preparing?,✅ BẮT BUỘC,Timeline cá nhân hóa
+11,Hỏi về extracurricular (thiếu),"I don't have much extracurricular, is that bad?",✅ BẮT BUỘC,Đánh giá và tư vấn
+12,Hỏi về work experience (không có),Do I need work experience for Master's?,✅ BẮT BUỘC,Tư vấn về kinh nghiệm làm việc
+13,Hỏi về research experience,Should I do research before applying?,✅ BẮT BUỘC,Tư vấn về kinh nghiệm nghiên cứu
+14,Hỏi về motivation letter (ngây thơ),What should I write in my motivation letter?,✅ BẮT BUỘC,Gợi ý nội dung dựa trên profile
+15,Hỏi về recommendation letters,Who should I ask for recommendations?,✅ BẮT BUỘC,Gợi ý người giới thiệu phù hợp
+16,Hỏi về backup plan (lo lắng),What if I don't get any scholarship?,✅ BẮT BUỘC,Tư vấn kế hoạch dự phòng
+17,Hỏi về multiple applications,How many scholarships should I apply for?,✅ BẮT BUỘC,Tư vấn số lượng đơn nên nộp
+18,Hỏi về priority (không biết chọn),Which scholarship should I prioritize?,✅ BẮT BUỘC,Gợi ý ưu tiên dựa trên profile
+19,Hỏi về realistic expectations,"Be honest, what are my real chances?",✅ BẮT BUỘC,Đánh giá thực tế cơ hội
+20,Hỏi về next steps (cần hướng dẫn),What should I do next to improve my chances?,✅ BẮT BUỘC,Roadmap cụ thể để cải thiện

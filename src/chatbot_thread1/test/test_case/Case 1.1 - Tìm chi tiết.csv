@@ -1,0 +1,21 @@
+STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
+1,Hỏi trực tiếp tên học bổng,Tell me about Clark University Global Scholars Program,❌ Không,Thông tin chi tiết về Clark University Global Scholars Program
+2,Hỏi thiếu ngữ cảnh (chỉ tên viết tắt),What is Lester B. Pearson International Scholarship?,❌ Không,Thông tin về học bổng Lester B. Pearson
+3,Hỏi về funding (ngây thơ),How much money do I get from NUS Global Merit Scholarship?,❌ Không,Thông tin về mức tài trợ NUS Global Merit
+4,Hỏi deadline (thiếu tên đầy đủ),When is the deadline for American University Emerging Global Leader?,❌ Không,Deadline của AU EGLS
+5,Hỏi về requirements (không rõ ràng),What do I need for University of Toronto Scholars Program?,❌ Không,Điều kiện của U of T Scholars
+6,Hỏi về học bổng Australia,Tell me everything about ANU Tuckwell Scholarship Program,❌ Không,Thông tin chi tiết về ANU Tuckwell
+7,Hỏi GPA requirement (ngây thơ),What GPA do I need for Edinburgh Global Undergraduate Mathematics Scholarships?,❌ Không,Yêu cầu GPA của Edinburgh Mathematics
+8,Hỏi về language certificate,Do I need IELTS for NUS ASEAN Undergraduate Scholarship?,❌ Không,Yêu cầu chứng chỉ ngôn ngữ
+9,Hỏi về tuition (ngây thơ),Is Lester B. Pearson scholarship free?,❌ Không,Thông tin về học phí (100% miễn phí)
+10,Hỏi về accommodation,Do they give me a place to stay with ANU Tuckwell?,❌ Không,Thông tin về chỗ ở
+11,Hỏi về UK scholarship,What is University of Sheffield International Undergraduate Scholarship?,❌ Không,Thông tin về học bổng Sheffield
+12,Hỏi về age limit (lo lắng),Am I too old for Clark University Global Scholars? I'm 28,❌ Không,Thông tin về giới hạn tuổi
+13,Hỏi về Belgium scholarship,Tell me about KU Leuven ASEAN Scholarship,❌ Không,Thông tin về KU Leuven ASEAN
+14,Hỏi về eligible fields (không rõ),Can I study engineering with NUS Global Merit?,❌ Không,Thông tin về ngành học được hỗ trợ
+15,Hỏi về application process (ngây thơ),How do I apply for Lester B. Pearson?,❌ Không,Quy trình nộp đơn
+16,Hỏi về documents (lo lắng),What papers do I need for American University EGLS?,❌ Không,Danh sách giấy tờ cần thiết
+17,Hỏi về monthly stipend (cụ thể),How much is the monthly allowance for ANU Tuckwell?,❌ Không,Thông tin về trợ cấp hàng tháng
+18,Hỏi về health insurance,Does NUS ASEAN scholarship cover health insurance?,❌ Không,Thông tin về bảo hiểm y tế
+19,Hỏi về flight ticket (ngây thơ),Do they pay for my plane ticket with Mastercard Foundation Scholars?,❌ Không,Thông tin về vé máy bay
+20,Hỏi về language course,Do I have to learn French for ETH Zurich Solidarity Fund?,❌ Không,Thông tin về khóa học ngôn ngữ

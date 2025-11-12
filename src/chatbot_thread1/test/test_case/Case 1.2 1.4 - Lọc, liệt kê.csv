@@ -1,0 +1,21 @@
+STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
+1,Lọc theo quốc gia (đơn giản),Show me scholarships in USA,❌ Không,Danh sách học bổng ở Mỹ
+2,Lọc theo funding level (ngây thơ),Which scholarships are fully funded?,❌ Không,Danh sách học bổng toàn phần
+3,Lọc theo degree (thiếu ngữ cảnh),Scholarships for Master's?,❌ Không,Học bổng cho bậc Thạc sĩ
+4,Lọc theo field (không rõ),Any scholarships for engineering students?,❌ Không,Học bổng cho ngành kỹ thuật
+5,Lọc theo nhiều tiêu chí,Full scholarships in Asia for Bachelor's,❌ Không,Học bổng toàn phần ở châu Á cho Cử nhân
+6,Hỏi về scholarships ở Canada,What scholarships does Canada offer?,❌ Không,Danh sách học bổng Canada
+7,Lọc theo GPA (lo lắng),Scholarships that accept GPA 3.0?,❌ Không,Học bổng có yêu cầu GPA thấp
+8,Lọc theo age (ngây thơ),Scholarships for people over 25?,❌ Không,Học bổng không giới hạn tuổi hoặc >25
+9,Lọc theo language (cụ thể),Scholarships that don't require IELTS,❌ Không,Học bổng không bắt buộc IELTS
+10,Lọc theo deadline (gấp),Which scholarships are still open?,❌ Không,Học bổng còn hạn nộp đơn
+11,Lọc theo field - Mathematics,Scholarships for Mathematics students,❌ Không,Học bổng cho ngành Toán học
+12,Lọc theo country - Singapore,List all scholarships in Singapore,❌ Không,Danh sách học bổng ở Singapore
+13,Lọc theo accommodation (quan tâm),Scholarships that provide housing,❌ Không,Học bổng có hỗ trợ chỗ ở
+14,Lọc theo undergraduate,Scholarships for bachelor degree,❌ Không,Học bổng cho bậc Cử nhân
+15,Lọc theo country - Australia,Scholarships in Australia,❌ Không,Học bổng ở Úc
+16,Lọc theo university scholarships,University funded scholarships,❌ Không,Học bổng do trường đại học tài trợ
+17,Lọc theo field - Computer Science,Scholarships for CS students,❌ Không,Học bổng cho ngành Khoa học máy tính
+18,Lọc theo stipend (quan tâm tiền),Scholarships with high monthly allowance,❌ Không,Học bổng có trợ cấp cao
+19,Lọc theo country - UK,Are there scholarships in United Kingdom?,❌ Không,Học bổng ở Anh
+20,Lọc tổng hợp (ngây thơ),Best scholarships for international students,❌ Không,Danh sách học bổng tốt nhất
