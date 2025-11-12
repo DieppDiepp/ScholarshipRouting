@@ -1,0 +1,82 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Hỏi về chances (lo lắng),Do I have a good chance for Lester B. Pearson International Scholarship?,✅ BẮT BUỘC,Đánh giá cơ hội dựa trên profile,"Bạn không đủ điều kiện để ứng tuyển học bổng Lester B. Pearson International Scholarship.
+
+Dưới đây là phân tích chi tiết:
+
+*   **Đối tượng học bổng:**
+    *   Học bổng Lester B. Pearson International Scholarship **chỉ dành riêng cho sinh viên quốc tế đang hoàn thành hoặc vừa tốt nghiệp trung học phổ thông** (high school) và nộp đơn vào bậc Cử nhân (undergraduate).
+    *   Ứng viên phải được trường trung học của mình đề cử.
+
+*   **Profile của bạn:**
+    *   Bạn đã có bằng Cử nhân (Bachelor) và đang tìm kiếm học bổng cho bậc Thạc sĩ (Master). Điều này không phù hợp với tiêu chí của học bổng Lester B. Pearson.
+
+*   **Thời hạn nộp hồ sơ:**
+    *   Hạn chót nộp hồ sơ cho học bổng năm 2025 đã kết thúc vào ngày 7 tháng 11 năm 2025.
+    *   Tuy nhiên, các đơn đăng ký cho Chương trình Học bổng Quốc tế Lester B. Pearson năm 2026 hiện đã mở, nhưng vẫn áp dụng tiêu chí về bậc học.
+
+**Lời khuyên cá nhân hóa:**
+
+Mặc dù không phù hợp với học bổng này, profile của bạn có nhiều điểm mạnh để theo đuổi các học bổng Thạc sĩ khác:
+
+*   **Điểm mạnh:**
+    *   **GPA 3.5:** Đây là một mức điểm khá tốt, cho thấy năng lực học tập của bạn.
+    *   **IELTS 7.0:** Chứng chỉ ngôn ngữ này đáp ứng yêu cầu của hầu hết các chương trình Thạc sĩ quốc tế.
+    *   **Ngành học Computer Science:** Ngành này có nhiều cơ hội học bổng và nghiên cứu ở bậc Thạc sĩ, đặc biệt khi bạn muốn chuyển sang Engineering.
+
+*   **Gợi ý để cải thiện hồ sơ và tìm kiếm học bổng Thạc sĩ ngành Engineering:**
+    *   **Xác định rõ chuyên ngành hẹp:** Ngành Engineering rất rộng. Bạn nên tìm hiểu và xác định chuyên ngành cụ thể mà bạn muốn theo đuổi (ví dụ: Software Engineering, AI Engineering, Data Engineering, Electrical Engineering, v.v.) để tìm kiếm các chương trình và học bổng phù hợp hơn.
+    *   **Kinh nghiệm nghiên cứu/làm việc:** Với bằng Cử nhân Computer Science, hãy làm nổi bật bất kỳ dự án nghiên cứu, thực tập, hoặc kinh nghiệm làm việc nào liên quan đến ngành Engineering mà bạn đã tham gia. Đây là yếu tố rất quan trọng cho bậc Thạc sĩ.
+    *   **Thư giới thiệu (Letter of Recommendation - LOR):** Liên hệ với các giáo sư hoặc người quản lý đã từng làm việc với bạn để xin thư giới thiệu mạnh mẽ, nêu bật năng lực học tập, kỹ năng và tiềm năng nghiên cứu của bạn.
+    *   **Bài luận cá nhân (Statement of Purpose - SOP):** Đầu tư thời gian viết một bài luận cá nhân xuất sắc, trình bày rõ ràng lý do bạn muốn học Thạc sĩ ngành Engineering, mục tiêu nghề nghiệp, và cách chương trình bạn chọn sẽ giúp bạn đạt được những mục tiêu đó.
+    *   **Tìm kiếm học bổng phù hợp:**
+        *   **Học bổng của chính phủ:** Tìm kiếm các học bổng chính phủ như Chevening (Anh), Fulbright (Mỹ), DAAD (Đức), Erasmus Mundus (Châu Âu), MEXT (Nhật Bản), v.v. Các học bổng này thường dành cho bậc Thạc sĩ và có tiêu chí rõ ràng.
+        *   **Học bổng của các trường đại học:** Nhiều trường đại học có các học bổng riêng cho sinh viên Thạc sĩ, có thể dựa trên thành tích học tập hoặc nhu cầu tài chính.
+        *   **Học bổng của các tổ chức:** Một số tổ chức phi chính phủ hoặc công ty cũng có học bổng cho các ngành kỹ thuật.
+
+Hãy tập trung vào việc nghiên cứu các học bổng dành cho bậc Thạc sĩ và chuẩn bị một bộ hồ sơ mạnh mẽ, làm nổi bật kinh nghiệm và mục tiêu của bạn.",personalized_advice,0.98,"tavily_search, profile_retriever",23.41,✅ Success,
+2,Hỏi về GPA (không tự tin),Is my GPA 3.5 good enough?,✅ BẮT BUỘC,Đánh giá GPA so với yêu cầu,"GPA 3.5 của bạn là mức khá tốt, đủ điều kiện để nộp hồ sơ vào nhiều chương trình Thạc sĩ ngành Kỹ thuật ở các trường đại học quốc tế, đặc biệt khi kết hợp với IELTS 7.0. Tuy nhiên, mức GPA này có thể chưa đủ nổi bật để cạnh tranh vào các trường đại học hàng đầu (top-tier universities) hoặc các học bổng toàn phần (full scholarships) cực kỳ cạnh tranh, vốn thường yêu cầu GPA cao hơn (thường từ 3.7 trở lên).
+
+Dưới đây là phân tích chi tiết và lời khuyên dành cho bạn:
+
+*   **Phân tích Profile và Nhận xét:**
+    *   **Điểm mạnh:**
+        *   **IELTS 7.0:** Đây là một lợi thế rất lớn, đáp ứng yêu cầu ngôn ngữ của hầu hết các trường và chương trình học bổng.
+        *   **Ngành học hiện tại (Computer Science) và mục tiêu (Engineering):** Có sự liên kết chặt chẽ, tạo nền tảng tốt cho việc học Thạc sĩ.
+        *   **GPA 3.5:** Mức trên trung bình (tương đương A-/B+), cho thấy bạn có năng lực học tập tốt.
+    *   **Điểm cần lưu ý:**
+        *   **GPA 3.5:** Mặc dù tốt, nhưng như các thông tin bổ sung đã chỉ ra, mức này ""unlikely to stand out"" (khó nổi bật) khi cạnh tranh với các ứng viên có GPA 3.8-4.0, đặc biệt là ở các trường top hoặc cho các học bổng toàn phần danh giá.
+
+*   **Đánh giá khả năng đỗ học bổng:**
+    *   **Học bổng bán phần hoặc học bổng của các trường không thuộc top:** Khả năng đỗ cao hơn, đặc biệt nếu bạn có các yếu tố khác trong hồ sơ mạnh.
+    *   **Học bổng toàn phần hoặc học bổng của các trường top:** Khả năng cạnh tranh sẽ khó khăn hơn do GPA chưa thực sự xuất sắc so với mặt bằng chung của các ứng viên được nhận học bổng này. Bạn sẽ cần các yếu tố khác cực kỳ nổi bật để bù đắp.
+
+*   **Lời khuyên cụ thể để cải thiện hồ sơ và tăng khả năng đỗ:**
+    *   **Nhấn mạnh các yếu tố khác ngoài GPA:**
+        *   **Kinh nghiệm nghiên cứu/dự án:** Nếu bạn đã tham gia các dự án nghiên cứu, đồ án tốt nghiệp xuất sắc, hoặc có bài báo khoa học, hãy làm nổi bật chúng. Đây là điểm cộng rất lớn cho ngành Engineering.
+        *   **Kinh nghiệm làm việc/thực tập:** Kinh nghiệm thực tế trong ngành Computer Science hoặc Engineering sẽ chứng minh năng lực ứng dụng kiến thức và sự nghiêm túc với con đường sự nghiệp.
+        *   **Thư giới thiệu (Letter of Recommendation - LOR):** Xin thư giới thiệu từ các giáo sư hoặc cấp trên có uy tín, những người có thể đánh giá cao năng lực học tập, nghiên cứu và phẩm chất cá nhân của bạn.
+        *   **Bài luận cá nhân (Statement of Purpose - SOP):** Đây là cơ hội vàng để bạn kể câu chuyện của mình, giải thích lý do chọn ngành, trường, mục tiêu nghề nghiệp, và cách bạn sẽ đóng góp cho cộng đồng học thuật. Bạn có thể khéo léo giải thích nếu có bất kỳ lý do nào khiến GPA của bạn không đạt mức cao nhất (ví dụ: một học kỳ khó khăn, nhưng sau đó đã cải thiện).
+        *   **Hoạt động ngoại khóa/tình nguyện:** Thể hiện kỹ năng lãnh đạo, làm việc nhóm và trách nhiệm xã hội.
+    *   **Chiến lược ứng tuyển:**
+        *   **Đa dạng hóa lựa chọn trường:** Nộp hồ sơ vào một số trường thuộc các nhóm xếp hạng khác nhau (ví dụ: một vài trường top, một vài trường tốt nhưng không quá cạnh tranh, và một vài trường có yêu cầu đầu vào phù hợp hơn với GPA 3.5).
+        *   **Tìm kiếm học bổng cụ thể:** Tập trung vào các học bổng không chỉ dựa vào GPA mà còn đánh giá cao kinh nghiệm thực tế, tiềm năng nghiên cứu, hoặc các kỹ năng đặc biệt khác. Nhiều học bổng của các phòng thí nghiệm hoặc giáo sư cũng có thể ít phụ thuộc vào GPA tổng thể hơn.
+        *   **Nghiên cứu kỹ yêu cầu từng chương trình:** Một số chương trình có thể có yêu cầu GPA tối thiểu thấp hơn hoặc đánh giá cao điểm các môn chuyên ngành hơn là GPA tổng thể.
+
+*   **Khuyến khích điểm mạnh, gợi ý khắc phục điểm yếu:**
+    *   **Khuyến khích:** IELTS 7.0 và nền tảng Computer Science là những điểm mạnh cần được phát huy tối đa. Hãy tự tin thể hiện khả năng ngôn ngữ và kiến thức chuyên môn của bạn.
+    *   **Khắc phục:** Điểm yếu về GPA có thể được khắc phục bằng cách xây dựng một hồ sơ tổng thể mạnh mẽ, tập trung vào kinh nghiệm thực tế, kỹ năng mềm và một bài luận cá nhân thuyết phục.
+
+Chúc bạn thành công trên hành trình tìm kiếm học bổng!",personalized_advice,0.98,"tavily_search, profile_retriever",26.36,✅ Success,
+3,Hỏi về IELTS score,Is IELTS 7.0 sufficient for these scholarships?,✅ BẮT BUỘC,Đánh giá điểm IELTS,"IELTS 7.0 thường là đủ cho nhiều học bổng Thạc sĩ ngành Kỹ thuật, nhưng mức độ đủ phụ thuộc vào từng học bổng cụ thể.
+
+*   **Mức độ chấp nhận chung:**
+    *   IELTS 7.0 là một điểm số mạnh mẽ và đáp ứng yêu cầu ngôn ngữ tối thiểu cho phần lớn các chương trình Thạc sĩ Kỹ thuật và học bổng tại các quốc gia nói tiếng Anh (Mỹ, Anh, Canada, Úc) và nhiều chương trình giảng dạy bằng tiếng Anh ở châu Âu, châu Á.
+    *   Với điểm 7.0, bạn có cơ hội tốt để được xem xét cho các học bổng toàn phần và bán phần.
+
+*   **Các trường hợp có thể yêu cầu cao hơn:**
+    *   **Học bổng cạnh tranh cao:** Một số học bổng danh giá hoặc các trường đại học top đầu thế giới có thể yêu cầu IELTS 7.5 hoặc thậm chí 8.0, đặc biệt nếu chương trình có yếu tố nghiên cứu, viết lách hoặc giao tiếp chuyên sâu.
+    *   **Yêu cầu điểm thành phần:** Một số học bổng hoặc trường có thể yêu cầu không có kỹ năng nào dưới một mức điểm nhất định (ví dụ: không kỹ năng nào dưới 6.5 hoặc 7.0), dù điểm tổng thể là 7.0. Bạn cần kiểm tra kỹ điều này.
+
+*   **Lời khuyên:**
+    *   Để biết chính xác, bạn cần kiểm tra yêu cầu ngôn ngữ cụ thể của từng học bổng và chương trình Thạc sĩ Kỹ thuật mà bạn quan tâm trên trang web chính thức của họ.
+    *   Ngay cả khi IELTS 7.0 đáp ứng yêu cầu tối thiểu, một hồ sơ mạnh mẽ toàn diện (GPA 3.5, kinh nghiệm liên quan, thư giới thiệu, bài luận cá nhân) vẫn là yếu tố then chốt để cạnh tranh học bổng.",fact_retrieval,0.9,semantic_search,18.92,✅ Success,

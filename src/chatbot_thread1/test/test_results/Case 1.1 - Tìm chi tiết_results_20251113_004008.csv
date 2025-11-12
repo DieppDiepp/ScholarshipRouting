@@ -1,0 +1,63 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Hỏi trực tiếp tên học bổng,Tell me about Clark University Global Scholars Program,❌ Không,Thông tin chi tiết về Clark University Global Scholars Program,"Clark University Global Scholars Program là một chương trình học bổng dành cho sinh viên quốc tế năm nhất có thành tích học tập xuất sắc và tiềm năng lãnh đạo.
+
+*   **Đối tượng:**
+    *   Sinh viên quốc tế năm nhất (không phải công dân hoặc thường trú nhân Hoa Kỳ).
+    *   Thể hiện thành tích học tập xuất sắc.
+    *   Có khả năng lãnh đạo và cam kết với dịch vụ cộng đồng.
+    *   Cần nộp hồ sơ xin hỗ trợ tài chính (CSS Profile hoặc International Student Financial Aid Application).
+*   **Giá trị học bổng:**
+    *   Học bổng từ **$15,000 đến $25,000** mỗi năm.
+    *   Được đảm bảo trong suốt bốn năm học đại học, với điều kiện duy trì thành tích học tập.
+    *   Bao gồm một khoản trợ cấp **$2,500** cho một kỳ thực tập có lương hoặc vị trí trợ lý nghiên cứu vào mùa hè sau năm thứ hai hoặc thứ ba.
+*   **Quy trình ứng tuyển:**
+    *   Ứng tuyển vào Clark University thông qua Common Application hoặc Coalition Application.
+    *   Bày tỏ sự quan tâm đến Global Scholars Program trong đơn đăng ký của bạn.
+    *   Nộp CSS Profile (hoặc International Student Financial Aid Application nếu CSS Profile không khả dụng) để chứng minh nhu cầu tài chính.
+    *   Không yêu cầu đơn đăng ký riêng cho chương trình học bổng này ngoài việc bày tỏ sự quan tâm và nộp hồ sơ hỗ trợ tài chính.
+*   **Hạn chót nộp hồ sơ:**
+    *   Early Action/Early Decision: **15 tháng 11**
+    *   Regular Decision: **1 tháng 2**
+*   **Đặc điểm nổi bật:**
+    *   Tập trung vào phát triển công dân toàn cầu và kỹ năng lãnh đạo.
+    *   Tích hợp học thuật với kinh nghiệm thực tế thông qua trợ cấp thực tập/nghiên cứu.
+    *   Tham gia vào một nhóm sinh viên quốc tế chọn lọc với các hội thảo và sự kiện đặc biệt.
+
+**Nguồn tham khảo:** [Clark University Global Scholars Program](https://www.clarku.edu/admissions/financial-aid/international-students/global-scholars-program/)",fact_retrieval,0.98,semantic_search,39.28,✅ Success,
+2,Hỏi thiếu ngữ cảnh (chỉ tên viết tắt),What is Lester B. Pearson International Scholarship?,❌ Không,Thông tin về học bổng Lester B. Pearson,"Lester B. Pearson International Scholarship là một học bổng toàn phần danh giá dành cho sinh viên quốc tế xuất sắc theo học các chương trình cử nhân tại Đại học Toronto (University of Toronto), Canada.
+
+*   🌍 **Mục đích:** Thu hút những sinh viên quốc tế có thành tích học tập vượt trội, khả năng lãnh đạo nổi bật và sự sáng tạo, cam kết với cộng đồng.
+*   💰 **Mức tài trợ:** Đây là học bổng toàn phần, bao gồm:
+    *   Học phí (tuition fees)
+    *   Chi phí sách vở (books)
+    *   Chi phí sinh hoạt (incidental fees)
+    *   Chi phí nhà ở (full residence support)
+    *   Bảo hiểm y tế (health insurance)
+    *   Tất cả các chi phí này được chi trả trong suốt 4 năm học đại học.
+*   🎓 **Đại học:** Chỉ áp dụng cho các chương trình cử nhân tại University of Toronto.
+*   🧑‍🎓 **Đối tượng:**
+    *   Là sinh viên quốc tế (không phải công dân Canada hoặc thường trú nhân).
+    *   Đang học năm cuối trung học phổ thông hoặc đã tốt nghiệp không quá tháng 6 của năm trước.
+    *   Có ý định bắt đầu học đại học vào tháng 9 tại University of Toronto.
+*   🌟 **Tiêu chí lựa chọn:**
+    *   Thành tích học tập xuất sắc.
+    *   Khả năng lãnh đạo và sự tham gia vào các hoạt động ngoại khóa.
+    *   Sự sáng tạo và cam kết với cộng đồng.
+    *   Được đề cử bởi trường trung học của mình.
+*   📝 **Quy trình ứng tuyển:**
+    *   Sinh viên phải được trường trung học của mình đề cử. Mỗi trường trung học chỉ có thể đề cử một số lượng giới hạn sinh viên.
+    *   Sau khi được đề cử, sinh viên cần nộp đơn xin nhập học vào University of Toronto và hoàn thành đơn xin học bổng Pearson.
+*   🗓️ **Số lượng:** Khoảng 37 sinh viên được chọn mỗi năm.
+
+Thông tin chi tiết có thể tìm thấy tại: [https://future.utoronto.ca/pearson/](https://future.utoronto.ca/pearson/)",fact_retrieval,0.98,semantic_search,17.01,✅ Success,
+3,Hỏi về funding (ngây thơ),How much money do I get from NUS Global Merit Scholarship?,❌ Không,Thông tin về mức tài trợ NUS Global Merit,"Mức tài trợ từ Học bổng NUS Global Merit bao gồm toàn bộ học phí và các khoản trợ cấp khác, cụ thể như sau:
+
+*   **Học phí:** Được chi trả toàn bộ học phí (sau khi trừ Trợ cấp học phí MOE).
+*   **Trợ cấp sinh hoạt hàng năm:** S$6,000.
+*   **Trợ cấp chỗ ở trong khuôn viên trường:** S$6,850 nếu sinh viên ở tại NUSC West Wing hoặc Valour House.
+*   **Trợ cấp Chương trình Trao đổi Sinh viên/NUS Overseas Colleges:**
+    *   S$7,500 mỗi học kỳ cho các quốc gia ngoài châu Á và Nhật Bản.
+    *   S$5,000 mỗi học kỳ cho các quốc gia châu Á khác.
+    *   Khoản trợ cấp này có thể được yêu cầu tối đa hai lần và sẽ được tính toán theo tỷ lệ.
+
+Bạn có thể tìm hiểu thêm thông tin chi tiết tại trang web chính thức của NUS: [https://www.nus.edu.sg/oam/scholarships/scholarships-for-freshmen-singapore-citizens/nus-global-merit-scholarship](https://www.nus.edu.sg/oam/scholarships/scholarships-for-freshmen-singapore-citizens/nus-global-merit-scholarship)",general_advice,0.5,tavily_search,10.97,✅ Success,

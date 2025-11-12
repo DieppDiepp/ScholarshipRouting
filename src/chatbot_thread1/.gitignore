@@ -14,9 +14,6 @@ env/
 vector_store/
 *.sqlite3
 
-# Test Results
-test/test_results/
-
 # IDE
 .vscode/
 .idea/

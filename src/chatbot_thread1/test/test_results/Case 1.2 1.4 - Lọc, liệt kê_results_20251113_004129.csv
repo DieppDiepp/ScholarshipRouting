@@ -1,0 +1,156 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Lọc theo quốc gia (đơn giản),Show me scholarships in USA,❌ Không,Danh sách học bổng ở Mỹ,"Dưới đây là danh sách các học bổng nổi bật tại Hoa Kỳ dành cho sinh viên quốc tế, được sắp xếp theo độ phù hợp và mức độ toàn diện của học bổng:
+
+1.  **Fulbright Foreign Student Program**
+    *   🇺🇸 **Quốc gia**: Hoa Kỳ
+    *   💰 **Mức tài trợ**: Toàn phần. Bao gồm học phí, sinh hoạt phí, vé máy bay khứ hồi, bảo hiểm y tế và một số chi phí khác.
+    *   🗓️ **Deadline**: Thường vào tháng 4 - 6 hàng năm (đối với ứng viên Việt Nam, nộp hồ sơ qua Đại sứ quán/Lãnh sự quán Hoa Kỳ tại Việt Nam).
+    *   **Chi tiết**: Dành cho sinh viên tốt nghiệp đại học, thạc sĩ, tiến sĩ và các chuyên gia trẻ muốn theo học thạc sĩ hoặc tiến sĩ tại các trường đại học Hoa Kỳ. Đây là một trong những học bổng uy tín và cạnh tranh nhất thế giới, tập trung vào trao đổi văn hóa và phát triển lãnh đạo.
+
+2.  **Knight-Hennessy Scholars Program (Stanford University)**
+    *   🇺🇸 **Quốc gia**: Hoa Kỳ
+    *   💰 **Mức tài trợ**: Toàn phần. Bao gồm học phí, sinh hoạt phí, vé máy bay, chi phí học tập, sách vở và một khoản hỗ trợ phát triển cá nhân.
+    *   🗓️ **Deadline**: Thường vào tháng 10 hàng năm.
+    *   **Chi tiết**: Dành cho các ứng viên xuất sắc từ mọi quốc tịch muốn theo học bất kỳ chương trình sau đại học nào (Thạc sĩ, Tiến sĩ, MBA, JD, MD...) tại Đại học Stanford. Chương trình tìm kiếm những nhà lãnh đạo tương lai có tầm nhìn và cam kết tạo ra sự thay đổi tích cực.
+
+3.  **Học bổng dựa trên nhu cầu (Need-Based Aid) từ các trường Đại học hàng đầu**
+    *   🇺🇸 **Quốc gia**: Hoa Kỳ (đặc biệt là các trường như Harvard, Yale, Princeton, MIT, Amherst, Williams, Dartmouth, v.v.)
+    *   💰 **Mức tài trợ**: Toàn phần hoặc gần toàn phần, dựa trên khả năng tài chính của gia đình ứng viên. Các trường này cam kết đáp ứng 100% nhu cầu tài chính được chứng minh cho sinh viên quốc tế được nhận.
+    *   🗓️ **Deadline**: Theo deadline nộp hồ sơ của từng trường (thường là tháng 11 - 1 cho Early Action/Decision và Regular Decision).
+    *   **Chi tiết**: Đây là nguồn tài trợ quan trọng cho sinh viên quốc tế bậc đại học và sau đại học. Mức hỗ trợ được xác định sau khi đánh giá kỹ lưỡng tình hình tài chính của gia đình.
+
+4.  **AAUW International Fellowships**
+    *   🇺🇸 **Quốc gia**: Hoa Kỳ
+    *   💰 **Mức tài trợ**: Bán phần đến toàn phần. $20,000 cho Thạc sĩ, $25,000 cho Tiến sĩ, $30,000 cho Postdoctoral.
+    *   🗓️ **Deadline**: Thường vào tháng 11 hàng năm.
+    *   **Chi tiết**: Dành cho phụ nữ không phải công dân hoặc thường trú nhân Hoa Kỳ muốn theo học các chương trình Thạc sĩ, Tiến sĩ hoặc Postdoctoral tại các trường đại học được công nhận ở Hoa Kỳ. Ứng viên phải có bằng cử nhân (hoặc tương đương) và có ý định trở về quê hương để đóng góp sau khi hoàn thành chương trình học.
+
+5.  **Hubert H. Humphrey Fellowship Program**
+    *   🇺🇸 **Quốc gia**: Hoa Kỳ
+    *   💰 **Mức tài trợ**: Toàn phần. Bao gồm học phí, sinh hoạt phí, vé máy bay, bảo hiểm y tế và chi phí phát triển chuyên môn.
+    *   🗓️ **Deadline**: Thường vào tháng 5 - 9 hàng năm (tùy thuộc vào quốc gia nộp hồ sơ).
+    *   **Chi tiết**: Dành cho các chuyên gia có kinh nghiệm từ các quốc gia đang phát triển muốn tham gia một năm học tập không cấp bằng và phát triển chuyên môn tại Hoa Kỳ. Chương trình tập trung vào các lĩnh vực phát triển bền vững, quản lý công, giáo dục và y tế.
+
+6.  **Rotary Peace Fellowships**
+    *   🇺🇸 **Quốc gia**: Hoa Kỳ (và các quốc gia khác có trung tâm hòa bình của Rotary)
+    *   💰 **Mức tài trợ**: Toàn phần. Bao gồm học phí, sinh hoạt phí, vé máy bay, chi phí thực tập/nghiên cứu và các chi phí liên quan.
+    *   🗓️ **Deadline**: Thường vào tháng 5 hàng năm.
+    *   **Chi tiết**: Dành cho các cá nhân có kinh nghiệm làm việc trong lĩnh vực hòa bình và giải quyết xung đột, muốn theo học chương trình Thạc sĩ hoặc chứng chỉ chuyên môn tại một trong các Trung tâm Hòa bình của Rotary trên thế giới (trong đó có một số tại Hoa Kỳ).
+
+7.  **Học bổng dựa trên thành tích (Merit-Based Scholarships) từ các trường Đại học**
+    *   🇺🇸 **Quốc gia**: Hoa Kỳ (rất nhiều trường đại học và cao đẳng cung cấp)
+    *   💰 **Mức tài trợ**: Bán phần đến toàn phần. Mức độ tài trợ thay đổi đáng kể tùy thuộc vào trường và thành tích của ứng viên.
+    *   🗓️ **Deadline**: Theo deadline nộp hồ sơ của từng trường (thường là tháng 11 - 3).
+    *   **Chi tiết**: Các học bổng này được trao dựa trên thành tích học tập xuất sắc, kỹ năng lãnh đạo, tài năng đặc biệt (thể thao, nghệ thuật) hoặc các đóng góp cộng đồng. Sinh viên quốc tế cần tìm kiếm trực tiếp trên trang web của từng trường mà họ quan tâm.",filtering,0.98,structured_query,36.97,✅ Success,
+2,Lọc theo funding level (ngây thơ),Which scholarships are fully funded?,❌ Không,Danh sách học bổng toàn phần,"Dưới đây là danh sách các học bổng toàn phần (fully funded) từ kết quả tìm kiếm của bạn, được sắp xếp theo hạn nộp sớm nhất:
+
+1.  **Stipendium Hungaricum (Hungarian Government Scholarship)** 🇭🇺
+    *   **Quốc gia:** Hungary
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, trợ cấp sinh hoạt phí, chỗ ở và các chi phí khác.
+    *   **Hạn nộp:** 2025-01-15
+
+2.  **Turkiye Burslari (Turkey Government Scholarship)** 🇹🇷
+    *   **Quốc gia:** Turkey
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, trợ cấp sinh hoạt phí, chỗ ở, bảo hiểm y tế và các chi phí khác.
+    *   **Hạn nộp:** 2025-02-20
+
+3.  **Government of Ireland – International Education Scholarship (GOI-IES)** 🇮🇪
+    *   **Quốc gia:** Ireland
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí và trợ cấp sinh hoạt phí.
+    *   **Hạn nộp:** 2025-03-05
+
+4.  **Italian Government Scholarship (MAECI)** 🇮🇹
+    *   **Quốc gia:** Italy
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm trợ cấp sinh hoạt phí, miễn học phí và các chi phí khác.
+    *   **Hạn nộp:** 2025-05-16
+
+5.  **Colombia Government Scholarship (for foreigners)** 🇨🇴
+    *   **Quốc gia:** Colombia
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, trợ cấp sinh hoạt phí, chỗ ở và các chi phí khác.
+    *   **Hạn nộp:** 2025-06-13
+
+6.  **Bangkok Government Scholarship (Chulalongkorn University – Graduate)** 🇹🇭
+    *   **Quốc gia:** Thailand
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, trợ cấp sinh hoạt phí, chỗ ở và các chi phí khác.
+    *   **Hạn nộp:** 2025-10-13
+
+7.  **Danish Government Scholarship (University of Southern Denmark – SDU)** 🇩🇰
+    *   **Quốc gia:** Denmark
+    *   **Mức tài trợ:** Học bổng này có thể là toàn phần, bao gồm miễn học phí, trợ cấp sinh hoạt phí và các chi phí khác.
+    *   **Hạn nộp:** 2026-01-07
+
+8.  **Government of Brunei Darussalam Scholarship** 🇧🇳
+    *   **Quốc gia:** Brunei Darussalam
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, trợ cấp sinh hoạt phí và các chi phí khác.
+    *   **Hạn nộp:** 2026-01-09
+
+9.  **Master Mind Scholarship (Government of Flanders)** 🇧🇪
+    *   **Quốc gia:** Belgium
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí và một khoản trợ cấp cố định.
+    *   **Hạn nộp:** 2026-01-15
+
+10. **Chinese Government Scholarship (CGS)** 🇨🇳
+    *   **Quốc gia:** China
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, chỗ ở, trợ cấp sinh hoạt phí (một khoản cố định) và các chi phí khác.
+    *   **Hạn nộp:** 2026-02-08",filtering,0.98,structured_query,25.81,✅ Success,
+3,Lọc theo degree (thiếu ngữ cảnh),Scholarships for Master's?,❌ Không,Học bổng cho bậc Thạc sĩ,"Dưới đây là danh sách các học bổng Thạc sĩ phù hợp, được sắp xếp theo hạn nộp sớm nhất:
+
+1.  **Stipendium Hungaricum**
+    *   Quốc gia: Hungary
+    *   Mức tài trợ: Miễn học phí, trợ cấp sinh hoạt, chỗ ở, các chi phí khác.
+    *   Hạn nộp: 2025-01-15
+
+2.  **Turkiye Burslari (Turkey Government Scholarship)**
+    *   Quốc gia: Turkey
+    *   Mức tài trợ: Học bổng toàn phần, miễn học phí, trợ cấp sinh hoạt, chỗ ở, bảo hiểm y tế, các chi phí khác.
+    *   Hạn nộp: 2025-02-20
+
+3.  **Government of Ireland – International Education Scholarship (GOI-IES)**
+    *   Quốc gia: Ireland
+    *   Mức tài trợ: Học bổng toàn phần, miễn học phí, trợ cấp sinh hoạt.
+    *   Hạn nộp: 2025-03-05
+
+4.  **Kemitraan Negara Berkembang (KNB) Scholarship**
+    *   Quốc gia: Indonesia
+    *   Mức tài trợ: Học bổng toàn phần, trợ cấp sinh hoạt, các chi phí khác.
+    *   Hạn nộp: 2025-03-07
+
+5.  **Romanian Government Scholarship (MFA/Study in Romania)**
+    *   Quốc gia: Romania
+    *   Mức tài trợ: Học bổng toàn phần, miễn học phí, chỗ ở, trợ cấp sinh hoạt, các chi phí khác.
+    *   Hạn nộp: 2025-03-12
+
+6.  **Italian Government Scholarship (MAECI)**
+    *   Quốc gia: Italy
+    *   Mức tài trợ: Học bổng toàn phần, trợ cấp sinh hoạt, miễn học phí, các chi phí khác.
+    *   Hạn nộp: 2025-05-16
+
+7.  **Azerbaijan Government Scholarship (Educational Grant for OIC/NAM)**
+    *   Quốc gia: Azerbaijan
+    *   Mức tài trợ: Học bổng toàn phần, miễn học phí, trợ cấp sinh hoạt, các chi phí khác.
+    *   Hạn nộp: 2025-06-20
+
+8.  **Bangkok Government Scholarship (Chulalongkorn University – Graduate)**
+    *   Quốc gia: Thailand
+    *   Mức tài trợ: Học bổng toàn phần, miễn học phí, trợ cấp sinh hoạt, chỗ ở, các chi phí khác.
+    *   Hạn nộp: 2025-10-13
+
+9.  **Thailand International Postgraduate Programme (TIPP)**
+    *   Quốc gia: Thailand
+    *   Mức tài trợ: Học bổng toàn phần, miễn học phí, trợ cấp sinh hoạt, chỗ ở, các chi phí khác.
+    *   Hạn nộp: 2026-01-31
+
+10. **Chinese Government Scholarship (CGS)**
+    *   Quốc gia: China
+    *   Mức tài trợ: Học bổng toàn phần, miễn học phí, chỗ ở, trợ cấp sinh hoạt, các chi phí khác.
+    *   Hạn nộp: 2026-02-08
+
+11. **National Scholarship Programme of the Slovak Republic (NSP)**
+    *   Quốc gia: Slovakia
+    *   Mức tài trợ: Học bổng toàn phần, trợ cấp sinh hoạt, trợ cấp đi lại, chỗ ở, miễn học phí, các chi phí khác.
+    *   Hạn nộp: 2026-04-30
+
+12. **Australia Research Training Program (RTP) Scholarships**
+    *   Quốc gia: Australia
+    *   Mức tài trợ: Học bổng toàn phần, miễn học phí, trợ cấp sinh hoạt, các chi phí khác.
+    *   Hạn nộp: Chưa xác định (thường do từng trường đại học quy định và có thể khác nhau).",filtering,0.98,structured_query,17.01,✅ Success,

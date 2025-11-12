@@ -1,0 +1,113 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Hỏi cách apply (cơ bản),How do I apply for scholarships?,❌ Không,Hướng dẫn chung về cách nộp đơn,"Để xin học bổng du học, bạn cần thực hiện một quy trình có hệ thống, bắt đầu từ việc tìm kiếm đến nộp hồ sơ, đòi hỏi sự chuẩn bị kỹ lưỡng và chiến lược rõ ràng.
+
+Dưới đây là các bước cụ thể bạn có thể áp dụng:
+
+*   **Bước 1: Nghiên cứu và Xác định Học bổng phù hợp** 🧐
+    *   **Tìm kiếm đa dạng:** Khám phá các học bổng từ nhiều nguồn như các trường đại học (hầu hết các trường hàng đầu đều có học bổng riêng), các tổ chức chính phủ (ví dụ: Fulbright, Chevening, DAAD), các quỹ tư nhân, và các nền tảng tìm kiếm học bổng trực tuyến.
+    *   **Ưu tiên học bổng địa phương:** Nghiên cứu các học bổng dành cho sinh viên Việt Nam hoặc các học bổng có ít ứng viên hơn (ví dụ: học bổng từ cộng đồng, tổ chức địa phương ở Việt Nam hoặc nơi bạn muốn đến). Bạn có thể hỏi cố vấn học đường hoặc phòng hỗ trợ tài chính của trường đại học.
+    *   **Kiểm tra tiêu chí đủ điều kiện:** Đảm bảo bạn đáp ứng đầy đủ các yêu cầu về học lực, kinh nghiệm, quốc tịch, ngành học, v.v., trước khi quyết định nộp hồ sơ. Việc này giúp bạn tập trung vào những học bổng có khả năng cao nhất.
+
+*   **Bước 2: Chuẩn bị Hồ sơ và Tài liệu cần thiết** 📝
+    *   **Thư giới thiệu (Letter of Recommendation):** Tìm những người hiểu rõ bạn nhất (giáo viên, sếp, người hướng dẫn) để viết thư giới thiệu. Hãy cho họ đủ thời gian và cung cấp thông tin về mục tiêu của bạn.
+    *   **Bài luận cá nhân (Personal Statement/Essay):** Đây là cơ hội để bạn thể hiện bản thân, động lực, mục tiêu và những đóng góp tiềm năng. Hãy viết một cách chân thực, độc đáo và chỉnh sửa kỹ lưỡng.
+    *   **Bảng điểm và bằng cấp:** Chuẩn bị bản sao có công chứng hoặc bản dịch (nếu cần) của bảng điểm, bằng tốt nghiệp, chứng chỉ tiếng Anh (IELTS/TOEFL) và các chứng chỉ khác.
+    *   **CV/Resume:** Tóm tắt kinh nghiệm học tập, làm việc, hoạt động ngoại khóa và kỹ năng của bạn một cách chuyên nghiệp.
+    *   **Các tài liệu khác:** Tùy thuộc vào học bổng, bạn có thể cần thêm kế hoạch học tập, portfolio, giấy tờ tài chính, v.v.
+
+*   **Bước 3: Nộp Hồ sơ một cách Chiến lược** 🚀
+    *   **Đọc kỹ hướng dẫn:** Mỗi học bổng có yêu cầu và quy trình nộp hồ sơ riêng. Hãy đọc thật kỹ để không bỏ sót bất kỳ chi tiết nào.
+    *   **Kiểm tra lại hồ sơ:** Trước khi nộp, hãy rà soát lại toàn bộ hồ sơ, đặc biệt là bài luận và các giấy tờ quan trọng, để đảm bảo không có lỗi chính tả hay ngữ pháp.
+    *   **Nộp trước thời hạn:** Luôn cố gắng nộp hồ sơ sớm hơn thời hạn chót để tránh các sự cố kỹ thuật hoặc áp lực vào phút cuối.
+    *   **Nộp nhiều học bổng:** Đừng chỉ nộp một học bổng duy nhất. Hãy nộp cho nhiều chương trình khác nhau mà bạn đủ điều kiện để tăng cơ hội thành công.
+
+Quá trình xin học bổng có thể đòi hỏi nhiều thời gian và công sức, nhưng đó là một khoản đầu tư xứng đáng cho tương lai của bạn. Hãy kiên trì và tin tưởng vào khả năng của mình nhé! 💪",general_advice,0.98,tavily_search,17.02,✅ Success,
+2,Hỏi về documents (lo lắng),What documents do I need for scholarship applications?,❌ Không,Danh sách giấy tờ chung,"Để chuẩn bị hồ sơ xin học bổng du học, bạn cần tập hợp một bộ tài liệu khá toàn diện. Dưới đây là danh sách các tài liệu phổ biến và quan trọng nhất, được chia thành các nhóm để bạn dễ dàng theo dõi:
+
+### 📝 Các Tài Liệu Học Thuật (Academic Documents)
+
+*   **Bảng điểm (Transcripts):**
+    *   Bảng điểm THPT (cho bậc Đại học).
+    *   Bảng điểm Đại học (cho bậc Thạc sĩ/Tiến sĩ).
+    *   Bảng điểm từ các khóa học, chương trình trao đổi khác (nếu có).
+    *   *Lưu ý:* Thường yêu cầu bản gốc hoặc bản sao công chứng, có thể cần dịch thuật sang tiếng Anh.
+*   **Bằng tốt nghiệp/Giấy chứng nhận tốt nghiệp tạm thời:**
+    *   Bằng tốt nghiệp THPT (cho bậc Đại học).
+    *   Bằng tốt nghiệp Đại học (cho bậc Thạc sĩ/Tiến sĩ).
+*   **Chứng chỉ tiếng Anh:** 🇬🇧🇺🇸
+    *   IELTS, TOEFL iBT, PTE Academic, Duolingo English Test (DET).
+    *   Kiểm tra điểm tối thiểu yêu cầu của từng học bổng và trường.
+*   **Chứng chỉ các bài thi chuẩn hóa (nếu yêu cầu):**
+    *   **SAT/ACT:** Cho bậc Đại học (đặc biệt là ở Mỹ).
+    *   **GRE/GMAT:** Cho bậc Thạc sĩ/Tiến sĩ (GRE cho nhiều ngành, GMAT cho ngành kinh doanh/quản lý).
+    *   *Lưu ý:* Nhiều học bổng và trường hiện nay đã miễn yêu cầu các bài thi này, nhưng một số vẫn coi đây là điểm cộng hoặc bắt buộc.
+
+### ✍️ Các Tài Liệu Cá Nhân & Hỗ Trợ (Personal & Supporting Documents)
+
+*   **Bài luận cá nhân (Personal Statement/Statement of Purpose):** 🌟
+    *   Giải thích lý do bạn muốn theo học ngành/chương trình đó, mục tiêu nghề nghiệp, kinh nghiệm liên quan, và tại sao bạn xứng đáng nhận học bổng. Đây là cơ hội để bạn thể hiện cá tính và sự khác biệt.
+*   **Thư giới thiệu (Letters of Recommendation - LORs):** ✉️
+    *   Thường từ 2-3 thư, viết bởi giáo viên, giảng viên, người quản lý trực tiếp hoặc người hướng dẫn nghiên cứu.
+    *   Họ sẽ đánh giá năng lực học tập, kỹ năng, phẩm chất và tiềm năng của bạn.
+*   **Sơ yếu lý lịch (Curriculum Vitae - CV/Resume):** 📄
+    *   Tóm tắt quá trình học vấn, kinh nghiệm làm việc, hoạt động ngoại khóa, kỹ năng, giải thưởng và các thành tích khác.
+*   **Hộ chiếu (Passport):** 🛂
+    *   Bản sao trang thông tin cá nhân. Đảm bảo hộ chiếu còn hạn sử dụng dài.
+*   **Ảnh thẻ:** 📸
+    *   Theo kích thước và định dạng yêu cầu (thường là ảnh kỹ thuật số).
+*   **Chứng nhận hoạt động ngoại khóa, tình nguyện, giải thưởng:** 🏆
+    *   Các giấy chứng nhận tham gia câu lạc bộ, hoạt động xã hội, giải thưởng học thuật, cuộc thi, dự án nghiên cứu, v.v.
+*   **Portfolio (đối với một số ngành đặc thù):** 🎨
+    *   Nếu bạn nộp hồ sơ vào các ngành như nghệ thuật, kiến trúc, thiết kế, truyền thông, bạn có thể cần nộp một portfolio thể hiện các tác phẩm của mình.
+
+### 💰 Các Tài Liệu Tài Chính (Financial Documents)
+
+*   **Giấy tờ chứng minh tài chính (Proof of Funds):** 🏦
+    *   Chỉ khi học bổng yêu cầu hoặc để chứng minh khả năng chi trả phần còn lại của chi phí (nếu là học bổng bán phần) hoặc cho mục đích xin visa.
+    *   Có thể bao gồm sao kê ngân hàng, giấy xác nhận số dư tài khoản, thư bảo lãnh tài chính từ người thân/tổ chức.
+    *   *Lưu ý:* Đối với các học bổng toàn phần, tài liệu này thường không phải là yêu cầu chính trong hồ sơ ban đầu mà có thể được yêu cầu sau khi bạn đã được chọn.
+
+### 💡 Lời khuyên quan trọng:
+
+1.  **Đọc kỹ yêu cầu của từng học bổng:** Mỗi học bổng có thể có danh sách tài liệu riêng biệt. Đừng bao giờ bỏ qua bước này!
+2.  **Bắt đầu sớm:** Việc chuẩn bị hồ sơ, đặc biệt là thư giới thiệu và bài luận, cần nhiều thời gian.
+3.  **Dịch thuật công chứng:** Hầu hết các tài liệu bằng tiếng Việt cần được dịch thuật sang tiếng Anh và công chứng hợp lệ.
+4.  **Sắp xếp khoa học:** Đặt tên file rõ ràng và sắp xếp các tài liệu theo thứ tự logic để dễ dàng quản lý và nộp.
+
+Chúc bạn thật nhiều năng lượng và thành công trên hành trình chinh phục học bổng mơ ước của mình! 💪 Hãy tin tưởng vào bản thân và nỗ lực hết mình nhé!",general_advice,0.95,tavily_search,30.76,✅ Success,
+3,Hỏi về motivation letter (ngây thơ),How to write a good motivation letter?,❌ Không,Tips viết thư động lực,"Để viết một lá thư động lực (motivation letter) xuất sắc, bạn cần thể hiện rõ ràng niềm đam mê, những thành tựu liên quan và sự quan tâm sâu sắc đến chương trình hoặc học bổng mà bạn đang ứng tuyển. Đây là một cơ hội để bạn kể câu chuyện của mình và thuyết phục hội đồng tuyển sinh rằng bạn là ứng viên phù hợp nhất.
+
+Dưới đây là các bước cụ thể và lời khuyên thực tế để bạn có thể tạo ra một lá thư động lực ấn tượng:
+
+### 🚀 **Các Bước Viết Thư Động Lực Hiệu Quả**
+
+1.  **Nghiên cứu kỹ lưỡng (Trước khi viết):**
+    *   🔍 **Chương trình & Trường:** Tìm hiểu sâu về nội dung khóa học, các môn học, giáo sư, dự án nghiên cứu, giá trị cốt lõi và văn hóa của trường. Điều này giúp bạn cá nhân hóa lá thư và chứng minh sự phù hợp.
+    *   🎯 **Yêu cầu học bổng:** Đọc kỹ tiêu chí của học bổng để biết họ tìm kiếm điều gì ở ứng viên.
+    *   📝 **Ghi chú:** Liệt kê các kinh nghiệm học tập, làm việc, hoạt động ngoại khóa, kỹ năng và thành tựu của bản thân có liên quan trực tiếp đến chương trình/học bổng.
+
+2.  **Xây dựng cấu trúc thuyết phục:**
+    *   **Mở đầu (Introduction) – 1 đoạn:**
+        *   ✨ Nêu rõ mục đích của lá thư (bạn đang ứng tuyển vào chương trình/học bổng nào).
+        *   🤝 Giới thiệu ngắn gọn về bản thân và lý do chính khiến bạn quan tâm *cụ thể* đến chương trình/trường này.
+        *   Tạo ấn tượng mạnh mẽ ngay từ câu đầu tiên.
+    *   **Thân bài (Body Paragraphs) – 2-3 đoạn:**
+        *   📚 **Kinh nghiệm học thuật & chuyên môn:** Trình bày các kinh nghiệm học tập, nghiên cứu, làm việc hoặc hoạt động ngoại khóa *có liên quan*. Sử dụng các ví dụ cụ thể, số liệu (nếu có) để minh họa kỹ năng, kiến thức và thành tựu của bạn.
+        *   💡 **Động lực & Mục tiêu:** Giải thích *tại sao* bạn muốn theo học chương trình này. Liên kết động lực cá nhân, học thuật và nghề nghiệp của bạn với nội dung chương trình. Nêu rõ mục tiêu ngắn hạn và dài hạn của bạn sau khi hoàn thành khóa học và cách chương trình sẽ giúp bạn đạt được chúng.
+        *   🧩 **Sự phù hợp & Đóng góp:** Chứng minh bạn là ứng viên lý tưởng cho chương trình và trường. Bạn sẽ đóng góp gì cho cộng đồng sinh viên, cho lĩnh vực nghiên cứu? Bạn có những kỹ năng, phẩm chất nào mà chương trình đang tìm kiếm?
+    *   **Kết luận (Conclusion) – 1 đoạn:**
+        *   💖 Tóm tắt lại sự quan tâm và động lực mạnh mẽ của bạn.
+        *   🌟 Nhấn mạnh lại giá trị độc đáo mà bạn sẽ mang lại cho chương trình và trường.
+        *   🤝 Bày tỏ mong muốn được thảo luận thêm hoặc được chấp nhận vào chương trình.
+        *   Lời cảm ơn chân thành và ký tên.
+
+### 💡 **Những Lời Khuyên Quan Trọng Khác**
+
+*   **Cá nhân hóa (Tailor-made):** Đây là yếu tố then chốt! Tuyệt đối không sử dụng một mẫu thư chung cho tất cả các hồ sơ. Mỗi lá thư phải được viết riêng, đề cập đến những chi tiết cụ thể của chương trình, trường học hoặc giáo sư mà bạn đang ứng tuyển.
+*   **Trung thực & Chân thành:** Viết bằng giọng văn của chính bạn. Sự chân thành và niềm đam mê thực sự sẽ được cảm nhận qua từng câu chữ.
+*   **Ngắn gọn & Súc tích:** Một lá thư động lực thường có độ dài từ 1-2 trang A4. Đi thẳng vào vấn đề, tránh lan man và lặp lại thông tin đã có trong CV.
+*   **Tập trung vào ""Why"":** Thay vì chỉ liệt kê những gì bạn đã làm, hãy giải thích *tại sao* bạn làm điều đó, *tại sao* nó quan trọng với bạn, và *tại sao* nó liên quan đến chương trình bạn đang ứng tuyển.
+*   **Kiểm tra kỹ lưỡng (Proofread):** Lỗi ngữ pháp, chính tả, dấu câu là điều tối kỵ và có thể để lại ấn tượng rất xấu. Hãy đọc đi đọc lại nhiều lần và sử dụng các công cụ kiểm tra ngữ pháp.
+*   **Tìm kiếm phản hồi:** Nhờ bạn bè, giáo viên, cố vấn hoặc những người có kinh nghiệm đọc và góp ý cho lá thư của bạn. Một góc nhìn khách quan sẽ giúp bạn phát hiện ra những điểm cần cải thiện.
+
+Bạn hoàn toàn có thể viết một lá thư động lực xuất sắc! Hãy dành thời gian suy nghĩ kỹ lưỡng về câu chuyện của mình, thể hiện sự nhiệt huyết và chuẩn bị thật chu đáo nhé. Chúc bạn thành công! 💪",general_advice,0.98,tavily_search,21.14,✅ Success,

@@ -1,0 +1,58 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Hỏi về cost of living,What is the cost of living in Singapore?,❌ Không,Thông tin về chi phí sinh hoạt ở Singapore,"Chi phí sinh hoạt tại Singapore được đánh giá là khá cao.
+
+Dưới đây là các chi tiết cụ thể:
+
+*   💰 **Chi phí hàng tháng ước tính:** Đối với một cá nhân, chi phí sinh hoạt hàng tháng ước tính dao động từ **SGD 2,000 đến SGD 5,000** hoặc hơn, tùy thuộc vào lối sống và lựa chọn nhà ở [3, 1].
+*   🏠 **Yếu tố chính ảnh hưởng:** Giá thuê nhà là yếu tố đẩy chi phí sinh hoạt lên cao đáng kể và được ghi nhận là rất đắt đỏ [2, 1].
+*   🌍 **So sánh quốc tế:**
+    *   Chi phí sinh hoạt ở Singapore cao hơn nhiều so với nhiều quốc gia phương Tây [1].
+    *   Cao hơn khoảng **39.1%** so với Vương quốc Anh (dữ liệu 2022) [2].
+    *   Cao hơn **35%** so với Dubai và cao hơn **168%** so với Manila [4].
+    *   Tuy nhiên, lại rẻ hơn **19%** so với London và rẻ hơn **12%** so với Shiraz [4].
+    *   Mặc dù một số mặt hàng tiêu dùng và nhu yếu phẩm hàng ngày có thể thấp hơn so với các nước phương Tây, nhưng giá thuê nhà đã làm tăng tổng chi phí [2].
+
+Với mức chi phí này, việc tìm kiếm các học bổng toàn phần hoặc có hỗ trợ chi phí sinh hoạt là rất quan trọng đối với sinh viên quốc tế muốn du học tại Singapore.
+
+**Nguồn tham khảo:**
+[1] Tavily AI Answer
+[2] Cost Of Living In Singapore For Expats - William Russell: https://www.william-russell.com/blog/expat-cost-of-living-singapore/
+[3] What is the Cost of Living in Singapore in 2025? - Digit Insurance: https://www.godigit.com/guides/cost-of-living/cost-of-living-in-singapore
+[4] Cost of Living in Singapore - 2025 prices. - Expatistan: https://www.expatistan.com/cost-of-living/country/singapore",external_qa,0.98,tavily_search,18.26,✅ Success,
+2,Hỏi về culture (ngây thơ),What is Canadian culture like?,❌ Không,Thông tin về văn hóa Canada,"Văn hóa Canada được đặc trưng bởi sự đa dạng, tôn trọng cá nhân và các giá trị xã hội mạnh mẽ.
+
+Dưới đây là những điểm chính về văn hóa Canada:
+
+*   **Giá trị cốt lõi:**
+    *   Tự do, bình đẳng và tôn trọng sự đa dạng là những giá trị được đề cao hàng đầu.
+    *   Người Canada coi trọng quyền và tự do cá nhân, thường đưa ra các quyết định dựa trên lợi ích gia đình hơn là bản sắc tập thể Canada.
+    *   Lòng khoan dung, sự nhạy cảm, lòng tốt và lòng trắc ẩn cũng là những phẩm chất quan trọng. Một cuộc khảo sát cho thấy 16% người được hỏi nhấn mạnh những giá trị này là quan trọng nhất (Nguồn: Canadian values - Wikipedia).
+*   **Đa văn hóa:**
+    *   Canada là một quốc gia đa văn hóa và tích cực thúc đẩy chủ nghĩa đa văn hóa. Điều này có nghĩa là các nền văn hóa khác nhau được khuyến khích duy trì và phát triển bản sắc của mình trong xã hội Canada.
+*   **Song ngữ:**
+    *   Tiếng Anh và tiếng Pháp là hai ngôn ngữ chính thức và có vai trò quan trọng trong văn hóa Canada.
+*   **Tập quán xã hội và nghi thức:**
+    *   Văn hóa Canada cũng bao gồm các tập quán xã hội và nghi thức riêng, mặc dù thông tin chi tiết về chúng không được cung cấp trong các nguồn tìm kiếm.
+
+(Nguồn: Tavily AI Answer, Culture of Canada - Wikipedia, Canadian values - Wikipedia, Canada - Language, Culture, Customs And Etiquette)",external_qa,0.98,tavily_search,20.87,✅ Success,
+3,Hỏi về weather,How is the weather in Australia?,❌ Không,Thông tin về thời tiết Úc,"Thời tiết ở Úc vào tháng 11 năm 2025 dự kiến sẽ có những đặc điểm sau:
+
+*   ☀️ **Tổng quan:** Các ngày sẽ chủ yếu là nắng đến có mây một phần, với thời tiết nhìn chung ôn hòa và dễ chịu.
+*   🌡️ **Nhiệt độ:** Nhiệt độ dao động từ 10°C đến 28°C.
+    *   Ở Tasmania (Hobart và Launceston), nhiệt độ dự kiến ở mức giữa 10 độ C (mid-teens).
+    *   Nam Úc có thể có buổi sáng mát mẻ và khởi đầu se lạnh.
+*   🌧️ **Lượng mưa và mây:**
+    *   Có khả năng có mưa rải rác, đặc biệt ở phía bắc.
+    *   Các loại hình thời tiết bao gồm nắng, mây một phần, trời u ám, có thể có mưa rải rác, trời quang đãng và có mây.
+    *   Phía đông và phía bắc, bao gồm Hobart và Launceston, dự kiến không có nhiều mưa.
+*   🌞 **Số giờ nắng:**
+    *   Trung bình từ 0 đến 12 giờ nắng mỗi ngày.
+    *   Ngày nắng nhất là 19.11 với 12 giờ nắng.
+    *   Ngày ít nắng nhất là 01.11 với 0 giờ nắng.
+    *   Trung bình 10 giờ nắng vào đầu tháng, 9 giờ vào giữa tháng và 9 giờ vào cuối tháng.
+*   💨 **Gió:** Dự kiến có gió mạnh trên khắp Tasmania.
+
+**Nguồn tham khảo:**
+*   Weather25.com (https://www.weather25.com/oceania/australia?page=month&month=November)
+*   Climate-Data.org (https://en.climate-data.org/oceania/australia-140/c/november-11/)
+*   YouTube - National Weather Forecast 11 November 2025 (https://www.youtube.com/watch?v=9cEb8GKI2d4)",external_qa,0.95,tavily_search,16.29,✅ Success,

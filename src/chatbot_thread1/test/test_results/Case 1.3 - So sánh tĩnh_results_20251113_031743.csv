@@ -1,0 +1,55 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,So sánh 2 học bổng cụ thể,Compare Lester B. Pearson and American University EGLS,❌ Không,So sánh chi tiết 2 học bổng,"Chào bạn, dưới đây là so sánh ngắn gọn và trọng tâm giữa Học bổng Lester B. Pearson (Đại học Toronto) và Học bổng American University EGLS:
+
+**1. Mức tài trợ:**
+*   **Lester B. Pearson:** Học bổng toàn phần, bao gồm toàn bộ học phí, sách vở, phí phụ và chi phí ăn ở tại ký túc xá trong suốt 4 năm học.
+*   **AU EGLS:** Học bổng toàn phần, chi trả toàn bộ học phí, chi phí ăn ở (ký túc xá và bữa ăn) tại trường.
+
+**2. Điều kiện đầu vào:**
+*   **Lester B. Pearson:** Yêu cầu thành tích học tập xuất sắc, khả năng lãnh đạo nổi bật, và đặc biệt cần được trường cấp 3 của bạn đề cử chính thức.
+*   **AU EGLS:** Đòi hỏi GPA cao (tương đương 3.8/4.0), khả năng lãnh đạo, cam kết giải quyết các vấn đề xã hội và phải quay về nước sau khi tốt nghiệp để đóng góp.
+
+**3. Deadline:**
+*   **Lester B. Pearson:** Hạn chót đề cử từ trường thường vào tháng 11, hạn nộp hồ sơ học bổng và nhập học Đại học Toronto thường vào tháng 1.
+*   **AU EGLS:** Hạn nộp hồ sơ nhập học và học bổng thường vào giữa tháng 12 hàng năm.
+
+**4. Ưu điểm nổi bật:**
+*   **Lester B. Pearson:** Học bổng danh giá từ một trong những đại học hàng đầu thế giới tại Canada, tập trung vào học thuật xuất sắc và tiềm năng lãnh đạo toàn diện.
+*   **AU EGLS:** Cơ hội học tập tại thủ đô Washington D.C., tập trung mạnh vào phát triển lãnh đạo toàn cầu và giải quyết các vấn đề xã hội, với yêu cầu cam kết quay về phục vụ cộng đồng.
+
+**Tổng quan:** Học bổng Lester B. Pearson phù hợp với những bạn có thành tích học tập vượt trội, được trường cấp 3 đánh giá cao và muốn trải nghiệm môi trường học thuật hàng đầu Canada. Trong khi đó, AU EGLS lý tưởng cho những sinh viên quốc tế có tiềm năng lãnh đạo, cam kết mạnh mẽ với các vấn đề xã hội và mong muốn đóng góp cho đất nước mình sau khi tốt nghiệp.",static_comparison,0.98,structured_query,23.66,✅ Success,
+2,So sánh không rõ ràng,"Which is better, NUS Global Merit or NUS ASEAN?",❌ Không,So sánh NUS Global Merit vs NUS ASEAN,"NUS Global Merit và NUS ASEAN đều là những học bổng danh giá, nhưng ""tốt hơn"" phụ thuộc vào hồ sơ và mục tiêu của bạn. Dưới đây là so sánh ngắn gọn:
+
+*   **Mức tài trợ:**
+    *   **NUS Global Merit:** Học bổng toàn phần, bao gồm học phí, trợ cấp sinh hoạt hàng năm, trợ cấp ký túc xá, và vé máy bay khứ hồi (nếu có).
+    *   **NUS ASEAN:** Học bổng toàn phần, bao gồm học phí và trợ cấp sinh hoạt hàng năm.
+*   **Điều kiện đầu vào:**
+    *   **NUS Global Merit:** Yêu cầu thành tích học tập xuất sắc vượt trội (thường là top đầu), kỹ năng lãnh đạo và hoạt động ngoại khóa nổi bật. Dành cho mọi quốc tịch.
+    *   **NUS ASEAN:** Yêu cầu thành tích học tập xuất sắc, kỹ năng lãnh đạo và hoạt động ngoại khóa. Chỉ dành cho công dân các nước ASEAN (bao gồm Việt Nam).
+*   **Deadline:**
+    *   Cả hai học bổng thường có hạn nộp hồ sơ trùng với hạn nộp hồ sơ đại học NUS, thường vào tháng 3 hàng năm cho kỳ nhập học tháng 8.
+*   **Ưu điểm nổi bật:**
+    *   **NUS Global Merit:** Mức tài trợ toàn diện nhất, không yêu cầu ràng buộc sau tốt nghiệp, mang lại cơ hội phát triển lãnh đạo và mạng lưới toàn cầu.
+    *   **NUS ASEAN:** Là lựa chọn tuyệt vời cho sinh viên ASEAN với mức tài trợ đầy đủ, cạnh tranh hơn so với Global Merit nhưng vẫn rất danh giá, không yêu cầu ràng buộc.
+
+Nhìn chung, NUS Global Merit có mức tài trợ toàn diện hơn và cạnh tranh hơn nhiều do dành cho sinh viên toàn cầu với thành tích vượt trội. NUS ASEAN là một lựa chọn tuyệt vời và dễ tiếp cận hơn cho sinh viên Việt Nam có thành tích xuất sắc trong khu vực.",static_comparison,0.98,structured_query,11.58,✅ Success,
+3,So sánh về funding,"Which scholarship gives more money, Clark University or ANU Tuckwell?",❌ Không,So sánh mức tài trợ,"Trả lời trực tiếp: Học bổng ANU Tuckwell thường cung cấp mức tài trợ toàn diện và hào phóng hơn đáng kể so với các học bổng tại Clark University.
+
+Dưới đây là so sánh ngắn gọn:
+
+**1. Học bổng Clark University (ví dụ: Presidential Scholarship, Global Scholars Program)**
+
+*   **Mức tài trợ:** Thường là học bổng bán phần đáng kể, dao động từ $20,000 - $30,000 mỗi năm, giúp giảm đáng kể gánh nặng học phí nhưng hiếm khi bao gồm toàn bộ chi phí.
+*   **Điều kiện đầu vào:** Yêu cầu GPA cao (thường 3.7+), điểm SAT/ACT tốt (nếu nộp), thành tích ngoại khóa nổi bật và bài luận cá nhân mạnh mẽ.
+*   **Deadline:** Thường vào tháng 11 (Early Action/Decision) hoặc tháng 1 (Regular Decision) cho kỳ nhập học mùa thu năm sau.
+*   **Ưu điểm nổi bật:** Cơ hội học tập tại một trường đại học uy tín ở Mỹ với hỗ trợ tài chính đáng kể, giúp sinh viên tiếp cận nền giáo dục chất lượng cao.
+
+**2. Học bổng ANU Tuckwell Scholarship**
+
+*   **Mức tài trợ:** Đây là học bổng toàn phần rất hào phóng, bao gồm toàn bộ học phí, chi phí sinh hoạt, chỗ ở, sách vở, bảo hiểm y tế và vé máy bay khứ hồi cho toàn bộ thời gian học.
+*   **Điều kiện đầu vào:** Yêu cầu thành tích học tập xuất sắc gần như tuyệt đối, khả năng lãnh đạo đã được chứng minh, đóng góp tích cực cho cộng đồng và tư duy phản biện sắc bén, cùng với quá trình phỏng vấn nghiêm ngặt.
+*   **Deadline:** Thường vào tháng 3-4 hàng năm cho kỳ nhập học năm sau.
+*   **Ưu điểm nổi bật:** Hỗ trợ tài chính toàn diện không giới hạn, cơ hội học tập tại Đại học Quốc gia Úc – một trong những trường hàng đầu thế giới, và trở thành thành viên của cộng đồng sinh viên ưu tú.
+
+**Tổng quan:**
+ANU Tuckwell là học bổng toàn phần với mức tài trợ vượt trội, phù hợp với những sinh viên có thành tích học tập và hoạt động ngoại khóa xuất sắc vượt trội, mong muốn được hỗ trợ tài chính toàn diện. Trong khi đó, các học bổng của Clark University là lựa chọn tuyệt vời cho những bạn tìm kiếm hỗ trợ tài chính đáng kể để theo học tại Mỹ, dù có thể cần tự chi trả một phần chi phí.",static_comparison,0.98,structured_query,27.97,✅ Success,

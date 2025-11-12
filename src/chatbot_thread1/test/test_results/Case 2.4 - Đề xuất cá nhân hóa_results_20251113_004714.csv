@@ -1,0 +1,119 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Hỏi đề xuất chung (đơn giản),Which scholarship is best for me?,✅ BẮT BUỘC,Đề xuất học bổng phù hợp nhất,"Dựa trên hồ sơ của bạn với GPA 3.5, IELTS 7.0, bằng Cử nhân Khoa học Máy tính và mục tiêu Thạc sĩ ngành Kỹ thuật, dưới đây là 5 học bổng phù hợp nhất, được sắp xếp theo độ ưu tiên:
+
+### 1. Chinese Government Scholarship (CGS) 🇨🇳
+*   **Tại sao phù hợp:** Đây là một trong những học bổng toàn phần lớn nhất và uy tín nhất thế giới, cung cấp nhiều chương trình Thạc sĩ Kỹ thuật và Khoa học Máy tính tại các trường đại học hàng đầu Trung Quốc. Với GPA 3.5 và IELTS 7.0, bạn có hồ sơ rất mạnh để cạnh tranh. Học bổng này giúp bạn tiếp cận nền giáo dục chất lượng cao và cơ hội nghiên cứu tiên tiến trong lĩnh vực Kỹ thuật.
+*   **Khả năng đỗ:** Trung bình - Cao. Mặc dù rất cạnh tranh do số lượng ứng viên đông đảo, hồ sơ xuất sắc của bạn tăng đáng kể cơ hội.
+*   **Hạn nộp:** 2026-02-08
+
+### 2. Stipendium Hungaricum (Hungarian Government Scholarship) 🇭🇺
+*   **Tại sao phù hợp:** Học bổng toàn phần này rất phổ biến cho bậc Thạc sĩ, đặc biệt trong các ngành STEM như Kỹ thuật và Công nghệ thông tin. Hungary có nhiều trường đại học chất lượng với các chương trình giảng dạy bằng tiếng Anh. Mức GPA và IELTS của bạn rất phù hợp, giúp bạn có lợi thế cạnh tranh tốt để theo đuổi ngành Kỹ thuật tại một quốc gia châu Âu với chi phí sinh hoạt hợp lý.
+*   **Khả năng đỗ:** Trung bình - Cao. Đây là học bổng cạnh tranh toàn cầu, nhưng hồ sơ của bạn rất mạnh.
+*   **Hạn nộp:** 2025-01-15
+
+### 3. Turkiye Burslari (Turkey Government Scholarship) 🇹🇷
+*   **Tại sao phù hợp:** Đây là một học bổng toàn phần rất hào phóng, bao gồm đầy đủ các chi phí, giúp bạn tập trung hoàn toàn vào việc học Thạc sĩ Kỹ thuật. Thổ Nhĩ Kỳ có hệ thống giáo dục đại học đang phát triển mạnh mẽ với nhiều chương trình Kỹ thuật chất lượng cao. Hồ sơ của bạn rất ấn tượng và phù hợp với tiêu chí của học bổng này.
+*   **Khả năng đỗ:** Trung bình - Cao. Học bổng này thu hút lượng lớn ứng viên quốc tế, nhưng hồ sơ của bạn rất cạnh tranh.
+*   **Hạn nộp:** 2025-02-20
+
+### 4. Master Mind Scholarship (Government of Flanders, Belgium) 🇧🇪
+*   **Tại sao phù hợp:** Học bổng này dành cho những sinh viên xuất sắc muốn theo học Thạc sĩ tại các trường đại học ở Flanders, Bỉ. Bỉ nổi tiếng với chất lượng giáo dục và nghiên cứu, đặc biệt trong lĩnh vực Kỹ thuật. Với GPA 3.5 và IELTS 7.0, bạn là một ứng viên tiềm năng cho học bổng danh giá này, giúp bạn tiếp cận môi trường học thuật tiên tiến ở châu Âu.
+*   **Khả năng đỗ:** Trung bình. Đây là học bổng rất cạnh tranh, hướng đến các ứng viên có thành tích học tập xuất sắc.
+*   **Hạn nộp:** 2026-01-15
+
+### 5. Danish Government Scholarship (University of Southern Denmark – SDU) 🇩🇰
+*   **Tại sao phù hợp:** Đan Mạch là quốc gia hàng đầu về đổi mới và công nghệ, với các chương trình Kỹ thuật chất lượng cao. SDU là một trường đại học uy tín. Mặc dù học bổng có thể là toàn phần hoặc bán phần, với hồ sơ mạnh của bạn, bạn có cơ hội tốt để nhận được mức hỗ trợ cao nhất, giúp bạn trải nghiệm nền giáo dục tiên tiến tại Bắc Âu.
+*   **Khả năng đỗ:** Trung bình. Học bổng Đan Mạch rất cạnh tranh, và việc nhận được tài trợ toàn phần đòi hỏi hồ sơ nổi bật.
+*   **Hạn nộp:** 2026-01-07",personalized_recommendation,0.98,"structured_query, profile_retriever",35.47,✅ Success,
+2,Hỏi đề xuất (ngây thơ),Recommend scholarships for me,✅ BẮT BUỘC,Danh sách học bổng được đề xuất,"Dưới đây là 5 học bổng phù hợp nhất với hồ sơ của bạn cho bậc Thạc sĩ ngành Kỹ thuật, được sắp xếp theo độ ưu tiên:
+
+### 1. Government of Ireland – International Education Scholarship (GOI-IES) 🇮🇪
+*   **Quốc gia:** Ireland
+*   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí và sinh hoạt phí.
+*   **Hạn nộp:** 2025-03-05
+*   **Tại sao phù hợp:** Ireland là một trung tâm công nghệ phát triển mạnh mẽ ở châu Âu, rất lý tưởng cho sinh viên ngành Kỹ thuật và Khoa học Máy tính. Học bổng này cung cấp tài trợ toàn diện, giúp bạn tập trung hoàn toàn vào việc học. Với GPA 3.5 và IELTS 7.0, bạn có một hồ sơ rất cạnh tranh để ứng tuyển vào các trường đại học hàng đầu tại đây.
+*   **Khả năng đỗ:** Trung bình đến Cao. Đây là học bổng có tính cạnh tranh cao nhưng hồ sơ của bạn rất mạnh.
+
+### 2. Master Mind Scholarship (Government of Flanders) 🇧🇪
+*   **Quốc gia:** Bỉ (Vùng Flanders)
+*   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí và một khoản trợ cấp cố định.
+*   **Hạn nộp:** 2026-01-15
+*   **Tại sao phù hợp:** Bỉ nổi tiếng với hệ thống giáo dục chất lượng cao, đặc biệt trong các lĩnh vực Kỹ thuật và Khoa học. Học bổng Master Mind là một cơ hội tuyệt vời để theo học tại các trường đại học uy tín ở Flanders với tài trợ đầy đủ. Ngành Kỹ thuật mục tiêu của bạn rất phù hợp với các chương trình được tài trợ.
+*   **Khả năng đỗ:** Trung bình đến Cao. Học bổng này cũng cạnh tranh, nhưng với thành tích học tập và khả năng tiếng Anh của bạn, cơ hội là rất tốt.
+
+### 3. Stipendium Hungaricum (Hungarian Government Scholarship) 🇭🇺
+*   **Quốc gia:** Hungary
+*   **Mức tài trợ:** Miễn học phí, sinh hoạt phí, chỗ ở và các chi phí khác (thực chất là học bổng toàn phần).
+*   **Hạn nộp:** 2025-01-15
+*   **Tại sao phù hợp:** Đây là một trong những chương trình học bổng chính phủ phổ biến và toàn diện nhất ở châu Âu, cung cấp nhiều lựa chọn chương trình Thạc sĩ Kỹ thuật bằng tiếng Anh. Hồ sơ của bạn với GPA 3.5 và IELTS 7.0 rất phù hợp với các yêu cầu của học bổng này.
+*   **Khả năng đỗ:** Trung bình. Số lượng ứng viên quốc tế cho học bổng này rất lớn, nhưng hồ sơ của bạn có tính cạnh tranh cao.
+
+### 4. Chinese Government Scholarship (CGS) 🇨🇳
+*   **Quốc gia:** Trung Quốc
+*   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, chỗ ở, sinh hoạt phí và các chi phí khác.
+*   **Hạn nộp:** 2026-02-08
+*   **Tại sao phù hợp:** Trung Quốc có nhiều trường đại học hàng đầu thế giới về Kỹ thuật và Khoa học Máy tính, với nhiều chương trình Thạc sĩ bằng tiếng Anh. CGS là một trong những học bổng hào phóng nhất, cung cấp tài trợ toàn diện. Đây là một lựa chọn tuyệt vời để trải nghiệm nền giáo dục chất lượng cao và văn hóa đa dạng.
+*   **Khả năng đỗ:** Trung bình. CGS rất phổ biến và thu hút nhiều ứng viên, nhưng với thành tích học tập của bạn, bạn có cơ hội tốt.
+
+### 5. Turkiye Burslari (Turkey Government Scholarship) 🇹🇷
+*   **Quốc gia:** Thổ Nhĩ Kỳ
+*   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, sinh hoạt phí, chỗ ở, bảo hiểm y tế và vé máy bay khứ hồi.
+*   **Hạn nộp:** 2025-02-20
+*   **Tại sao phù hợp:** Turkiye Burslari là một học bổng toàn diện, bao gồm gần như tất cả các chi phí cần thiết cho việc du học. Thổ Nhĩ Kỳ có nhiều trường đại học chất lượng với các chương trình Kỹ thuật bằng tiếng Anh, và đây là một lựa chọn tốt để theo đuổi bậc Thạc sĩ.
+*   **Khả năng đỗ:** Trung bình. Học bổng này thu hút một lượng lớn ứng viên quốc tế, nhưng hồ sơ của bạn đủ mạnh để cạnh tranh.",personalized_recommendation,0.98,"structured_query, profile_retriever",22.78,✅ Success,
+3,Hỏi đề xuất với priority (cụ thể),Which scholarship should I apply first?,✅ BẮT BUỘC,Đề xuất theo thứ tự ưu tiên,"Dựa trên profile của bạn (GPA 3.5, IELTS 7.0, ngành Computer Science muốn học Master Engineering), bạn có một hồ sơ rất mạnh và cạnh tranh cho nhiều học bổng toàn phần. Dưới đây là 5 học bổng bạn nên ưu tiên nộp hồ sơ:
+
+### 1. Stipendium Hungaricum (Hungarian Government Scholarship)
+
+*   **Quốc gia:** Hungary
+*   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, sinh hoạt phí, chỗ ở và bảo hiểm y tế.
+*   **Hạn nộp:** 2025-01-15
+*   **Tại sao phù hợp:**
+    *   **Hồ sơ mạnh:** GPA 3.5 và IELTS 7.0 của bạn là điểm cộng rất lớn, vượt trội so với yêu cầu tối thiểu của học bổng này.
+    *   **Ngành học:** Hungary có nhiều chương trình Thạc sĩ Kỹ thuật (Engineering) và Khoa học Máy tính (Computer Science) chất lượng cao, giảng dạy bằng tiếng Anh.
+    *   **Cơ hội ở Châu Âu:** Đây là một cánh cửa tuyệt vời để trải nghiệm giáo dục chất lượng cao ở Châu Âu với chi phí sinh hoạt hợp lý.
+*   **Khả năng đỗ:** Cao. Với profile hiện tại, bạn là một ứng viên rất mạnh cho học bổng này.
+
+### 2. Chinese Government Scholarship (CGS)
+
+*   **Quốc gia:** China
+*   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, chỗ ở, sinh hoạt phí và các chi phí khác.
+*   **Hạn nộp:** 2026-02-08 (Lưu ý: Hạn nộp thường vào đầu năm, bạn cần chuẩn bị sớm cho kỳ 2026)
+*   **Tại sao phù hợp:**
+    *   **Uy tín và toàn diện:** CGS là một trong những học bổng chính phủ lớn nhất và uy tín nhất thế giới, cung cấp hỗ trợ toàn diện.
+    *   **Đa dạng ngành:** Trung Quốc có rất nhiều trường đại học hàng đầu với các chương trình Thạc sĩ Kỹ thuật và Khoa học Máy tính tiên tiến, giảng dạy bằng tiếng Anh.
+    *   **Hồ sơ cạnh tranh:** Profile của bạn đủ mạnh để cạnh tranh cho học bổng này, đặc biệt nếu bạn có thêm các hoạt động ngoại khóa hoặc kinh nghiệm nghiên cứu liên quan.
+*   **Khả năng đỗ:** Trung bình. CGS có tính cạnh tranh cao do số lượng ứng viên toàn cầu rất lớn, nhưng profile của bạn đủ mạnh để có cơ hội tốt.
+
+### 3. Turkiye Burslari (Turkey Government Scholarship)
+
+*   **Quốc gia:** Turkey
+*   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, sinh hoạt phí, chỗ ở, bảo hiểm y tế và vé máy bay khứ hồi.
+*   **Hạn nộp:** 2025-02-20
+*   **Tại sao phù hợp:**
+    *   **Hỗ trợ toàn diện:** Đây là một trong những học bổng hào phóng nhất, bao gồm cả vé máy bay, giúp giảm gánh nặng tài chính đáng kể.
+    *   **Nhiều lựa chọn:** Thổ Nhĩ Kỳ có nhiều trường đại học tốt với các chương trình Thạc sĩ Kỹ thuật bằng tiếng Anh.
+    *   **Hồ sơ phù hợp:** Profile của bạn rất phù hợp với yêu cầu của học bổng này.
+*   **Khả năng đỗ:** Trung bình. Học bổng này cũng phổ biến nhưng có thể ít cạnh tranh hơn CGS một chút, và profile của bạn rất phù hợp.
+
+### 4. Bangkok Government Scholarship (Chulalongkorn University – Graduate)
+
+*   **Quốc gia:** Thailand
+*   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí, sinh hoạt phí, chỗ ở và các chi phí khác.
+*   **Hạn nộp:** 2025-10-13
+*   **Tại sao phù hợp:**
+    *   **Đại học hàng đầu khu vực:** Chulalongkorn University là một trong những trường đại học danh tiếng nhất Thái Lan và khu vực Đông Nam Á, với chất lượng đào tạo Kỹ thuật được công nhận.
+    *   **Hồ sơ xuất sắc:** Với GPA 3.5 và IELTS 7.0, bạn sẽ là một ứng viên rất nổi bật cho học bổng này, đặc biệt là trong bối cảnh cạnh tranh khu vực.
+    *   **Môi trường học tập tốt:** Thái Lan là một lựa chọn tốt cho việc du học với chi phí sinh hoạt phải chăng và môi trường thân thiện.
+*   **Khả năng đỗ:** Cao. Khả năng bạn được nhận vào chương trình và học bổng này là rất cao với hồ sơ xuất sắc.
+
+### 5. Master Mind Scholarship (Government of Flanders)
+
+*   **Quốc gia:** Belgium
+*   **Mức tài trợ:** Học bổng toàn phần, bao gồm miễn học phí và một khoản trợ cấp cố định.
+*   **Hạn nộp:** 2026-01-15 (Lưu ý: Hạn nộp thường vào đầu năm, bạn cần chuẩn bị sớm cho kỳ 2026)
+*   **Tại sao phù hợp:**
+    *   **Danh giá:** Đây là một học bổng rất danh giá, dành cho các sinh viên quốc tế xuất sắc muốn theo học Thạc sĩ tại các trường đại học hàng đầu vùng Flanders (Bỉ).
+    *   **Chất lượng giáo dục cao:** Bỉ có hệ thống giáo dục chất lượng cao, đặc biệt trong các ngành Kỹ thuật.
+    *   **Hồ sơ mạnh:** Profile của bạn đáp ứng các tiêu chí học thuật cao mà học bổng này tìm kiếm.
+*   **Khả năng đỗ:** Thấp. Master Mind cực kỳ cạnh tranh, chỉ dành cho những ứng viên xuất sắc nhất thế giới. Mặc dù profile của bạn tốt, số lượng ứng viên và tiêu chuẩn rất cao khiến khả năng đỗ thấp hơn các học bổng khác. Tuy nhiên, đây vẫn là một học bổng đáng để thử sức.",personalized_recommendation,0.98,"structured_query, profile_retriever",63.06,✅ Success,
