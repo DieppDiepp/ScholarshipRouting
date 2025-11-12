@@ -80,6 +80,6 @@ python run_batch_test.py
 ## Cấu hình
 
 File `.env`:
-- `MAX_TOKENS=2048` - Giới hạn response
+- `MAX_TOKENS=3500` - Giới hạn response
 - `TEMPERATURE=0.3` - Độ sáng tạo (0.0-1.0)
 - `USE_SEMANTIC_SEARCH=false` - Bật/tắt semantic search
