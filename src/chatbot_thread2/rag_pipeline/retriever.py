@@ -89,8 +89,9 @@ def apply_post_retrieval_filters(docs: List[Document], filters: ScholarshipSearc
 # 3. HÀM CHÍNH (Sửa lại): Tìm kiếm 2 bước
 def search_scholarships(user_query: str, 
                         filters: ScholarshipSearchFilters, 
-                        initial_k: int = 25, 
-                        final_k: int = 5) -> List[Document]:
+                        # ĐỌC TỪ CONFIG LÀM DEFAULT
+                        initial_k: int = config.INITIAL_K_RETRIEVAL, 
+                        final_k: int = config.FINAL_K_RETRIEVAL) -> List[Document]:
     """
     Thực hiện tìm kiếm 3 bước:
     1. Semantic Search (lấy initial_k)
@@ -125,7 +126,7 @@ def search_scholarships(user_query: str,
             unique_scholarships.add(scholarship_name)
         
         # Dừng lại khi đủ số lượng mong muốn
-        if len(final_unique_docs) >= final_k:
+        if len(final_unique_docs) >= final_k: # <-- Đọc final_k từ tham số
             break
             
     print(f"--- Found {len(final_unique_docs)} unique scholarship chunks (after filtering & de-duping) ---")
@@ -138,14 +139,14 @@ if __name__ == '__main__':
     
     print(f"Testing RAG pipeline with '{config.EMBEDDING_CHOICE}' model.")
     
-    test_query = "Tôi muốn tìm học bổng toàn phần thạc sĩ ngành khoa học dữ liệu ở châu âu"
+    test_query = "I want to find a full scholarship for a Master’s program in Data Science in Europe. I have a high GPA and strong leadership skills."
     
     # 1. Chạy extractor
     extracted_filters = extract_filters(test_query)
     print(f"Extracted filters: {extracted_filters.model_dump_json(indent=2, exclude_none=True)}")
     
     # 2. Chạy retriever
-    retrieved_docs = search_scholarships(test_query, extracted_filters)
+    retrieved_docs = search_scholarships(test_query, extracted_filters, initial_k=config.INITIAL_K)
     
     # 3. In kết quả
     for i, doc in enumerate(retrieved_docs):
