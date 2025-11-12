@@ -116,21 +116,3 @@ python api/api_fastapi.py
 cd test
 python run_batch_test.py
 ```
-
-## Troubleshooting
-
-### Lỗi: "GEMINI_API_KEY chưa được cấu hình"
-- Kiểm tra file .env đã tạo chưa
-- Kiểm tra API key đã điền đúng chưa
-
-### Lỗi: "Cannot find data file"
-- Kiểm tra đường dẫn DATA_PATH trong .env
-- Đảm bảo file JSON tồn tại
-
-### Lỗi: "Module not found"
-- Chạy lại: `pip install -r requirements.txt`
-- Kiểm tra virtual environment đã activate chưa
-
-### Response quá chậm
-- Giảm TOP_K_RESULTS trong .env
-- Tắt semantic search: `USE_SEMANTIC_SEARCH=false`
