@@ -90,6 +90,14 @@ def ensure_index(client: Elasticsearch, index: str) -> str:
                         "type": "text",
                         "analyzer": "en_std",
                     },
+                    "End_Date": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                    },
+                    "Start_Date": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                    },
                 }
             },
         )
@@ -142,22 +150,44 @@ def index_many(
     *,
     index: str,
     collection: Optional[str] = None,
-) -> int:
+) -> Dict[str, Any]:
     ensure_index(client, index)
+    
+    failed_docs = []
 
     def gen():
         for d in docs:
-            src = {**d, "__text": _catch_all(d)}
-            if collection:
-                src["collection"] = collection
+            try:
+                src = {**d, "__text": _catch_all(d)}
+                if collection:
+                    src["collection"] = collection
 
-            # Lấy id từ Firestore doc.id nếu có
-            es_id = d.get("id") or d.get("doc_id")
+                # Lấy id từ Firestore doc.id nếu có
+                es_id = d.get("id") or d.get("doc_id")
 
-            yield {"_op_type": "index", "_index": index, "_id": es_id, "_source": src}
+                yield {"_op_type": "index", "_index": index, "_id": es_id, "_source": src}
+            except Exception as e:
+                doc_id = d.get("id") or d.get("doc_id") or "unknown"
+                failed_docs.append({"id": doc_id, "error": str(e)})
+                continue
 
-    success, _ = helpers.bulk(client, gen(), stats_only=True)
-    return success
+    success, errors = helpers.bulk(client, gen(), stats_only=False, raise_on_error=False)
+    
+    # Add bulk operation errors to failed_docs
+    if errors:
+        for error in errors:
+            error_info = error.get("index", {})
+            doc_id = error_info.get("_id", "unknown")
+            error_msg = error_info.get("error", {})
+            if isinstance(error_msg, dict):
+                error_msg = error_msg.get("reason", str(error_msg))
+            failed_docs.append({"id": doc_id, "error": str(error_msg)})
+    
+    return {
+        "success": success,
+        "failed": len(failed_docs),
+        "failed_ids": [{"id": f["id"], "error": f["error"]} for f in failed_docs]
+    }
 
 
 def search_keyword(

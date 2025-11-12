@@ -42,26 +42,41 @@ def search(
 def sync_firestore_to_es(
     collection: str = Query(..., description="Tên Firestore collection cần sync"),
 ):
-    db = firestore.client()
-    docs = db.collection(collection).stream()
-    items = [{"id": doc.id, **doc.to_dict()} for doc in docs]
-
-    if not items:
-        return {"status": "ok", "message": f"No documents in collection '{collection}'"}
-
-    es = Elasticsearch(
-        hosts=[ES_HOST],
-        basic_auth=(ES_USER, ES_PASS),
-        verify_certs=False,
-        max_retries=30,
-        retry_on_timeout=True,
-        request_timeout=30,
-    )
     try:
-        count = index_many(es, items, index=collection, collection=collection)
-        return {"status": "ok", "indexed": count, "collection": collection}
-    finally:
-        es.close()
+        db = firestore.client()
+        docs = db.collection(collection).stream()
+        items = [{"id": doc.id, **doc.to_dict()} for doc in docs]
+
+        if not items:
+            return {"status": "ok", "message": f"No documents in collection '{collection}'"}
+
+        es = Elasticsearch(
+            hosts=[ES_HOST],
+            basic_auth=(ES_USER, ES_PASS),
+            verify_certs=False,
+            max_retries=30,
+            retry_on_timeout=True,
+            request_timeout=30,
+        )
+        try:
+            result = index_many(es, items, index=collection, collection=collection)
+            return {
+                "status": "ok",
+                "total_documents": len(items),
+                "indexed": result["success"],
+                "failed": result["failed"],
+                "failed_records": result["failed_ids"],
+                "collection": collection
+            }
+        finally:
+            es.close()
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": str(e),
+            "collection": collection,
+            "error_type": type(e).__name__
+        }
 
 filter_example = [
     {
