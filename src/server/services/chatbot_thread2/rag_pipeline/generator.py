@@ -1,5 +1,6 @@
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.docstore.document import Document
+# from langchain.docstore.document import Document
+from langchain_core.documents import Document
 from typing import List
 
 # --- IMPORT MỚI ---

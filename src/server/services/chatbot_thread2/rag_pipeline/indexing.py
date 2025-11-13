@@ -3,8 +3,7 @@ import shutil
 from tqdm import tqdm
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.embeddings.base import Embeddings # Dùng class base
-from langchain.docstore.document import Document
-# from langchain_core.documents import Documents
+from langchain_core.documents import Document
 from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 
