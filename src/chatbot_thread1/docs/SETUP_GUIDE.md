@@ -54,7 +54,8 @@ DATA_PATH=path/to/structured_english_reports_master.json
 RAG_DATABASE_PATH=path/to/rag_database_master.jsonl
 
 # Model settings
-GEMINI_MODEL=models/gemini-2.5-flash
+GEMINI_MODEL_CLASSIFICATION=gemini-2.5-flash-8b
+GEMINI_MODEL_GENERATION=gemini-2.5-flash
 TEMPERATURE=0.3
 MAX_TOKENS=2048
 

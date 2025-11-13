@@ -1,21 +1,21 @@
-STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
-1,So sánh 2 học bổng cụ thể,Compare Lester B. Pearson and American University EGLS,❌ Không,So sánh chi tiết 2 học bổng
-2,So sánh không rõ ràng,"Which is better, NUS Global Merit or NUS ASEAN?",❌ Không,So sánh NUS Global Merit vs NUS ASEAN
-3,So sánh về funding,"Which scholarship gives more money, Clark University or ANU Tuckwell?",❌ Không,So sánh mức tài trợ
-4,So sánh về requirements (lo lắng),Is University of Toronto Scholars easier to get than Lester B. Pearson?,❌ Không,So sánh điều kiện nhập học
-5,So sánh về deadline,"Which one has later deadline, Clark University or American University?",❌ Không,So sánh thời hạn nộp đơn
-6,So sánh 3 học bổng,"Compare NUS Global Merit, NUS ASEAN and Lester B. Pearson",❌ Không,So sánh 3 học bổng
-7,So sánh về GPA (ngây thơ),Which scholarship accepts lower GPA between ANU Tuckwell and Edinburgh Mathematics?,❌ Không,So sánh yêu cầu GPA
-8,So sánh về age limit,Which scholarship is better for older students?,❌ Không,So sánh giới hạn tuổi
-9,So sánh về language requirement,"NUS vs University of Toronto, which needs better English?",❌ Không,So sánh yêu cầu tiếng Anh
-10,So sánh về accommodation,"Which provides better housing, ANU Tuckwell or Lester B. Pearson?",❌ Không,So sánh hỗ trợ chỗ ở
-11,So sánh về eligible fields,Which scholarship covers more fields of study?,❌ Không,So sánh ngành học được hỗ trợ
-12,So sánh về application process,"Which is easier to apply, Clark University or Sheffield?",❌ Không,So sánh quy trình nộp đơn
-13,So sánh về monthly stipend,Compare monthly allowance of NUS Global Merit and NUS ASEAN,❌ Không,So sánh trợ cấp hàng tháng
-14,So sánh về health insurance,Which scholarship has better health coverage?,❌ Không,So sánh bảo hiểm y tế
-15,So sánh về duration,How long is ANU Tuckwell compared to American University EGLS?,❌ Không,So sánh thời gian học bổng
-16,So sánh về flight tickets,Do both Mastercard Foundation and Benjamin Gilman pay for flights?,❌ Không,So sánh hỗ trợ vé máy bay
-17,So sánh về tuition coverage,Which scholarship covers 100% tuition?,❌ Không,So sánh mức hỗ trợ học phí
-18,So sánh về work permission,Can I work while studying with these scholarships?,❌ Không,So sánh quy định về làm việc
-19,So sánh về degree levels,Which scholarship supports more degree levels?,❌ Không,So sánh các bậc học được hỗ trợ
-20,So sánh tổng thể (ngây thơ),"Overall, which scholarship is better for me?",❌ Không,So sánh tổng quan (nhưng không có profile)
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
+1,So sánh 2 học bổng cụ thể,So sánh học bổng Lester B. Pearson và American University EGLS,Không,So sánh chi tiết 2 học bổng
+2,So sánh không rõ ràng,Học bổng nào tốt hơn giữa NUS Global Merit và NUS ASEAN?,Không,So sánh NUS Global Merit vs NUS ASEAN
+3,So sánh về funding,Học bổng nào cho nhiều tiền hơn giữa Clark University và ANU Tuckwell?,Không,So sánh mức tài trợ
+4,So sánh về requirements (lo lắng),University of Toronto Scholars có dễ đỗ hơn Lester B. Pearson không?,Không,So sánh điều kiện nhập học
+5,So sánh về deadline,Học bổng nào có hạn nộp đơn muộn hơn giữa Clark University và American University?,Không,So sánh thời hạn nộp đơn
+6,So sánh 3 học bổng,So sánh NUS Global Merit, NUS ASEAN và Lester B. Pearson,Không,So sánh 3 học bổng
+7,So sánh về GPA (ngây thơ),Học bổng nào chấp nhận GPA thấp hơn giữa ANU Tuckwell và Edinburgh Mathematics?,Không,So sánh yêu cầu GPA
+8,So sánh về age limit,Học bổng nào tốt hơn cho sinh viên lớn tuổi?,Không,So sánh giới hạn tuổi
+9,So sánh về language requirement,NUS hay University of Toronto yêu cầu tiếng Anh tốt hơn?,Không,So sánh yêu cầu tiếng Anh
+10,So sánh về accommodation,Học bổng nào hỗ trợ chỗ ở tốt hơn giữa ANU Tuckwell và Lester B. Pearson?,Không,So sánh hỗ trợ chỗ ở
+11,So sánh về eligible fields,Học bổng nào hỗ trợ nhiều ngành học hơn?,Không,So sánh ngành học được hỗ trợ
+12,So sánh về application process,Học bổng nào dễ nộp đơn hơn giữa Clark University và Sheffield?,Không,So sánh quy trình nộp đơn
+13,So sánh về monthly stipend,So sánh trợ cấp hàng tháng của NUS Global Merit và NUS ASEAN,Không,So sánh trợ cấp hàng tháng
+14,So sánh về health insurance,Học bổng nào có bảo hiểm y tế tốt hơn?,Không,So sánh bảo hiểm y tế
+15,So sánh về duration,ANU Tuckwell kéo dài bao lâu so với American University EGLS?,Không,So sánh thời gian học bổng
+16,So sánh về flight tickets,Cả Mastercard Foundation và Benjamin Gilman có trả vé máy bay không?,Không,So sánh hỗ trợ vé máy bay
+17,So sánh về tuition coverage,Học bổng nào hỗ trợ 100% học phí?,Không,So sánh mức hỗ trợ học phí
+18,So sánh về work permission,Tôi có thể làm việc khi học với những học bổng này không?,Không,So sánh quy định về làm việc
+19,So sánh về degree levels,Học bổng nào hỗ trợ nhiều bậc học hơn?,Không,So sánh các bậc học được hỗ trợ
+20,So sánh tổng thể (ngây thơ),Nhìn chung học bổng nào tốt hơn cho tôi?,Không,So sánh tổng quan (nhưng không có profile)

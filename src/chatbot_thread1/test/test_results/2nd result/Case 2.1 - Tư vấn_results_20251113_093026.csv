@@ -1,0 +1,25 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Hỏi cách apply (cơ bản),Làm thế nào để xin học bổng?,Không,Hướng dẫn chung về cách nộp đơn,"Để xin học bổng thành công, bạn cần thực hiện một quy trình có hệ thống, từ nghiên cứu đến chuẩn bị và nộp hồ sơ một cách kỹ lưỡng.
+
+Dưới đây là các bước cụ thể bạn có thể áp dụng:
+
+*   **Bước 1: Nghiên cứu và Xác định mục tiêu:**
+    *   Tìm kiếm các chương trình học bổng phù hợp với ngành học, quốc gia mong muốn và trình độ học vấn của bạn (Đại học, Thạc sĩ, Tiến sĩ).
+    *   Xác định rõ các tiêu chí đủ điều kiện của từng học bổng, bao gồm yêu cầu về học lực, kinh nghiệm, kỹ năng ngoại ngữ và các hoạt động ngoại khóa.
+    *   Lưu ý rằng các nguồn học bổng rất đa dạng, có thể từ 10% đến 100% học phí.
+
+*   **Bước 2: Chuẩn bị hồ sơ chất lượng cao:**
+    *   Thu thập và hoàn thiện các tài liệu cần thiết như bảng điểm, bằng cấp, chứng chỉ tiếng Anh (IELTS/TOEFL), thư giới thiệu, CV (sơ yếu lý lịch) và bài luận cá nhân (Statement of Purpose/Personal Statement).
+    *   Đảm bảo mọi tài liệu đều chính xác, chuyên nghiệp và thể hiện rõ năng lực cũng như mục tiêu của bạn.
+
+*   **Bước 3: Nộp đơn đúng thời hạn:**
+    *   Điền đầy đủ và chính xác thông tin vào mẫu đơn xin học bổng.
+    *   Lưu ý kỹ thời hạn nộp đơn của từng chương trình và gửi hồ sơ trước thời điểm đó.
+    *   Trong nhiều trường hợp, việc được nhận vào một trường Đại học là điều kiện tiên quyết để nộp đơn xin học bổng, nhưng đôi khi bạn cũng có thể thực hiện hai việc này song song.
+
+*   **Bước 4: Nâng cao khả năng thành công:**
+    *   Đừng ngại nộp đơn cho nhiều học bổng khác nhau để tăng cơ hội.
+    *   Cá nhân hóa từng bộ hồ sơ cho phù hợp với yêu cầu và giá trị của từng học bổng cụ thể.
+    *   Kiên trì và không ngừng cải thiện hồ sơ của mình.
+
+Quá trình xin học bổng đòi hỏi sự chuẩn bị kỹ lưỡng và kiên trì. Hãy tự tin vào khả năng của mình và bắt đầu hành trình chinh phục học bổng ngay hôm nay!",general_advice,0.98,tavily_search,12.87,✅ Success,

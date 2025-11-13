@@ -239,7 +239,7 @@ class BatchTestRunner:
         Chạy tất cả các file test trong thư mục test case (3 samples đầu mỗi file)
         """
         print("\n" + "="*80)
-        print("🚀 BẮT ĐẦU BATCH TEST - CHẠY 3 SAMPLES ĐẦU MỖI FILE")
+        print("🚀 BẮT ĐẦU BATCH TEST")
         print("="*80)
         
         # Tìm tất cả file CSV trong thư mục test case
@@ -287,7 +287,7 @@ class BatchTestRunner:
         print("\n" + "="*80)
         print("📋 BATCH TEST RUNNER - MENU")
         print("="*80)
-        print("\n1. Chạy tất cả 7 file test (3 samples đầu mỗi file)")
+        print("\n1. Chạy tất cả 7 file test")
         print("2. Chạy từng file test riêng lẻ")
         print("3. Thoát")
         print("\n" + "="*80)

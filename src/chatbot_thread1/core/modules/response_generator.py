@@ -25,8 +25,9 @@ class ResponseGenerator:
         # Giới hạn max_output_tokens để tránh response quá dài (đặc biệt cho static_comparison)
         max_tokens = min(Config.MAX_TOKENS, 2048)  # Giới hạn tối đa 2048 tokens
         
+        # Sử dụng model chất lượng cao cho generation
         self.model = genai.GenerativeModel(
-            Config.GEMINI_MODEL,
+            Config.GEMINI_MODEL_GENERATION,
             generation_config={
                 "temperature": Config.TEMPERATURE,
                 "max_output_tokens": max_tokens,

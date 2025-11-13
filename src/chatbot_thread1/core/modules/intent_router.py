@@ -15,7 +15,8 @@ class IntentRouter:
     def __init__(self):
         """Khởi tạo Intent Router"""
         genai.configure(api_key=Config.GEMINI_API_KEY)
-        self.model = genai.GenerativeModel(Config.GEMINI_MODEL)
+        # Sử dụng model nhanh cho classification
+        self.model = genai.GenerativeModel(Config.GEMINI_MODEL_CLASSIFICATION)
         self._cache = {}  # Simple cache cho intent classification
     
     def classify_intent(self, query: str, has_profile: bool = False) -> Intent:

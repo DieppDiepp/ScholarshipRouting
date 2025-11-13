@@ -1,0 +1,12 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Hỏi về chances (lo lắng),Tôi có cơ hội tốt cho học bổng Lester B. Pearson International không?,Bắt buộc,Đánh giá cơ hội dựa trên profile,"Không thể đánh giá chính xác cơ hội của bạn cho học bổng Lester B. Pearson International mà không có thông tin chi tiết về hồ sơ cá nhân của bạn. Tuy nhiên, bạn có cơ hội tốt nếu đáp ứng các tiêu chí rất cao sau:
+
+*   **Thành tích học tập xuất sắc:** Bạn phải nằm trong top 1-2% học sinh giỏi nhất của trường, với điểm số cao vượt trội.
+*   **Khả năng lãnh đạo nổi bật:** Thể hiện rõ ràng qua các hoạt động ngoại khóa, dự án cộng đồng hoặc vai trò lãnh đạo trong trường.
+*   **Sáng tạo và tư duy độc đáo:** Có khả năng giải quyết vấn đề, đưa ra ý tưởng mới và thể hiện sự tò mò trí tuệ.
+*   **Đóng góp tích cực cho cộng đồng:** Có tác động đáng kể đến trường học hoặc cộng đồng địa phương.
+*   **Thư giới thiệu mạnh mẽ:** Nhận được thư giới thiệu xuất sắc từ giáo viên hoặc hiệu trưởng, làm nổi bật phẩm chất và tiềm năng của bạn.
+*   **Được trường trung học đề cử:** Đây là yêu cầu bắt buộc; mỗi trường trung học chỉ có thể đề cử một số lượng giới hạn học sinh.
+*   **Nộp hồ sơ vào Đại học Toronto:** Bạn phải nộp đơn và được chấp nhận vào một chương trình đại học tại Đại học Toronto.
+
+Để tự đánh giá cơ hội, hãy xem xét kỹ lưỡng hồ sơ của mình so với các tiêu chí trên và thảo luận với cố vấn học tập tại trường trung học của bạn.",fact_retrieval,0.85,semantic_search,13.9,✅ Success,

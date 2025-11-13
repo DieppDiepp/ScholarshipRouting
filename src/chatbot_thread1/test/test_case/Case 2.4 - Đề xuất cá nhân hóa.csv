@@ -1,21 +1,21 @@
-STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
-1,Hỏi đề xuất chung (đơn giản),Which scholarship is best for me?,✅ BẮT BUỘC,Đề xuất học bổng phù hợp nhất
-2,Hỏi đề xuất (ngây thơ),Recommend scholarships for me,✅ BẮT BUỘC,Danh sách học bổng được đề xuất
-3,Hỏi đề xuất với priority (cụ thể),Which scholarship should I apply first?,✅ BẮT BUỘC,Đề xuất theo thứ tự ưu tiên
-4,Hỏi về top choices,What are my top 3 scholarship options?,✅ BẮT BUỘC,Top 3 học bổng phù hợp nhất
-5,Hỏi về realistic options (thực tế),Which scholarships can I realistically get?,✅ BẮT BUỘC,Học bổng có cơ hội cao
-6,Hỏi về reach scholarships (tham vọng),What are some reach scholarships for me?,✅ BẮT BUỘC,Học bổng khó nhưng có thể thử
-7,Hỏi về safety scholarships (an toàn),Which scholarships am I likely to get?,✅ BẮT BUỘC,Học bổng có cơ hội rất cao
-8,Hỏi đề xuất theo country,Recommend scholarships in Europe for me,✅ BẮT BUỘC,Học bổng châu Âu phù hợp
-9,Hỏi đề xuất theo field,Best scholarships for engineering students like me,✅ BẮT BUỘC,Học bổng cho ngành kỹ thuật
-10,Hỏi đề xuất theo funding,Which full scholarships match my profile?,✅ BẮT BUỘC,Học bổng toàn phần phù hợp
-11,Hỏi đề xuất với GPA concern,Scholarships that accept my GPA 3.5,✅ BẮT BUỘC,Học bổng phù hợp với GPA 3.5
-12,Hỏi đề xuất với age concern,Scholarships suitable for 22 year olds,✅ BẮT BUỘC,Học bổng phù hợp với tuổi 22
-13,Hỏi đề xuất với IELTS score,Scholarships I can get with IELTS 7.0,✅ BẮT BUỘC,Học bổng phù hợp với IELTS 7.0
-14,Hỏi đề xuất backup (lo lắng),What are some backup scholarship options for me?,✅ BẮT BUỘC,Học bổng dự phòng
-15,Hỏi đề xuất với timeline,Scholarships with deadlines I can still meet,✅ BẮT BUỘC,Học bổng còn hạn nộp đơn
-16,Hỏi đề xuất chi tiết (cần giải thích),Why do you recommend these scholarships for me?,✅ BẮT BUỘC,Giải thích lý do đề xuất
-17,Hỏi đề xuất với chances (muốn biết tỷ lệ),What are my chances for each recommended scholarship?,✅ BẮT BUỘC,Đánh giá cơ hội cho từng học bổng
-18,Hỏi đề xuất alternative (linh hoạt),Any alternative scholarships if I don't get my top choice?,✅ BẮT BUỘC,Học bổng thay thế
-19,Hỏi đề xuất comprehensive (muốn nhiều),Give me a comprehensive list of scholarships I should apply,✅ BẮT BUỘC,Danh sách đầy đủ học bổng nên apply
-20,Hỏi đề xuất với strategy (chiến lược),What's the best scholarship application strategy for me?,✅ BẮT BUỘC,Chiến lược apply dựa trên profile
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
+1,Hỏi đề xuất chung (đơn giản),Học bổng nào tốt nhất cho tôi?,Bắt buộc,Đề xuất học bổng phù hợp nhất
+2,Hỏi đề xuất (ngây thơ),Gợi ý học bổng cho tôi,Bắt buộc,Danh sách học bổng được đề xuất
+3,Hỏi đề xuất với priority (cụ thể),Tôi nên nộp đơn học bổng nào trước?,Bắt buộc,Đề xuất theo thứ tự ưu tiên
+4,Hỏi về top choices,3 lựa chọn học bổng hàng đầu của tôi là gì?,Bắt buộc,Top 3 học bổng phù hợp nhất
+5,Hỏi về realistic options (thực tế),Tôi có thể đỗ những học bổng nào một cách thực tế?,Bắt buộc,Học bổng có cơ hội cao
+6,Hỏi về reach scholarships (tham vọng),Những học bổng khó nhưng tôi có thể thử là gì?,Bắt buộc,Học bổng khó nhưng có thể thử
+7,Hỏi về safety scholarships (an toàn),Tôi có khả năng cao đỗ những học bổng nào?,Bắt buộc,Học bổng có cơ hội rất cao
+8,Hỏi đề xuất theo country,Gợi ý học bổng ở châu Âu cho tôi,Bắt buộc,Học bổng châu Âu phù hợp
+9,Hỏi đề xuất theo field,Học bổng tốt nhất cho sinh viên kỹ thuật như tôi,Bắt buộc,Học bổng cho ngành kỹ thuật
+10,Hỏi đề xuất theo funding,Học bổng toàn phần nào phù hợp với hồ sơ của tôi?,Bắt buộc,Học bổng toàn phần phù hợp
+11,Hỏi đề xuất với GPA concern,Học bổng chấp nhận GPA 3.5 của tôi,Bắt buộc,Học bổng phù hợp với GPA 3.5
+12,Hỏi đề xuất với age concern,Học bổng phù hợp cho người 22 tuổi,Bắt buộc,Học bổng phù hợp với tuổi 22
+13,Hỏi đề xuất với IELTS score,Học bổng tôi có thể đỗ với IELTS 7.0,Bắt buộc,Học bổng phù hợp với IELTS 7.0
+14,Hỏi đề xuất backup (lo lắng),Những lựa chọn học bổng dự phòng cho tôi là gì?,Bắt buộc,Học bổng dự phòng
+15,Hỏi đề xuất với timeline,Học bổng còn hạn nộp đơn mà tôi có thể kịp,Bắt buộc,Học bổng còn hạn nộp đơn
+16,Hỏi đề xuất chi tiết (cần giải thích),Tại sao bạn gợi ý những học bổng này cho tôi?,Bắt buộc,Giải thích lý do đề xuất
+17,Hỏi đề xuất với chances (muốn biết tỷ lệ),Cơ hội của tôi cho mỗi học bổng được gợi ý là bao nhiêu?,Bắt buộc,Đánh giá cơ hội cho từng học bổng
+18,Hỏi đề xuất alternative (linh hoạt),Có học bổng thay thế nào nếu tôi không đỗ lựa chọn hàng đầu không?,Bắt buộc,Học bổng thay thế
+19,Hỏi đề xuất comprehensive (muốn nhiều),Cho tôi danh sách đầy đủ học bổng tôi nên nộp,Bắt buộc,Danh sách đầy đủ học bổng nên apply
+20,Hỏi đề xuất với strategy (chiến lược),Chiến lược nộp đơn học bổng tốt nhất cho tôi là gì?,Bắt buộc,Chiến lược apply dựa trên profile

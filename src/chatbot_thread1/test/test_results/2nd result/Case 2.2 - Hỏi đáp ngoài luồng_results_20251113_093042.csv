@@ -1,0 +1,10 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Hỏi về cost of living,Chi phí sinh hoạt ở Singapore như thế nào?,Không,Thông tin về chi phí sinh hoạt ở Singapore,"Chi phí sinh hoạt trung bình ở Singapore dao động từ 1.000 đến 1.500 SGD mỗi tháng, tùy thuộc vào lựa chọn lối sống và chi tiêu cá nhân.
+
+Dưới đây là các yếu tố chính ảnh hưởng đến chi phí:
+*   **Chỗ ở:** Đây thường là khoản chi lớn nhất. Chi phí thuê nhà cho sinh viên quốc tế có thể khác biệt đáng kể so với người đi làm.
+*   **Ăn uống:** Chi phí thực phẩm khá hợp lý, đặc biệt nếu bạn chọn ăn tại các khu ẩm thực địa phương (hawker centres) hoặc tự nấu ăn tại nhà.
+*   **Giao thông:** Hệ thống giao thông công cộng (MRT và xe buýt) rất hiệu quả và có chi phí phải chăng.
+*   **Tiện ích và chi phí khác:** Bao gồm điện, nước, internet và các chi phí sinh hoạt cá nhân khác.
+
+Nhìn chung, chi phí cho các nhu yếu phẩm cơ bản ở Singapore là khá hợp lý đối với sinh viên quốc tế. Tuy nhiên, việc lập kế hoạch chi tiêu cụ thể và quản lý tài chính cẩn thận là rất quan trọng để đảm bảo bạn có thể yên tâm trong suốt quá trình học tập.",external_qa,0.98,tavily_search,15.38,✅ Success,

@@ -1,0 +1,28 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Lọc theo quốc gia (đơn giản),Cho tôi xem các học bổng ở Mỹ,Không,Danh sách học bổng ở Mỹ,"Dưới đây là danh sách các học bổng nổi bật tại Mỹ dành cho sinh viên quốc tế:
+
+1.  **Fulbright Foreign Student Program**
+    *   **Quốc gia:** Mỹ
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm học phí, sinh hoạt phí, vé máy bay khứ hồi, bảo hiểm y tế và một số chi phí khác.
+    *   **Deadline:** Thường vào tháng 4 - 6 hàng năm (tùy thuộc vào quốc gia ứng viên, đối với Việt Nam, thông tin chi tiết cần kiểm tra trên trang web của Đại sứ quán/Lãnh sự quán Mỹ tại Việt Nam).
+    *   **Mô tả:** Chương trình danh giá của chính phủ Mỹ dành cho sinh viên sau đại học (Thạc sĩ, Tiến sĩ) và các nhà nghiên cứu muốn theo học hoặc nghiên cứu tại Mỹ.
+
+2.  **Học bổng của các trường Đại học Mỹ (University-Specific Scholarships)**
+    *   **Quốc gia:** Mỹ
+    *   **Mức tài trợ:** Đa dạng, từ bán phần đến toàn phần, bao gồm học phí, chi phí sinh hoạt hoặc cả hai.
+    *   **Deadline:** Thay đổi tùy theo từng trường và chương trình, thường trùng với thời hạn nộp hồ sơ nhập học (ví dụ: tháng 10 - 1 cho kỳ nhập học mùa Thu năm sau).
+    *   **Mô tả:** Hầu hết các trường đại học tại Mỹ đều có các chương trình học bổng riêng dành cho sinh viên quốc tế dựa trên thành tích học tập (merit-based) hoặc nhu cầu tài chính (need-based). Đây là nguồn tài trợ phổ biến nhất.
+
+3.  **The Paul & Daisy Soros Fellowships for New Americans**
+    *   **Quốc gia:** Mỹ
+    *   **Mức tài trợ:** Học bổng toàn phần, lên đến 90.000 USD trong hai năm, bao gồm học phí và sinh hoạt phí.
+    *   **Deadline:** Thường vào cuối tháng 10 hàng năm.
+    *   **Mô tả:** Dành cho các ""New Americans"" (người nhập cư hoặc con cái của người nhập cư) đang theo học chương trình sau đại học (Thạc sĩ, Tiến sĩ) tại Mỹ.
+
+4.  **Rotary Peace Fellowships**
+    *   **Quốc gia:** Mỹ (và các quốc gia khác có trung tâm hòa bình của Rotary)
+    *   **Mức tài trợ:** Học bổng toàn phần, bao gồm học phí, sinh hoạt phí, vé máy bay khứ hồi và chi phí thực tập.
+    *   **Deadline:** Thường vào ngày 15 tháng 5 hàng năm.
+    *   **Mô tả:** Dành cho các cá nhân có kinh nghiệm làm việc trong lĩnh vực hòa bình và giải quyết xung đột, muốn theo học Thạc sĩ hoặc chương trình chứng chỉ chuyên nghiệp tại một trong các Trung tâm Hòa bình của Rotary.
+
+Để có thông tin chính xác nhất về yêu cầu và thời hạn nộp hồ sơ, bạn nên truy cập trực tiếp trang web chính thức của từng chương trình học bổng.",filtering,0.98,structured_query,14.73,✅ Success,

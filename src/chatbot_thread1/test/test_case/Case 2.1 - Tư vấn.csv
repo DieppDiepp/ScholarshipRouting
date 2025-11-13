@@ -1,21 +1,21 @@
-STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
-1,Hỏi cách apply (cơ bản),How do I apply for scholarships?,❌ Không,Hướng dẫn chung về cách nộp đơn
-2,Hỏi về documents (lo lắng),What documents do I need for scholarship applications?,❌ Không,Danh sách giấy tờ chung
-3,Hỏi về motivation letter (ngây thơ),How to write a good motivation letter?,❌ Không,Tips viết thư động lực
-4,Hỏi về recommendation letters,Who should I ask for recommendation letters?,❌ Không,Hướng dẫn xin thư giới thiệu
-5,Hỏi về timeline (gấp),When should I start preparing for scholarships?,❌ Không,Timeline chuẩn bị
-6,Hỏi về IELTS (lo lắng),What IELTS score do I need for scholarships?,❌ Không,Yêu cầu IELTS chung
-7,Hỏi về GPA (không tự tin),Is my GPA 3.0 good enough for scholarships?,❌ Không,Tư vấn về GPA
-8,Hỏi về extracurricular (ngây thơ),Do scholarships care about extracurricular activities?,❌ Không,Tầm quan trọng của hoạt động ngoại khóa
-9,Hỏi về interview (lo lắng),How to prepare for scholarship interview?,❌ Không,Tips phỏng vấn học bổng
-10,Hỏi về multiple applications,Can I apply for multiple scholarships at once?,❌ Không,Tư vấn về nộp nhiều đơn
-11,Hỏi về rejection (buồn),What if I get rejected from all scholarships?,❌ Không,Tư vấn khi bị từ chối
-12,Hỏi về chances (không tự tin),How to increase my chances of getting scholarship?,❌ Không,Tips tăng cơ hội đỗ
-13,Hỏi về application fee,Do I have to pay to apply for scholarships?,❌ Không,Thông tin về phí nộp đơn
-14,Hỏi về language proficiency,Do all scholarships require English proficiency?,❌ Không,Yêu cầu ngôn ngữ chung
-15,Hỏi về work experience,Do I need work experience for scholarships?,❌ Không,Yêu cầu kinh nghiệm làm việc
-16,Hỏi về research proposal (PhD),How to write a research proposal for PhD scholarship?,❌ Không,Hướng dẫn viết đề cương nghiên cứu
-17,Hỏi về transcripts,Do I need official transcripts or copies are fine?,❌ Không,Yêu cầu về bảng điểm
-18,Hỏi về passport (ngây thơ),Do I need a passport to apply for scholarships?,❌ Không,Yêu cầu về hộ chiếu
-19,Hỏi về online vs offline application,Are scholarship applications online or paper-based?,❌ Không,Hình thức nộp đơn
-20,Hỏi về follow-up (lo lắng),Should I follow up after submitting my application?,❌ Không,Tư vấn về theo dõi đơn
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
+1,Hỏi cách apply (cơ bản),Làm thế nào để xin học bổng?,Không,Hướng dẫn chung về cách nộp đơn
+2,Hỏi về documents (lo lắng),Tôi cần giấy tờ gì để nộp đơn xin học bổng?,Không,Danh sách giấy tờ chung
+3,Hỏi về motivation letter (ngây thơ),Làm sao viết thư động lực tốt?,Không,Tips viết thư động lực
+4,Hỏi về recommendation letters,Tôi nên nhờ ai viết thư giới thiệu?,Không,Hướng dẫn xin thư giới thiệu
+5,Hỏi về timeline (gấp),Tôi nên bắt đầu chuẩn bị học bổng từ khi nào?,Không,Timeline chuẩn bị
+6,Hỏi về IELTS (lo lắng),Tôi cần điểm IELTS bao nhiêu cho học bổng?,Không,Yêu cầu IELTS chung
+7,Hỏi về GPA (không tự tin),GPA 3.0 của tôi có đủ tốt cho học bổng không?,Không,Tư vấn về GPA
+8,Hỏi về extracurricular (ngây thơ),Học bổng có quan tâm đến hoạt động ngoại khóa không?,Không,Tầm quan trọng của hoạt động ngoại khóa
+9,Hỏi về interview (lo lắng),Làm sao chuẩn bị cho phỏng vấn học bổng?,Không,Tips phỏng vấn học bổng
+10,Hỏi về multiple applications,Tôi có thể nộp nhiều đơn học bổng cùng lúc không?,Không,Tư vấn về nộp nhiều đơn
+11,Hỏi về rejection (buồn),Nếu tôi bị từ chối tất cả học bổng thì sao?,Không,Tư vấn khi bị từ chối
+12,Hỏi về chances (không tự tin),Làm sao tăng cơ hội đỗ học bổng?,Không,Tips tăng cơ hội đỗ
+13,Hỏi về application fee,Tôi có phải trả phí để nộp đơn học bổng không?,Không,Thông tin về phí nộp đơn
+14,Hỏi về language proficiency,Tất cả học bổng đều yêu cầu tiếng Anh không?,Không,Yêu cầu ngôn ngữ chung
+15,Hỏi về work experience,Tôi có cần kinh nghiệm làm việc cho học bổng không?,Không,Yêu cầu kinh nghiệm làm việc
+16,Hỏi về research proposal (PhD),Làm sao viết đề cương nghiên cứu cho học bổng PhD?,Không,Hướng dẫn viết đề cương nghiên cứu
+17,Hỏi về transcripts,Tôi cần bảng điểm chính thức hay bản sao cũng được?,Không,Yêu cầu về bảng điểm
+18,Hỏi về passport (ngây thơ),Tôi có cần hộ chiếu để nộp đơn học bổng không?,Không,Yêu cầu về hộ chiếu
+19,Hỏi về online vs offline application,Nộp đơn học bổng online hay giấy?,Không,Hình thức nộp đơn
+20,Hỏi về follow-up (lo lắng),Tôi có nên theo dõi sau khi nộp đơn không?,Không,Tư vấn về theo dõi đơn

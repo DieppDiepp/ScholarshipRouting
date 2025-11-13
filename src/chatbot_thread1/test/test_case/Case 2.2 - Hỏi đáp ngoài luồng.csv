@@ -1,21 +1,21 @@
-STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
-1,Hỏi về cost of living,What is the cost of living in Singapore?,❌ Không,Thông tin về chi phí sinh hoạt ở Singapore
-2,Hỏi về culture (ngây thơ),What is Canadian culture like?,❌ Không,Thông tin về văn hóa Canada
-3,Hỏi về weather,How is the weather in Australia?,❌ Không,Thông tin về thời tiết Úc
-4,Hỏi về food (quan tâm),What do people eat in Malaysia?,❌ Không,Thông tin về ẩm thực Malaysia
-5,Hỏi về transportation,How to get around in Toronto?,❌ Không,Thông tin về giao thông ở Toronto
-6,Hỏi về safety (lo lắng),Is USA safe for international students?,❌ Không,Thông tin về an ninh
-7,Hỏi về part-time jobs,Can I work part-time in UK as a student?,❌ Không,Quy định về làm thêm
-8,Hỏi về visa process,How to get student visa for Belgium?,❌ Không,Quy trình xin visa
-9,Hỏi về accommodation cost,How much does rent cost in Edinburgh?,❌ Không,Giá thuê nhà ở Edinburgh
-10,Hỏi về language (lo lắng),Do I need to speak French to live in Belgium?,❌ Không,Yêu cầu ngôn ngữ trong sinh hoạt
-11,Hỏi về universities (chung chung),What are the best universities in Singapore?,❌ Không,Danh sách trường tốt ở Singapore
-12,Hỏi về healthcare system,How does healthcare work in Canada?,❌ Không,Hệ thống y tế Canada
-13,Hỏi về banking (thực tế),How to open a bank account in Australia?,❌ Không,Hướng dẫn mở tài khoản ngân hàng
-14,Hỏi về mobile phone,What mobile network should I use in USA?,❌ Không,Thông tin về mạng di động
-15,Hỏi về social life (ngây thơ),What do students do for fun in Switzerland?,❌ Không,Hoạt động giải trí của sinh viên
-16,Hỏi về religion,What is the main religion in Malaysia?,❌ Không,Thông tin về tôn giáo
-17,Hỏi về tourist attractions,What places should I visit in Washington DC?,❌ Không,Địa điểm du lịch ở Washington DC
-18,Hỏi về language learning,Where can I learn English in Singapore?,❌ Không,Nơi học tiếng Anh
-19,Hỏi về student discounts,Do students get discounts in UK?,❌ Không,Ưu đãi cho sinh viên
-20,Hỏi về climate (lo lắng),Is it very cold in Canada in winter?,❌ Không,Thông tin về khí hậu mùa đông
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi)
+1,Hỏi về cost of living,Chi phí sinh hoạt ở Singapore như thế nào?,Không,Thông tin về chi phí sinh hoạt ở Singapore
+2,Hỏi về culture (ngây thơ),Văn hóa Canada như thế nào?,Không,Thông tin về văn hóa Canada
+3,Hỏi về weather,Thời tiết ở Úc thế nào?,Không,Thông tin về thời tiết Úc
+4,Hỏi về food (quan tâm),Người ta ăn gì ở Malaysia?,Không,Thông tin về ẩm thực Malaysia
+5,Hỏi về transportation,Làm sao di chuyển ở Toronto?,Không,Thông tin về giao thông ở Toronto
+6,Hỏi về safety (lo lắng),Mỹ có an toàn cho sinh viên quốc tế không?,Không,Thông tin về an ninh
+7,Hỏi về part-time jobs,Tôi có thể làm thêm ở Anh khi là sinh viên không?,Không,Quy định về làm thêm
+8,Hỏi về visa process,Làm sao xin visa du học Bỉ?,Không,Quy trình xin visa
+9,Hỏi về accommodation cost,Giá thuê nhà ở Edinburgh là bao nhiêu?,Không,Giá thuê nhà ở Edinburgh
+10,Hỏi về language (lo lắng),Tôi có cần nói tiếng Pháp để sống ở Bỉ không?,Không,Yêu cầu ngôn ngữ trong sinh hoạt
+11,Hỏi về universities (chung chung),Những trường đại học tốt nhất ở Singapore là gì?,Không,Danh sách trường tốt ở Singapore
+12,Hỏi về healthcare system,Hệ thống y tế ở Canada hoạt động như thế nào?,Không,Hệ thống y tế Canada
+13,Hỏi về banking (thực tế),Làm sao mở tài khoản ngân hàng ở Úc?,Không,Hướng dẫn mở tài khoản ngân hàng
+14,Hỏi về mobile phone,Tôi nên dùng mạng di động nào ở Mỹ?,Không,Thông tin về mạng di động
+15,Hỏi về social life (ngây thơ),Sinh viên ở Thụy Sĩ làm gì cho vui?,Không,Hoạt động giải trí của sinh viên
+16,Hỏi về religion,Tôn giáo chính ở Malaysia là gì?,Không,Thông tin về tôn giáo
+17,Hỏi về tourist attractions,Tôi nên đi thăm những nơi nào ở Washington DC?,Không,Địa điểm du lịch ở Washington DC
+18,Hỏi về language learning,Tôi có thể học tiếng Anh ở đâu ở Singapore?,Không,Nơi học tiếng Anh
+19,Hỏi về student discounts,Sinh viên có được giảm giá ở Anh không?,Không,Ưu đãi cho sinh viên
+20,Hỏi về climate (lo lắng),Mùa đông ở Canada có rất lạnh không?,Không,Thông tin về khí hậu mùa đông

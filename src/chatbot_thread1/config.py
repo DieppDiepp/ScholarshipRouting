@@ -21,16 +21,20 @@ class Config:
     
     # Cấu hình Vector Database
     VECTOR_DB_PATH = os.getenv("VECTOR_DB_PATH", "./vector_store")
-    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "models/embedding-001")
+    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "models/embedding-004")
     
     # Cấu hình Gemini
-    GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-pro")
+    # Model cho Intent Classification (nhanh)
+    GEMINI_MODEL_CLASSIFICATION = os.getenv("GEMINI_MODEL_CLASSIFICATION", "models/gemini-2.5-flash")
+    # Model cho Response Generation (chất lượng)
+    GEMINI_MODEL_GENERATION = os.getenv("GEMINI_MODEL_GENERATION", "models/gemini-2.5-flash")
+    
     TEMPERATURE = float(os.getenv("TEMPERATURE", "0.7"))
     MAX_TOKENS = int(os.getenv("MAX_TOKENS", "2048"))
     
     # Cấu hình tìm kiếm
-    TOP_K_RESULTS = 3  # Giảm từ 5 → 3 (nhanh hơn)
-    TAVILY_MAX_RESULTS = 2  # Giảm từ 3 → 2 (nhanh hơn)
+    TOP_K_RESULTS = 3  
+    TAVILY_MAX_RESULTS = 2  
     USE_SEMANTIC_SEARCH = os.getenv("USE_SEMANTIC_SEARCH", "true").lower() == "true"  # Bật/tắt Semantic Search
     
     @classmethod

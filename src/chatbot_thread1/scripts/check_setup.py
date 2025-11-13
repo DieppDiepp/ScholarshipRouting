@@ -151,7 +151,8 @@ def test_gemini_connection():
         from config import Config
         
         genai.configure(api_key=Config.GEMINI_API_KEY)
-        model = genai.GenerativeModel(Config.GEMINI_MODEL)
+        # Test với model generation (có thể test bất kỳ model nào)
+        model = genai.GenerativeModel(Config.GEMINI_MODEL_GENERATION)
         
         response = model.generate_content("Hello")
         

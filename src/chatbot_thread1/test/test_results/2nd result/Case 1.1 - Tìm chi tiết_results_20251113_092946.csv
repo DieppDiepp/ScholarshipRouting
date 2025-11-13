@@ -1,0 +1,14 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,Hỏi trực tiếp tên học bổng,Cho tôi biết về chương trình Clark University Global Scholars,Không,Thông tin chi tiết về Clark University Global Scholars Program,"Chương trình Clark University Global Scholars là một học bổng danh giá dành cho sinh viên quốc tế năm nhất có thành tích học tập xuất sắc và tiềm năng lãnh đạo.
+
+*   **Đối tượng:** Dành cho sinh viên quốc tế nộp hồ sơ vào năm nhất đại học tại Clark University.
+*   **Mức tài trợ:** Học bổng có giá trị từ $15,000 đến $25,000 mỗi năm, có thể được gia hạn hàng năm trong bốn năm học, tùy thuộc vào thành tích học tập.
+*   **Trợ cấp bổ sung:** Ngoài học bổng học phí, sinh viên còn nhận được khoản trợ cấp $2,500 cho các hoạt động thực tập hoặc nghiên cứu trong mùa hè.
+*   **Yêu cầu:** Ứng viên cần thể hiện thành tích học tập vượt trội, khả năng lãnh đạo, và cam kết đóng góp cho cộng đồng toàn cầu.
+*   **Quy trình ứng tuyển:**
+    *   Nộp hồ sơ nhập học đầy đủ vào Clark University (bao gồm bảng điểm, thư giới thiệu, bài luận).
+    *   Sau khi nộp hồ sơ nhập học, ứng viên sẽ được mời nộp thêm một bài luận riêng cho chương trình Global Scholars.
+    *   Không yêu cầu điểm SAT/ACT để đủ điều kiện xét tuyển học bổng này.
+*   **Lợi ích khác:** Sinh viên Global Scholars tham gia vào một cộng đồng đặc biệt, nhận được sự cố vấn và có cơ hội tham gia các hoạt động phát triển chuyên môn.
+
+Đây là một cơ hội tuyệt vời cho những sinh viên quốc tế mong muốn một nền giáo dục khai phóng chất lượng cao tại Hoa Kỳ và phát triển bản thân.",fact_retrieval,0.98,semantic_search,13.04,✅ Success,

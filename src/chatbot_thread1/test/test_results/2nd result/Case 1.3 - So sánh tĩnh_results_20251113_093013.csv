@@ -1,0 +1,17 @@
+﻿STT,Nhóm Test Case,Query (Câu hỏi),Profile required,Expected (Kết quả mong đợi),Answer (Câu trả lời),Intent,Confidence,Tools Used,Time (s),Status,Error
+1,So sánh 2 học bổng cụ thể,So sánh học bổng Lester B. Pearson và American University EGLS,Không,So sánh chi tiết 2 học bổng,"Dưới đây là so sánh ngắn gọn và trọng tâm giữa Học bổng Lester B. Pearson và American University EGLS:
+
+**1. Học bổng Lester B. Pearson (Đại học Toronto, Canada)**
+*   **Mức tài trợ:** Học bổng toàn phần, chi trả toàn bộ học phí, sách vở, chi phí phụ và sinh hoạt phí trong suốt 4 năm học.
+*   **Điều kiện đầu vào:** Yêu cầu học sinh quốc tế có thành tích học tập xuất sắc, thể hiện khả năng lãnh đạo, sáng tạo và đóng góp tích cực cho cộng đồng. Ứng viên cần được trường THPT đề cử.
+*   **Deadline:** Thường là tháng 11 cho đề cử từ trường và tháng 1 cho hồ sơ ứng tuyển hoàn chỉnh.
+*   **Ưu điểm nổi bật:** Cơ hội học tập tại một trong những đại học hàng đầu thế giới ở Canada, tập trung phát triển những nhà lãnh đạo toàn cầu.
+
+**2. Học bổng American University Emerging Global Leader Scholarship (EGLS) (Đại học American, Mỹ)**
+*   **Mức tài trợ:** Học bổng toàn phần hoặc bán phần, bao gồm học phí, ăn ở và các chi phí khác, tùy thuộc vào nhu cầu tài chính và thành tích của ứng viên.
+*   **Điều kiện đầu vào:** Dành cho sinh viên quốc tế có thành tích học tập vượt trội, khả năng lãnh đạo và cam kết tạo ra sự thay đổi tích cực trong cộng đồng hoặc quốc gia của mình. Yêu cầu điểm GPA cao.
+*   **Deadline:** Thường vào tháng 12 hoặc tháng 1 hàng năm.
+*   **Ưu điểm nổi bật:** Học tập tại thủ đô Washington D.C., tập trung vào phát triển kỹ năng lãnh đạo toàn cầu và giải quyết các vấn đề xã hội.
+
+**Nhận xét tổng quan:**
+Học bổng Lester B. Pearson phù hợp với những bạn muốn trải nghiệm giáo dục Canada, được trường THPT đề cử và có thành tích học thuật, lãnh đạo nổi bật. American University EGLS lý tưởng cho những sinh viên quốc tế muốn học tại Mỹ, có cam kết mạnh mẽ với các vấn đề xã hội và khả năng lãnh đạo để tạo ra thay đổi.",static_comparison,0.98,structured_query,11.37,✅ Success,
