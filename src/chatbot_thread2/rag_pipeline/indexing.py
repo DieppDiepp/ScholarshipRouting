@@ -9,6 +9,7 @@ from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharac
 from langchain_chroma import Chroma
 
 from .custom_embeddings import CustomVietnameseEmbeddings
+from .llm_factory import get_next_api_key
 from . import data_loader
 from .. import config
 from typing import List, Union # Mới
@@ -104,7 +105,7 @@ def split_documents(documents: List[Document]) -> List[Document]:
     print(f"Split {len(documents)} documents into {len(all_chunks)} chunks.")
     return all_chunks
 
-def get_embedding_model() -> Embeddings: # Thay Union thành base class
+def get_embedding_model() -> Embeddings:
     """
     Đọc config và khởi tạo model embedding tương ứng.
     """
@@ -112,13 +113,17 @@ def get_embedding_model() -> Embeddings: # Thay Union thành base class
     
     if choice == "google":
         print(f"Initializing Google embedding model: {config.GOOGLE_EMBEDDING_MODEL_NAME}")
+        
+        # --- SỬA LỖI ---
+        # Lấy MỘT key từ pool để khởi tạo embedding
+        # Thay vì: google_api_key=config.GOOGLE_API_KEY
+        api_key = get_next_api_key() 
         return GoogleGenerativeAIEmbeddings(
             model=config.GOOGLE_EMBEDDING_MODEL_NAME,
-            google_api_key=config.GOOGLE_API_KEY
+            google_api_key=api_key # <-- Dùng key vừa lấy từ factory
         )
     elif choice == "hf":
         print(f"Initializing CustomVietnameseEmbeddings: {config.HF_EMBEDDING_MODEL_NAME}")
-        # Đây là thay đổi quan trọng
         return CustomVietnameseEmbeddings(
             model_name=config.HF_EMBEDDING_MODEL_NAME,
             max_length=config.HF_EMBEDDING_MAX_LENGTH
