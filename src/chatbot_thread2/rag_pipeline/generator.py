@@ -1,31 +1,11 @@
-from pydantic import BaseModel, Field
-from typing import List, Optional
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.docstore.document import Document
+from typing import List
 
-from .. import config
-# --- THÊM IMPORT DATA_LOADER ---
+# --- IMPORT MỚI ---
+from .llm_factory import get_generator_llm
+from ..config import ScholarshipAnswer # Import Schema từ config
 from . import data_loader
-
-# 1. Định nghĩa Schema output (Giữ nguyên)
-class ScholarshipAnswer(BaseModel):
-    scholarship_names: List[str] = Field(
-        ..., 
-        description="Danh sách CHÍNH XÁC tên các học bổng được tìm thấy, ví dụ: ['Chevening Scholarship', 'CSC Scholarship']"
-    )
-    answer: str = Field(
-        ..., 
-        description="Câu trả lời tổng hợp, thân thiện, tư vấn cho người dùng, viết bằng tiếng Việt."
-    )
-
-# 2. Khởi tạo LLM (Giữ nguyên)
-llm = ChatGoogleGenerativeAI(
-    model=config.GENERATOR_LLM_MODEL,
-    google_api_key=config.GOOGLE_API_KEY,
-    temperature=config.GENERATOR_LLM_TEMP
-)
-structured_generator_llm = llm.with_structured_output(ScholarshipAnswer)
 
 
 # --- TẢI TOÀN BỘ VĂN BẢN (FILE 3) ---
@@ -99,16 +79,12 @@ prompt = ChatPromptTemplate.from_messages([
     # Human prompt ở đây không còn quan trọng bằng context và câu hỏi gốc
 ])
 
-# 5. Tạo chuỗi (chain)
-generation_chain = prompt | structured_generator_llm
 
 def generate_answer(original_user_query: str, retrieved_docs: List[Document]) -> ScholarshipAnswer:
     """
     Hàm chính: Nhận query gốc (để biết ngôn ngữ) và context.
     """
     if not retrieved_docs:
-        # (Xử lý không tìm thấy gì - giữ nguyên)
-        # Tạm thời trả về tiếng Việt, có thể cải thiện sau
         print("--- No relevant documents found. Returning default answer. ---")
         return ScholarshipAnswer(
             scholarship_names=[],
@@ -120,9 +96,14 @@ def generate_answer(original_user_query: str, retrieved_docs: List[Document]) ->
     
     # 2. Gọi LLM
     print("--- Generating final answer (calling LLM) ---")
+    
+    # --- TẠO LLM VÀ CHAIN MỚI MỖI LẦN GỌI ---
+    generator_llm = get_generator_llm() # Lấy LLM (đã gắn schema) với key xoay vòng
+    generation_chain = prompt | generator_llm
+    
     response_obj = generation_chain.invoke({
         "context": formatted_context,
-        "original_user_query": original_user_query # Truyền câu hỏi GỐC
+        "original_user_query": original_user_query
     })
     
     return response_obj

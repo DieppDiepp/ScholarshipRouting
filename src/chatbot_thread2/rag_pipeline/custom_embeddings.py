@@ -6,12 +6,12 @@ from langchain.embeddings.base import Embeddings
 
 class CustomVietnameseEmbeddings(Embeddings):
     """
-    Lớp wrapper tùy chỉnh cho 'dangvantuan/vietnamese-embedding'
+    Lớp wrapper tùy chỉnh cho 'intfloat/multilingual-e5-large'
     dựa trên code của bạn.
     """
     def __init__(self, model_name: str, max_length: int):
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        print(f"Initializing CustomVietnameseEmbeddings on device: {self.device}")
+        print(f"Initializing CustomMultiEmbeddings on device: {self.device}")
         
         # Khởi tạo model và tokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)

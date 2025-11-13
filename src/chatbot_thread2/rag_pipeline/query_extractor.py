@@ -4,44 +4,10 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 
 from .. import config
+# --- IMPORT MỚI ---
+from .llm_factory import get_extractor_llm
+from ..config import ScholarshipSearchFilters # Import Schema từ config
 
-# 1. Định nghĩa cấu trúc (Schema)
-# (Mình đã sửa 1 lỗi chính tả nhỏ: "LIST)1" -> "LIST) 1")
-class ScholarshipSearchFilters(BaseModel):
-    Country: Optional[List[str]] = Field( # <-- ĐỔI SANG List[str]
-        None,
-        description="Quốc gia mà người dùng muốn du học. Luôn trả về một DANH SÁCH (LIST) 1 hoặc nhiều tên quốc gia chính thức. Ví dụ: ['UK'], ['USA', 'Canada'], ['China'], ['Hungary']"
-    )
-    Scholarship_Type: Optional[List[str]] = Field( # <-- ĐỔI SANG List[str]
-        None,
-        description="Loại nguồn gốc học bổng. Luôn trả về DANH SÁCH (LIST) 1 hoặc nhiều giá trị sau: ['Government'], ['University'], ['Organization/Foundation']"
-    )
-    Funding_Level: Optional[List[str]] = Field( # <-- ĐỔI SANG List[str]
-        None,
-        description="Mức tài trợ. Luôn trả về DANH SÁCH (LIST) 1 hoặc nhiều giá trị sau: ['Full scholarship'], ['Tuition Waiver'], ['Stipend'], ['Accommodation'], ['Partial Funding'], ['Fixed Amount'], ['Other Costs']"
-    )
-    Required_Degree: Optional[str] = Field( # <-- GIỮ NGUYÊN (vì là '1 trong')
-        None,
-        description="Bằng tốt nghiệp cao nhất mà người dùng đang đề cập, chỉ chấp nhận trả về 1 TRONG các giá trị: 'High School Diploma','Bachelor', 'Master'"
-    )
-    Wanted_Degree:Optional[List[str]] = Field( # <-- ĐỔI SANG List[str]
-        None,
-        description="Bậc học mà người dùng muốn tìm. Luôn trả về DANH SÁCH 1 hoặc nhiều giá trị sau: ['Bachelor'], ['Master'], ['PhD']"
-    )
-    Eligible_Field_Group: Optional[List[str]] = Field(
-        None,
-        description="Nhóm ngành học người dùng quan tâm, Luôn trả về DANH SÁCH 1 hoặc nhiều giá trị, ví dụ: ['IT & Data Science'], ['Engineering & Technology', 'Natural Sciences']. DANH SÁCH CHỈ CÓ THỂ BAO GỒM CÁC GIÁ TRỊ: 'Education & Training', 'Arts, Design & Media', 'Humanities & Social Sciences', 'Economics & Business', 'Law & Public Policy', 'Natural Sciences', 'IT & Data Science', 'Engineering & Technology', 'Construction & Planning', 'Agriculture & Environment', 'Healthcare & Medicine', 'Social Services & Care', 'Personal Services & Tourism', 'Security & Defense', 'Library & Information Management', 'Transportation & Logistics', 'All fields'"
-    )
-
-# 2. Khởi tạo LLM (Giữ nguyên)
-llm = ChatGoogleGenerativeAI(
-    model=config.EXTRACTOR_LLM_MODEL,
-    google_api_key=config.GOOGLE_API_KEY,
-    temperature=config.EXTRACTOR_LLM_TEMP
-)
-
-# 3. Tạo "Chain" (Giữ nguyên)
-structured_llm = llm.with_structured_output(ScholarshipSearchFilters)
 
 # 4. Tạo Prompt - CẬP NHẬT (RẤT QUAN TRỌNG)
 prompt = ChatPromptTemplate.from_messages([
@@ -72,14 +38,17 @@ prompt = ChatPromptTemplate.from_messages([
     ("human", "{user_query}")
 ])
 
-# 5. Kết hợp Prompt và LLM (Giữ nguyên)
-extractor_chain = prompt | structured_llm
 
 def extract_filters(user_query: str) -> ScholarshipSearchFilters:
     """
     Nhận query của người dùng và trả về đối tượng Pydantic chứa các bộ lọc.
     """
     print(f"--- Extracting filters from query: '{user_query}' ---")
+    
+    # --- TẠO LLM VÀ CHAIN MỚI MỖI LẦN GỌI ---
+    extractor_llm = get_extractor_llm() # Lấy LLM (đã gắn schema) với key xoay vòng
+    extractor_chain = prompt | extractor_llm
+    
     return extractor_chain.invoke({"user_query": user_query})
 
 if __name__ == '__main__':

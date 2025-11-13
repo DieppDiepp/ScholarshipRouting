@@ -1,17 +1,12 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+# --- IMPORT MỚI ---
+from .llm_factory import get_translator_llm
 
-from .. import config
+# --- BỎ KHỞI TẠO LLM TĨNH ---
+# Bỏ 'translator_llm = ChatGoogleGenerativeAI(...)'
 
-# Khởi tạo LLM dịch thuật
-translator_llm = ChatGoogleGenerativeAI(
-    model=config.TRANSLATOR_LLM_MODEL,
-    google_api_key=config.GOOGLE_API_KEY,
-    temperature=config.TRANSLATOR_LLM_TEMP
-)
-
-# Prompt để dịch
+# Prompt để dịch (Giữ nguyên)
 translate_prompt = ChatPromptTemplate.from_messages([
     ("system", 
      "You are an expert translator. Your task is to translate the user's query into English. "
@@ -22,8 +17,8 @@ translate_prompt = ChatPromptTemplate.from_messages([
 
 output_parser = StrOutputParser()
 
-# Chain dịch thuật
-translation_chain = translate_prompt | translator_llm | output_parser
+# --- BỎ TẠO CHAIN TĨNH ---
+# Bỏ 'translation_chain = ...'
 
 def translate_query_to_english(user_query: str) -> str:
     """
@@ -31,12 +26,14 @@ def translate_query_to_english(user_query: str) -> str:
     """
     print(f"--- Translating query: '{user_query}' ---")
     
-    # Kiểm tra xem query đã là tiếng Anh chưa
-    # (Đây là một phỏng đoán đơn giản, có thể cải thiện sau)
     if all(ord(c) < 128 for c in user_query):
         print("Query already in English. Skipping translation.")
         return user_query
-        
+    
+    # --- TẠO LLM VÀ CHAIN MỚI MỖI LẦN GỌI ---
+    translator_llm = get_translator_llm() # Lấy LLM với key xoay vòng
+    translation_chain = translate_prompt | translator_llm | output_parser
+    
     translated_query = translation_chain.invoke({"user_query": user_query})
     print(f"Translated query: '{translated_query}'")
     return translated_query
