@@ -16,6 +16,8 @@ class QueryResponse(BaseModel):
     success: bool
     message: str
     query: str
+    answer: str
+    scholarship_names: list[str]
 
 class ErrorResponse(BaseModel):
     success: bool
@@ -35,7 +37,9 @@ async def ask(request: QueryRequest):
     {
         "success": true,
         "message": "Query processed successfully",
-        "query": "original query"
+        "query": "original query",
+        "answer": "Câu trả lời từ chatbot",
+        "scholarship_names": ["Danh sách tên học bổng"]
     }
     """
     try:
@@ -49,14 +53,16 @@ async def ask(request: QueryRequest):
         
         logger.info(f"Received query: {query}")
         
-        # Gọi hàm ask_chatbot từ main_app.py
-        ask_chatbot(query)
+        # Gọi hàm ask_chatbot từ main_app.py và nhận kết quả
+        result = ask_chatbot(query)
         
-        # Trả về response thành công
+        # Trả về response với kết quả từ chatbot
         return QueryResponse(
             success=True,
             message="Query processed successfully",
-            query=query
+            query=query,
+            answer=result.answer,
+            scholarship_names=result.scholarship_names
         )
         
     except HTTPException:

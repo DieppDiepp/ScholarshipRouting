@@ -12,6 +12,7 @@ from .rag_pipeline.generator import generate_answer
 def ask_chatbot(query: str):
     """
     Chạy toàn bộ pipeline RAG: Translate -> Extract -> Retrieve -> Generate
+    Returns: final_answer_obj từ generate_answer
     """
     # Thay print() bằng logger.info()
     logger.info(f"========= Query Mới =========\nQuery Gốc: {query}\n")
@@ -39,6 +40,9 @@ def ask_chatbot(query: str):
     logger.info(f"{final_answer_obj.scholarship_names}") 
     
     logger.info("\n===============================")
+    
+    # Trả về kết quả
+    return final_answer_obj
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")
