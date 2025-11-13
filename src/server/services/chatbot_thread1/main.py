@@ -5,17 +5,17 @@ Hệ thống chatbot tư vấn học bổng với Intent Routing và Multi-Tool 
 import os
 import signal
 from typing import Dict, Any, Optional
-from config import Config
-from core.models.intent import Intent
-from core.models.user_profile import UserProfile
-from core.modules.intent_router import IntentRouter
-from core.modules.response_generator import ResponseGenerator
-from core.tools.semantic_search import SemanticSearchTool
-from core.tools.structured_query import StructuredQueryTool
-from core.tools.tavily_search import TavilySearchTool
-from core.tools.profile_retriever import ProfileRetrieverTool
-from core.utils.data_loader import DataLoader
-from core.utils.context_assembler import ContextAssembler
+from services.chatbot_thread1.config import Config
+from services.chatbot_thread1.core.models.intent import Intent
+from services.chatbot_thread1.core.models.user_profile import UserProfile
+from services.chatbot_thread1.core.modules.intent_router import IntentRouter
+from services.chatbot_thread1.core.modules.response_generator import ResponseGenerator
+from services.chatbot_thread1.core.tools.semantic_search import SemanticSearchTool
+from services.chatbot_thread1.core.tools.structured_query import StructuredQueryTool
+from services.chatbot_thread1.core.tools.tavily_search import TavilySearchTool
+from services.chatbot_thread1.core.tools.profile_retriever import ProfileRetrieverTool
+from services.chatbot_thread1.core.utils.data_loader import DataLoader
+from services.chatbot_thread1.core.utils.context_assembler import ContextAssembler
 
 # Timeout exception
 class TimeoutError(Exception):

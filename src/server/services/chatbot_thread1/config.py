@@ -4,13 +4,14 @@ Quản lý các biến môi trường và cấu hình hệ thống
 """
 import os
 from dotenv import load_dotenv
+from pathlib import Path
 
 # Load biến môi trường từ file .env
 load_dotenv()
 
 class Config:
     """Class chứa tất cả cấu hình của hệ thống"""
-
+    BASE_DIR = Path(__file__).resolve().parent
     DATA_DIR = BASE_DIR.parent / "data_collection" / "output" / "old12-official-FullMaster"
     TEXT_REPORTS_PATH = DATA_DIR / "text_reports_master.json"
     STRUCTURED_REPORTS_PATH = DATA_DIR / "structured_english_reports_master.json"
