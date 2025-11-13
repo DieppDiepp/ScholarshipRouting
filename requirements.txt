@@ -38,6 +38,7 @@ langchain-tavily
 # GenAI integration
 langchain-google-genai
 langchain_community
+google-generativeai
 
 # Vector DBs
 langchain_chroma

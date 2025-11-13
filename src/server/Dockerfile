@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
     langchain langchain-core langchain-community \
     langsmith dotenv langgraph typing langchain-tavily \
     langchain-google-genai langchain_community langchain_chroma \
-    langchain-text-splitters tqdm
+    langchain-text-splitters tqdm google-generativeai
     # sentence-transformers langchain-huggingface transformers torch
 COPY . .
 
