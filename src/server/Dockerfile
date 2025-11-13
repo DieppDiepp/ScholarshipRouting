@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
     numpy pandas pyarrow fastparquet \
     ipykernel ipython openpyxl docling \
     langchain langchain-core langchain-community \
-    langsmith dotenv langgraph typing langchain-tavily \
+    langsmith python-dotenv langgraph langchain-tavily \
     langchain-google-genai langchain_community langchain_chroma \
     langchain-text-splitters tqdm google-generativeai
     # sentence-transformers langchain-huggingface transformers torch

@@ -28,7 +28,7 @@ langchain-community    # Community-contributed integrations: tools, vector store
 # === Dev Tools & Deployment ===
 langsmith              # Observability platform: log, trace, and debug LLM apps with full visibility
 fastapi                # FastAPI framework for building APIs
-dotenv                 # Load environment variables from .env file
+python-dotenv          # Load environment variables from .env file
 
 # Agent frameworks
 langgraph
