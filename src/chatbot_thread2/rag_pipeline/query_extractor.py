@@ -7,33 +7,35 @@ from .. import config
 # --- IMPORT MỚI ---
 from .llm_factory import get_extractor_llm
 from ..config import ScholarshipSearchFilters # Import Schema từ config
+import logging # Thêm logging
 
+logger = logging.getLogger(__name__)
 
-# 4. Tạo Prompt - CẬP NHẬT (RẤT QUAN TRỌNG)
+# 4. Tạo Prompt (Đã dịch sang tiếng Anh)
 prompt = ChatPromptTemplate.from_messages([
     ("system", 
-     "Bạn là một chuyên gia trích xuất thông tin VÀ ÁNH XẠ (mapper) siêu chính xác. "
-     "Nhiệm vụ của bạn là trích xuất các tiêu chí VÀ ÁNH XẠ chúng vào các giá trị được phép trong schema."
-     "Hãy tuân thủ tuyệt đối các giá trị được phép VÀ ĐỊNH DẠNG (LIST[str] hoặc str). KHÔNG ĐƯỢC tự ý sáng tạo giá trị mới."
+     "You are an expert information extraction and hyper-accurate mapping specialist. "
+     "Your task is to extract criteria from the user's query AND map them to the allowed values in the schema."
+     "You MUST strictly adhere to the allowed values AND formats (LIST[str] or str) specified in the field descriptions. DO NOT invent new values."
      
-     "\n--- QUY TẮC ÁNH XẠ BẮT BUỘC (MAPPING RULES) ---"
-     "BẠN PHẢI SỬ DỤNG CÁC GIÁ TRỊ CHÍNH TẢ CHÍNH XÁC SAU:"
+     "\n--- MANDATORY MAPPING RULES ---"
+     "You MUST use the following exact string values:"
      
      "1. Funding_Level:"
-     "   - Nếu người dùng nói 'học bổng toàn phần', 'full funding', 'full ride': LUÔN TRẢ VỀ ['Full scholarship']"
-     "   - Nếu người dùng nói 'miễn học phí': LUÔN TRẢ VỀ ['Tuition Waiver']"
+     "   - If the user query mentions 'full scholarship', 'full funding', or 'full ride': ALWAYS return ['Full scholarship']"
+     "   - If the user query mentions 'tuition waiver': ALWAYS return ['Tuition Waiver']"
      
      "2. Eligible_Field_Group:"
-     "   - Nếu người dùng nói 'khoa học máy tính', 'IT', 'công nghệ thông tin', 'khoa học dữ liệu', 'data science': LUÔN TRẢ VỀ ['IT & Data Science']"
-     "   - Nếu người dùng nói 'kỹ thuật', 'engineering': LUÔN TRẢ VỀ ['Engineering & Technology']"
-     "   - Nếu người dùng nói 'kinh doanh', 'kinh tế', 'quản trị': LUÔN TRẢ VỀ ['Economics & Business']"
-     "   - (Bạn tự suy luận các ngành khác vào các nhóm còn lại trong description)"
+     "   - If the user query mentions 'computer science', 'IT', 'information technology', 'data science': ALWAYS return ['IT & Data Science']"
+     "   - If the user query mentions 'engineering': ALWAYS return ['Engineering & Technology']"
+     "   - If the user query mentions 'business', 'economics', 'management': ALWAYS return ['Economics & Business']"
+     "   - (You must infer other fields into the remaining groups provided in the schema description)"
 
-     "\n--- QUY TẮC ĐỊNH DẠNG (FORMAT RULES) ---"
-     "1. VỚI CÁC TRƯỜNG LÀ DANH SÁCH (List[str]), LUÔN TRẢ VỀ 1 DANH SÁCH, ngay cả khi chỉ có 1 giá trị. (Ví dụ: Wanted_Degree: ['Master'])."
-     "2. NẾU NGƯỜI DÙNG HỎI VỀ MỘT KHU VỰC (ví dụ: 'Châu Âu', 'Châu Á'), hãy suy luận và trả về một DANH SÁCH các quốc gia tiêu biểu."
-     "   Ví dụ 'Châu Âu': ['France', 'Germany', 'UK', 'Italy', 'Spain', 'Netherlands', 'Sweden', 'Hungary', 'Switzerland', 'Belgium', 'Austria', 'Denmark', 'Finland', 'Norway', 'Poland', 'Portugal', 'Ireland', 'Czech Republic']"
-     "   Ví dụ 'Đông Nam Á': ['Singapore', 'Thailand', 'Malaysia', 'Vietnam', 'Philippines', 'Indonesia']"),
+     "\n--- FORMAT RULES ---"
+     "1. For fields that are LIST[str], ALWAYS return a list, even if there is only one value. (e.g., Wanted_Degree: ['Master'])."
+     "2. IF THE USER ASKS ABOUT A REGION (e.g., 'Europe', 'Asia'), infer and return a LIST of representative countries for that region in the 'Country' field."
+     "   Example 'Europe': ['France', 'Germany', 'UK', 'Italy', 'Spain', 'Netherlands', 'Sweden', 'Hungary', 'Switzerland', 'Belgium', 'Austria', 'Denmark', 'Finland', 'Norway', 'Poland', 'Portugal', 'Ireland', 'Czech Republic']"
+     "   Example 'Southeast Asia': ['Singapore', 'Thailand', 'Malaysia', 'Vietnam', 'Philippines', 'Indonesia']"),
 
     ("human", "{user_query}")
 ])
@@ -41,11 +43,10 @@ prompt = ChatPromptTemplate.from_messages([
 
 def extract_filters(user_query: str) -> ScholarshipSearchFilters:
     """
-    Nhận query của người dùng và trả về đối tượng Pydantic chứa các bộ lọc.
+    Takes the user query (in English) and returns the Pydantic filter object.
     """
-    print(f"--- Extracting filters from query: '{user_query}' ---")
+    logger.info(f"--- Extracting filters from query: '{user_query}' ---")
     
-    # --- TẠO LLM VÀ CHAIN MỚI MỖI LẦN GỌI ---
     extractor_llm = get_extractor_llm() # Lấy LLM (đã gắn schema) với key xoay vòng
     extractor_chain = prompt | extractor_llm
     

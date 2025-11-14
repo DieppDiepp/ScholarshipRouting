@@ -1,10 +1,13 @@
-2025-11-13 15:22:04,899 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM Factory: Đã tải thành công 17 API keys ---
-2025-11-13 15:22:05,306 - [INFO] - (__main__) - ========= Query Mới =========
+2025-11-14 15:06:18,713 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM Factory: Đã tải thành công 17 API keys ---
+2025-11-14 15:06:22,529 - [INFO] - (src.chatbot_thread2.rag_pipeline.generator) - Loading full text reports (File 3) for Generator context...
+2025-11-14 15:06:22,835 - [INFO] - (src.chatbot_thread2.rag_pipeline.generator) - Full text reports loaded.
+2025-11-14 15:06:22,835 - [INFO] - (__main__) - ========= Query Mới =========
 Query Gốc: Tôi muốn tìm học bổng toàn phần thạc sĩ ngành khoa học dữ liệu ở châu âu, tôi có gpa cao và kỹ năng lãnh đạo tốt
 
-2025-11-13 15:22:05,306 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #1 ---
-2025-11-13 15:22:07,451 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #2 ---
-2025-11-13 15:22:16,111 - [INFO] - (__main__) - 
+2025-11-14 15:06:22,835 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #1 ---
+2025-11-14 15:06:24,435 - [INFO] - (src.chatbot_thread2.rag_pipeline.query_extractor) - --- Extracting filters from query: 'I am looking for a full scholarship for a Master's degree in Data Science in Europe. I have a high GPA and good leadership skills.' ---
+2025-11-14 15:06:24,435 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #2 ---
+2025-11-14 15:06:28,026 - [INFO] - (__main__) - 
 [PHASE 2] Extracted Filters:
 {
   "Country": [
@@ -37,51 +40,57 @@ Query Gốc: Tôi muốn tìm học bổng toàn phần thạc sĩ ngành khoa h
     "IT & Data Science"
   ]
 }
-2025-11-13 15:22:16,131 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- LAZY LOADING: Bắt đầu tải Vector Store và Embedding Model... (Chỉ 1 lần) ---
-2025-11-13 15:22:16,132 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #3 ---
-2025-11-13 15:22:16,136 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - Loading Vector Store from: D:\Git\ScholarshipRouting\src\chatbot_thread2\vector_store_google
-2025-11-13 15:22:16,136 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - Using embedding model: google
-2025-11-13 15:22:16,190 - [INFO] - (chromadb.telemetry.product.posthog) - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
-2025-11-13 15:22:16,293 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- LAZY LOADING: Tải Vector Store hoàn tất! ---
-2025-11-13 15:22:16,294 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 1: Semantic Search (k=100) ---
-2025-11-13 15:22:17,662 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 2: Post-retrieval Filtering ---
-2025-11-13 15:22:17,662 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Applying post-retrieval filters: {'Country': ['France', 'Germany', 'UK', 'Italy', 'Spain', 'Netherlands', 'Sweden', 'Hungary', 'Switzerland', 'Belgium', 'Austria', 'Denmark', 'Finland', 'Norway', 'Poland', 'Portugal', 'Ireland', 'Czech Republic'], 'Funding_Level': ['Full scholarship'], 'Wanted_Degree': ['Master'], 'Eligible_Field_Group': ['IT & Data Science']} ---
-2025-11-13 15:22:17,663 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 3: De-duplicating results (by Scholarship_Name) ---
-2025-11-13 15:22:17,663 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Found 5 unique scholarship chunks (after filtering & de-duping) ---
-2025-11-13 15:22:17,664 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #4 ---
-2025-11-13 15:22:34,500 - [INFO] - (__main__) - 
+2025-11-14 15:06:28,026 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- LAZY LOADING: Bắt đầu tải Vector Store và Embedding Model... (Chỉ 1 lần) ---
+2025-11-14 15:06:28,026 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #3 ---
+2025-11-14 15:06:28,031 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - Loading Vector Store from: D:\Git\ScholarshipRouting\src\chatbot_thread2\vector_store_google
+2025-11-14 15:06:28,031 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - Using embedding model: google
+2025-11-14 15:06:28,077 - [INFO] - (chromadb.telemetry.product.posthog) - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-14 15:06:28,183 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- LAZY LOADING: Tải Vector Store hoàn tất! ---
+2025-11-14 15:06:28,185 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 1: Semantic Search (k=100) ---
+2025-11-14 15:06:29,082 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 2: Post-retrieval Filtering ---
+2025-11-14 15:06:29,084 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Applying post-retrieval filters: {'Country': ['France', 'Germany', 'UK', 'Italy', 'Spain', 'Netherlands', 'Sweden', 'Hungary', 'Switzerland', 'Belgium', 'Austria', 'Denmark', 'Finland', 'Norway', 'Poland', 'Portugal', 'Ireland', 'Czech Republic'], 'Funding_Level': ['Full scholarship'], 'Wanted_Degree': ['Master'], 'Eligible_Field_Group': ['IT & Data Science']} ---
+2025-11-14 15:06:29,084 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 3: De-duplicating results (by Scholarship_Name) ---
+2025-11-14 15:06:29,085 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Found 5 unique scholarship chunks (after filtering & de-duping) ---
+2025-11-14 15:06:29,086 - [INFO] - (src.chatbot_thread2.rag_pipeline.generator) - --- Generating final answer (calling LLM) ---
+2025-11-14 15:06:29,086 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #4 ---
+2025-11-14 15:06:48,425 - [INFO] - (__main__) - 
 --- 🤖 Chatbot Trả lời ---
-2025-11-13 15:22:34,507 - [INFO] - (__main__) - Chào bạn, với mong muốn tìm học bổng toàn phần thạc sĩ ngành Khoa học dữ liệu ở Châu Âu, có GPA cao và kỹ năng lãnh đạo tốt, tôi đã tìm thấy một số học bổng phù hợp dành cho bạn:
+2025-11-14 15:06:48,425 - [INFO] - (__main__) - Chào bạn, với mong muốn tìm học bổng toàn phần thạc sĩ ngành khoa học dữ liệu ở châu Âu, cùng với thành tích học tập (GPA cao) và kỹ năng lãnh đạo tốt, mình thấy có một số học bổng rất phù hợp với bạn đây:
 
-*   **ETH Zurich Excellence Scholarship & Opportunity Programme (ESOP)**:
-    *   **Tại sao phù hợp:** Đây là học bổng toàn phần tại Thụy Sĩ (Châu Âu) dành cho bậc Thạc sĩ, bao gồm 12.000 CHF/học kỳ và miễn toàn bộ học phí. Học bổng này yêu cầu kết quả học tập xuất sắc (top 10% cử nhân của bạn) và hướng đến những "nhà lãnh đạo tương lai". Các ngành như Khoa học Máy tính (Computer Science) và Khoa học (Science) thường bao gồm Khoa học Dữ liệu. 
-    *   **Hạn nộp hồ sơ:** 30 tháng 11.
+1.  **ETH Zurich Excellence Scholarship & Opportunity Programme (Thụy Sĩ)**
+    *   Đây là học bổng toàn phần, bao gồm toàn bộ học phí và chi phí sinh hoạt (12.000 CHF mỗi học kỳ) trong suốt khóa học Thạc sĩ tại ETH Zurich. 
+    *   Ngành Khoa học Dữ liệu có khả năng cao được hỗ trợ, vì học bổng dành cho nhiều ngành Thạc sĩ nói chung, bao gồm cả Khoa học Máy tính. 
+    *   Yêu cầu học thuật rất cao: Bạn cần nằm trong top 10% sinh viên xuất sắc nhất của khóa cử nhân (tương đương điểm A). Điều này rất phù hợp với GPA cao của bạn.
+    *   Học bổng này tìm kiếm những ứng viên có tiềm năng trở thành các nhà lãnh đạo tương lai.
+    *   **Hạn chót nộp hồ sơ:** 30 tháng 11 hàng năm.
 
-*   **Eiffel Excellence Scholarship**:
-    *   **Tại sao phù hợp:** Học bổng toàn phần danh giá này của Pháp (Châu Âu) dành cho bậc Thạc sĩ, với trợ cấp hàng tháng €1.181, bao gồm học phí, chi phí đi lại, bảo hiểm và hỗ trợ nhà ở. Các lĩnh vực đủ điều kiện bao gồm "Toán học và kỹ thuật số" (Mathematics and digital), rất phù hợp với Khoa học Dữ liệu. Học bổng tìm kiếm sinh viên có thành tích học tập xuất sắc (top 3-5% trong các nghiên cứu trước đây), và bạn có thể thể hiện kỹ năng lãnh đạo trong thư động lực.
-    *   **Hạn nộp hồ sơ:** Hạn chót chính thức là 08 tháng 01 (năm sau), nhưng các trường đại học Pháp thường có hạn nộp hồ sơ nội bộ sớm hơn (ví dụ: trước 24 tháng 11).
+2.  **Eiffel Excellence Scholarship (Pháp)**
+    *   Đây là học bổng toàn phần, cung cấp trợ cấp hàng tháng (€1.181 cho bậc Thạc sĩ), miễn học phí, chi phí đi lại, bảo hiểm y tế và hỗ trợ tìm chỗ ở.
+    *   Ngành Khoa học Dữ liệu rất phù hợp vì học bổng bao gồm các lĩnh vực "Toán học và kỹ thuật số" (Mathematics and digital) trong nhóm Khoa học và Kỹ thuật.
+    *   Yêu cầu học thuật cao: Mặc dù không có yêu cầu GPA tối thiểu cụ thể, việc có xếp hạng học tập cao (ví dụ: nằm trong top 3-5% khóa học) là một yếu tố quyết định trong quá trình lựa chọn. Điều này rất khớp với GPA cao của bạn.
+    *   Học bổng này nhằm thu hút các sinh viên quốc tế xuất sắc nhất, những người có tiềm năng lãnh đạo.
+    *   **Hạn chót nộp hồ sơ chính thức:** 8 tháng 1 năm 2026. Tuy nhiên, các trường đại học Pháp thường có hạn chót nội bộ sớm hơn (ví dụ: trước 24 tháng 11 năm 2025) để đề cử ứng viên, vì vậy bạn nên liên hệ sớm với trường bạn muốn nộp.
 
-*   **Invest Your Talent in Italy (IYT)**:
-    *   **Tại sao phù hợp:** Đây là học bổng toàn phần tại Ý (Châu Âu) dành cho bậc Thạc sĩ, đặc biệt **có liệt kê rõ ràng ngành Khoa học Dữ liệu (Data Science)** là một trong những lĩnh vực đủ điều kiện. Học bổng bao gồm toàn bộ chi phí sinh hoạt và miễn học phí. Bạn cần có thành tích học tập xuất sắc. Một điểm đặc biệt là bạn sẽ có cơ hội thực tập 3 tháng tại một công ty Ý, giúp phát triển kỹ năng chuyên môn và lãnh đạo.
-    *   **Hạn nộp hồ sơ:** 24 tháng 02 (cho năm học 2025-2026). Bạn cần hoàn thành đơn đăng ký trước tại trường đại học Ý bạn chọn trước khi nộp hồ sơ IYT.
+3.  **Invest Your Talent in Italy (IYT) (Ý)**
+    *   Đây là học bổng toàn phần, bao gồm miễn học phí, trợ cấp sinh hoạt và các dịch vụ hỗ trợ sinh viên.
+    *   **Đặc biệt phù hợp:** Học bổng này **trực tiếp liệt kê ngành Khoa học Dữ liệu** (Data Science) là một trong những lĩnh vực đủ điều kiện.
+    *   Yêu cầu học thuật: Bạn được mong đợi sẽ thể hiện sự xuất sắc trong học tập để cạnh tranh cho học bổng này.
+    *   Học bổng này có một yêu cầu bắt buộc là thực tập toàn thời gian 3 tháng tại một công ty Ý, giúp bạn phát triển năng lực chuyên môn và kỹ năng lãnh đạo trong môi trường thực tế.
+    *   **Thời gian nộp hồ sơ cho năm học 2025-2026:** từ 23 tháng 1 năm 2025 đến 24 tháng 2 năm 2025.
 
-*   **University of Warwick – ASEAN–UK SAGE Women in STEM Scholarship**:
-    *   **Tại sao phù hợp:** Học bổng toàn phần này tại Vương quốc Anh (Châu Âu) dành cho bậc Thạc sĩ trong các lĩnh vực STEM (Khoa học, Công nghệ, Kỹ thuật và Toán học), bao gồm Khoa học Dữ liệu. Học bổng bao gồm toàn bộ học phí, trợ cấp sinh hoạt hàng tháng (£19.824/năm) và chi phí đi lại. Đây là học bổng được thiết kế để "trao quyền cho phụ nữ dẫn dắt trong các lĩnh vực khoa học", rất phù hợp với kỹ năng lãnh đạo của bạn. 
-    *   **Lưu ý quan trọng:** Học bổng này **chỉ dành cho phụ nữ** và công dân của các quốc gia thành viên ASEAN hoặc Timor-Leste. Bạn cần kiểm tra xem mình có đủ điều kiện về tiêu chí này không. 
-    *   **Hạn nộp hồ sơ:** Hạn chót nộp hồ sơ khóa học tại Đại học Warwick là 17 tháng 04 năm 2025. Hồ sơ học bổng chung cho năm học 2025-26 đã đóng, nhưng bạn cần có thư mời từ trường để được xét duyệt cho học bổng này.
-
-Chúc bạn may mắn trong quá trình tìm kiếm học bổng!
-2025-11-13 15:22:34,508 - [INFO] - (__main__) - 
+Hy vọng những thông tin này sẽ giúp bạn định hướng tốt cho kế hoạch du học Thạc sĩ của mình nhé! Chúc bạn thành công!
+2025-11-14 15:06:48,425 - [INFO] - (__main__) - 
 --- 🔑 Tên học bổng (Output cho ElasticSearch) ---
-2025-11-13 15:22:34,508 - [INFO] - (__main__) - ['ETH Zurich Excellence Scholarship & Opportunity Programme', 'Eiffel Excellence Scholarship', 'Invest Your Talent in Italy (IYT)', 'University of Warwick – ASEAN–UK SAGE Women in STEM Scholarship']
-2025-11-13 15:22:34,508 - [INFO] - (__main__) - 
+2025-11-14 15:06:48,425 - [INFO] - (__main__) - ['ETH Zurich Excellence Scholarship & Opportunity Programme', 'Eiffel Excellence Scholarship', 'Invest Your Talent in Italy (IYT)']
+2025-11-14 15:06:48,425 - [INFO] - (__main__) - 
 ===============================
-2025-11-13 15:22:34,509 - [INFO] - (__main__) - ========= Query Mới =========
+2025-11-14 15:06:48,425 - [INFO] - (__main__) - ========= Query Mới =========
 Query Gốc: I want to find a full scholarship for a Master’s program in Data Science in Europe. I have a high GPA and strong leadership skills.
 
-2025-11-13 15:22:34,510 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #5 ---
-2025-11-13 15:22:35,883 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #6 ---
-2025-11-13 15:22:38,454 - [INFO] - (__main__) - 
+2025-11-14 15:06:48,425 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #5 ---
+2025-11-14 15:06:50,106 - [INFO] - (src.chatbot_thread2.rag_pipeline.query_extractor) - --- Extracting filters from query: 'I am looking for a full scholarship for a Master's program in Data Science in Europe. I have a high GPA and strong leadership skills.' ---
+2025-11-14 15:06:50,106 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #6 ---
+2025-11-14 15:06:55,815 - [INFO] - (__main__) - 
 [PHASE 2] Extracted Filters:
 {
   "Country": [
@@ -114,32 +123,30 @@ Query Gốc: I want to find a full scholarship for a Master’s program in Data 
     "IT & Data Science"
   ]
 }
-2025-11-13 15:22:38,457 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 1: Semantic Search (k=100) ---
-2025-11-13 15:22:38,918 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 2: Post-retrieval Filtering ---
-2025-11-13 15:22:38,918 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Applying post-retrieval filters: {'Country': ['France', 'Germany', 'UK', 'Italy', 'Spain', 'Netherlands', 'Sweden', 'Hungary', 'Switzerland', 'Belgium', 'Austria', 'Denmark', 'Finland', 'Norway', 'Poland', 'Portugal', 'Ireland', 'Czech Republic'], 'Funding_Level': ['Full scholarship'], 'Wanted_Degree': ['Master'], 'Eligible_Field_Group': ['IT & Data Science']} ---
-2025-11-13 15:22:38,919 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 3: De-duplicating results (by Scholarship_Name) ---
-2025-11-13 15:22:38,919 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Found 5 unique scholarship chunks (after filtering & de-duping) ---
-2025-11-13 15:22:38,919 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #7 ---
-2025-11-13 15:23:21,624 - [WARNING] - (langchain_google_genai.chat_models) - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
-* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 10
-Please retry in 38.40706764s. [links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 10
-}
-, retry_delay {
-  seconds: 38
-}
-].
+2025-11-14 15:06:55,815 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 1: Semantic Search (k=100) ---
+2025-11-14 15:06:56,383 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 2: Post-retrieval Filtering ---
+2025-11-14 15:06:56,383 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Applying post-retrieval filters: {'Country': ['France', 'Germany', 'UK', 'Italy', 'Spain', 'Netherlands', 'Sweden', 'Hungary', 'Switzerland', 'Belgium', 'Austria', 'Denmark', 'Finland', 'Norway', 'Poland', 'Portugal', 'Ireland', 'Czech Republic'], 'Funding_Level': ['Full scholarship'], 'Wanted_Degree': ['Master'], 'Eligible_Field_Group': ['IT & Data Science']} ---
+2025-11-14 15:06:56,383 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Step 3: De-duplicating results (by Scholarship_Name) ---
+2025-11-14 15:06:56,386 - [INFO] - (src.chatbot_thread2.rag_pipeline.retriever) - --- Found 5 unique scholarship chunks (after filtering & de-duping) ---
+2025-11-14 15:06:56,386 - [INFO] - (src.chatbot_thread2.rag_pipeline.generator) - --- Generating final answer (calling LLM) ---
+2025-11-14 15:06:56,386 - [INFO] - (src.chatbot_thread2.rag_pipeline.llm_factory) - --- LLM FACTORY: Đang sử dụng API Key #7 ---
+2025-11-14 15:07:05,911 - [INFO] - (__main__) - 
+--- 🤖 Chatbot Trả lời ---
+2025-11-14 15:07:05,911 - [INFO] - (__main__) - I found a few full scholarships in Europe for a Master's in Data Science that align with your high GPA and strong leadership skills!
+
+Here are some options:
+
+*   **ETH Zurich Excellence Scholarship & Opportunity Programme (ESOP)**: This is a fully funded scholarship in Switzerland for outstanding Master's students. It covers full study and living costs (CHF 12,000 per semester) and a full tuition fee waiver. You need to demonstrate very good results in your Bachelor's degree, typically placing in the top 10% of your cohort. While not explicitly requiring leadership skills, recipients are seen as future leaders. The application window is typically from **1 November to 30 November**.
+
+*   **Eiffel Excellence Scholarship**: This prestigious scholarship in France offers comprehensive financial support for Master's programs. Data Science falls under their "Science and Techniques" domain (Mathematics and digital, Science and engineering). While a specific GPA isn't stated, a high academic ranking (e.g., top 3-5%) is a decisive factor. The official program deadline is **January 8, 2026**, but French institutions often have earlier internal deadlines, so it's advised to contact your desired program by **November 24, 2025**.
+
+*   **UNIL Master's Grants (Lausanne)**: This fully funded scholarship in Switzerland provides CHF 1,600 per month for living expenses for outstanding international students pursuing a Master's at the University of Lausanne. You must have outstanding academic results. The application deadline is **November 1, 2025**.
+
+*   **Invest Your Talent in Italy (IYT)**: This fully funded scholarship in Italy explicitly supports Master's programs in Data Science. It includes a full scholarship package, fee-waiver, and a compulsory three-month internship in an Italian company. You are expected to demonstrate academic excellence. The application period for the 2025-2026 academic year opens on **January 23, 2025**, with a deadline of **February 24, 2025**.
+
+These scholarships are highly competitive and value strong academic performance. Make sure to check the specific requirements and deadlines for each program thoroughly!
+2025-11-14 15:07:05,911 - [INFO] - (__main__) - 
+--- 🔑 Tên học bổng (Output cho ElasticSearch) ---
+2025-11-14 15:07:05,911 - [INFO] - (__main__) - ['ETH Zurich Excellence Scholarship & Opportunity Programme', 'Eiffel Excellence Scholarship', "UNIL Master's Grants (Lausanne)", 'Invest Your Talent in Italy (IYT)']
+2025-11-14 15:07:05,911 - [INFO] - (__main__) - 
+===============================
