@@ -82,39 +82,39 @@ TRANSLATOR_LLM_TEMP = 0.0
 
 # 1. Định nghĩa cấu trúc (Schema)
 class ScholarshipSearchFilters(BaseModel):
-    Country: Optional[List[str]] = Field( # <-- ĐỔI SANG List[str]
+    Country: Optional[List[str]] = Field(
         None,
-        description="Quốc gia mà người dùng muốn du học. Luôn trả về một DANH SÁCH (LIST) 1 hoặc nhiều tên quốc gia chính thức. Ví dụ: ['UK'], ['USA', 'Canada'], ['China'], ['Hungary']"
+        description="The country the user wants to study in. Must always return a LIST of official country names. Example: ['UK'], ['USA', 'Canada'], ['China'], ['Hungary']"
     )
-    Scholarship_Type: Optional[List[str]] = Field( # <-- ĐỔI SANG List[str]
+    Scholarship_Type: Optional[List[str]] = Field(
         None,
-        description="Loại nguồn gốc học bổng. Luôn trả về DANH SÁCH (LIST) 1 hoặc nhiều giá trị sau: ['Government'], ['University'], ['Organization/Foundation']"
+        description="The type (source) of the scholarship. Must always return a LIST of one or more of the following values: ['Government'], ['University'], ['Organization/Foundation']"
     )
-    Funding_Level: Optional[List[str]] = Field( # <-- ĐỔI SANG List[str]
+    Funding_Level: Optional[List[str]] = Field(
         None,
-        description="Mức tài trợ. Luôn trả về DANH SÁCH (LIST) 1 hoặc nhiều giá trị sau: ['Full scholarship'], ['Tuition Waiver'], ['Stipend'], ['Accommodation'], ['Partial Funding'], ['Fixed Amount'], ['Other Costs']"
+        description="The funding level the user wants. Must always return a LIST of one or more of the following values: ['Full scholarship'], ['Tuition Waiver'], ['Stipend'], ['Accommodation'], ['Partial Funding'], ['Fixed Amount'], ['Other Costs']"
     )
-    Required_Degree: Optional[str] = Field( # <-- GIỮ NGUYÊN (vì là '1 trong')
+    Required_Degree: Optional[str] = Field(
         None,
-        description="Bằng tốt nghiệp cao nhất mà người dùng đang đề cập, chỉ chấp nhận trả về 1 TRONG các giá trị: 'High School Diploma','Bachelor', 'Master'"
+        description="The highest degree the user currently has (for filtering requirements). Must return ONLY ONE of the following values: 'High School Diploma','Bachelor', 'Master'"
     )
-    Wanted_Degree:Optional[List[str]] = Field( # <-- ĐỔI SANG List[str]
+    Wanted_Degree:Optional[List[str]] = Field(
         None,
-        description="Bậc học mà người dùng muốn tìm. Luôn trả về DANH SÁCH 1 hoặc nhiều giá trị sau: ['Bachelor'], ['Master'], ['PhD']"
+        description="The academic level the user wants to apply for. Must always return a LIST of one or more of the following values: ['Bachelor'], ['Master'], ['PhD']"
     )
     Eligible_Field_Group: Optional[List[str]] = Field(
         None,
-        description="Nhóm ngành học người dùng quan tâm, Luôn trả về DANH SÁCH 1 hoặc nhiều giá trị, ví dụ: ['IT & Data Science'], ['Engineering & Technology', 'Natural Sciences']. DANH SÁCH CHỈ CÓ THỂ BAO GỒM CÁC GIÁ TRỊ: 'Education & Training', 'Arts, Design & Media', 'Humanities & Social Sciences', 'Economics & Business', 'Law & Public Policy', 'Natural Sciences', 'IT & Data Science', 'Engineering & Technology', 'Construction & Planning', 'Agriculture & Environment', 'Healthcare & Medicine', 'Social Services & Care', 'Personal Services & Tourism', 'Security & Defense', 'Library & Information Management', 'Transportation & Logistics', 'All fields'"
+        description="The field of study the user is interested in. Must always return a LIST. The LIST CAN ONLY INCLUDE values from the following: 'Education & Training', 'Arts, Design & Media', 'Humanities & Social Sciences', 'Economics & Business', 'Law & Public Policy', 'Natural Sciences', 'IT & Data Science', 'Engineering & Technology', 'Construction & Planning', 'Agriculture & Environment', 'Healthcare & Medicine', 'Social Services & Care', 'Personal Services & Tourism', 'Security & Defense', 'Library & Information Management', 'Transportation & Logistics', 'All fields'"
     )
 
 class ScholarshipAnswer(BaseModel):
     scholarship_names: List[str] = Field(
         ..., 
-        description="Danh sách CHÍNH XÁC tên các học bổng được tìm thấy, ví dụ: ['Chevening Scholarship', 'CSC Scholarship']"
+        description="A list of the EXACT scholarship names found, e.g., ['Chevening Scholarship', 'CSC Scholarship']"
     )
     answer: str = Field(
         ..., 
-        description="Câu trả lời tổng hợp, thân thiện, tư vấn cho người dùng, viết bằng tiếng Việt."
+        description="The final, synthesized, and friendly advisory answer for the user (in the user's original language)."
     )
 
 # python -m src.chatbot_thread2.rag_pipeline.indexing
