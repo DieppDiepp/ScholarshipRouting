@@ -1,180 +1,136 @@
 """
-Main Module - Chatbot Thread 1
+Main Module - Chatbot Thread 1 (Refactored với Langchain)
 Hệ thống chatbot tư vấn học bổng với Intent Routing và Multi-Tool Retrieval
 """
 import os
-import signal
+import sys
+import threading
+import logging
 from typing import Dict, Any, Optional
+from pathlib import Path
+
+# Add parent directories to path để có thể import
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# current_dir = .../chatbot_thread1
+# parent = .../services
+# parent.parent = .../server
+server_dir = os.path.dirname(os.path.dirname(current_dir))
+if server_dir not in sys.path:
+    sys.path.insert(0, server_dir)
+
 from services.chatbot_thread1.config import Config
-from services.chatbot_thread1.core.models.intent import Intent
-from services.chatbot_thread1.core.models.user_profile import UserProfile
-from services.chatbot_thread1.core.modules.intent_router import IntentRouter
-from services.chatbot_thread1.core.modules.response_generator import ResponseGenerator
-from services.chatbot_thread1.core.tools.semantic_search import SemanticSearchTool
-from services.chatbot_thread1.core.tools.structured_query import StructuredQueryTool
-from services.chatbot_thread1.core.tools.tavily_search import TavilySearchTool
-from services.chatbot_thread1.core.tools.profile_retriever import ProfileRetrieverTool
-from services.chatbot_thread1.core.utils.data_loader import DataLoader
-from services.chatbot_thread1.core.utils.context_assembler import ContextAssembler
+from services.chatbot_thread1.core.agents.scholarship_agent import ScholarshipAgent
 
-# Timeout exception
-class TimeoutError(Exception):
-    pass
+# Setup logging (giống thread2)
+BASE_DIR = Path(__file__).resolve().parent
+LOG_FILE_PATH = BASE_DIR / "chatbot.log"
 
-def timeout_handler(signum, frame):
-    raise TimeoutError("Operation timed out")
+# Cấu hình logging - Tránh duplicate handlers
+root_logger = logging.getLogger()
+# Xóa tất cả handlers cũ
+for handler in root_logger.handlers[:]:
+    root_logger.removeHandler(handler)
+
+# Thêm handlers mới
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - [%(levelname)s] - (%(name)s) - %(message)s',
+    handlers=[
+        logging.FileHandler(LOG_FILE_PATH, encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)
+    ],
+    force=True
+)
+
+logger = logging.getLogger(__name__)
+
 
 class ScholarshipChatbot:
     """
-    Chatbot tư vấn học bổng - Thread 1
+    Chatbot tư vấn học bổng - Thread 1 (Refactored với Langchain)
     """
     
     def __init__(self):
-        """Khởi tạo Chatbot với tất cả các components"""
-        print("🔄 Đang khởi tạo chatbot...")
+        """Khởi tạo Chatbot với Scholarship Agent"""
+        logger.info("🔄 Đang khởi tạo chatbot...")
         
         # Validate config
         Config.validate()
         
-        # Khởi tạo components (silent mode)
-        self.data_loader = DataLoader()
-        self.semantic_search = SemanticSearchTool()
-        self.structured_query = StructuredQueryTool(self.data_loader)
-        self.tavily_search = TavilySearchTool()
-        self.profile_retriever = ProfileRetrieverTool()
-        self.intent_router = IntentRouter()
-        self.response_generator = ResponseGenerator()
+        # Khởi tạo agent
+        self.agent = ScholarshipAgent()
         
-        # Index scholarships (nếu cần)
-        use_semantic = os.getenv("USE_SEMANTIC_SEARCH", "true").lower() == "true"
-        if use_semantic:
-            scholarships = self.data_loader.get_all_scholarships()
-            if scholarships:
-                try:
-                    self.semantic_search.index_scholarships(scholarships)
-                except:
-                    pass
-            
-            # Index RAG database
-            if self.semantic_search.rag_tool:
-                try:
-                    self.semantic_search.rag_tool.index_rag_documents()
-                except Exception as e:
-                    print(f"⚠ Không thể index RAG database: {e}")
+        # Conversation memory - lưu lịch sử chat
+        self.conversation_history = []
         
-        print("✅ Chatbot đã sẵn sàng!\n")
+        logger.info("✅ Chatbot đã sẵn sàng!\n")
     
     def chat(
         self, 
         query: str, 
         profile_enabled: bool = False,
         user_profile: Optional[Dict[str, Any]] = None,
-        timeout: int = 180
+        timeout: int = 180,
+        use_memory: bool = True
     ) -> Dict[str, Any]:
         """
         Xử lý một câu hỏi từ người dùng với timeout protection
         
         Args:
             query: Câu hỏi của người dùng
-            profile_enabled: Có sử dụng profile hay không (nút ON/OFF)
+            profile_enabled: Có sử dụng profile hay không
             user_profile: Dict chứa thông tin profile (nếu có)
-            timeout: Thời gian timeout tối đa (giây), mặc định 180s
+            timeout: Thời gian timeout tối đa (giây)
+            use_memory: Có sử dụng conversation history hay không
             
         Returns:
-            Dict chứa câu trả lời và metadata
+            Dict chứa câu trả lời và metadata (bao gồm processing_time_seconds)
         """
-        # Windows không hỗ trợ signal.alarm, dùng threading thay thế
-        import threading
+        import time
         
-        result = {"error": None}
+        # Bắt đầu đo thời gian
+        start_time = time.time()
+        
+        logger.info(f"\n{'='*80}")
+        logger.info(f"Query: {query}")
+        logger.info(f"Profile: {'Enabled' if profile_enabled else 'Disabled'}")
+        logger.info(f"Memory: {len(self.conversation_history)} previous messages")
+        logger.info(f"{'='*80}\n")
+        
+        # Thêm conversation history vào query nếu có
+        enhanced_query = query
+        if use_memory and self.conversation_history:
+            # Lấy 3 cặp hội thoại gần nhất (6 messages)
+            recent_history = self.conversation_history[-6:]
+            history_text = "\n".join([
+                f"{'User' if i % 2 == 0 else 'Assistant'}: {msg}"
+                for i, msg in enumerate(recent_history)
+            ])
+            enhanced_query = f"[Conversation History]\n{history_text}\n\n[Current Question]\n{query}"
+        
+        result = {"error": None, "data": None}
         
         def chat_worker():
             try:
-                # Load profile nếu có
-                profile_obj = None
-                if profile_enabled and user_profile:
-                    profile_obj = self.profile_retriever.load_profile(user_profile)
-                
-                # GIAI ĐOẠN 1: INTENT ROUTING
-                intent = self.intent_router.classify_intent(query, profile_enabled)
-                
-                # GIAI ĐOẠN 2: XÁC ĐỊNH TOOLS CẦN SỬ DỤNG
-                tools_to_use = self.intent_router.route_to_tools(intent)
-                
-                # GIAI ĐOẠN 3: RETRIEVAL - GỌI CÁC TOOLS
-                
-                semantic_results = None
-                structured_results = None
-                tavily_results = None
-                
-                # Tool 1: Semantic Search
-                use_semantic = os.getenv("USE_SEMANTIC_SEARCH", "true").lower() == "true"
-                if tools_to_use.get("semantic_search") and use_semantic:
-                    try:
-                        semantic_results = self.semantic_search.search(query)
-                    except Exception as e:
-                        semantic_results = None
-                
-                # Tool 2: Structured Query
-                if tools_to_use.get("structured_query"):
-                    try:
-                        structured_results = self._execute_structured_query(query, intent)
-                    except Exception as e:
-                        structured_results = None
-                
-                # Tool 3: Tavily Search
-                if tools_to_use.get("tavily_search"):
-                    try:
-                        tavily_results = self.tavily_search.search(query)
-                    except Exception as e:
-                        tavily_results = None
-                
-                # GIAI ĐOẠN 4: TỔNG HỢP CONTEXT VÀ TẠO SINH CÂU TRẢ LỜI
-                context = ContextAssembler.assemble(
-                    query=query,
-                    semantic_results=semantic_results,
-                    structured_results=structured_results,
-                    tavily_results=tavily_results,
-                    user_profile=profile_obj
+                result["data"] = self.agent.run(
+                    query=enhanced_query,
+                    original_query=query,  # Truyền query gốc để detect language
+                    profile_enabled=profile_enabled,
+                    user_profile=user_profile
                 )
-                
-                # Kiểm tra context length và cảnh báo
-                if len(context) > 10000:
-                    print(f"⚠ Warning: Context rất dài ({len(context)} chars)")
-                
-                # Tạo câu trả lời
-                answer = self.response_generator.generate(query, context, intent)
-                
-                # Kiểm tra answer length và cảnh báo
-                if len(answer) > 10000:
-                    print(f"⚠ Warning: Response từ Gemini rất dài ({len(answer)} chars)")
-                
-                # Trả về kết quả
-                result["data"] = {
-                    "query": query,
-                    "answer": answer,
-                    "intent": intent.intent_type.value,
-                    "confidence": intent.confidence,
-                    "tools_used": [k for k, v in tools_to_use.items() if v],
-                    "metadata": {
-                        "semantic_results_count": len(semantic_results) if semantic_results else 0,
-                        "structured_results_count": len(structured_results) if structured_results else 0,
-                        "tavily_results_count": len(tavily_results) if tavily_results else 0,
-                        "has_profile": profile_enabled
-                    }
-                }
             except Exception as e:
                 result["error"] = str(e)
+                logger.error(f"Error in chat_worker: {e}", exc_info=True)
         
         # Chạy chat trong thread với timeout
-        thread = threading.Thread(target=chat_worker)
-        thread.daemon = True
+        thread = threading.Thread(target=chat_worker, daemon=True)
         thread.start()
         thread.join(timeout=timeout)
         
         # Kiểm tra timeout
         if thread.is_alive():
-            print(f"❌ TIMEOUT: Chat vượt quá {timeout} giây, dừng xử lý")
+            elapsed_time = time.time() - start_time
+            logger.warning(f"❌ TIMEOUT: Chat exceeded {timeout}s (actual: {elapsed_time:.2f}s)")
             return {
                 "query": query,
                 "answer": f"Xin lỗi, câu hỏi của bạn mất quá nhiều thời gian xử lý (>{timeout}s). Vui lòng thử lại với câu hỏi ngắn gọn hơn.",
@@ -182,64 +138,132 @@ class ScholarshipChatbot:
                 "confidence": 0.0,
                 "tools_used": [],
                 "metadata": {
-                    "timeout": True,
-                    "timeout_seconds": timeout
+                    "timeout": True, 
+                    "timeout_seconds": timeout,
+                    "processing_time_seconds": elapsed_time
                 }
             }
         
         # Kiểm tra lỗi
         if result.get("error"):
-            print(f"❌ Error trong chat: {result['error']}")
+            elapsed_time = time.time() - start_time
+            logger.error(f"❌ Error: {result['error']} (after {elapsed_time:.2f}s)")
             return {
                 "query": query,
                 "answer": f"Xin lỗi, đã xảy ra lỗi: {result['error']}",
                 "intent": "error",
                 "confidence": 0.0,
                 "tools_used": [],
-                "metadata": {"error": result["error"]}
+                "metadata": {
+                    "error": result["error"],
+                    "processing_time_seconds": elapsed_time
+                }
             }
         
-        return result.get("data", {})
+        # Tính thời gian xử lý
+        elapsed_time = time.time() - start_time
+        
+        # Log kết quả
+        final_result = result.get("data", {})
+        logger.info(f"\n--- 🤖 Response ---")
+        logger.info(f"Intent: {final_result.get('intent')}")
+        logger.info(f"Confidence: {final_result.get('confidence', 0):.2f}")
+        logger.info(f"Tools: {final_result.get('tools_used', [])}")
+        logger.info(f"Processing Time: {elapsed_time:.2f}s")
+        logger.info(f"Answer: {final_result.get('answer', '')[:200]}...")
+        logger.info(f"{'='*80}\n")
+        
+        # Thêm processing time vào metadata
+        if 'metadata' not in final_result:
+            final_result['metadata'] = {}
+        final_result['metadata']['processing_time_seconds'] = round(elapsed_time, 2)
+        
+        # Lưu vào conversation history
+        if use_memory and final_result.get('answer'):
+            self.conversation_history.append(query)
+            self.conversation_history.append(final_result.get('answer', ''))
+            # Giới hạn history ở 20 messages (10 cặp hội thoại)
+            if len(self.conversation_history) > 20:
+                self.conversation_history = self.conversation_history[-20:]
+        
+        return final_result
     
-    def _execute_structured_query(self, query: str, intent: Intent) -> list:
-        """
-        Thực thi structured query dựa trên intent và extracted params
-        
-        Args:
-            query: Query gốc
-            intent: Intent đã phân loại
+    def clear_memory(self):
+        """Xóa conversation history"""
+        self.conversation_history = []
+        logger.info("🗑️ Đã xóa conversation history")
+
+def interactive_mode():
+    """Chế độ interactive - nhập query từ console"""
+    chatbot = ScholarshipChatbot()
+    
+    print("\n" + "="*80)
+    print("🤖 SCHOLARSHIP CHATBOT - INTERACTIVE MODE")
+    print("="*80)
+    print("Commands:")
+    print("  - Type your question to chat")
+    print("  - Type 'profile' to enable profile mode")
+    print("  - Type 'clear' to clear conversation history")
+    print("  - Type 'exit' or 'quit' to stop")
+    print("="*80 + "\n")
+    
+    profile_enabled = False
+    user_profile = None
+    
+    while True:
+        try:
+            query = input("You: ").strip()
             
-        Returns:
-            List kết quả từ structured query
-        """
-        params = intent.extracted_params or {}
-        
-        # Nếu có tên học bổng cụ thể
-        if params.get("scholarship_name"):
-            scholarship = self.structured_query.get_scholarship_details(params["scholarship_name"])
-            return [scholarship] if scholarship else []
-        
-        # Nếu cần so sánh
-        query_str = query if isinstance(query, str) else str(query)
-        if "compare" in query_str.lower() or "so sánh" in query_str.lower():
-            # TODO: Extract scholarship names để so sánh
-            return []
-        
-        # Lọc theo các tiêu chí
-        filters = {}
-        if params.get("country"):
-            country = params["country"]
-            # Xử lý nếu country là list, lấy phần tử đầu
-            filters["country"] = country[0] if isinstance(country, list) else country
-        if params.get("field"):
-            field = params["field"]
-            filters["field"] = field[0] if isinstance(field, list) else field
-        if params.get("degree"):
-            degree = params["degree"]
-            filters["degree"] = degree[0] if isinstance(degree, list) else degree
-        
-        if filters:
-            return self.structured_query.advanced_filter(filters)
-        
-        # Mặc định: trả về tất cả
-        return self.structured_query.data_loader.get_all_scholarships()[:10]  # Giới hạn 10
+            if not query:
+                continue
+            
+            if query.lower() in ['exit', 'quit', 'q']:
+                print("\n👋 Goodbye!")
+                break
+            
+            if query.lower() == 'profile':
+                from services.chatbot_thread1.example_profiles import get_sample_profile
+                profile_enabled = not profile_enabled
+                if profile_enabled:
+                    user_profile = get_sample_profile()
+                    print(f"✅ Profile mode: ON")
+                else:
+                    user_profile = None
+                    print(f"❌ Profile mode: OFF")
+                continue
+            
+            # Chat
+            result = chatbot.chat(
+                query=query,
+                profile_enabled=profile_enabled,
+                user_profile=user_profile
+            )
+            
+            print(f"\nBot: {result.get('answer', 'No answer')}\n")
+            
+            # Hiển thị metadata
+            processing_time = result.get('metadata', {}).get('processing_time_seconds', 0)
+            print(f"[Intent: {result.get('intent')} | Confidence: {result.get('confidence', 0):.2f} | Time: {processing_time:.2f}s]\n")
+            
+        except KeyboardInterrupt:
+            print("\n\n👋 Goodbye!")
+            break
+        except Exception as e:
+            print(f"\n❌ Error: {e}\n")
+
+
+if __name__ == "__main__":
+    import sys
+    
+    # Kiểm tra arguments
+    if len(sys.argv) > 1:
+        # Mode: python main.py "your query here"
+        query = " ".join(sys.argv[1:])
+        chatbot = ScholarshipChatbot()
+        result = chatbot.chat(query)
+        print(f"\n{result.get('answer')}")
+    else:
+        # Mode: Interactive
+        interactive_mode()
+    
+    logging.shutdown()

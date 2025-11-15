@@ -1,16 +1,61 @@
 """
 Tool 3: Dynamic Search - Tìm kiếm động trên Internet sử dụng Tavily API
+Refactored to use Langchain BaseTool
 """
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
+from langchain_core.tools import BaseTool
+from pydantic import Field
 from tavily import TavilyClient
-from config import Config
+import sys
+import os
 
-class TavilySearchTool:
+# Add parent directory to path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+
+from services.chatbot_thread1.config import Config
+from services.chatbot_thread1.core.utils.api_key_manager import get_next_tavily_key
+
+class TavilySearchTool(BaseTool):
     """Tool tìm kiếm thông tin trên Internet sử dụng Tavily API"""
     
-    def __init__(self):
+    name: str = "tavily_search"
+    description: str = """Search for information on the Internet.
+    Use when additional information, general advice, or off-topic questions are needed.
+    Input: question or topic to search.
+    Output: information from the Internet."""
+    
+    # Custom fields
+    client: Any = Field(default=None, exclude=True)
+    
+    def __init__(self, **kwargs):
         """Khởi tạo Tavily Search Tool"""
-        self.client = TavilyClient(api_key=Config.TAVILY_API_KEY)
+        super().__init__(**kwargs)
+        # Sử dụng API key rotation
+        self.client = TavilyClient(api_key=get_next_tavily_key())
+    
+    def _run(self, query: str) -> str:
+        """
+        Langchain BaseTool _run method
+        
+        Args:
+            query: Câu hỏi cần tìm kiếm
+            
+        Returns:
+            String representation của kết quả
+        """
+        results = self.search(query)
+        
+        if not results:
+            return "Không tìm thấy thông tin phù hợp."
+        
+        # Format results
+        output = []
+        for idx, result in enumerate(results, 1):
+            title = result.get("title", "No title")
+            content = result.get("content", "")[:200]  # Giới hạn 200 chars
+            output.append(f"{idx}. {title}\n   {content}...")
+        
+        return "\n\n".join(output)
     
     def search(self, query: str, max_results: int = None) -> List[Dict[str, Any]]:
         """

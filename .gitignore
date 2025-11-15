@@ -2,10 +2,6 @@ venv310/
 .env
 __pycache__/
 secrets/
-src/chatbot_thread2/vector_store_google/
-src/server/services/chatbot_thread2/vector_store_google/
-src/chatbot_thread2/vector_store_hf/
-src/server/services/chatbot_thread2/vector_store_hf/
 
-src/chatbot_thread2/vector_store_google/chroma.sqlite3
-src/server/services/chatbot_thread2/vector_store_google/chroma.sqlite3
+vector_store/
+*.db

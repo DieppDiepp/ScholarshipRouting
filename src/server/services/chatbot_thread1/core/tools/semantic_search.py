@@ -1,20 +1,45 @@
 """
 Tool 1: Semantic Search - Tìm kiếm ngữ nghĩa trên Vector Database
 Kết hợp Structured JSON + RAG Database
+Refactored to use Langchain BaseTool
 """
 import chromadb
 from chromadb.config import Settings
 import google.generativeai as genai
-from typing import List, Dict, Any
-from config import Config
+from typing import List, Dict, Any, Optional
+from langchain_core.tools import BaseTool
+from pydantic import Field
+import sys
+import os
 
-class SemanticSearchTool:
+# Add parent directory to path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+
+from services.chatbot_thread1.config import Config
+from services.chatbot_thread1.core.utils.api_key_manager import get_next_gemini_key
+
+class SemanticSearchTool(BaseTool):
     """Tool tìm kiếm ngữ nghĩa sử dụng ChromaDB và Gemini Embeddings"""
     
-    def __init__(self, use_rag: bool = True):
+    name: str = "semantic_search"
+    description: str = """Search for scholarships based on semantics (semantic search).
+    Use when detailed information about specific scholarships is needed.
+    Input: question or scholarship name.
+    Output: list of matching scholarships with detailed information."""
+    
+    # Custom fields
+    client: Any = Field(default=None, exclude=True)
+    collection: Any = Field(default=None, exclude=True)
+    collection_name: str = Field(default="scholarships", exclude=True)
+    use_rag: bool = Field(default=True, exclude=True)
+    rag_tool: Any = Field(default=None, exclude=True)
+    
+    def __init__(self, use_rag: bool = True, **kwargs):
         """Khởi tạo Semantic Search Tool"""
-        # Cấu hình Gemini API
-        genai.configure(api_key=Config.GEMINI_API_KEY)
+        super().__init__(**kwargs)
+        
+        # Cấu hình Gemini API với key rotation
+        genai.configure(api_key=get_next_gemini_key())
         
         # Khởi tạo ChromaDB client
         self.client = chromadb.PersistentClient(
@@ -31,7 +56,7 @@ class SemanticSearchTool:
         self.rag_tool = None
         if use_rag:
             try:
-                from core.tools.rag_search import RAGSearchTool
+                from services.chatbot_thread1.core.tools.rag_search import RAGSearchTool
                 self.rag_tool = RAGSearchTool()
             except Exception as e:
                 print(f"⚠ Không thể load RAG tool: {e}")
@@ -136,6 +161,32 @@ class SemanticSearchTool:
             
         except Exception as e:
             print(f"✗ Lỗi khi index scholarships: {e}")
+    
+    def _run(self, query: str, top_k: Optional[int] = None) -> str:
+        """
+        Langchain BaseTool _run method
+        
+        Args:
+            query: Câu hỏi/truy vấn của người dùng
+            top_k: Số lượng kết quả trả về
+            
+        Returns:
+            String representation của kết quả
+        """
+        results = self.search(query, top_k)
+        
+        # Format results as string
+        if not results:
+            return "Không tìm thấy học bổng phù hợp."
+        
+        output = []
+        for idx, scholarship in enumerate(results, 1):
+            name = scholarship.get("Scholarship_Name", "Unknown")
+            country = scholarship.get("Country", "N/A")
+            funding = scholarship.get("Funding_Level", "N/A")
+            output.append(f"{idx}. {name} ({country}) - {funding}")
+        
+        return "\n".join(output)
     
     def search(self, query: str, top_k: int = None, use_rag: bool = None) -> List[Dict[str, Any]]:
         """

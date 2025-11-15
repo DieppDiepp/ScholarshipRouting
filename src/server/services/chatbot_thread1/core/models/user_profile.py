@@ -60,4 +60,4 @@ class UserProfile(BaseModel):
         if self.target_countries:
             parts.append(f"Quốc gia mục tiêu: {', '.join(self.target_countries)}")
         
-        return "\n".join(parts) if parts else "Không có thông tin profile"
+        return "\n".join(parts) if parts else "No profile information"

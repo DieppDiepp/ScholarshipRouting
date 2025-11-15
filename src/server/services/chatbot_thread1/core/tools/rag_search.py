@@ -6,15 +6,22 @@ import chromadb
 from chromadb.config import Settings
 import google.generativeai as genai
 from typing import List, Dict, Any
-from config import Config
+import sys
+import os
+
+# Add parent directory to path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+
+from services.chatbot_thread1.config import Config
+from services.chatbot_thread1.core.utils.api_key_manager import get_next_gemini_key
 
 class RAGSearchTool:
     """Tool tìm kiếm trên RAG database (web content + URLs)"""
     
     def __init__(self, rag_path: str = None):
         """Khởi tạo RAG Search Tool"""
-        # Cấu hình Gemini API
-        genai.configure(api_key=Config.GEMINI_API_KEY)
+        # Cấu hình Gemini API với key rotation
+        genai.configure(api_key=get_next_gemini_key())
         
         # Đường dẫn RAG database
         self.rag_path = rag_path or Config.RAG_DATABASE_PATH

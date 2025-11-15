@@ -1,20 +1,73 @@
 """
 Tool 2: Structured Query - Truy vấn có cấu trúc trên JSON Database
+Refactored to use Langchain BaseTool
 """
 from typing import List, Dict, Any, Optional
-from core.utils.data_loader import DataLoader
+from langchain_core.tools import BaseTool
+from pydantic import Field
+import sys
+import os
 
-class StructuredQueryTool:
+# Add parent directory to path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+
+from services.chatbot_thread1.core.utils.data_loader import DataLoader
+
+class StructuredQueryTool(BaseTool):
     """Tool truy vấn có cấu trúc trên dữ liệu JSON"""
     
-    def __init__(self, data_loader: DataLoader):
+    name: str = "structured_query"
+    description: str = """Structured query on scholarship database.
+    Use when filtering, listing, or comparing scholarships by specific criteria is needed.
+    Input: filter criteria (country, field of study, degree level, funding level).
+    Output: list of matching scholarships."""
+    
+    # Custom fields
+    data_loader: Any = Field(default=None, exclude=True)
+    
+    def __init__(self, data_loader: DataLoader, **kwargs):
         """
         Khởi tạo Structured Query Tool
         
         Args:
             data_loader: Instance của DataLoader để truy xuất dữ liệu
         """
+        super().__init__(**kwargs)
         self.data_loader = data_loader
+    
+    def _run(self, filters: str) -> str:
+        """
+        Langchain BaseTool _run method
+        
+        Args:
+            filters: String representation của filters (JSON format)
+            
+        Returns:
+            String representation của kết quả
+        """
+        import json
+        
+        try:
+            # Parse filters từ string
+            filters_dict = json.loads(filters) if isinstance(filters, str) else filters
+        except:
+            filters_dict = {}
+        
+        # Execute query
+        results = self.advanced_filter(filters_dict)
+        
+        # Format results
+        if not results:
+            return "Không tìm thấy học bổng phù hợp với tiêu chí."
+        
+        output = []
+        for idx, scholarship in enumerate(results[:10], 1):  # Giới hạn 10
+            name = scholarship.get("Scholarship_Name", "Unknown")
+            country = scholarship.get("Country", "N/A")
+            funding = scholarship.get("Funding_Level", "N/A")
+            output.append(f"{idx}. {name} ({country}) - {funding}")
+        
+        return "\n".join(output)
     
     def filter_by_country(self, country: str) -> List[Dict[str, Any]]:
         """

@@ -3,7 +3,13 @@ Module tải và xử lý dữ liệu học bổng
 """
 import json
 from typing import List, Dict, Any
-from config import Config
+import sys
+import os
+
+# Add parent directory to path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+
+from services.chatbot_thread1.config import Config
 
 class DataLoader:
     """Class quản lý việc tải và truy xuất dữ liệu học bổng"""
