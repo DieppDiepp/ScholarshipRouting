@@ -44,11 +44,11 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore")
     
     # --- Test Case 1 (Tiếng Việt) ---
-    query1 = "Tôi muốn tìm học bổng toàn phần thạc sĩ ngành khoa học dữ liệu ở châu âu, tôi có gpa cao và kỹ năng lãnh đạo tốt"
+    query1 = "I want to find a full scholarship for a Master’s program in Data Science in Europe. I have a high GPA and strong leadership skills."
     ask_chatbot(query1)
     
     # --- Test Case 2 (Tiếng Anh) ---
-    query2 = "I want to find a full scholarship for a Master’s program in Data Science in Europe. I have a high GPA and strong leadership skills."
+    query2 = "I want to find a full scholarship for a Bachelor’s program in Data Science in Europe. I have a high GPA and strong leadership skills."
     ask_chatbot(query2)
 
     # --- (THÊM DÒNG NÀY) ---

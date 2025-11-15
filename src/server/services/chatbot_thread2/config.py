@@ -35,9 +35,9 @@ logging.basicConfig(
 )
 
 # --- Đường dẫn ---
-DATA_DIR = BASE_DIR.parent / "data_collection" / "output" / "old12-official-FullMaster"
-TEXT_REPORTS_PATH = DATA_DIR / "text_reports_master.json"
-STRUCTURED_REPORTS_PATH = DATA_DIR / "structured_english_reports_master.json"
+DATA_DIR = BASE_DIR.parent / "data_collection" / "output" / "old12_full_levels"
+TEXT_REPORTS_PATH = DATA_DIR / "text_reports.json"
+STRUCTURED_REPORTS_PATH = DATA_DIR / "structured_english_reports.json"
 
 # --- LỰA CHỌN MODEL EMBEDDING ---
 # Đổi giá trị này thành "google" hoặc "hf" (HuggingFace)
@@ -63,7 +63,7 @@ CHUNK_OVERLAP = 250
 
 # --- CẤU HÌNH RAG RETRIEVAL (MỚI) ---
 # Số lượng chunk ban đầu để semantic search
-INITIAL_K_RETRIEVAL = 100
+INITIAL_K_RETRIEVAL = 200
 # Số lượng học bổng duy nhất cuối cùng trả về
 FINAL_K_RETRIEVAL = 5
 
