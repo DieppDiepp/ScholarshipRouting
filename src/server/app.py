@@ -1,7 +1,7 @@
 import os
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from routes import health, firestore_routes, search , auth, user, chatbot
+from routes import health, firestore_routes, search , auth, user, chatbot, crm
 import firebase_admin
 from firebase_admin import credentials, firestore
 from elasticsearch import Elasticsearch
@@ -41,6 +41,7 @@ app.include_router(search.router, prefix="/api/v1/es", tags=["elasticsearch"])
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["auth"])
 app.include_router(user.router, prefix="/api/v1/user", tags=["user"])
 app.include_router(chatbot.router, prefix="/api/v1/chatbot", tags=["chatbot"])
+app.include_router(crm.router, prefix="/api/v1/crm", tags=["crm"])
 Instrumentator().instrument(app).expose(app)
 @app.on_event("startup")
 def sync_all_firestore_collections_to_es():

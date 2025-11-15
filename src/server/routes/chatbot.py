@@ -2,7 +2,9 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import Optional, Dict, Any
 import logging
+from datetime import datetime
 from services.chatbot_thread2.main_app import ask_chatbot
+from services.crm_svc import save_chat_to_user
 
 # Tạo router cho chatbot routes
 router = APIRouter()
@@ -27,9 +29,8 @@ class ErrorResponse(BaseModel):
 
 class ChatRequest(BaseModel):
     query: str
-    profile_enabled: bool = False
-    user_profile: Optional[Dict[str, Any]] = None
-    timeout: int = 180
+    plan: str  # "basic" or "pro"
+    user_id: Optional[str] = None  # Firebase UID or null
 
 class ChatResponse(BaseModel):
     success: bool
@@ -42,13 +43,14 @@ class ChatResponse(BaseModel):
     metadata: Dict[str, Any]
 
 @router.post("/ask", response_model=QueryResponse)
-async def ask(request: QueryRequest):
+async def ask(request: ChatRequest):
     """
     Route để xử lý câu hỏi từ người dùng thông qua RAG pipeline
     
     Expected JSON payload:
     {
-        "query": "Tôi muốn tìm học bổng toàn phần thạc sĩ ngành khoa học dữ liệu ở châu âu"
+        "query": "Tôi muốn tìm học bổng toàn phần thạc sĩ ngành khoa học dữ liệu ở châu âu",
+        "user_id": "user123" // Optional: if provided, chat will be saved to Firestore
     }
     
     Returns:
@@ -73,6 +75,19 @@ async def ask(request: QueryRequest):
         
         # Gọi hàm ask_chatbot từ main_app.py và nhận kết quả
         result = ask_chatbot(query)
+        
+        # Save chat to Firestore if user_id is provided
+        if request.user_id:
+            chat_data = {
+                "id": f"chat_{int(datetime.utcnow().timestamp() * 1000)}",
+                "query": query,
+                "answer": result.answer,
+                "timestamp": datetime.utcnow().isoformat() + "Z",
+                "scholarship_names": result.scholarship_names,
+                "plan": request.plan
+            }
+            save_chat_to_user(request.user_id, chat_data)
+            logger.info(f"Chat saved for user: {request.user_id}")
         
         # Trả về response với kết quả từ chatbot
         return QueryResponse(
