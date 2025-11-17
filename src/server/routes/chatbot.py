@@ -74,7 +74,7 @@ async def ask(request: ChatRequest):
         logger.info(f"Received query: {query}")
         
         # Gọi hàm ask_chatbot từ main_app.py và nhận kết quả
-        result = ask_chatbot(query)
+        result = ask_chatbot(query, user_id=request.user_id)
         
         # Save chat to Firestore if user_id is provided
         if request.user_id:
