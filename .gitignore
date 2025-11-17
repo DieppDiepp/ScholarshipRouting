@@ -5,3 +5,12 @@ secrets/
 
 vector_store/
 *.db
+
+# Chatbot logs
+src/chatbot_thread2/chatbot.log
+
+# Vector stores
+src/chatbot_thread2/vector_store_google/
+src/chatbot_thread2/vector_store_hf/
+src/server/services/chatbot_thread2/vector_store_google/
+src/server/services/chatbot_thread2/vector_store_hf/
