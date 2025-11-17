@@ -1,11 +1,11 @@
 import warnings
-import logging # <-- THÊM IMPORT
+import logging
 from services.auth_svc import get_profile
 
-# Lấy logger cho file này (dòng này giữ nguyên)
+# Lấy logger cho file này
 logger = logging.getLogger(__name__)
 
-from .rag_pipeline.translator import translate_query_to_english # (MỚI)
+from .rag_pipeline.translator import translate_query_to_english
 from .rag_pipeline.query_extractor import extract_filters
 from .rag_pipeline.retriever import search_scholarships
 from .rag_pipeline.generator import generate_answer
@@ -14,38 +14,41 @@ from .rag_pipeline.generator import generate_answer
 def format_chat_history(user_id: str, limit: int = 6) -> str:
     """
     Lấy lịch sử chat từ Firestore và format thành chuỗi string.
-    Chỉ lấy 'limit' tin nhắn gần nhất để tiết kiệm token.
+    Khớp với cấu trúc dữ liệu trong crm_svc: 
+    Key: 'chatHistory'
+    Item: { 'query': '...', 'answer': '...', 'timestamp': ... }
     """
     if not user_id:
         return "No history available."
 
     try:
-        # Gọi hàm get_profile của bạn
         user_profile = get_profile(user_id)
         
         if not user_profile:
             return "No history available."
         
-        # Giả sử field lưu lịch sử tên là 'chat_history'
-        # Bạn hãy đổi tên key này nếu trong DB bạn lưu tên khác (ví dụ: 'messages', 'history'...)
-        history_list = user_profile.get("chat_history", [])
+        history_list = user_profile.get("chatHistory", [])
         
         if not history_list:
             return "No history available."
 
         # Lấy n tin nhắn cuối cùng
+        # Lưu ý: logic lưu là append, nên tin mới nhất ở cuối list.
         recent_history = history_list[-limit:]
         
         formatted_str = ""
-        for msg in recent_history:
-            role = msg.get("role", "unknown") # user hoặc model/assistant
-            content = msg.get("content", "")
-            # Chuẩn hóa role để LLM dễ hiểu
-            if role == "user":
-                formatted_str += f"User: {content}\n"
-            else:
-                formatted_str += f"AI: {content}\n"
-                
+        for chat_item in recent_history:
+            user_text = chat_item.get("query", "")
+            ai_text = chat_item.get("answer", "")
+            
+            if user_text:
+                formatted_str += f"User: {user_text}\n"
+            if ai_text:
+                formatted_str += f"AI: {ai_text}\n"
+        
+        # Log ra để debug xem đã lấy được chưa
+        logger.info(f"Formatted {len(recent_history)} history items for user {user_id}")
+        
         return formatted_str
 
     except Exception as e:
