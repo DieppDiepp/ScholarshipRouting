@@ -53,44 +53,44 @@ def format_context(docs: List[Document]) -> str:
         
     return formatted_string
 
-# 4. Tạo RAG Prompt (Đã dịch sang tiếng Anh)
+# --- 4. CẬP NHẬT RAG PROMPT ---
 system_prompt_template = """
 You are a professional and friendly study abroad advisor AI.
-Your task is to synthesize the information from the provided CONTEXT to answer the user's question.
+Your task is to synthesize the information from the provided CONTEXT to answer the user's question, considering the CHAT HISTORY context.
 The CONTEXT contains the FULL TEXT of the scholarships (in English).
 
 --- RESPONSE RULES (VERY IMPORTANT) ---
 1.  **LANGUAGE RULE:** You MUST respond in the same language used by the user in the 'ORIGINAL USER QUERY'.
-    * Example: If the original query is in Vietnamese, respond in Vietnamese.
-    * Example: If the original query is in English, respond in English.
-    * Example: If the original query is in Chinese, respond in Chinese.
 2.  Use ONLY information from the CONTEXT. Do not invent information.
 3.  Scholarship names must be extracted EXACTLY from 'Scholarship_Name' in the context.
-4.  When responding (e.g., in Vietnamese 'mình' - 'bạn'), briefly summarize why the scholarships are relevant.
+4.  When responding, briefly summarize why the scholarships are relevant.
 5.  Try to find key information like DEADLINES or REQUIREMENTS from the FULL TEXT and mention them if relevant.
+6.  **CONTEXTUAL AWARENESS:** Use the 'CHAT HISTORY' to understand the flow of conversation. If the user refers to "it" or "that scholarship", refer back to the history.
 
---- ORIGINAL USER QUERY (For language detection) ---
+--- CHAT HISTORY (PREVIOUS CONVERSATION) ---
+{chat_history}
+--- END CHAT HISTORY ---
+
+--- ORIGINAL USER QUERY ---
 {original_user_query}
 
---- CONTEXT ---
+--- CONTEXT (SEARCH RESULTS) ---
 {context}
 --- END CONTEXT ---
 """
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", system_prompt_template),
-    # Dịch human prompt
-    ("human", "Please answer based on my original query and the provided context.") 
+    ("human", "Please answer based on my original query, the chat history, and the provided context.") 
 ])
 
-def generate_answer(original_user_query: str, retrieved_docs: List[Document]) -> ScholarshipAnswer:
+# --- CẬP NHẬT HÀM generate_answer ---
+def generate_answer(original_user_query: str, retrieved_docs: List[Document], chat_history_str: str = "") -> ScholarshipAnswer:
     """
-    Hàm chính: Nhận query gốc (để biết ngôn ngữ) và context.
+    Hàm chính: Nhận query gốc, context và lịch sử chat.
     """
     if not retrieved_docs:
         logger.info("--- No relevant documents found. Returning default answer. ---")
-        # Trả về câu trả lời mặc định, generator sẽ cố gắng dịch nó
-        # (Chúng ta có thể cải thiện điều này sau bằng cách phát hiện ngôn ngữ)
         return ScholarshipAnswer(
             scholarship_names=[],
             answer="Unfortunately, I couldn't find any scholarships that exactly match all your criteria. Would you like to try searching with fewer filters?"
@@ -103,9 +103,11 @@ def generate_answer(original_user_query: str, retrieved_docs: List[Document]) ->
     generator_llm = get_generator_llm()
     generation_chain = prompt | generator_llm
     
+    # Truyền thêm chat_history vào prompt
     response_obj = generation_chain.invoke({
         "context": formatted_context,
-        "original_user_query": original_user_query
+        "original_user_query": original_user_query,
+        "chat_history": chat_history_str  # <-- Thêm biến này
     })
     
     return response_obj
