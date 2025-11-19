@@ -69,7 +69,7 @@ FINAL_K_RETRIEVAL = 5
 
 # --- Cấu hình LLM ---
 # Dùng cho các tác vụ không cần sáng tạo (bóc tách, phân loại)
-EXTRACTOR_LLM_MODEL = "gemini-2.5-flash"
+EXTRACTOR_LLM_MODEL = "gemini-2.5-flash-lite"
 EXTRACTOR_LLM_TEMP = 0.0
 
 # Dùng cho các tác vụ sáng tạo (sinh câu trả lời - Phase 4)
