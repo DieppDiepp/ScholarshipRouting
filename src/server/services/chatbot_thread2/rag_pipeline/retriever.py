@@ -5,11 +5,10 @@ from typing import List, Dict, Any, Optional
 from .. import config
 from .indexing import get_embedding_model, get_vector_store_path
 from .query_extractor import ScholarshipSearchFilters, extract_filters
-import logging # Thêm logging
+import logging
 
 logger = logging.getLogger(__name__)
 
-# --- (THAY ĐỔI LỚN) ---
 
 # 1. Bỏ việc load ở global scope. Đặt một biến toàn cục là None
 # Bỏ: vector_store = load_vector_store()
@@ -55,8 +54,7 @@ def get_vector_store() -> Chroma:
     # Dòng này đảm bảo store được load trước khi sử dụng
     return _load_vector_store_once()
 
-# --- (HẾT THAY ĐỔI LỚN) ---
-
+WILDCARD_FIELDS = ["All fields"]
 
 # (Hàm apply_post_retrieval_filters giữ nguyên)
 def apply_post_retrieval_filters(docs: List[Document], filters: ScholarshipSearchFilters) -> List[Document]:
@@ -78,6 +76,17 @@ def apply_post_retrieval_filters(docs: List[Document], filters: ScholarshipSearc
             
             metadata_value_str = str(metadata_value).lower()
             
+            if key == "Eligible_Field_Group":
+                is_wildcard = False
+                for wildcard in WILDCARD_FIELDS:
+                    if wildcard in metadata_value_str:
+                        is_wildcard = True
+                        break
+                
+                if is_wildcard:
+                    # Học bổng này dành cho mọi ngành -> Pass filter này ngay lập tức
+                    continue
+
             if isinstance(value, list):
                 any_match_in_list = False
                 for item in value:
@@ -103,11 +112,7 @@ def search_scholarships(user_query: str,
                         initial_k: int = config.INITIAL_K_RETRIEVAL, 
                         final_k: int = config.FINAL_K_RETRIEVAL) -> List[Document]:
     
-    # --- SỬA DÒNG NÀY ---
-    # Thay vì dùng 'vector_store' (biến toàn cục cũ),
-    # chúng ta gọi hàm 'get_vector_store()'
     vector_store = get_vector_store()
-    # --- HẾT SỬA ---
     
     # Bước 1: Semantic Search (Không dùng filter)
     logger.info(f"--- Step 1: Semantic Search (k={initial_k}) ---")
@@ -140,7 +145,6 @@ def search_scholarships(user_query: str,
     
     return final_unique_docs
 
-# (Phần if __name__ == '__main__' giữ nguyên)
 if __name__ == '__main__':
     
     logger.info(f"Testing RAG pipeline with '{config.EMBEDDING_CHOICE}' model.")
