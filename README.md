@@ -9,7 +9,7 @@
 ### 🏆 About The Project
 **Scholarship Routing** is a comprehensive platform designed to help students overcome the barriers of finding international scholarships. Our solution aggregates data from diverse sources and utilizes AI to personalize the search process.
 
-We achieved 1st-prize of **AISC 2025 (Academic Information System Competition)** organized by UIT.
+We achieved 1st-prize of **AISC 2025 (Advanced Information Systems Contest)** organized by UIT.
 More info about the competition: [https://httt.uit.edu.vn/aisc/](https://httt.uit.edu.vn/aisc/)
 
 ## 📸 Team Moments at AISC 2025
