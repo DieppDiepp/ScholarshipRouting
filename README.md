@@ -16,8 +16,8 @@ More info about the competition: [https://httt.uit.edu.vn/aisc/](https://httt.ui
 The NOVA PRO TEAM at the Academic Information System Competition finals.
 
 <p float="left">
-  <img src="https://raw.githubusercontent.com/DieppDiepp/ScholarshipRouting/main/image_for_readme/AISC-CDH-4.jpg" width="45%" />
-  <img src="https://raw.githubusercontent.com/DieppDiepp/ScholarshipRouting/main/image_for_readme/AISC-CDH-2.jpg" width="45%" />
+  <img src="https://raw.githubusercontent.com/DieppDiepp/ScholarshipRouting/main/image_for_readme/AISC-CDH-4.jpg" width="49%" />
+  <img src="https://raw.githubusercontent.com/DieppDiepp/ScholarshipRouting/main/image_for_readme/AISC-CDH-2.jpg" width="49%" />
 </p>
 
 ---
