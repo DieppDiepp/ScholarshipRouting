@@ -251,7 +251,7 @@ def filter_advanced(
     
     # Fields that contain comma-separated values and need partial text matching
     multi_value_fields = ["Eligible_Fields", "Funding_Level", "Scholarship_Type", 
-                          "Danh_Sách_Nhóm_Ngành", "Application_Mode"]
+                          "Danh_Sách_Nhóm_Ngành", "Application_Mode", "Eligible_Field_Group"]
     
     for f in filters:
         field = f["field"]
@@ -260,13 +260,13 @@ def filter_advanced(
         
         # Determine if we should use text search or exact keyword matching
         if field in text_search_fields or field in multi_value_fields:
-            # Use match query for text search (finds partial matches in comma-separated values)
+            # Use match_phrase query for exact phrase matching in comma-separated values
             if intra_operator == "or":
                 # OR logic: any value matches
                 should_clauses = []
                 for value in values:
                     should_clauses.append(
-                        {"match": {field: {"query": str(value), "operator": "and"}}}
+                        {"match_phrase": {field: str(value)}}
                     )
                 clauses.append({
                     "bool": {
@@ -277,7 +277,7 @@ def filter_advanced(
             else:  # AND logic: all values must match
                 for value in values:
                     clauses.append(
-                        {"match": {field: {"query": str(value), "operator": "and"}}}
+                        {"match_phrase": {field: str(value)}}
                     )
         else:
             # Use term/terms query for exact matching with keyword field

@@ -1,47 +1,92 @@
 import warnings
-import logging # <-- THÊM IMPORT
+import logging
+from services.auth_svc import get_profile
 
-# Lấy logger cho file này (dòng này giữ nguyên)
+# Lấy logger cho file này
 logger = logging.getLogger(__name__)
 
-from .rag_pipeline.translator import translate_query_to_english # (MỚI)
+from .rag_pipeline.translator import translate_query_to_english
 from .rag_pipeline.query_extractor import extract_filters
 from .rag_pipeline.retriever import search_scholarships
 from .rag_pipeline.generator import generate_answer
 
-def ask_chatbot(query: str):
+# --- Hàm helper để format lịch sử ---
+def format_chat_history(user_id: str, limit: int = 6) -> str:
     """
-    Chạy toàn bộ pipeline RAG: Translate -> Extract -> Retrieve -> Generate
-    Returns: final_answer_obj từ generate_answer
+    Lấy lịch sử chat từ Firestore và format thành chuỗi string.
+    Khớp với cấu trúc dữ liệu trong crm_svc: 
+    Key: 'chatHistory'
+    Item: { 'query': '...', 'answer': '...', 'timestamp': ... }
     """
-    # Thay print() bằng logger.info()
-    logger.info(f"========= Query Mới =========\nQuery Gốc: {query}\n")
+    if not user_id:
+        return "No history available."
+
+    try:
+        user_profile = get_profile(user_id)
+        
+        if not user_profile:
+            return "No history available."
+        
+        history_list = user_profile.get("chatHistory", [])
+        
+        if not history_list:
+            return "No history available."
+
+        # Lấy n tin nhắn cuối cùng
+        # Lưu ý: logic lưu là append, nên tin mới nhất ở cuối list.
+        recent_history = history_list[-limit:]
+        
+        formatted_str = ""
+        for chat_item in recent_history:
+            user_text = chat_item.get("query", "")
+            ai_text = chat_item.get("answer", "")
+            
+            if user_text:
+                formatted_str += f"User: {user_text}\n"
+            if ai_text:
+                formatted_str += f"AI: {ai_text}\n"
+        
+        # Log ra để debug xem đã lấy được chưa
+        logger.info(f"Formatted {len(recent_history)} history items for user {user_id}")
+        
+        return formatted_str
+
+    except Exception as e:
+        logger.error(f"Error fetching chat history for user {user_id}: {e}")
+        return "Error fetching history."
     
-    # --- (MỚI) PHASE 1: TRANSLATE ---
+# --- Cập nhật hàm ask_chatbot ---
+def ask_chatbot(query: str, user_id: str = None):
+    """
+    Chạy pipeline RAG có tích hợp lịch sử chat.
+    """
+    logger.info(f"========= Query Mới =========\nUser ID: {user_id}\nQuery Gốc: {query}\n")
+    
+    # 1. Lấy và format lịch sử chat (MỚI)
+    chat_history_str = format_chat_history(user_id)
+    logger.info(f"Chat History Context:\n{chat_history_str}")
+
+    # 2. Translate
     english_query = translate_query_to_english(query)
     
-    # --- PHASE 2: EXTRACT ---
+    # 3. Extract
     filters = extract_filters(english_query)
-    # Thay print() bằng logger.info()
     logger.info(f"\n[PHASE 2] Extracted Filters:\n{filters.model_dump_json(indent=2, exclude_none=True)}")
     
-    # --- PHASE 3: RETRIEVE ---
+    # 4. Retrieve
     retrieved_docs = search_scholarships(english_query, filters)
     
-    # --- PHASE 4: GENERATE ---
-    final_answer_obj = generate_answer(query, retrieved_docs)
+    # 5. Generate (Truyền thêm history)
+    final_answer_obj = generate_answer(query, retrieved_docs, chat_history_str)
     
-    # --- KẾT QUẢ (THAY PRINT BẰNG LOGGER) ---
+    # --- KẾT QUẢ ---
     logger.info("\n--- 🤖 Chatbot Trả lời ---")
     logger.info(final_answer_obj.answer)
-    
-    logger.info("\n--- 🔑 Tên học bổng (Output cho ElasticSearch) ---")
-    # Thêm f-string để đảm bảo list được in ra
+    logger.info("\n--- 🔑 Tên học bổng ---")
     logger.info(f"{final_answer_obj.scholarship_names}") 
-    
     logger.info("\n===============================")
     
-    # Trả về kết quả
+    # Trả về object để Route sử dụng
     return final_answer_obj
 
 if __name__ == "__main__":
