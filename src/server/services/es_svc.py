@@ -249,18 +249,36 @@ def filter_advanced(
     text_search_fields = ["Language_Certificate", "Min_Gpa", "Experience_Years", 
                           "Funding_Details", "Eligibility_Criteria", "Other_Requirements"]
     
+    # Fields that contain comma-separated values and need partial text matching
+    multi_value_fields = ["Eligible_Fields", "Funding_Level", "Scholarship_Type", 
+                          "Danh_Sách_Nhóm_Ngành", "Application_Mode"]
+    
     for f in filters:
         field = f["field"]
         values = f["values"]
         intra_operator = f.get("operator", "OR").lower()
         
         # Determine if we should use text search or exact keyword matching
-        if field in text_search_fields:
-            # Use match query for text search (finds "6.5" within longer text)
-            query_text = " ".join(map(str, values))
-            clauses.append(
-                {"match": {field: {"query": query_text, "operator": intra_operator}}}
-            )
+        if field in text_search_fields or field in multi_value_fields:
+            # Use match query for text search (finds partial matches in comma-separated values)
+            if intra_operator == "or":
+                # OR logic: any value matches
+                should_clauses = []
+                for value in values:
+                    should_clauses.append(
+                        {"match": {field: {"query": str(value), "operator": "and"}}}
+                    )
+                clauses.append({
+                    "bool": {
+                        "should": should_clauses,
+                        "minimum_should_match": 1
+                    }
+                })
+            else:  # AND logic: all values must match
+                for value in values:
+                    clauses.append(
+                        {"match": {field: {"query": str(value), "operator": "and"}}}
+                    )
         else:
             # Use term/terms query for exact matching with keyword field
             keyword_field = f"{field}.raw" if field not in ["collection", "__text"] else field
