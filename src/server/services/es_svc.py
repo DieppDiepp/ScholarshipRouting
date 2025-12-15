@@ -66,6 +66,11 @@ def ensure_index(client: Elasticsearch, index: str) -> str:
                         "analyzer": "en_std",
                         "fields": {"raw": {"type": "keyword"}},
                     },
+                    "Wanted_Degree": {
+                        "type": "text",
+                        "analyzer": "en_std",
+                        "fields": {"raw": {"type": "keyword"}},
+                    },
                     "Language_Certificate": {
                         "type": "text",
                         "analyzer": "en_std",
@@ -253,6 +258,9 @@ def filter_advanced(
     multi_value_fields = ["Eligible_Fields", "Funding_Level", "Scholarship_Type", 
                           "Danh_Sách_Nhóm_Ngành", "Application_Mode", "Eligible_Field_Group"]
     
+    # Fields that need case-insensitive exact matching
+    case_insensitive_fields = ["Wanted_Degree", "Country"]
+    
     for f in filters:
         field = f["field"]
         values = f["values"]
@@ -278,6 +286,26 @@ def filter_advanced(
                 for value in values:
                     clauses.append(
                         {"match_phrase": {field: str(value)}}
+                    )
+        elif field in case_insensitive_fields:
+            # Use match query for case-insensitive exact matching
+            if intra_operator == "or":
+                # OR logic: any value matches
+                should_clauses = []
+                for value in values:
+                    should_clauses.append(
+                        {"match": {field: {"query": str(value), "operator": "and"}}}
+                    )
+                clauses.append({
+                    "bool": {
+                        "should": should_clauses,
+                        "minimum_should_match": 1
+                    }
+                })
+            else:  # AND logic: all values must match
+                for value in values:
+                    clauses.append(
+                        {"match": {field: {"query": str(value), "operator": "and"}}}
                     )
         else:
             # Use term/terms query for exact matching with keyword field
