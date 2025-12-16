@@ -1,7 +1,7 @@
 # routes/user.py
 import os
 from typing import Dict, Any, List
-from fastapi import APIRouter, Query, Body, HTTPException, status
+from fastapi import APIRouter, Query, Body, HTTPException, status, Depends
 from elasticsearch import Elasticsearch
 
 from services.user_svc import find_matching_scholarships_for_profile
@@ -12,7 +12,13 @@ from dtos.user_dtos import (
     ScholarshipApplication,
     ScholarshipApplicationUpdate,
 )
-from services.auth_svc import get_profile, update_profile
+from services.auth_svc import (
+    get_profile, 
+    update_profile,
+    verify_firebase_user,
+    require_user_ownership,
+    AuthenticatedUser
+)
 
 router = APIRouter()
 
@@ -99,10 +105,15 @@ def match_scholarships_by_profile(
 @router.get(
     "/interests/{uid}",
     response_model=Dict[str, Any],
-    summary="Get user's scholarship interests",
-    description="Return the list of scholarship interests stored on the user's Firestore document (field: scholar_interests).",
+    summary="Get user's scholarship interests (Protected)",
+    description="Return the list of scholarship interests. User can only access their own data.",
 )
-def get_scholar_interests(uid: str):
+async def get_scholar_interests(
+    uid: str,
+    current_user: AuthenticatedUser = Depends(verify_firebase_user)
+):
+    require_user_ownership(current_user, uid)
+    
     profile = get_profile(uid)
     if not profile:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
@@ -114,13 +125,16 @@ def get_scholar_interests(uid: str):
 @router.post(
     "/interests/{uid}/add",
     response_model=Dict[str, Any],
-    summary="Add a new scholarship interest",
-    description="Add a new scholarship to user's interests list. Duplicates are prevented based on scholarship_id."
+    summary="Add a new scholarship interest (Protected)",
+    description="Add a new scholarship to user's interests list. User can only modify their own data."
 )
-def add_scholar_interest(
+async def add_scholar_interest(
     uid: str,
-    interest: ScholarshipInterest = Body(..., description="Scholarship interest to add")
+    interest: ScholarshipInterest = Body(..., description="Scholarship interest to add"),
+    current_user: AuthenticatedUser = Depends(verify_firebase_user)
 ):
+    require_user_ownership(current_user, uid)
+    
     try:
         # Get current profile
         profile = get_profile(uid)
@@ -156,13 +170,16 @@ def add_scholar_interest(
 @router.put(
     "/interests/{uid}",
     response_model=Dict[str, Any],
-    summary="Update a scholarship interest",
-    description="Partially update a scholarship in user's interests list by providing its scholarship_id and only the fields to change in the body"
+    summary="Update a scholarship interest (Protected)",
+    description="Partially update a scholarship in user's interests list. User can only modify their own data."
 )
-def update_scholar_interest(
+async def update_scholar_interest(
     uid: str, 
-    interest_data: ScholarshipInterestUpdate = Body(..., description="Partial update payload; include scholarship_id and any fields to change")
+    interest_data: ScholarshipInterestUpdate = Body(..., description="Partial update payload; include scholarship_id and any fields to change"),
+    current_user: AuthenticatedUser = Depends(verify_firebase_user)
 ):
+    require_user_ownership(current_user, uid)
+    
     try:
         # Get current profile
         profile = get_profile(uid)
@@ -208,10 +225,16 @@ def update_scholar_interest(
 @router.delete(
     "/interests/{uid}/{scholarship_id}",
     response_model=Dict[str, Any],
-    summary="Remove a scholarship interest",
-    description="Remove a specific scholarship from user's interests list"
+    summary="Remove a scholarship interest (Protected)",
+    description="Remove a specific scholarship from user's interests list. User can only modify their own data."
 )
-def delete_scholar_interest(uid: str, scholarship_id: str):
+async def delete_scholar_interest(
+    uid: str,
+    scholarship_id: str,
+    current_user: AuthenticatedUser = Depends(verify_firebase_user)
+):
+    require_user_ownership(current_user, uid)
+    
     try:
         # Get current profile
         profile = get_profile(uid)
@@ -246,10 +269,15 @@ def delete_scholar_interest(uid: str, scholarship_id: str):
 @router.get(
     "/applications/{uid}",
     response_model=Dict[str, Any],
-    summary="Get user's scholarship applications",
-    description="Return the list of scholarship applications stored on the user's Firestore document (field: scholar_applications).",
+    summary="Get user's scholarship applications (Protected)",
+    description="Return the list of scholarship applications. User can only access their own data.",
 )
-def get_scholar_applications(uid: str):
+async def get_scholar_applications(
+    uid: str,
+    current_user: AuthenticatedUser = Depends(verify_firebase_user)
+):
+    require_user_ownership(current_user, uid)
+    
     profile = get_profile(uid)
     if not profile:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
@@ -261,13 +289,16 @@ def get_scholar_applications(uid: str):
 @router.post(
     "/applications/{uid}/add",
     response_model=Dict[str, Any],
-    summary="Add a new scholarship application",
-    description="Add a new scholarship application to user's profile. Duplicates are prevented based on scholarship_id.",
+    summary="Add a new scholarship application (Protected)",
+    description="Add a new scholarship application to user's profile. User can only modify their own data.",
 )
-def add_scholar_application(
+async def add_scholar_application(
     uid: str,
     application: ScholarshipApplication = Body(..., description="Scholarship application to add"),
+    current_user: AuthenticatedUser = Depends(verify_firebase_user)
 ):
+    require_user_ownership(current_user, uid)
+    
     try:
         profile = get_profile(uid)
         if not profile:
@@ -298,15 +329,18 @@ def add_scholar_application(
 @router.put(
     "/applications/{uid}",
     response_model=Dict[str, Any],
-    summary="Update a scholarship application",
-    description="Partially update a scholarship application by scholarship_id. Only provided fields are updated.",
+    summary="Update a scholarship application (Protected)",
+    description="Partially update a scholarship application. User can only modify their own data.",
 )
-def update_scholar_application(
+async def update_scholar_application(
     uid: str,
     application_data: ScholarshipApplicationUpdate = Body(
         ..., description="Partial update payload; include scholarship_id and any fields to change"
     ),
+    current_user: AuthenticatedUser = Depends(verify_firebase_user)
 ):
+    require_user_ownership(current_user, uid)
+    
     try:
         profile = get_profile(uid)
         if not profile:
@@ -345,10 +379,16 @@ def update_scholar_application(
 @router.delete(
     "/applications/{uid}/{scholarship_id}",
     response_model=Dict[str, Any],
-    summary="Remove a scholarship application",
-    description="Remove a specific scholarship application from user's profile",
+    summary="Remove a scholarship application (Protected)",
+    description="Remove a specific scholarship application. User can only modify their own data.",
 )
-def delete_scholar_application(uid: str, scholarship_id: str):
+async def delete_scholar_application(
+    uid: str,
+    scholarship_id: str,
+    current_user: AuthenticatedUser = Depends(verify_firebase_user)
+):
+    require_user_ownership(current_user, uid)
+    
     try:
         profile = get_profile(uid)
         if not profile:

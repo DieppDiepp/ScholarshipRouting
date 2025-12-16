@@ -1,6 +1,150 @@
 from typing import Optional, Dict, Any
 from firebase_admin import auth as firebase_auth, firestore
 from services.firestore_svc import save_with_id, get_one_raw
+from fastapi import HTTPException, status, Header, Depends
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+import httpx
+import os
+
+# Security scheme for Bearer token
+security_scheme = HTTPBearer()
+
+
+# ============================================================================
+# Authentication User Model
+# ============================================================================
+
+class AuthenticatedUser:
+    """Represents an authenticated Firebase user"""
+    def __init__(self, uid: str, email: Optional[str], provider: str):
+        self.uid = uid
+        self.email = email
+        self.provider = provider
+        self.is_anonymous = provider == "anonymous"
+
+
+# ============================================================================
+# Security Dependencies
+# ============================================================================
+
+async def verify_firebase_user(
+    credentials: HTTPAuthorizationCredentials = Depends(security_scheme)
+) -> AuthenticatedUser:
+    """
+    Verify Firebase ID token and return authenticated user.
+    Raises 401 if token is invalid, expired, or revoked.
+    """
+    if not credentials or not credentials.credentials:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Missing authentication token",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
+    token = credentials.credentials
+    
+    try:
+        # Verify token with revocation check
+        decoded = firebase_auth.verify_id_token(token, check_revoked=True)
+        
+        uid = decoded.get("uid")
+        email = decoded.get("email")
+        provider = decoded.get("firebase", {}).get("sign_in_provider", "")
+        
+        return AuthenticatedUser(uid=uid, email=email, provider=provider)
+        
+    except firebase_auth.InvalidIdTokenError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid authentication token",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    except firebase_auth.ExpiredIdTokenError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Authentication token has expired",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    except firebase_auth.RevokedIdTokenError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Authentication token has been revoked",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    except Exception as e:
+        print(f"Token verification error: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Authentication failed",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+
+def require_user_ownership(current_user: AuthenticatedUser, target_uid: str) -> None:
+    """
+    Verify that the authenticated user can only access their own data.
+    Raises 403 if user tries to access another user's data.
+    """
+    if current_user.uid != target_uid:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You can only access your own data"
+        )
+
+
+async def verify_bot_token(
+    turnstile_token: Optional[str] = Header(None, alias="X-Turnstile-Token")
+) -> bool:
+    """
+    Verify Cloudflare Turnstile token to prevent bot access.
+    Returns True if valid, raises 403 if missing/invalid.
+    """
+    turnstile_secret = os.getenv("CLOUDFLARE_TURNSTILE_SECRET")
+    
+    # Skip check if not configured (dev environment)
+    if not turnstile_secret:
+        return True
+    
+    if not turnstile_token:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Bot verification required"
+        )
+    
+    try:
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            response = await client.post(
+                "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+                json={
+                    "secret": turnstile_secret,
+                    "response": turnstile_token,
+                }
+            )
+            
+            if response.status_code != 200 or not response.json().get("success"):
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail="Bot verification failed"
+                )
+            
+            return True
+            
+    except httpx.TimeoutException:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Bot verification service unavailable"
+        )
+    except Exception as e:
+        print(f"Turnstile error: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Bot verification failed"
+        )
+
+
+# ============================================================================
+# User Management Functions
+# ============================================================================
 
 
 def _ensure_user_in_firestore(uid: str, user_doc: Dict[str, Any]) -> None:
@@ -51,10 +195,22 @@ def verify_token(id_token: str) -> Optional[Dict]:
     """
     Xác thực Firebase ID token (FE gửi lên sau khi login).
     Nếu user mới login lần đầu (Google/Email) thì đồng bộ vào Firestore.
+    Enhanced with revocation check for better security.
     """
     try:
-        decoded = firebase_auth.verify_id_token(id_token)
-    except Exception:
+        # Verify token with revocation check for hardened security
+        decoded = firebase_auth.verify_id_token(id_token, check_revoked=True)
+    except firebase_auth.InvalidIdTokenError:
+        print("Invalid ID token")
+        return None
+    except firebase_auth.ExpiredIdTokenError:
+        print("Expired ID token")
+        return None
+    except firebase_auth.RevokedIdTokenError:
+        print("Revoked ID token")
+        return None
+    except Exception as e:
+        print(f"Token verification error: {str(e)}")
         return None
 
     uid = decoded["uid"]
