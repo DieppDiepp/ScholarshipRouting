@@ -5,6 +5,9 @@ from fastapi import HTTPException, status, Header, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 import httpx
 import os
+import jwt
+import secrets
+from datetime import datetime, timedelta
 
 # Security scheme for Bearer token
 security_scheme = HTTPBearer()
@@ -31,7 +34,8 @@ async def verify_firebase_user(
     credentials: HTTPAuthorizationCredentials = Depends(security_scheme)
 ) -> AuthenticatedUser:
     """
-    Verify Firebase ID token and return authenticated user.
+    Verify Firebase ID token or guest JWT token and return authenticated user.
+    Supports both Firebase authentication and temporary guest sessions.
     Raises 401 if token is invalid, expired, or revoked.
     """
     if not credentials or not credentials.credentials:
@@ -43,6 +47,28 @@ async def verify_firebase_user(
     
     token = credentials.credentials
     
+    # Try to decode as guest JWT token first
+    jwt_secret = os.getenv("JWT_SECRET", "change-this-secret-in-production")
+    try:
+        decoded = jwt.decode(token, jwt_secret, algorithms=["HS256"])
+        # Check if it's a guest token
+        if decoded.get("provider") == "guest" and decoded.get("uid", "").startswith("guest_"):
+            return AuthenticatedUser(
+                uid=decoded["uid"],
+                email=decoded.get("email"),
+                provider="guest"
+            )
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Guest session has expired. Please continue as guest again.",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    except jwt.InvalidTokenError:
+        # Not a guest token, try Firebase
+        pass
+    
+    # Try Firebase token verification
     try:
         # Verify token with revocation check
         decoded = firebase_auth.verify_id_token(token, check_revoked=True)
@@ -156,6 +182,42 @@ def _ensure_user_in_firestore(uid: str, user_doc: Dict[str, Any]) -> None:
     if profile:
         return
     save_with_id("users", uid, user_doc)
+
+
+def create_guest_session() -> Dict:
+    """
+    Create a temporary guest session with JWT token.
+    Session expires in 24 hours. No database storage.
+    """
+    # Generate unique guest ID
+    guest_id = f"guest_{secrets.token_urlsafe(16)}"
+    
+    # Get JWT secret from environment or use default (change in production!)
+    jwt_secret = os.getenv("JWT_SECRET", "change-this-secret-in-production")
+    
+    # Create expiration time (24 hours)
+    expiration = datetime.utcnow() + timedelta(hours=24)
+    
+    # Create JWT token
+    payload = {
+        "uid": guest_id,
+        "email": None,
+        "display_name": "Guest User",
+        "provider": "guest",
+        "is_anonymous": True,
+        "exp": expiration,
+        "iat": datetime.utcnow()
+    }
+    
+    token = jwt.encode(payload, jwt_secret, algorithm="HS256")
+    
+    return {
+        "guest_token": token,
+        "uid": guest_id,
+        "expires_at": expiration.isoformat(),
+        "is_anonymous": True,
+        "display_name": "Guest User",
+    }
 
 
 def register_user(

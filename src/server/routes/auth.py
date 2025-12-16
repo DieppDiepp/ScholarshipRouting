@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends
 from services.auth_svc import (
-    register_user, 
+    register_user,
+    create_guest_session,
     verify_token, 
     get_profile, 
     update_profile,
@@ -13,6 +14,15 @@ from dtos.auth_dtos import RegisterRequest, VerifyRequest, UpdateProfileRequest
 from typing import Dict, Any
 
 router = APIRouter()
+
+@router.post("/guest", summary="Create temporary guest session")
+def create_guest():
+    """Create a temporary guest session with 24-hour expiration. No database storage."""
+    try:
+        return create_guest_session()
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
 
 @router.post("/register", summary="Register new user (with bot protection)")
 async def register(
