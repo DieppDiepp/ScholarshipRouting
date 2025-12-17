@@ -12,28 +12,30 @@ logger = logging.getLogger(__name__)
 def _load_api_keys() -> List[str]:
     """
     Tải tất cả các key có dạng GOOGLE_API_KEY_... từ file .env
-    CHO PHÉP SỐ THỨ TỰ BỊ ĐỨT QUÃNG.
+    Sử dụng vòng lặp FOR để quét, chấp nhận các số thứ tự bị đứt quãng.
+    (Ví dụ: Có Key 2, Key 5 nhưng thiếu Key 1, Key 3, 4 vẫn chạy tốt)
     """
     keys = []
-    # Quét thử từ 1 đến 50 (hoặc 100 nếu bạn có nhiều hơn)
-    # Cách này an toàn hơn 'while True' vì nếu thiếu key ở giữa, nó vẫn tìm tiếp key sau.
-    scan_range = 50 
+    # Quét thử từ 1 đến 50 (hoặc 100 tùy bạn)
+    # Nếu key 1 bị comment, nó sẽ bỏ qua và check tiếp key 2
+    SCAN_RANGE = 50 
     
-    logger.info(f"--- LLM Factory: Đang quét tìm key từ 1 đến {scan_range}... ---")
+    logger.info(f"--- LLM Factory: Đang quét tìm key từ 1 đến {SCAN_RANGE}... ---")
 
-    for i in range(1, scan_range + 1):
-        key = os.getenv(f"GOOGLE_API_KEY_{i}")
+    for i in range(1, SCAN_RANGE + 1):
+        env_var_name = f"GOOGLE_API_KEY_{i}"
+        key = os.getenv(env_var_name)
         
-        # Chỉ lấy nếu key tồn tại và không phải chuỗi rỗng
+        # Điều kiện: Key không được None (do comment) VÀ không được rỗng (do để trống)
         if key and key.strip():
             keys.append(key.strip())
-            # (Optional) Log để debug xem nó load được key số mấy
-            # logger.info(f"Loaded GOOGLE_API_KEY_{i}") 
+            # logger.info(f"Loaded {env_var_name}") # Uncomment nếu muốn debug kỹ
             
     if not keys:
+        logger.error("CRITICAL: Không tìm thấy bất kỳ GOOGLE_API_KEY_... nào hợp lệ!")
         raise ValueError("Không tìm thấy GOOGLE_API_KEY_... nào trong file .env")
         
-    logger.info(f"--- LLM Factory: Đã tải thành công TỔNG CỘNG {len(keys)} API keys ---")
+    logger.info(f"--- LLM Factory: Đã tải thành công {len(keys)} API keys ---")
     return keys
 
 # --- KHỞI TẠO BỘ XOAY VÒNG KEY ---
