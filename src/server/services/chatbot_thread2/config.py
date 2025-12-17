@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 from pydantic import BaseModel, Field
-from typing import Optional, List
+from typing import Optional, List, Literal
 import logging
 import sys
 
@@ -116,6 +116,30 @@ class ScholarshipAnswer(BaseModel):
         ..., 
         description="The final, synthesized, and friendly advisory answer for the user (in the user's original language)."
     )
+
+# --- CẤU HÌNH CHO QUERY ROUTER (MỚI) ---
+class QueryClassification(BaseModel):
+    """
+    Schema để LLM phân loại intent của user query.
+    """
+    query_type: Literal["greeting", "scholarship_search", "chitchat", "off_topic"] = Field(
+        ...,
+        description=(
+            "The type of user query:\n"
+            "- 'greeting': Greetings like 'hello', 'hi', 'xin chào', 'good morning'\n"
+            "- 'scholarship_search': Questions about scholarships, studying abroad, funding, applications\n"
+            "- 'chitchat': Casual conversation like 'how are you', 'cảm ơn bạn', 'that's great'\n"
+            "- 'off_topic': Questions unrelated to scholarships (weather, news, math problems, etc.)"
+        )
+    )
+    reasoning: str = Field(
+        ...,
+        description="Brief explanation (1-2 sentences) of why this classification was chosen."
+    )
+
+# Config cho Router LLM (dùng flash cho nhanh)
+ROUTER_LLM_MODEL = "gemini-2.5-flash-lite"
+ROUTER_LLM_TEMP = 0.0
 
 # python -m src.chatbot_thread2.rag_pipeline.indexing
 # python -m src.chatbot_thread2.rag_pipeline.retriever
