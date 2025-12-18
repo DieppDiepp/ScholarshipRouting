@@ -8,7 +8,7 @@ from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharac
 from langchain_chroma import Chroma
 
 from .custom_embeddings import CustomVietnameseEmbeddings
-from .llm_factory import get_next_api_key
+from .llm_factory import get_next_google_key
 from . import data_loader
 from .. import config
 from typing import List, Union # Mới
@@ -116,7 +116,7 @@ def get_embedding_model() -> Embeddings:
         # --- SỬA LỖI ---
         # Lấy MỘT key từ pool để khởi tạo embedding
         # Thay vì: google_api_key=config.GOOGLE_API_KEY
-        api_key = get_next_api_key() 
+        api_key = get_next_google_key() 
         return GoogleGenerativeAIEmbeddings(
             model=config.GOOGLE_EMBEDDING_MODEL_NAME,
             google_api_key=api_key # <-- Dùng key vừa lấy từ factory
