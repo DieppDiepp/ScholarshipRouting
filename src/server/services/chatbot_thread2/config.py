@@ -73,7 +73,7 @@ EXTRACTOR_LLM_MODEL = "gemini-2.5-flash-lite"
 EXTRACTOR_LLM_TEMP = 0.0
 
 # Dùng cho các tác vụ sáng tạo (sinh câu trả lời - Phase 4)
-GENERATOR_LLM_MODEL = "gemini-2.5-flash-lite"
+GENERATOR_LLM_MODEL = "gemini-3-flash"
 GENERATOR_LLM_TEMP = 0.7
 
 # Dùng cho dịch thuật
