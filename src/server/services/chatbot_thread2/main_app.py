@@ -1,6 +1,13 @@
 import warnings
 import logging
-from services.auth_svc import get_profile
+
+# Try import auth service (optional for standalone testing)
+try:
+    from services.auth_svc import get_profile
+except ImportError:
+    # Fallback nếu chạy standalone
+    def get_profile(user_id):
+        return None
 
 # Lấy logger cho file này
 logger = logging.getLogger(__name__)
@@ -9,8 +16,8 @@ from .rag_pipeline.translator import translate_query_to_english
 from .rag_pipeline.query_extractor import extract_filters
 from .rag_pipeline.retriever import search_scholarships
 from .rag_pipeline.generator import generate_answer
-# --- IMPORT MỚI: QUERY ROUTER ---
-from .rag_pipeline.query_router import classify_query, should_use_rag, get_direct_response
+# --- IMPORT MỚI: QUERY ROUTER (COMMENTED OUT) ---
+# from .rag_pipeline.query_router import classify_query, should_use_rag, get_direct_response
 from . import config
 
 # --- Hàm helper để format lịch sử ---
@@ -61,32 +68,33 @@ def format_chat_history(user_id: str, limit: int = 6) -> str:
 # --- Cập nhật hàm ask_chatbot ---
 def ask_chatbot(query: str, user_id: str = None):
     """
-    Chạy pipeline RAG có tích hợp lịch sử chat VÀ QUERY ROUTER.
+    Chạy pipeline RAG có tích hợp lịch sử chat.
     
     Flow:
-    1. Router phân loại query
-    2. Nếu là greeting/chitchat/off_topic → Trả lời trực tiếp (NHANH)
-    3. Nếu là scholarship_search → Chạy full RAG pipeline
+    1. Translate query
+    2. Extract filters
+    3. Retrieve scholarships
+    4. Generate answer
     """
     logger.info(f"========= Query Mới =========\nUser ID: {user_id}\nQuery Gốc: {query}\n")
     
-    # --- BƯỚC 0: QUERY ROUTING (MỚI) ---
-    logger.info("[PHASE 0] Query Classification & Routing")
-    classification = classify_query(query)
+    # --- ROUTER LOGIC (COMMENTED OUT - BỎ TẠM THỜI) ---
+    # logger.info("[PHASE 0] Query Classification & Routing")
+    # classification = classify_query(query)
+    # 
+    # # Nếu KHÔNG cần RAG → Trả lời trực tiếp
+    # if not should_use_rag(classification):
+    #     logger.info(f"--- Query type '{classification.query_type}' không cần RAG. Trả lời trực tiếp. ---")
+    #     direct_answer = get_direct_response(classification, query)
+    #     
+    #     # Trả về format giống ScholarshipAnswer để đồng nhất
+    #     return config.ScholarshipAnswer(
+    #         scholarship_names=[],
+    #         answer=direct_answer
+    #     )
     
-    # Nếu KHÔNG cần RAG → Trả lời trực tiếp
-    if not should_use_rag(classification):
-        logger.info(f"--- Query type '{classification.query_type}' không cần RAG. Trả lời trực tiếp. ---")
-        direct_answer = get_direct_response(classification, query)
-        
-        # Trả về format giống ScholarshipAnswer để đồng nhất
-        return config.ScholarshipAnswer(
-            scholarship_names=[],
-            answer=direct_answer
-        )
-    
-    # --- NẾU CẦN RAG, CHẠY PIPELINE BÌNH THƯỜNG ---
-    logger.info("--- Query cần RAG. Chạy full pipeline... ---")
+    # --- CHẠY FULL RAG PIPELINE ---
+    logger.info("--- Running full RAG pipeline... ---")
     
     # 1. Lấy và format lịch sử chat
     chat_history_str = format_chat_history(user_id)
