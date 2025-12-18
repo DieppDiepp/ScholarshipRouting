@@ -14,29 +14,22 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 
 logger = logging.getLogger(__name__)
 
-# --- ROUTER PROMPT ---
+# --- ROUTER PROMPT (MULTILINGUAL) ---
 router_prompt = ChatPromptTemplate.from_messages([
     ("system", 
-     "You are an intelligent query classifier for a study abroad scholarship chatbot system.\n"
-     "Your task is to classify the user's query into ONE of these categories:\n\n"
+     "You are an intelligent multilingual query classifier for a study abroad scholarship chatbot.\n"
+     "The user's query can be in ANY language (English, Vietnamese, Japanese, Korean, Chinese, etc.).\n"
+     "Your task is to classify it into ONE of these categories:\n\n"
      
-     "1. **greeting**: Simple greetings or introductions\n"
-     "   - Examples: 'hello', 'hi there', 'xin chào', 'chào bạn', 'good morning'\n\n"
-     
-     "2. **scholarship_search**: Questions about scholarships, studying abroad, funding, applications, eligibility\n"
-     "   - Examples: 'find scholarships in Europe', 'học bổng thạc sĩ', 'how to apply', 'tôi muốn du học úc'\n\n"
-     
+     "1. **greeting**: Simple greetings or introductions in any language\n"
+     "2. **scholarship_search**: Questions about scholarships, studying abroad, funding, applications\n"
      "3. **chitchat**: Casual conversation, thanks, small talk (NOT scholarship related)\n"
-     "   - Examples: 'cảm ơn bạn', 'that's helpful', 'how are you', 'bạn khỏe không'\n\n"
+     "4. **off_topic**: Questions unrelated to scholarships or education\n\n"
      
-     "4. **off_topic**: Questions completely unrelated to scholarships or education\n"
-     "   - Examples: 'what's the weather', 'solve this math problem', 'thời tiết hôm nay'\n\n"
-     
-     "IMPORTANT RULES:\n"
-     "- If the query mentions ANY scholarship/study abroad keyword → classify as 'scholarship_search'\n"
-     "- If the query is a follow-up like 'tell me more about it' → classify as 'scholarship_search'\n"
-     "- Be strict: only pure greetings get 'greeting', only pure thanks/chitchat get 'chitchat'\n"
-     "- Provide clear reasoning for your classification."
+     "RULES:\n"
+     "- ANY scholarship/study abroad keyword → 'scholarship_search'\n"
+     "- Follow-ups like 'tell me more' → 'scholarship_search'\n"
+     "- Only pure greetings/thanks get 'greeting'/'chitchat'"
     ),
     ("human", "Classify this query: {user_query}")
 ])
@@ -57,10 +50,11 @@ def get_router_llm() -> ChatGoogleGenerativeAI:
 def classify_query(user_query: str) -> config.QueryClassification:
     """
     Phân loại query của user với retry logic.
+    Hỗ trợ đa ngôn ngữ (không cần dịch trước).
     Tự động skip key hết quota và thử key tiếp theo.
     
     Args:
-        user_query: Câu hỏi gốc của user (có thể tiếng Việt hoặc tiếng Anh)
+        user_query: Câu hỏi gốc của user (bất kỳ ngôn ngữ nào)
         
     Returns:
         QueryClassification object với query_type và reasoning
@@ -77,7 +71,7 @@ def classify_query(user_query: str) -> config.QueryClassification:
             router_llm = get_router_llm()
             router_chain = router_prompt | router_llm
             
-            # Invoke chain
+            # Invoke chain trực tiếp (không cần translate)
             classification = router_chain.invoke({"user_query": user_query})
             
             logger.info(f"--- [ROUTER] Classification: {classification.query_type} ---")
@@ -123,93 +117,111 @@ def should_use_rag(classification: config.QueryClassification) -> bool:
     logger.info(f"--- [ROUTER] Needs RAG: {needs_rag} ---")
     return needs_rag
 
-# --- DIRECT RESPONSES (Không cần RAG) ---
-GREETING_RESPONSES = {
-    "vi": (
-        "Xin chào! 👋 Tôi là trợ lý tư vấn du học. "
-        "Tôi có thể giúp bạn tìm kiếm học bổng phù hợp với nhu cầu của bạn. "
-        "Hãy cho tôi biết bạn quan tâm đến học bổng nào nhé!"
+# --- DYNAMIC RESPONSE GENERATION (Multilingual) ---
+response_prompt = ChatPromptTemplate.from_messages([
+    ("system",
+     "You are a friendly study abroad scholarship advisor chatbot.\n"
+     "Generate a SHORT, appropriate response based on the query type.\n\n"
+     "Response templates:\n"
+     "- greeting: Greet warmly, introduce yourself as scholarship advisor, ask what they need\n"
+     "- chitchat: Thank them politely, remind you can help with scholarships\n"
+     "- off_topic: Apologize politely, state you only help with scholarships, ask if they have scholarship questions\n\n"
+     "CRITICAL: Respond in the SAME LANGUAGE as the user's original query.\n"
+     "Keep it concise (2-3 sentences max). Use emoji if appropriate (👋😊🎓)."
     ),
-    "en": (
-        "Hello! 👋 I'm your study abroad advisor. "
-        "I can help you find scholarships that match your needs. "
-        "Please tell me what kind of scholarship you're looking for!"
-    )
-}
-
-CHITCHAT_RESPONSES = {
-    "vi": (
-        "Cảm ơn bạn! 😊 Nếu bạn cần tìm hiểu thêm về học bổng hoặc du học, "
-        "đừng ngại hỏi tôi nhé!"
-    ),
-    "en": (
-        "Thank you! 😊 If you need more information about scholarships or studying abroad, "
-        "feel free to ask me!"
-    )
-}
-
-OFF_TOPIC_RESPONSES = {
-    "vi": (
-        "Xin lỗi, tôi là chatbot chuyên về tư vấn học bổng và du học. "
-        "Tôi không thể trả lời câu hỏi này. "
-        "Bạn có thắc mắc gì về học bổng không? 🎓"
-    ),
-    "en": (
-        "I'm sorry, I'm a chatbot specialized in scholarship and study abroad advising. "
-        "I can't answer this question. "
-        "Do you have any questions about scholarships? 🎓"
-    )
-}
+    ("human", "Query type: {query_type}\nUser query: {user_query}\n\nGenerate response:")
+])
 
 def get_direct_response(classification: config.QueryClassification, user_query: str) -> str:
     """
-    Tạo câu trả lời trực tiếp cho các query không cần RAG.
+    Sinh câu trả lời động bằng LLM (hỗ trợ mọi ngôn ngữ).
     
     Args:
         classification: Kết quả phân loại từ router
-        user_query: Query gốc (để detect ngôn ngữ)
+        user_query: Query gốc của user
         
     Returns:
-        Câu trả lời phù hợp
+        Câu trả lời bằng ngôn ngữ của user
     """
-    # Detect ngôn ngữ đơn giản (có thể cải thiện)
-    is_vietnamese = any(char in user_query for char in "àáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ")
-    lang = "vi" if is_vietnamese else "en"
+    from langchain_core.output_parsers import StrOutputParser
+    from .llm_factory import get_translator_llm  # Dùng chung translator LLM (nhẹ)
     
-    query_type = classification.query_type
-    
-    if query_type == "greeting":
-        return GREETING_RESPONSES[lang]
-    elif query_type == "chitchat":
-        return CHITCHAT_RESPONSES[lang]
-    elif query_type == "off_topic":
-        return OFF_TOPIC_RESPONSES[lang]
-    else:
-        # Fallback (không nên xảy ra)
-        return GREETING_RESPONSES[lang]
+    try:
+        llm = get_translator_llm()  # Flash model, nhanh
+        chain = response_prompt | llm | StrOutputParser()
+        
+        response = chain.invoke({
+            "query_type": classification.query_type,
+            "user_query": user_query
+        })
+        
+        return response.strip()
+        
+    except Exception as e:
+        logger.error(f"Error generating response: {e}")
+        # Fallback tiếng Anh nếu LLM fail
+        return "Hello! I'm your scholarship advisor. How can I help you find scholarships?"
 
 if __name__ == '__main__':
-    # Test router
+    # Test router với 50 queries để kiểm tra quota limits
     test_queries = [
+        # Greetings (10)
         "xin chào bạn",
         "hello there",
-        "tôi muốn tìm học bổng thạc sĩ ở châu âu",
-        "I want to find a scholarship in USA",
-        "cảm ơn bạn nhiều",
-        "thời tiết hôm nay thế nào?",
-        "what is 2+2?",
-        "cho tôi biết thêm về học bổng đó"
+        "hi",
+        "chào buổi sáng",
+        "good morning",
+        "hey",
+        "xin chào",
+        "hello",
+        "chào bạn",
+        "こんにちは"
     ]
     
-    for query in test_queries:
-        print(f"\n{'='*60}")
-        print(f"Query: {query}")
+    print(f"\n🧪 TESTING ROUTER WITH {len(test_queries)} QUERIES")
+    print(f"{'='*80}\n")
+    
+    # Tracking stats
+    stats = {
+        "greeting": 0,
+        "scholarship_search": 0,
+        "chitchat": 0,
+        "off_topic": 0
+    }
+    quota_errors = []
+    
+    for i, query in enumerate(test_queries, 1):
+        print(f"\n[{i}/{len(test_queries)}] Query: {query}")
         
-        classification = classify_query(query)
-        print(f"Type: {classification.query_type}")
-        print(f"Reasoning: {classification.reasoning}")
-        print(f"Use RAG: {should_use_rag(classification)}")
-        
-        if not should_use_rag(classification):
-            response = get_direct_response(classification, query)
-            print(f"Direct Response: {response}")
+        try:
+            classification = classify_query(query)
+            stats[classification.query_type] += 1
+            
+            print(f"✅ Type: {classification.query_type}")
+            print(f"   Reasoning: {classification.reasoning[:80]}...")
+            
+            if not should_use_rag(classification):
+                response = get_direct_response(classification, query)
+                print(f"   Direct Response: {response[:60]}...")
+                
+        except ResourceExhausted as e:
+            print(f"❌ ALL KEYS EXHAUSTED at query #{i}")
+            quota_errors.append(i)
+            break
+        except Exception as e:
+            print(f"❌ ERROR: {str(e)[:100]}")
+            break
+    
+    # Print summary
+    print(f"\n{'='*80}")
+    print(f"TEST SUMMARY")
+    print(f"{'='*80}")
+    print(f"Total queries tested: {i}/{len(test_queries)}")
+    print(f"\nClassification breakdown:")
+    for query_type, count in stats.items():
+        print(f"  - {query_type}: {count}")
+    
+    if quota_errors:
+        print(f"\n⚠️ Quota errors at queries: {quota_errors}")
+    else:
+        print(f"\n✅ All queries completed successfully!")
