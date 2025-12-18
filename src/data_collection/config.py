@@ -58,6 +58,17 @@ DRILL_DOWN_QUERY_COUNT = 3  # Số lượng truy vấn đầu tiên trong danh s
 TAVILY_MAX_RESULTS_INITIAL = 4  # Số kết quả cho lần tìm kiếm đầu tiên
 TAVILY_MAX_RESULTS_DRILLDOWN = 3 # Số kết quả cho mỗi truy vấn drill-down
 
+
+
+# --- THÊM CẤU HÌNH PROVIDER ---
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "google").lower() # Mặc định là google
+
+# --- CẤU HÌNH OPENAI ---
+OPENAI_LITE_MODEL = os.getenv("OPENAI_LITE_MODEL", "gpt-4o-mini")
+OPENAI_HEAVY_MODEL = os.getenv("OPENAI_HEAVY_MODEL", "gpt-4o")
+
+
+
 # --- 4. CẤU HÌNH LLM (Giữ nguyên) ---
 NON_CREATIVE_LLM_MODEL = "gemini-2.5-flash"
 NON_CREATIVE_LLM_TEMP = 0

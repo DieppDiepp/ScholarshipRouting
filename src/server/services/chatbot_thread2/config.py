@@ -68,6 +68,14 @@ INITIAL_K_RETRIEVAL = 200
 FINAL_K_RETRIEVAL = 5
 
 # --- Cấu hình LLM ---
+
+# --- THÊM CẤU HÌNH PROVIDER ---
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "google").lower() # Mặc định là google
+
+# --- CẤU HÌNH OPENAI ---
+OPENAI_LITE_MODEL = os.getenv("OPENAI_LITE_MODEL", "gpt-5-mini")
+OPENAI_HEAVY_MODEL = os.getenv("OPENAI_HEAVY_MODEL", "gpt-5-mini")
+
 # Dùng cho các tác vụ không cần sáng tạo (bóc tách, phân loại)
 EXTRACTOR_LLM_MODEL = "gemini-2.5-flash-lite"
 EXTRACTOR_LLM_TEMP = 0.0
