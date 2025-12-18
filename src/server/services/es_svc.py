@@ -159,21 +159,32 @@ def index_many(
     ensure_index(client, index)
     
     failed_docs = []
+    doc_ids_seen = set()
+    duplicate_count = 0
 
     def gen():
+        nonlocal duplicate_count
         for d in docs:
             try:
+                # Lấy id từ Firestore doc.id nếu có
+                es_id = d.get("id") or d.get("doc_id")
+                
+                # Check for duplicate IDs
+                if es_id in doc_ids_seen:
+                    duplicate_count += 1
+                    print(f"⚠️  Duplicate ID detected: {es_id}")
+                    continue
+                doc_ids_seen.add(es_id)
+                
                 src = {**d, "__text": _catch_all(d)}
                 if collection:
                     src["collection"] = collection
-
-                # Lấy id từ Firestore doc.id nếu có
-                es_id = d.get("id") or d.get("doc_id")
 
                 yield {"_op_type": "index", "_index": index, "_id": es_id, "_source": src}
             except Exception as e:
                 doc_id = d.get("id") or d.get("doc_id") or "unknown"
                 failed_docs.append({"id": doc_id, "error": str(e)})
+                print(f"❌ Error preparing doc {doc_id}: {e}")
                 continue
 
     success, errors = helpers.bulk(client, gen(), stats_only=False, raise_on_error=False)
@@ -187,10 +198,16 @@ def index_many(
             if isinstance(error_msg, dict):
                 error_msg = error_msg.get("reason", str(error_msg))
             failed_docs.append({"id": doc_id, "error": str(error_msg)})
+            print(f"❌ Bulk error for doc {doc_id}: {error_msg}")
+    
+    # Log summary
+    total_attempted = len(doc_ids_seen) + duplicate_count + len(failed_docs)
+    print(f"📊 Index Summary: Total={total_attempted}, Success={success}, Failed={len(failed_docs)}, Duplicates={duplicate_count}")
     
     return {
         "success": success,
         "failed": len(failed_docs),
+        "duplicates": duplicate_count,
         "failed_ids": [{"id": f["id"], "error": f["error"]} for f in failed_docs]
     }
 
