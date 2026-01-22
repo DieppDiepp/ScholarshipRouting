@@ -155,12 +155,17 @@ def index_many(
     *,
     index: str,
     collection: Optional[str] = None,
+    batch_size: int = 100,  # Process in smaller batches
 ) -> Dict[str, Any]:
+    """Index multiple documents with batching to prevent ES overload"""
     ensure_index(client, index)
+    
+    import time
     
     failed_docs = []
     doc_ids_seen = set()
     duplicate_count = 0
+    total_success = 0
 
     def gen():
         nonlocal duplicate_count
@@ -172,7 +177,6 @@ def index_many(
                 # Check for duplicate IDs
                 if es_id in doc_ids_seen:
                     duplicate_count += 1
-                    print(f"⚠️  Duplicate ID detected: {es_id}")
                     continue
                 doc_ids_seen.add(es_id)
                 
@@ -187,28 +191,52 @@ def index_many(
                 print(f"❌ Error preparing doc {doc_id}: {e}")
                 continue
 
-    success, errors = helpers.bulk(client, gen(), stats_only=False, raise_on_error=False)
+    try:
+        # Use chunk_size and request_timeout to control bulk operations
+        success, errors = helpers.bulk(
+            client, 
+            gen(), 
+            chunk_size=batch_size,  # Process in smaller chunks
+            request_timeout=120,  # Increase timeout for bulk operations
+            max_retries=3,
+            initial_backoff=2,
+            stats_only=False, 
+            raise_on_error=False
+        )
+        total_success = success
+        
+        # Add bulk operation errors to failed_docs
+        if errors:
+            for error in errors:
+                error_info = error.get("index", {})
+                doc_id = error_info.get("_id", "unknown")
+                error_msg = error_info.get("error", {})
+                if isinstance(error_msg, dict):
+                    error_msg = error_msg.get("reason", str(error_msg))
+                failed_docs.append({"id": doc_id, "error": str(error_msg)})
+                print(f"❌ Bulk error for doc {doc_id}: {error_msg}")
     
-    # Add bulk operation errors to failed_docs
-    if errors:
-        for error in errors:
-            error_info = error.get("index", {})
-            doc_id = error_info.get("_id", "unknown")
-            error_msg = error_info.get("error", {})
-            if isinstance(error_msg, dict):
-                error_msg = error_msg.get("reason", str(error_msg))
-            failed_docs.append({"id": doc_id, "error": str(error_msg)})
-            print(f"❌ Bulk error for doc {doc_id}: {error_msg}")
+    except Exception as e:
+        print(f"❌ Critical error during bulk indexing: {e}")
+        import traceback
+        traceback.print_exc()
+        return {
+            "success": 0,
+            "failed": len(doc_ids_seen),
+            "duplicates": duplicate_count,
+            "failed_ids": [{"id": "bulk_operation", "error": str(e)}],
+            "error": str(e)
+        }
     
     # Log summary
-    total_attempted = len(doc_ids_seen) + duplicate_count + len(failed_docs)
-    print(f"📊 Index Summary: Total={total_attempted}, Success={success}, Failed={len(failed_docs)}, Duplicates={duplicate_count}")
+    total_attempted = len(doc_ids_seen) + duplicate_count
+    print(f"📊 Index Summary: Total={total_attempted}, Success={total_success}, Failed={len(failed_docs)}, Duplicates={duplicate_count}")
     
     return {
-        "success": success,
+        "success": total_success,
         "failed": len(failed_docs),
         "duplicates": duplicate_count,
-        "failed_ids": [{"id": f["id"], "error": f["error"]} for f in failed_docs]
+        "failed_ids": [{"id": f["id"], "error": f["error"]} for f in failed_docs[:10]]  # Limit error list
     }
 
 

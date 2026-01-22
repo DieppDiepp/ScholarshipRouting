@@ -22,7 +22,7 @@ def search(
         hosts=[ES_HOST],
         basic_auth=(ES_USER, ES_PASS),
         verify_certs=False,
-        max_retries=30,
+        max_retries=3,
         retry_on_timeout=True,
         request_timeout=30,
     )
@@ -34,6 +34,15 @@ def search(
             offset=offset,
             collection=collection
         )
+    except Exception as e:
+        import traceback
+        return {
+            "error": str(e),
+            "error_type": type(e).__name__,
+            "message": "Search failed. Elasticsearch may be overloaded. Please try again.",
+            "total": 0,
+            "items": []
+        }
     finally:
         es.close()
 
@@ -41,41 +50,65 @@ def search(
 @router.post("/sync")
 def sync_firestore_to_es(
     collection: str = Query(..., description="Tên Firestore collection cần sync"),
+    force: bool = Query(False, description="Force resync even if data exists"),
 ):
     try:
         db = firestore.client()
-        docs = db.collection(collection).stream()
-        items = [{"id": doc.id, **doc.to_dict()} for doc in docs]
-
-        if not items:
-            return {"status": "ok", "message": f"No documents in collection '{collection}'"}
-
+        
         es = Elasticsearch(
             hosts=[ES_HOST],
             basic_auth=(ES_USER, ES_PASS),
             verify_certs=False,
-            max_retries=30,
+            max_retries=5,
             retry_on_timeout=True,
-            request_timeout=30,
+            request_timeout=120,
         )
+        
         try:
-            result = index_many(es, items, index=collection, collection=collection)
+            # Check if index already has data
+            if not force and es.indices.exists(index=collection):
+                doc_count = es.count(index=collection).get("count", 0)
+                if doc_count > 0:
+                    return {
+                        "status": "skipped",
+                        "message": f"Index '{collection}' already has {doc_count} documents. Use force=true to resync.",
+                        "existing_documents": doc_count,
+                        "collection": collection
+                    }
+            
+            docs = db.collection(collection).stream()
+            items = [{"id": doc.id, **doc.to_dict()} for doc in docs]
+
+            if not items:
+                return {"status": "ok", "message": f"No documents in collection '{collection}'"}
+
+            result = index_many(
+                es, 
+                items, 
+                index=collection, 
+                collection=collection,
+                batch_size=100  # Process in batches
+            )
+            
             return {
                 "status": "ok",
                 "total_documents": len(items),
                 "indexed": result["success"],
                 "failed": result["failed"],
-                "failed_records": result["failed_ids"],
+                "duplicates": result.get("duplicates", 0),
+                "failed_records": result["failed_ids"][:10],  # Limit to first 10
                 "collection": collection
             }
         finally:
             es.close()
     except Exception as e:
+        import traceback
         return {
             "status": "error",
             "message": str(e),
             "collection": collection,
-            "error_type": type(e).__name__
+            "error_type": type(e).__name__,
+            "traceback": traceback.format_exc()
         }
 
 filter_example = [
@@ -100,7 +133,7 @@ def filter_documents(
     inter_field_operator: Literal["AND", "OR"] = Query("AND", description="Toán tử kết hợp các bộ lọc với nhau"),
     
     # --- Request body giờ là một danh sách FilterItem ---
-    filters: List[FilterItem] = Body(..., example=filter_example)
+    filters: List[FilterItem] = Body(..., examples=[filter_example])
 ):
     """
     API để lọc document với các điều kiện phức tạp.
@@ -109,7 +142,7 @@ def filter_documents(
         hosts=[ES_HOST],
         basic_auth=(ES_USER, ES_PASS),
         verify_certs=False,
-        max_retries=30,
+        max_retries=3,
         retry_on_timeout=True,
         request_timeout=30,
     )
@@ -126,5 +159,14 @@ def filter_documents(
             size=size,
             offset=offset
         )
+    except Exception as e:
+        import traceback
+        return {
+            "error": str(e),
+            "error_type": type(e).__name__,
+            "message": "Filter operation failed. Elasticsearch may be overloaded. Please try again.",
+            "total": 0,
+            "items": []
+        }
     finally:
         es.close()
