@@ -52,29 +52,59 @@ def sync_firestore_to_es(
     collection: str = Query(..., description="Tên Firestore collection cần sync"),
     force: bool = Query(False, description="Force resync even if data exists"),
 ):
+    """Manual sync endpoint - use cautiously as ES may be under load from background sync"""
     try:
-        db = firestore.client()
-        
+        # Check ES health first
         es = Elasticsearch(
             hosts=[ES_HOST],
             basic_auth=(ES_USER, ES_PASS),
             verify_certs=False,
-            max_retries=5,
+            max_retries=3,
             retry_on_timeout=True,
-            request_timeout=120,
+            request_timeout=30,
         )
+        
+        try:
+            # Quick health check
+            health = es.cluster.health(timeout="5s")
+            cluster_status = health.get("status", "unknown")
+            
+            if cluster_status == "red":
+                return {
+                    "status": "error",
+                    "message": f"Elasticsearch cluster is unhealthy (status: {cluster_status}). Cannot sync now.",
+                    "collection": collection,
+                    "suggestion": "Wait for background sync to complete or check ES resources"
+                }
+            
+            if cluster_status == "yellow":
+                print(f"⚠️  ES cluster status is YELLOW, syncing may be slow...")
+                
+        except Exception as health_error:
+            return {
+                "status": "error", 
+                "message": f"Cannot connect to Elasticsearch: {str(health_error)}",
+                "collection": collection
+            }
+        
+        db = firestore.client()
         
         try:
             # Check if index already has data
             if not force and es.indices.exists(index=collection):
-                doc_count = es.count(index=collection).get("count", 0)
-                if doc_count > 0:
-                    return {
-                        "status": "skipped",
-                        "message": f"Index '{collection}' already has {doc_count} documents. Use force=true to resync.",
-                        "existing_documents": doc_count,
-                        "collection": collection
-                    }
+                try:
+                    doc_count = es.count(index=collection).get("count", 0)
+                    if doc_count > 0:
+                        return {
+                            "status": "skipped",
+                            "message": f"Index '{collection}' already has {doc_count} documents. Use force=true to resync.",
+                            "existing_documents": doc_count,
+                            "collection": collection
+                        }
+                except Exception as count_error:
+                    # If count fails (e.g., ES overloaded), log and continue with sync
+                    print(f"⚠️  Could not check document count for '{collection}': {count_error}")
+                    print(f"   Proceeding with sync attempt anyway...")
             
             docs = db.collection(collection).stream()
             items = [{"id": doc.id, **doc.to_dict()} for doc in docs]
@@ -87,7 +117,7 @@ def sync_firestore_to_es(
                 items, 
                 index=collection, 
                 collection=collection,
-                batch_size=100  # Process in batches
+                batch_size=50  # Process in smaller batches
             )
             
             return {

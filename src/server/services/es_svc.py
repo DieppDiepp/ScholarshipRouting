@@ -155,7 +155,7 @@ def index_many(
     *,
     index: str,
     collection: Optional[str] = None,
-    batch_size: int = 100,  # Process in smaller batches
+    batch_size: int = 50,  # Reduced default batch size
 ) -> Dict[str, Any]:
     """Index multiple documents with batching to prevent ES overload"""
     ensure_index(client, index)

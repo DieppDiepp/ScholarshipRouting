@@ -9,7 +9,7 @@ from google.api_core.exceptions import ResourceExhausted
 import logging
 
 from .. import config
-from .llm_factory import get_next_api_key, _create_llm_with_retry
+from .llm_factory import get_next_google_key
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 logger = logging.getLogger(__name__)
@@ -36,16 +36,15 @@ router_prompt = ChatPromptTemplate.from_messages([
 
 def get_router_llm() -> ChatGoogleGenerativeAI:
     """
-    Tạo LLM cho Router (sử dụng API key rotation với auto-retry).
+    Tạo LLM cho Router (sử dụng API key rotation).
     """
-    def creator(api_key: str) -> ChatGoogleGenerativeAI:
-        llm = ChatGoogleGenerativeAI(
-            model=config.ROUTER_LLM_MODEL,
-            google_api_key=api_key,
-            temperature=config.ROUTER_LLM_TEMP
-        )
-        return llm.with_structured_output(config.QueryClassification)
-    return _create_llm_with_retry(creator)
+    api_key = get_next_google_key()
+    llm = ChatGoogleGenerativeAI(
+        model=config.ROUTER_LLM_MODEL,
+        google_api_key=api_key,
+        temperature=config.ROUTER_LLM_TEMP
+    )
+    return llm.with_structured_output(config.QueryClassification)
 
 def classify_query(user_query: str) -> config.QueryClassification:
     """

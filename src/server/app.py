@@ -51,15 +51,19 @@ def sync_firestore_to_es():
             # Check if index exists and has data
             index_exists = es.indices.exists(index=coll_name)
             if index_exists:
-                # Check document count
-                doc_count = es.count(index=coll_name).get("count", 0)
-                if doc_count > 0:
-                    print(f"⏭️  Skipping '{coll_name}' - already has {doc_count} documents")
+                try:
+                    # Check document count
+                    doc_count = es.count(index=coll_name).get("count", 0)
+                    if doc_count > 0:
+                        print(f"⏭️  Skipping '{coll_name}' - already has {doc_count} documents")
+                        continue
+                    else:
+                        print(f"📝 Index '{coll_name}' exists but empty, syncing...")
+                except Exception as e:
+                    print(f"⚠️  Could not check count for '{coll_name}': {e}. Skipping for now.")
                     continue
-                else:
-                    print(f"📝 Index '{coll_name}' exists but empty, syncing...")
             else:
-                print(f"📝 Creating index '{coll_name}'...")
+                print(f"📝 Creating new index '{coll_name}'...")
             
             # Stream documents from Firestore
             print(f"🔍 Fetching documents from Firestore collection '{coll_name}'...")
@@ -71,24 +75,45 @@ def sync_firestore_to_es():
                 records.append(data)
 
             if records:
-                print(f"📦 Indexing {len(records)} documents in batches of 100...")
+                print(f"📦 Preparing to index {len(records)} documents...")
+                
+                # Wait for index to be ready (shards to activate)
+                print(f"⏳ Waiting for index '{coll_name}' shards to become active...")
+                max_wait = 30  # Wait up to 30 seconds
+                for wait_attempt in range(max_wait):
+                    try:
+                        health = es.cluster.health(index=coll_name, timeout="5s")
+                        if health.get("status") in ["yellow", "green"]:
+                            print(f"✓ Index '{coll_name}' is ready ({health.get('status')})")
+                            break
+                    except Exception as e:
+                        pass
+                    
+                    if wait_attempt < max_wait - 1:
+                        time.sleep(1)
+                else:
+                    print(f"⚠️  Timeout waiting for '{coll_name}' to be ready, attempting anyway...")
+                
+                # Now try to index
+                print(f"📦 Indexing documents in batches of 50...")
                 result = index_many(
                     es,
                     records,
                     index=coll_name,
                     collection=coll_name,
-                    batch_size=100  # Process 100 docs at a time
+                    batch_size=50  # Reduced from 100 to 50
                 )
                 
                 if result.get("error"):
                     print(f"❌ Error syncing '{coll_name}': {result['error']}")
                 else:
-                    print(f"✅ Synced {result['success']} docs from Firestore '{coll_name}' → ES")
+                    print(f"✅ Synced {result['success']}/{len(records)} docs from '{coll_name}'")
                     if result.get("failed", 0) > 0:
-                        print(f"⚠️  {result['failed']} documents failed to index")
+                        print(f"⚠️  {result['failed']} documents failed")
                 
-                # Add delay between collections to prevent overwhelming ES
-                time.sleep(2)
+                # Add delay between collections
+                print(f"💤 Waiting 5 seconds before next collection...")
+                time.sleep(5)
             else:
                 print(f"⚠️ No documents in collection '{coll_name}'")
 
