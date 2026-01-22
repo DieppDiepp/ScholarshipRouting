@@ -12,8 +12,8 @@
 We achieved 1st-prize of **AISC 2025 (Advanced Information Systems Contest)** organized by UIT.
 More info about the competition: [https://httt.uit.edu.vn/aisc/](https://httt.uit.edu.vn/aisc/)
 
-## 📸 Team Moments at AISC 2025
-The NOVA PRO TEAM at the Academic Information System Competition finals.
+## 🏆 Champion – Academic Information System Competition (AISC) 2025
+📸 Team Moments – NOVA PRO TEAM at the AISC Grand Finals
 
 <p float="left">
   <img src="https://raw.githubusercontent.com/DieppDiepp/ScholarshipRouting/main/image_for_readme/AISC-CDH-4.jpg" width="49%" />
@@ -21,6 +21,14 @@ The NOVA PRO TEAM at the Academic Information System Competition finals.
 </p>
 
 ---
+## 🏆 Champion – SE Mobile App Development Competition (SEEAPP) 2025
+📸 Team Moments & Project Poster at SEEAPP 2025
+
+<p float="left">
+  <img src="https://raw.githubusercontent.com/DieppDiepp/ScholarshipRouting/main/image_for_readme/1st-SEEAPP-2025.jpg" width="49%" />
+  <img src="https://raw.githubusercontent.com/DieppDiepp/ScholarshipRouting/main/image_for_readme/poster-SEEAPP-2025.jpg" width="49%" />
+</p>
+
 
 ## ✨ Key Features
 
