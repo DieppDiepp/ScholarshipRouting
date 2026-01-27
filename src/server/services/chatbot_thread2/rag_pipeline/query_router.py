@@ -6,11 +6,13 @@ Best Practice: Tiết kiệm API calls và thời gian bằng cách lọc các q
 
 from langchain_core.prompts import ChatPromptTemplate
 from google.api_core.exceptions import ResourceExhausted
+from openai import RateLimitError
 import logging
 
 from .. import config
-from .llm_factory import get_next_google_key
+from .llm_factory import get_next_google_key, get_next_openai_key
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 
 logger = logging.getLogger(__name__)
 
@@ -34,16 +36,26 @@ router_prompt = ChatPromptTemplate.from_messages([
     ("human", "Classify this query: {user_query}")
 ])
 
-def get_router_llm() -> ChatGoogleGenerativeAI:
+def get_router_llm():
     """
-    Tạo LLM cho Router (sử dụng API key rotation).
+    Tạo LLM cho Router (hỗ trợ cả OpenAI và Google).
+    Sử dụng API key rotation dựa trên config.LLM_PROVIDER.
     """
-    api_key = get_next_google_key()
-    llm = ChatGoogleGenerativeAI(
-        model=config.ROUTER_LLM_MODEL,
-        google_api_key=api_key,
-        temperature=config.ROUTER_LLM_TEMP
-    )
+    if config.LLM_PROVIDER == "openai":
+        api_key = get_next_openai_key()
+        llm = ChatOpenAI(
+            model=config.OPENAI_LITE_MODEL,
+            api_key=api_key,
+            temperature=config.ROUTER_LLM_TEMP
+        )
+    else:
+        api_key = get_next_google_key()
+        llm = ChatGoogleGenerativeAI(
+            model=config.ROUTER_LLM_MODEL,
+            google_api_key=api_key,
+            temperature=config.ROUTER_LLM_TEMP
+        )
+    
     return llm.with_structured_output(config.QueryClassification)
 
 def classify_query(user_query: str) -> config.QueryClassification:
@@ -60,8 +72,16 @@ def classify_query(user_query: str) -> config.QueryClassification:
     """
     logger.info(f"--- [ROUTER] Classifying query: '{user_query[:100]}...' ---")
     
-    from .llm_factory import API_KEY_POOL
-    max_attempts = len(API_KEY_POOL)
+    # Lấy key pool phù hợp với provider
+    if config.LLM_PROVIDER == "openai":
+        from .llm_factory import OPENAI_KEY_POOL
+        max_attempts = len(OPENAI_KEY_POOL)
+        quota_exception = RateLimitError
+    else:
+        from .llm_factory import GOOGLE_KEY_POOL
+        max_attempts = len(GOOGLE_KEY_POOL)
+        quota_exception = ResourceExhausted
+    
     last_error = None
     
     for attempt in range(max_attempts):
@@ -78,7 +98,7 @@ def classify_query(user_query: str) -> config.QueryClassification:
             
             return classification
             
-        except ResourceExhausted as e:
+        except (ResourceExhausted, RateLimitError) as e:
             last_error = e
             logger.warning(
                 f"⚠️ [ROUTER] API Key hết quota (429). "
@@ -90,7 +110,7 @@ def classify_query(user_query: str) -> config.QueryClassification:
             else:
                 # Đã thử hết tất cả keys
                 logger.error(f"❌ [ROUTER] TẤT CẢ {max_attempts} API keys đều hết quota!")
-                raise ResourceExhausted(
+                raise quota_exception(
                     f"All API keys exceeded quota. Please check billing."
                 ) from last_error
                 
@@ -146,7 +166,7 @@ def get_direct_response(classification: config.QueryClassification, user_query: 
     from .llm_factory import get_translator_llm  # Dùng chung translator LLM (nhẹ)
     
     try:
-        llm = get_translator_llm()  # Flash model, nhanh
+        llm = get_translator_llm()  # Flash model (Google) hoặc lite model (OpenAI), nhanh
         chain = response_prompt | llm | StrOutputParser()
         
         response = chain.invoke({
@@ -157,7 +177,7 @@ def get_direct_response(classification: config.QueryClassification, user_query: 
         return response.strip()
         
     except Exception as e:
-        logger.error(f"Error generating response: {e}")
+        logger.error(f"Error generating direct response: {e}")
         # Fallback tiếng Anh nếu LLM fail
         return "Hello! I'm your scholarship advisor. How can I help you find scholarships?"
 
